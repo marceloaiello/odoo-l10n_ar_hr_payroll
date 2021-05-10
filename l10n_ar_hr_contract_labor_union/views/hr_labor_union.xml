@@ -4,9 +4,7 @@
     <!-- DataTag -->
     <data>
         <!-- Menu Configuration -->
-        <!-- This Menu Item must have a parent and an action -->
-        <menuitem id="hr.menu_labor_union_contract" name="C.C.T / Sindicatos" parent="hr.menu_hr_employee_payroll"
-                    action="actions_hr_labor_union" sequence="3"/>
+        <menuitem id="hr.menu_labor_union_contract" name="C.C.T / Sindicatos" parent="hr.menu_hr_employee_payroll" action="actions_hr_labor_union" sequence="3"/>
 
         <!-- Main View Start -->
         <record id="actions_hr_labor_union" model="ir.actions.act_window">
