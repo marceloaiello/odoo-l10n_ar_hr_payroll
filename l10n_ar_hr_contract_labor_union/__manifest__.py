@@ -3,7 +3,7 @@
 
 {
     'name': 'Labor Unions Tools - Argentina',
-    'version': '13.0.1.0',
+    'version': '13.0.1.1',
     'description': 'Adds labor union management to hr_contract and hr_payroll',
     'summary': 'Adds labor union management to hr_contract and hr_payroll',
     'author': 'Nimarosa',
