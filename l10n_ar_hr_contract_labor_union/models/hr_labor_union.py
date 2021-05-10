@@ -14,12 +14,12 @@ class HrLaborUnion(models.Model):
                                         string='Categorias C.C.T')
     cct_svco_values = fields.One2many(comodel_name='hr.labor_union.svco_value',inverse_name='labor_union_id',
                                         string='S.V.C.O / Seguro de Vida')
-    current_value = fields.Float(compute='_compute_current_value', string='Valor Actual - SVCO')
+    svco_current_value = fields.Float(compute='_compute_svco_current_value', string='Valor Actual - SVCO')
     company_id = fields.Many2one('res.company', string='Company', required=True,
         default=lambda self: self.env.user.company_id)
 
     @api.depends('cct_svco_values')
-    def _compute_current_value(self):
+    def _compute_svco_current_value(self):
         for record in self.cct_svco_values:
             svco_value = 0
             if record.from_date <= today() <= record.to_date:

@@ -5,7 +5,7 @@
     <data>
         <!-- Menu Configuration -->
         <!-- This Menu Item must have a parent and an action -->
-        <menuitem id="hr.menu_labor_union_contract" name="Sindicatos / C.C.T" parent="hr.menu_hr_employee_payroll"
+        <menuitem id="hr.menu_labor_union_contract" name="C.C.T / Sindicatos" parent="hr.menu_hr_employee_payroll"
                     action="actions_hr_labor_union" sequence="3"/>
 
         <!-- Main View Start -->
@@ -13,7 +13,7 @@
             <field name="name">C.C.T / Sindicatos</field>
             <field name="res_model">hr.labor_union</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="view_mode">form,tree</field>
+            <field name="view_mode">tree,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     Todavia no se registraron Sindicatos / C.C.T. Ingrese uno nuevo.
@@ -21,6 +21,16 @@
             </field>
         </record>
         <!-- Main View End -->
+
+        <!-- Tree View Start -->
+        <tree string="C.C.T / Sindicatos">
+            <field name="name" string="Nombre"/>
+            <field name="sindicato" string="Sindicato / C.C.T"/>
+            <field name="convenio" string="Convenio / Rama"/>
+            <field name="cct_categories" string="Categorias C.C.T"/>
+            <field name="svco_current_value" string="Valor Actual S.V.C.O"/>
+        </tree>
+        <!-- Tree View End -->
 
         <!-- Form View Start -->
         <record id="action_hr_labor_union_form" model="ir.ui.view">
