@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_labor_union_admin,l10n_ar_hr_contract_labor_union.hr.labor_union,model_hr_labor_union,base.group_user,1,1,1,1

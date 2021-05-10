@@ -13,11 +13,11 @@
         'hr'
     ],
     'data': [
-        ''
+        'security/ir.mode.access.csv',
+        'views/hr_labor_union.xml',
+        'views/hr_contract.xml'
     ],
-    'demo': [
-        ''
-    ],
-    'auto_install': True,
-    'application': True,
+    'installable': True,
+    'auto_install': False,
+    'application': False,
 }
