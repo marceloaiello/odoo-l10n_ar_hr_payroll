@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="actions_hr_labor_union" model="ir.actions.act_window">
+            <field name="name">C.C.T / Sindicatos</field>
+            <field name="res_model">hr.labor_union</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Presione aqui para crear un nuevo Sindicato / C.C.T
+                </p>
+            </field>
+        </record>
+
+        <record id="action_hr_labor_union_form" model="ir.ui.view">
+            <field name="name">hr.labor_union.form</field>
+            <field name="model">hr.labor_union</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="oe_title pr-0" name="title">
+                        <h1 class="d-flex flex-row justify-content-between">
+                            <field name="name" placeholder="C.C.T / Sindicato"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="sindicato"/>
+                            <field name="convenio"/>
+                        </group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="svco-seguro" string="Seguro S.V.C.O">
+                            <group string="Seguro de Vida Colectivo (S.V.C.O)" modifiers="{}">
+                                <field name="cct_svco_values" context="{'default_labor_union_id': active_id}" nolabel="1" modifiers="{}"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
