@@ -2,13 +2,13 @@
 <odoo>
     <data>
         <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
-        <menuitem id="hr_labor_union" name="C.C.T / Sindicatos" sequence="5"/>
+        <menuitem id="hr.labor_union" name="C.C.T / Sindicatos" sequence="5"/>
 
         <record id="actions_hr_labor_union" model="ir.actions.act_window">
             <field name="name">C.C.T / Sindicatos</field>
             <field name="res_model">hr.labor_union</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">form,tree</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     Todavia no se registraron Sindicatos / C.C.T. Ingrese uno nuevo.
