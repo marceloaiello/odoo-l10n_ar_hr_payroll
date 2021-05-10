@@ -39,7 +39,7 @@ class HrLaborUnionCategory(models.Model):
         default=lambda self: self.env.user.company_id)
 
     @api.depends('categories_prices')
-    def _compute_current_value"(self):
+    def _compute_current_value(self):
         for record in self.categories_prices:
             value = 0
             if record.date_from <= today() <= record.date_to:
