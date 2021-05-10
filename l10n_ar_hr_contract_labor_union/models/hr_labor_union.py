@@ -8,8 +8,8 @@ class HrLaborUnion(models.Model):
     _description = 'Union Laboral / Sindicatos'
 
     name = fields.Char(string='Name')
-    sindicato = fields.String(string='Sindicato')
-    convenio = fields.String(string='Codigo C.C.T / RAMA')
+    sindicato = fields.Char(string='Sindicato')
+    convenio = fields.Char(string='Codigo C.C.T / RAMA')
     cct_categories = fields.One2many(comodel_name='hr.labor_union.category',inverse_name='labor_union_id',
                                         string='Categorias C.C.T')
     cct_svco_values = fields.One2many(comodel_name='hr.labor_union.svco_value',inverse_name='labor_union_id',
