@@ -17,11 +17,6 @@
         'base',
         'hr',
     ],
-    'external_dependencies': {
-        'python': [
-            '',
-        ],
-    },
     'data': [
         'views/hr_contract.xml',
     ],
