@@ -23,7 +23,7 @@ class HrContract(models.Model):
 
     @api.model
     def create(self, values):
-        if not values.get('antiquity_date')
+        if values.get('antiquity_date') is None:
             values[:antiquity_date] = self.date_start
         return super().create(values)
 
