@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- OdooTag -->
 <odoo>
+    <!-- DataTag -->
     <data>
+        <!-- Menu Configuration -->
         <!-- This Menu Item must have a parent and an action -->
-        <menuitem id="hr.labor_union_menu" name="C.C.T / Sindicatos"  parent="hr.menu_human_resources_configuration" action="ir.actions.act_window"/>
+        <menuitem id="hr.menu_labor_union_contract" name="Sindicatos / C.C.T" parent="hr.menu_hr_employee_payroll"
+                    action="actions_hr_labor_union" sequence="3"/>
 
+        <!-- Main View Start -->
         <record id="actions_hr_labor_union" model="ir.actions.act_window">
             <field name="name">C.C.T / Sindicatos</field>
             <field name="res_model">hr.labor_union</field>
@@ -15,7 +20,9 @@
                 </p>
             </field>
         </record>
+        <!-- Main View End -->
 
+        <!-- Form View Start -->
         <record id="action_hr_labor_union_form" model="ir.ui.view">
             <field name="name">hr.labor_union.form</field>
             <field name="model">hr.labor_union</field>
@@ -45,5 +52,8 @@
                 </form>
             </field>
         </record>
+        <!-- Form View End -->
     </data>
+    <!-- DataTag -->
 </odoo>
+<!-- OdooTag -->
