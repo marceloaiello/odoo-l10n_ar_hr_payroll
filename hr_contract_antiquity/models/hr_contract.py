@@ -4,7 +4,7 @@
 from dateutil.relativedelta import relativedelta
 from odoo import api, fields, models
 
-class ModuleName(models.Model):
+class HrContract(models.Model):
     _inherit = 'hr.contract'
     antiquity_date = fields.Date(string='Fecha de Antiguedad')
     antiquity = fields.Integer(string="Antiguedad", readonly=True, compute="_compute_antiquity")
@@ -13,7 +13,7 @@ class ModuleName(models.Model):
     @api.depends('antiquity_date')
     def _compute_antiquity(self):
         for record in self:
-            antiquity = 
+            antiquity = 0
             if record.antiquity_date:
                 antiquity = relativedelta(
                     fields.Date.today(),
