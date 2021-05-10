@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'Argentinian Localization - Labor Unions',
+    'name': 'Labor Unions Tools - Argentina',
     'version': '13.0.1.0',
     'description': 'Adds labor union management to hr_contract and hr_payroll',
     'summary': 'Adds labor union management to hr_contract and hr_payroll',
