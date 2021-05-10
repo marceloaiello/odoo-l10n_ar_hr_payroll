@@ -7,7 +7,7 @@
         <record id="actions_hr_labor_union" model="ir.actions.act_window">
             <field name="name">C.C.T / Sindicatos</field>
             <field name="res_model">hr.labor_union</field>
-            <field name="view_type">form</field>
+            <field name="type">ir.actions.act_window</field>
             <field name="view_mode">form,tree</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
