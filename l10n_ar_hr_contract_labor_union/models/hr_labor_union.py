@@ -61,7 +61,7 @@ class HrLaborUnionCategoryValue(models.Model):
     @api.constrains('to_date', 'from_date', 'company_id')
     def _check_dates(self):
         for record in self:
-            if record.date_from == record.date_to
+            if record.date_from == record.date_to:
                 raise ValidationError("'Fecha Desde' y 'Fecha Hasta' no pueden ser el mismo valor.")
             if record.date_to < record.date_from:
                 raise ValidationError("'Fecha Hasta' no puede ser menor a 'Fecha Desde'.")
@@ -92,7 +92,7 @@ class HrLaborUnionSvcoValue(models.Model):
     @api.constrains('to_date', 'from_date', 'company_id')
     def _check_svco_dates(self):
         for record in self:
-            if record.from_date == record.to_date
+            if record.from_date == record.to_date:
                 raise ValidationError("'Fecha Desde' y 'Fecha Hasta' no pueden ser el mismo valor.")
             if record.to_date < record.from_date:
                 raise ValidationError("'Fecha Hasta' no puede ser menor a 'Fecha Desde'.")
