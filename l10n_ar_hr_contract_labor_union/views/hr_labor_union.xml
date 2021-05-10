@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
-        <menuitem id="hr.labor_union" name="C.C.T / Sindicatos" sequence="5"/>
+        <!-- This Menu Item Must have a parent -->
+        <menuitem id="hr.labor_union_menu" name="C.C.T / Sindicatos" parent="hr.menu_human_resources_configuration" sequence="5"/>
 
         <record id="actions_hr_labor_union" model="ir.actions.act_window">
             <field name="name">C.C.T / Sindicatos</field>
