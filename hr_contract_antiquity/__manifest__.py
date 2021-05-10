@@ -9,11 +9,12 @@
     'author': 'Nimarosa',
     'maintainer': 'Nimarosa',
     'website': 'www.nimarosa.com',
-    'license': 'MIT',
+    'license': 'AGPL-3',
     'contributors': [
         '',
     ],
     'depends': [
+        'base',
         'hr',
     ],
     'external_dependencies': {
