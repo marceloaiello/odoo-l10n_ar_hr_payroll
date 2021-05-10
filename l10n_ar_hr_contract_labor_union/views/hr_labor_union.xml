@@ -19,6 +19,22 @@
         </record>
         <!-- Main View End -->
 
+        <!-- Tree View Start-->
+        <record id="hr_labor_union_view_tree" model="ir.ui.view">
+            <field name="name">hr.labor_union.view.tree</field>
+            <field name="model">hr.labor_union</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="sindicato"/>
+                    <field name="convenio"/>
+                    <field name="cct_categories"/>
+                    <field name="svco_current_value"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Tree View End-->
+
         <!-- Form View Start -->
         <record id="action_hr_labor_union_form" model="ir.ui.view">
             <field name="name">hr.labor_union.form</field>
