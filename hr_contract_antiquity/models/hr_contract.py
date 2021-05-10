@@ -9,7 +9,6 @@ class HrContract(models.Model):
     antiquity_date = fields.Date(string='Fecha de Antiguedad')
     antiquity = fields.Integer(string="Antiguedad", readonly=True, compute="_compute_antiquity")
 
-    @api.multi
     @api.depends('antiquity_date')
     def _compute_antiquity(self):
         for record in self:
