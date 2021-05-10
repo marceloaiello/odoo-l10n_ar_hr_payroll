@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- OdooTag -->
+
 <odoo>
-    <!-- DataTag -->
     <data>
         <!-- Menu Configuration -->
         <menuitem id="hr.menu_labor_union_contract" name="C.C.T / Sindicatos" parent="hr.menu_hr_employee_payroll" action="actions_hr_labor_union" sequence="3"/>
@@ -62,6 +61,4 @@
         </record>
         <!-- Form View End -->
     </data>
-    <!-- DataTag -->
 </odoo>
-<!-- OdooTag -->
