@@ -2,3 +2,5 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from . import hr_labor_union
+from . import hr_labor_union_category
+from . import hr_labor_union_svco_value
