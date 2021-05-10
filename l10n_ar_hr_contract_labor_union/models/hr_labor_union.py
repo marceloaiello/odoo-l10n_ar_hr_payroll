@@ -22,6 +22,6 @@ class HrLaborUnion(models.Model):
     def _compute_svco_current_value(self):
         for record in self.cct_svco_values:
             svco_value = 0
-            if record.from_date <= Date.today() <= record.to_date:
+            if record.from_date <= fields.Date.today() <= record.to_date:
                 svco_value = record.value
         record.svco_current_value = svco_value
