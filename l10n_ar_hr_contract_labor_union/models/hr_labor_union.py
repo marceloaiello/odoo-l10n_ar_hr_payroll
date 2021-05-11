@@ -27,7 +27,5 @@ class HrLaborUnion(models.Model):
         if self.cct_svco_values.search_count(domain) == 1:
             for svco in record.cct_svco_values.search(domain):
                 svco_value = svco.value
-        else:
-            raise UserError("Existen mas de un valor de SVCO para el periodo seleccionado. Esto no deberia pasar, consulte al administrador.")
         record.svco_current_value = svco_value
 
