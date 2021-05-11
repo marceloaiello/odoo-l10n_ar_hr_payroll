@@ -21,8 +21,9 @@ class HrLaborUnion(models.Model):
     @api.depends('cct_svco_values')
     def _compute_svco_current_value(self):
         for record in self:
+            today = fields.Date.context_today(self).strftime('%Y-%m-%d')
             svco_value = 0
-            domain = [('labor_union_id','=',record.id),('from_date','<=',context_today()),('to_date','>=',context_today())]
+            domain = [('labor_union_id','=',record.id),('from_date','<=',today),('to_date','>=',today)]
         if self.cct_svco_values.search_count(domain) == 1:
             for svco in record.cct_svco_values.search_count(domain):
                 svco_value = svco.value
