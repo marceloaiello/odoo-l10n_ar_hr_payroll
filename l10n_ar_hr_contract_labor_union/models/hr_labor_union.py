@@ -20,8 +20,19 @@ class HrLaborUnion(models.Model):
 
     @api.depends('cct_svco_values')
     def _compute_svco_current_value(self):
-        for record in self.cct_svco_values:
+        for record in self:
             svco_value = 0
-            if record.from_date <= fields.Date.today() <= record.to_date:
-                svco_value = record.value
+        domain = [
+            ('labor_union_id', '=', record.id),
+            ('company_id', '=', record.company_id.id),
+            '|', '|',
+            '&', ('from_date', '<=', fields.Date.today, ('to_date', '>=', fields.Date.today)
+                ]
+        search = self.cct_svco_values.search(domain)
+        if search_count == 1:
+            for svco in search:
+                svco_value = svco.value
+        else:
+            raise UserError("Existen mas de un valor de SVCO para el periodo seleccionado. Esto no deberia pasar, consulte al administrador.")
         record.svco_current_value = svco_value
+

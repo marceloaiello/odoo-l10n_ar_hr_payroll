@@ -31,5 +31,5 @@ class HrLaborUnionSvcoValue(models.Model):
                     '&', ('from_date', '<=', record.from_date), ('to_date', '>=', record.to_date),
                 ]
             if self.search_count(domain) > 0:
-                raise ValidationError(_('No puedes ingresra fechas que se superpongan a los periodos ya ingresados de S.V.C.O.'))
+                raise ValidationError('No puedes ingresra fechas que se superpongan a los periodos ya ingresados de S.V.C.O.')
         return True
