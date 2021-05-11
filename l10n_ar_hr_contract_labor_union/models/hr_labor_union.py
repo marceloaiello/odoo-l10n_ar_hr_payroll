@@ -22,7 +22,7 @@ class HrLaborUnion(models.Model):
     def _compute_svco_current_value(self):
         for record in self:
             svco_value = 0
-            domain = [('labor_union_id','=',record.id),('from_date','<=',fields.Date.today),('to_date','>=',fields.Date.today)]
+            domain = [('labor_union_id','=',record.id),('from_date','<=',context_today(),('to_date','>=',fields.Date.today)]
         if self.cct_svco_values.search_count(domain) == 1:
             for svco in record.cct_svco_values.search_count(domain):
                 svco_value = svco.value
