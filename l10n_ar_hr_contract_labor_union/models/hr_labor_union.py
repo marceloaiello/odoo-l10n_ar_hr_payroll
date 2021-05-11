@@ -24,8 +24,8 @@ class HrLaborUnion(models.Model):
             svco_value = 0
             svco_domain = [
                         ('labor_union_id', '=', record.id),
-                        '&', ('from_date', '<=', fields.Date.today,
-                        '&', ('to_date', '>=', fields.Date.today)
+                        ('from_date', '<=', fields.Date.today,
+                        ('to_date', '>=', fields.Date.today)
                     ]
         if self.cct_svco_values.search_count(svco_domain) == 1:
             for svco in record.cct_svco_values.search_count(domain):
