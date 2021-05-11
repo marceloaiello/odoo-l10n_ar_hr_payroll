@@ -7,7 +7,7 @@ class HrLaborUnion(models.Model):
     _name = 'hr.labor_union'
     _description = 'Union Laboral / Sindicatos'
 
-    name = fields.Char(string='Name')
+    name = fields.Char(string='C.C.T / Sindicato')
     sindicato = fields.Char(string='Sindicato')
     convenio = fields.Char(string='Codigo C.C.T / RAMA')
     cct_categories = fields.One2many(comodel_name='hr.labor_union.category',inverse_name='labor_union_id',
