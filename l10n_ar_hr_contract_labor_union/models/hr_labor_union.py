@@ -26,7 +26,7 @@ class HrLaborUnion(models.Model):
             ('labor_union_id', '=', record.id),
             ('company_id', '=', record.company_id.id),
             '|', '|',
-            '&', ('from_date', '<=', fields.Date.today, ('to_date', '>=', fields.Date.today)
+            '&', ('from_date', '<=', fields.Date.today, ('to_date', '>=', fields.Date.today),
                 ]
         search = self.cct_svco_values.search(domain)
         if search_count == 1:
