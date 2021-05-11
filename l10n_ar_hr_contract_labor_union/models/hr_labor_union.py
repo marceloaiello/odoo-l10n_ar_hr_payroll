@@ -22,14 +22,14 @@ class HrLaborUnion(models.Model):
     def _compute_svco_current_value(self):
         for record in self:
             svco_value = 0
-            domain = [
+            svco_domain = [
                         ('labor_union_id', '=', record.id),
                         ('company_id', '=', record.company_id.id),
                         '|', '|',
                         '&', ('from_date', '<=', fields.Date.today, ('to_date', '>=', fields.Date.today),
-                ]
-        if self.cct_svco_values.search_count(domain) == 1:
-            for svco in self.cct_svco_values.search_count(domain):
+                    ]
+        if self.cct_svco_values.search_count(svco_domain) == 1:
+            for svco in record.cct_svco_values.search_count(domain):
                 svco_value = svco.value
         else:
             raise UserError("Existen mas de un valor de SVCO para el periodo seleccionado. Esto no deberia pasar, consulte al administrador.")
