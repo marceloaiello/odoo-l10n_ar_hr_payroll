@@ -18,6 +18,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/hr_labor_union.xml',
+        'views/hr_labor_union_svco_value.xml',
+        'views/hr_labor_union_category.xml'
         'views/hr_contract.xml'
     ],
     'installable': True,
