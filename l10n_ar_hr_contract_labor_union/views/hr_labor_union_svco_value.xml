@@ -34,7 +34,6 @@
 						<field name="value" nolabel="1" placeholder="Ingrese el valor mensual..." colspan="2"/>
                         <field name="name" colspan="2"/>
 						<field name="labor_union_id" required="1" modifiers="{'invisible':true}"/>
-						<field name="company_id" required="1" modifiers="{'invisible':true}"/>
 					</group>
                 </form>
             </field>

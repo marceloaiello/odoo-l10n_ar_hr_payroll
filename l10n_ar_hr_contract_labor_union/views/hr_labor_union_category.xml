@@ -27,7 +27,7 @@
                         </h1>
                     </div>
                     <group string="Seguro de Vida Colectivo (S.V.C.O)">
-                        <field name="categories_prices" context="{'default_labor_union_category_id': active_id, 'default_company_id': active_company_id}" nolabel="1"/>
+                        <field name="categories_prices" context="{'default_labor_union_category_id': active_id" nolabel="1"/>
                     </group>
                 </form>
             </field>
