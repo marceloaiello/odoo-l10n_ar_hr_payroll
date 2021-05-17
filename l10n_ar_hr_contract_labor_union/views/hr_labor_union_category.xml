@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- Tree View Start-->
+        <!-- Tree View Start: Categories -->
         <record id="hr_labor_union_svco_value_view_tree" model="ir.ui.view">
-            <field name="name">hr.labor_union.svco_value.view.tree</field>
-            <field name="model">hr.labor_union.svco_value</field>
+            <field name="name">hr.labor_union.category.view.tree</field>
+            <field name="model">hr.labor_union.category</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="name" />
