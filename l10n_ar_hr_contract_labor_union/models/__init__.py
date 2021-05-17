@@ -4,3 +4,4 @@
 from . import hr_labor_union
 from . import hr_labor_union_category
 from . import hr_labor_union_svco_value
+from . import hr_contract

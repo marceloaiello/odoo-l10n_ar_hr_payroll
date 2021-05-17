@@ -23,15 +23,16 @@
                 <form>
                     <div class="oe_title pr-0" name="title">
                         <h1 class="d-flex flex-row justify-content-between">
-                            <field name="name" placeholder="Categoria C.C.T"/>
+                            <field name="name" placeholder="Categoria C.C.T" />
                         </h1>
                     </div>
                     <group string="Seguro de Vida Colectivo (S.V.C.O)">
-                        <field name="categories_prices" context="{'default_labor_union_category_id': active_id, 'default_company_id': active_company_id}" nolabel="1"/>
+                        <field name="categories_prices" context="{'default_labor_union_category_id': active_id, 'default_company_id': active_company_id}" nolabel="1" />
                     </group>
                 </form>
             </field>
         </record>
         <!-- Form View End -->
+
     </data>
 </odoo>

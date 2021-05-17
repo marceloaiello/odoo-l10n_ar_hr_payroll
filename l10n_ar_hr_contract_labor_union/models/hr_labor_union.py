@@ -5,15 +5,16 @@ from odoo import api, fields, models
 
 class HrLaborUnion(models.Model):
     _name = 'hr.labor_union'
+    _inherit = 'mail.thread' # Here we add chatter to the new module.
     _description = 'Union Laboral / Sindicatos'
 
-    name = fields.Char(string='C.C.T / Sindicato')
-    sindicato = fields.Char(string='Sindicato')
-    convenio = fields.Char(string='Codigo C.C.T / RAMA')
+    name = fields.Char(string='C.C.T / Sindicato', track_visibility='onchange')
+    sindicato = fields.Char(string='Sindicato', track_visibility='onchange')
+    convenio = fields.Char(string='Codigo C.C.T / RAMA', track_visibility='onchange')
     cct_categories = fields.One2many(comodel_name='hr.labor_union.category',inverse_name='labor_union_id',
-                                        string='Categorias C.C.T')
+                                        string='Categorias C.C.T', track_visibility='onchange')
     cct_svco_values = fields.One2many(comodel_name='hr.labor_union.svco_value',inverse_name='labor_union_id',
-                                        string='S.V.C.O / Seguro de Vida')
+                                        string=' CCT SVCO', track_visibility='onchange')
     svco_current_value = fields.Float(compute='_compute_svco_current_value', string='Valor Actual - SVCO')
     company_id = fields.Many2one('res.company', string='Company', required=True,
         default=lambda self: self.env.user.company_id)

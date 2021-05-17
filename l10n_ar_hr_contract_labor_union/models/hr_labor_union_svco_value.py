@@ -7,12 +7,12 @@ class HrLaborUnionSvcoValue(models.Model):
     _name = 'hr.labor_union.svco_value'
     _description = 'Valores de S.V.C.O de C.C.T'
 
-    name = fields.Char(string='Valor S.V.C.O')
+    name = fields.Char(string='Ref. CCT SVCO', required=True)
     from_date = fields.Date(string='Vigencia Desde', required=True, help='Fecha de Fin, incluida en el rango.')
     to_date = fields.Date(string='Vigencia Hasta', required=True, help='Fecha de Inicio, incluida en el rango.')
     value = fields.Float(string='Valor / Precio', required=True)
     labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato', required=True)
-    company_id = fields.Many2one('res.company', string='Company', required=True,
+    company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
 
     @api.constrains('to_date', 'from_date', 'company_id')

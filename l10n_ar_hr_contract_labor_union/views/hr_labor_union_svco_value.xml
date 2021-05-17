@@ -7,16 +7,39 @@
             <field name="model">hr.labor_union.svco_value</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="labor_union_id"/>
-                    <field name="from_date"/>
-                    <field name="to_date"/>
-                    <field name="name"/>
-                    <field name="value"/>
+                    <field name="from_date" />
+                    <field name="to_date" />
+                    <field name="name" />
+                    <field name="value" />
                 </tree>
             </field>
         </record>
         <!-- Tree View End-->
 
+        <!-- Form View Start -->
+        <record id="action_hr_labor_union_svco_value_view_form" model="ir.ui.view">
+            <field name="name">hr.labor_union.svco_value.form</field>
+            <field name="model">hr.labor_union.svco_value</field>
+            <field name="arch" type="xml">
+                <form>
+					<group name="dates_info" string="Seguro de Vida Obligatorio (SVCO)" modifiers="{}">
+						<label for="from_date" string="Fechas de Vigencia" modifiers="{}"/>
+						<div class="o_row" name="dates" modifiers="{}">
+							<field name="from_date" nolabel="1" required="1" on_change="1" modifiers="{'required':true}"/>
+							<span invisible="1">
+								 -
+							</span>
+							<field name="to_date" nolabel="1" on_change="1" modifiers="{'required':true}"/>
+						</div>
+						<field name="value" nolabel="1" placeholder="Ingrese el valor mensual..." colspan="2"/>
+                        <field name="name" colspan="2"/>
+						<field name="labor_union_id" required="1" modifiers="{'invisible':true}"/>
+						<field name="company_id" required="1" modifiers="{'invisible':true}"/>
+					</group>
+                </form>
+            </field>
+        </record>
+        <!-- Form View End -->
 
     </data>
 </odoo>
