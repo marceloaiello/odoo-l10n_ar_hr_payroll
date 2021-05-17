@@ -22,18 +22,22 @@
             <field name="model">hr.labor_union.svco_value</field>
             <field name="arch" type="xml">
                 <form>
-					<group name="dates_info" string="Seguro de Vida Obligatorio (SVCO)" modifiers="{}">
+                    <group string="Seguro de Vida Obligatorio (SVCO)">
+                        <field name="name"/>
+                        <field name="labor_union_id" default='default_labor_union_id'/>
+                    </group>
+					<group name="dates_info" modifiers="{}">
 						<label for="from_date" string="Fechas de Vigencia" modifiers="{}"/>
 						<div class="o_row" name="dates" modifiers="{}">
 							<field name="from_date" nolabel="1" required="1" on_change="1" modifiers="{'required':true}"/>
-							<span invisible="1">
+							<span>
 								 -
 							</span>
 							<field name="to_date" nolabel="1" on_change="1" modifiers="{'required':true}"/>
 						</div>
-						<field name="value" nolabel="1" placeholder="Ingrese el valor mensual..." colspan="2"/>
-                        <field name="name" colspan="2"/>
-						<field name="labor_union_id" required="1" modifiers="{'invisible':true}"/>
+                        <group>
+                            <field name="value"/>
+                        </group>
 					</group>
                 </form>
             </field>
