@@ -26,7 +26,7 @@
                             <field name="name" placeholder="Categoria C.C.T"/>
                         </h1>
                     </div>
-                    <group string="Seguro de Vida Colectivo (S.V.C.O)">
+                    <group string="Valores de Categorias">
                         <field name="categories_prices" context="{'default_labor_union_category_id': active_id}" nolabel="1"/>
                     </group>
                 </form>
