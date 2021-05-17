@@ -26,7 +26,7 @@ class HrLaborUnionCategoryPrice(models.Model):
     _name = 'hr.labor_union.category.price'
     _description = 'Precios de Categorias C.C.T'
 
-    name = fields.Char(string='Categoria C.C.T', required=True)
+    name = fields.Char(string='Referencia Periodo', required=True)
     from_date = fields.Date(string='Fecha Desde', required=True)
     to_date = fields.Date(string='Fecha Hasta', required=True)
     value = fields.Float(string='Valor / Precio', required=True)

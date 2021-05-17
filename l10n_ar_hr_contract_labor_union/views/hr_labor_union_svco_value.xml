@@ -22,13 +22,13 @@
             <field name="model">hr.labor_union.svco_value</field>
             <field name="arch" type="xml">
                 <form>
-                    <group string="Seguro de Vida Obligatorio (SVCO)">
+                    <group string="Seguro de Vida Obligatorio (SVCO)" col="2">
                         <field name="name"/>
                         <field name="labor_union_id" default='default_labor_union_id'/>
                     </group>
-					<group name="dates_info" modifiers="{}">
-                        <field name="from_date" nolabel="1" required="1" on_change="1" modifiers="{'required':true}"/>
-                        <field name="to_date" nolabel="1" on_change="1" modifiers="{'required':true}"/>
+					<group name="dates_info" modifiers="{}" col="2">
+                        <field name="from_date" on_change="1" modifiers="{'required':true}"/>
+                        <field name="to_date" on_change="1" modifiers="{'required':true}"/>
                         <group>
                             <field name="value"/>
                         </group>
@@ -37,6 +37,5 @@
             </field>
         </record>
         <!-- Form View End -->
-
     </data>
 </odoo>
