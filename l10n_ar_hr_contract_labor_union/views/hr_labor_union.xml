@@ -69,14 +69,14 @@
                         </page>
                     </notebook>
                 </form>
+                <!-- Form Chatter Widget -->
+                <div class="oe_chatter" modifiers="{}">
+                    <field name="message_follower_ids" widget="mail_followers" modifiers="{}"/>
+                    <field name="activity_ids" widget="mail_activity" modifiers="{}"/>
+                    <field name="message_ids" widget="mail_thread" modifiers="{}" options="{'display_log_button': True}"/>
+                </div>
+                <!-- Form Chatter Widget -->
             </field>
-            <!-- Form Chatter Widget -->
-            <div class="oe_chatter" modifiers="{}">
-                <field name="message_follower_ids" widget="mail_followers" modifiers="{}"/>
-                <field name="activity_ids" widget="mail_activity" modifiers="{}"/>
-                <field name="message_ids" widget="mail_thread" modifiers="{}" options="{'display_log_button': True}"/>
-            </div>
-            <!-- Form Chatter Widget -->
         </record>
         <!-- Form View End -->
     </data>
