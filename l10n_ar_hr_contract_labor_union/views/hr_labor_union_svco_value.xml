@@ -23,16 +23,16 @@
             <field name="arch" type="xml">
                 <form>
                     <group string="Seguro de Vida Obligatorio (SVCO)" col="2">
-                        <field name="name"/>
-                        <field name="labor_union_id" default='default_labor_union_id'/>
+                        <field name="name" />
+                        <field name="labor_union_id" default='default_labor_union_id' />
                     </group>
-					<group name="dates_info" col="2">
-                        <field name="from_date"/>
-                        <field name="to_date"/>
-                        <group>
-                            <field name="value"/>
-                        </group>
-					</group>
+                    <group name="dates_info" col="2">
+                        <field name="from_date" />
+                        <field name="to_date" />
+                    </group>
+                    <group>
+                        <field name="value" />
+                    </group>
                 </form>
             </field>
         </record>
