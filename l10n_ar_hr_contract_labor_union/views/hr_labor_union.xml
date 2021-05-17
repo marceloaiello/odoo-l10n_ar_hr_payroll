@@ -60,8 +60,6 @@
                                 <field name="cct_categories" context="{'default_labor_union_id': active_id}" nolabel="1"/>
                             </group>
                         </page>
-                    </notebook>
-                    <notebook>
                         <page name="svco-seguro" string="Seguro S.V.C.O">
                             <group string="Seguro de Vida Colectivo (S.V.C.O)">
                                 <field name="cct_svco_values" context="{'default_labor_union_id': active_id}" nolabel="1"/>
