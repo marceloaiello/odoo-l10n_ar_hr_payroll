@@ -27,14 +27,8 @@
                         <field name="labor_union_id" default='default_labor_union_id'/>
                     </group>
 					<group name="dates_info" modifiers="{}">
-						<label for="from_date" string="Fechas de Vigencia" modifiers="{}"/>
-						<div class="o_row" name="dates" modifiers="{}">
-							<field name="from_date" nolabel="1" required="1" on_change="1" modifiers="{'required':true}"/>
-							<span>
-								 -
-							</span>
-							<field name="to_date" nolabel="1" on_change="1" modifiers="{'required':true}"/>
-						</div>
+                        <field name="from_date" nolabel="1" required="1" on_change="1" modifiers="{'required':true}"/>
+                        <field name="to_date" nolabel="1" on_change="1" modifiers="{'required':true}"/>
                         <group>
                             <field name="value"/>
                         </group>
