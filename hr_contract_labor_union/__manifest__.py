@@ -2,10 +2,10 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'Labor Unions Tools - Argentina',
-    'version': '13.0.1.1',
+    'name': 'HR Labor Union - Argentina',
+    'version': '13.0.1.2',
     'description': 'Adds labor union management to hr_contract and hr_payroll',
-    'summary': 'Adds labor union management to hr_contract and hr_payroll',
+    'summary': 'This module allow to manage the Labor Union salary prices acording to Argentina',
     'author': 'Nimarosa',
     'website': 'www.nimarosa.com',
     'license': 'LGPL-3',

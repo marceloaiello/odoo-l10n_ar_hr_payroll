@@ -8,9 +8,9 @@ class HrLaborUnionCategory(models.Model):
     _description = 'Categorias de C.C.T'
 
     name = fields.Char(string='Categoria C.C.T', required=True)
-    current_value = fields.Float(string='Valor / Precio', computed="_compute_current_value")
+    current_value = fields.Float(string='Valor Actual', computed="_compute_current_value")
     categories_prices = fields.One2many(comodel_name='hr.labor_union.category.price', inverse_name='labor_union_category_id', string='Valores de Categoria')
-    labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato', required=True)
+    labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato', required=True, ondelete="cascade")
     company_id = fields.Many2one('res.company', string='Company', required=True,
         default=lambda self: self.env.user.company_id)
 
@@ -26,11 +26,11 @@ class HrLaborUnionCategoryPrice(models.Model):
     _name = 'hr.labor_union.category.price'
     _description = 'Precios de Categorias C.C.T'
 
-    name = fields.Char(string='Referencia Periodo', required=True)
+    name = fields.Char(string='Valor Periodo', required=True)
     from_date = fields.Date(string='Fecha Desde', required=True)
     to_date = fields.Date(string='Fecha Hasta', required=True)
-    value = fields.Float(string='Valor / Precio', required=True)
-    labor_union_category_id = fields.Many2one(comodel_name='hr.labor_union.category', string='C.C.T Categorias - Precios', required=True)
+    value = fields.Float(string='Valor Actual', required=True)
+    labor_union_category_id = fields.Many2one(comodel_name='hr.labor_union.category', string='C.C.T Categorias - Precios', required=True, ondelete="cascade")
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
 

@@ -15,6 +15,21 @@
         </record>
         <!-- Tree View End: Category -->
 
+        <!-- Tree View Start: Category Price -->
+        <record id="hr_labor_union_category_view_tree" model="ir.ui.view">
+            <field name="name">hr.labor_union.category.price.view.tree</field>
+            <field name="model">hr.labor_union.category.price</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="from_date" />
+                    <field name="to_date" />
+                    <field name="value" />
+                </tree>
+            </field>
+        </record>
+        <!-- Tree View End: Category Price -->
+
         <!-- Form View Start: Category -->
         <record id="action_hr_labor_union_category_form" model="ir.ui.view">
             <field name="name">hr.labor_union.category.form</field>
