@@ -1,5 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_hr_labor_union_admin,l10n_ar_hr_contract_labor_union.hr.labor_union,model_hr_labor_union,base.group_user,1,1,1,1
-access_hr_labor_union_category_user,l10n_ar_hr_contract_labor_union.hr.labor_union.category,model_hr_labor_union_category,base.group_user,1,1,1,1
-access_hr_labor_union_category_price_user,l10n_ar_hr_contract_labor_union.hr.labor_union.category.price,model_hr_labor_union_category_price,base.group_user,1,1,1,1
-access_hr_labor_union_svco_value_user,l10n_ar_hr_contract_labor_union.hr.labor_union.svco_value,model_hr_labor_union_svco_value,base.group_user,1,1,1,1
+access_hr_labor_union_admin,hr_contract_labor_union.hr.labor_union,model_hr_labor_union,base.group_user,1,1,1,1
+access_hr_labor_union_category_user,hr_contract_labor_union.hr.labor_union.category,model_hr_labor_union_category,base.group_user,1,1,1,1
+access_hr_labor_union_category_price_user,hr_contract_labor_union.hr.labor_union.category.price,model_hr_labor_union_category_price,base.group_user,1,1,1,1
+access_hr_labor_union_svco_value_user,hr_contract_labor_union.hr.labor_union.svco_value,model_hr_labor_union_svco_value,base.group_user,1,1,1,1

@@ -13,7 +13,8 @@
     'depends': [
         'base',
         'hr_contract',
-        'hr'
+        'hr',
+        'hr_contract_antiquity',
     ],
     'data': [
         'security/ir.model.access.csv',
