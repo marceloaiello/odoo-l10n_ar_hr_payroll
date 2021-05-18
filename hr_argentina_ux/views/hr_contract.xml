@@ -5,7 +5,7 @@
         <field name="model">hr.contract</field>
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
         <field name="arch" type="xml">
-            <page string="Detalles del Contrato" name="other" modifiers="{}" position="replace">
+            <xpath expr="//page[@name='other']" string="Detalles del Contrato" modifiers="{}" position="replace">
 				<group modifiers="{}">
 					<group name="duration_group" string="Fecha del Contrato" modifiers="{}">
 						<field name="date_start" modifiers="{'required':true}"/>
@@ -49,7 +49,7 @@
 				<group string="Notas" modifiers="{}">
 					<field name="notas" nolabel="1" modifiers="{}"/>
 				</group>
-			</page>
+			</xpath>
         </field>
     </record>
 </odoo>
