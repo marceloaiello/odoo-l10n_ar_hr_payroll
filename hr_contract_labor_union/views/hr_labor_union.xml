@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- Menu Configuration -->
-        <menuitem id="hr.menu_labor_union_contract" name="C.C.T / Sindicatos" parent="hr.menu_hr_employee_payroll" action="actions_hr_labor_union" sequence="3"/>
-
         <!-- Main View Start -->
         <record id="actions_hr_labor_union" model="ir.actions.act_window">
             <field name="name">C.C.T / Sindicatos</field>
@@ -64,5 +61,9 @@
             </field>
         </record>
         <!-- Form View End -->
+
+        <!-- Menu Configuration -->
+        <menuitem id="hr.contract.labor_union.menu" name="C.C.T / Sindicatos" parent="hr.menu_hr_employee_payroll" action="actions_hr_labor_union" sequence="3"/>
+        <!-- Menu Configuration -->
     </data>
 </odoo>
