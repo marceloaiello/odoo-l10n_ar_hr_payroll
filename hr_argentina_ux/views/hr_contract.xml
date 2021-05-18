@@ -47,7 +47,7 @@
 					</group>
 				</group>
 				<group string="Notas" modifiers="{}">
-					<field name="notas" nolabel="1" modifiers="{}"/>
+					<field name="notes" nolabel="1" modifiers="{}"/>
 				</group>
 			</xpath>
         </field>
