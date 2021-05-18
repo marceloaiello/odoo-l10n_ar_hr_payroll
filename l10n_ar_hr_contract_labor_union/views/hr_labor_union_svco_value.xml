@@ -22,13 +22,21 @@
             <field name="model">hr.labor_union.svco_value</field>
             <field name="arch" type="xml">
                 <form>
-                    <group string="Seguro de Vida Obligatorio (SVCO)" col="2">
-                        <field name="name" />
-                        <field name="labor_union_id"/>
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="labor_union_id"/>
+                        </group>
                     </group>
                     <group name="dates_info" col="2">
-                        <field name="from_date" />
-                        <field name="to_date" />
+                        <group>
+                            <field name="from_date" />
+                        </group>
+                        <group>
+                            <field name="to_date" />
+                        </group>
                     </group>
                     <group>
                         <field name="value" />
