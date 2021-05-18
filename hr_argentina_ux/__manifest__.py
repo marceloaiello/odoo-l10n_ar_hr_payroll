@@ -12,7 +12,7 @@
     'category': 'Human Resources',
     'depends': [
         'hr',
-        'hr_payroll',
+        'hr_contract',
         'base'
     ],
     'data': [
