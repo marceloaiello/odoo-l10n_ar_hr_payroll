@@ -63,7 +63,7 @@
         <!-- Form View End -->
 
         <!-- Menu Configuration -->
-        <menuitem id="hr.contract.labor_union.menu" name="C.C.T / Sindicatos" parent="hr.menu_hr_employee_payroll" action="actions_hr_labor_union" sequence="3"/>
+        <menuitem id="hr.contract_labor_union" name="C.C.T / Sindicatos" parent="hr.menu_hr_employee_payroll" action="actions_hr_labor_union" sequence="3"/>
         <!-- Menu Configuration -->
     </data>
 </odoo>
