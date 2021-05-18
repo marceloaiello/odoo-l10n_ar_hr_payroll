@@ -40,7 +40,25 @@
             <field name="model">hr.labor_union.category.price</field>
             <field name="arch" type="xml">
                 <form>
-                    
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="labor_union_category_id" />
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="from_date" />
+                        </group>
+                        <group>
+                            <field name="to_date" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="value" />
+                    </group>
                 </form>
             </field>
         </record>
