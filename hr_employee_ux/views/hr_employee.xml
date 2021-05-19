@@ -3,7 +3,7 @@
     <!-- hr.employee inherit form view -->
     <record id="view_id" model="ir.ui.view">
         <field name="name">hr_employee_ux.view_employee_form_inherit</field>
-        <field name="model">hr.employee</field>ç
+        <field name="model">hr.employee</field>
         <field name="priority" eval="500"/>
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
