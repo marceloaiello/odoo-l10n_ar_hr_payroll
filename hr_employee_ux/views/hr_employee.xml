@@ -29,7 +29,7 @@
                             <field name="study_school" />
                         </group>
                         <group string="Datos de Contacto">
-                            <field name="address_home_id" context="{show_address': 1,'default_type': 'private','form_view_ref': 'base.res_partner_view_form_private'}" options="{&quot;always_reload&quot;: True, &quot;highlight_first_line&quot;: True}" />
+                            <field name="address_home_id" context="{'show_address': 1,'default_type': 'private','form_view_ref': 'base.res_partner_view_form_private'}" options="{'always_reload': True, 'highlight_first_line': True}" />
                             <field name="private_email" string="Email" />
                             <field name="phone" class="o_force_ltr" groups="hr.group_hr_user" string="Telefono" readonly="True" />
                             <field name="bank_account_id" context="{'default_partner_id': address_home_id}" />
@@ -39,7 +39,7 @@
                             <field name="emergency_phone" class="o_force_ltr" />
                         </group>
                         <group string="Ciudadania y Fiscal">
-                            <field name="country_id" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}" />
+                            <field name="country_id" options="{'no_open': True, 'no_create': True}" />
                             <field name="identification_type_id" can_create="true" can_write="true" modifiers="{}" />
                             <field name="identification_id" groups="hr.group_hr_user" />
                             <field name="identification_expiry_date" modifiers="{}" />
@@ -54,7 +54,7 @@
                         <!-- These two div are used to position org_chart -->
                         <div id="o_work_employee_main">
                             <group string="Ubicacion de Trabajo">
-                                <field name="address_id" context="{'show_address': 1}" options="{&quot;always_reload&quot;: True, &quot;highlight_first_line&quot;: True}" />
+                                <field name="address_id" context="{'show_address': 1}" options="{'always_reload': True, 'highlight_first_line': True}" />
                             </group>
                             <group name="managers" string="Responsables y Jefes">
                                 <field name="leave_manager_id" can_create="true" can_write="true" modifiers="{}" />
