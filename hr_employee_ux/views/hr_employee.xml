@@ -2,9 +2,10 @@
 <odoo>
     <!-- hr.employee inherit form view -->
     <record id="view_id" model="ir.ui.view">
-        <field name="name">hr.employee.inherit.view.form</field>
-        <field name="model">hr.employee</field>
-        <field name="inherit_id" ref="TODO" />
+        <field name="name">hr.employee_ux.view_employee_form_inherit</field>
+        <field name="model">hr.employee</field>ç
+        <field name="priority" eval="500"/>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
             <!-- hr.employee: <notebook> replace -->
             <notebook position="replace">
