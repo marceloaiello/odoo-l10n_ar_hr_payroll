@@ -6,51 +6,7 @@
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
         <field name="arch" type="xml">
             <!-- This replaces full 'Contract Details' tab in the form -->
-            <xpath expr="//page[@name='other']" string="Detalles del Contrato" modifiers="{}" position="replace">
-                <group modifiers="{}">
-                    <group name="duration_group" string="Fecha del Contrato" modifiers="{}">
-                        <field name="date_start" modifiers="{'required':true}" />
-                        <label for="date_end" modifiers="{}" />
-                        <div class="o_row" modifiers="{}">
-                            <field name="date_end" nolabel="1" modifiers="{}" />
-                            <span class="text-muted" modifiers="{}">
-								(Solamente si por baja o contato con fecha definida)
-							</span>
-                        </div>
-                        <field name="trial_date_end" modifiers="{}" />
-                    </group>
-                    <group name="antiquity_group" string="Computo de Antiguedad" modifiers="{}">
-                        <label for="antiquity_date" modifiers="{}" />
-                        <div class="o_row" modifiers="{}">
-                            <field name="antiquity_date" nolabel="1" on_change="1" modifiers="{}" />
-                            <span class="text-muted" modifiers="{}">
-								(Solamente si no es la misma que la fecha de ingreso)
-							</span>
-                        </div>
-                        <field name="antiquity" modifiers="{'readonly':true}" />
-                    </group>
-                    <group name="terms_group" string="Detalle del Contrato" modifiers="{}">
-                        <field name="schedule_pay" modifiers="{}" />
-                        <field name="calendar_mismatch" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
-                        <label for="resource_calendar_id" modifiers="{}" />
-                        <div modifiers="{}">
-                            <field name="resource_calendar_id" required="1" nolabel="1" on_change="1" can_create="true" can_write="true" modifiers="{'required':true}" />
-                            <span attrs="{'invisible': ['|', ('calendar_mismatch', '=', False), ('state', '!=', 'open')]}" class="fa fa-exclamation-triangle text-danger o_calendar_warning pl-3" modifiers="{'invisible':['|',['calendar_mismatch','=',false],['state','!=','open']]}" />
-                            <span class="o_calendar_warning_tooltip text-danger" modifiers="{}">
-                                Calendar Mismatch : El calendario del empleado no corresponde con las fechas indicadas en este contrato. Esto puede llevar a comportamientos extraños.
-							</span>
-                        </div>
-                        <field name="hr_responsible_id" can_create="true" can_write="true" modifiers="{}" />
-                    </group>
-                    <group string="Contabilidad" modifiers="{}">
-                        <field name="analytic_account_id" can_create="true" can_write="true" modifiers="{}" />
-                        <field name="journal_id" can_create="true" can_write="true" modifiers="{}" />
-                    </group>
-                </group>
-                <group string="Notas" modifiers="{}">
-                    <field name="notes" nolabel="1" modifiers="{}" />
-                </group>
-            </xpath>
+                
             <!-- This replaces full 'Contract Details' tab in the form -->
         </field>
     </record>
