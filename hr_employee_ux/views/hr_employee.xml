@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- hr.employee inherit form view -->
-    <record id="view_id" model="ir.ui.view">
-        <field name="name">hr_employee_ux.view_employee_form_inherit</field>
+    <record id="hr_employee_ux_form_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit</field>
         <field name="model">hr.employee</field>
         <field name="priority" eval="500"/>
         <field name="inherit_id" ref="hr.view_employee_form"/>
