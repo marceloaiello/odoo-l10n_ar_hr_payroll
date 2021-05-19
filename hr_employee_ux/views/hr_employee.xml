@@ -7,7 +7,6 @@
             <field name="model">hr.employee</field>
             <field name="inherit_id" ref="hr.employee.form"/>
             <field name="priority" eval="100"/>
-            <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <!-- hr.employee: <notebook> replace -->
                 <notebook position="replace">
