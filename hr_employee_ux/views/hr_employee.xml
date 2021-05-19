@@ -95,7 +95,7 @@
                                         </span>
                                     </div>
                                 </group>
-                                <group name="departure" string="Renuncia / Fin de Relacion" attrs="{'invisible': [('active', '=', True)]}">
+                                <group name="departure" string="Fin de Relacion Laboral" attrs="{'invisible': [('active', '=', True)]}">
                                     <field name="departure_reason" />
                                     <field name="departure_description" />
                                 </group>
