@@ -3,7 +3,7 @@
 
 {
     'name': 'HR Labor Union - Argentina',
-    'version': '13.0.1.2',
+    'version': '13.0.1.3',
     'description': 'Adds labor union management to hr_contract and hr_payroll',
     'summary': 'This module allow to manage the Labor Union salary prices acording to Argentina',
     'author': 'Nimarosa',
@@ -13,8 +13,7 @@
     'depends': [
         'base',
         'hr_contract',
-        'hr',
-        'hr_contract_antiquity',
+        'hr'
     ],
     'data': [
         'security/ir.model.access.csv',
