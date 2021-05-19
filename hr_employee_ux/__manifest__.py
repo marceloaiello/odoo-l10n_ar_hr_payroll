@@ -11,8 +11,7 @@
     'license': 'LGPL-3',
     'category': 'Human Resources',
     'depends': [
-        'hr',
-        'hr_employee'
+        'hr'
     ],
     'data': [
         'views/hr_employee.xml'
