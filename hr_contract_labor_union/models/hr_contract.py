@@ -14,7 +14,7 @@ class HrContract(models.Model):
     def on_change_cct_category_id(self):
         for record in self:
             if record.cct_category_id is not None & record.aplica_cct == True:
-                record.amount = record.cct_category_id.current_value
+                record.wage = record.cct_category_id.current_value
             else:
-                record.amount = record.amount
+                record.wage = record.wage
 
