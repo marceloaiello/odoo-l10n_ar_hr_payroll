@@ -1,140 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <!-- hr.employee inherit form view -->
-        <record id="hr_employee_ux_view_form" model="ir.ui.view">
-            <field name="name">hr_employee_ux.hr.employee.form</field>
-            <field name="model">hr.employee</field>
-            <field name="inherit_id" ref="hr.employee.form"/>
-            <field name="priority" eval="100"/>
-            <field name="arch" type="xml">
-                <!-- hr.employee: <notebook> replace -->
-                <notebook position="replace">
-                    <page name="personal_information" string="Informacion Personal" groups="hr.group_hr_user">
-                        <group>
-                            <group string="Datos Personales">
-                                <field name="gender" />
-                                <field name="birthday" />
-                                <field name="age" modifiers="{'readonly':true}" />
-                                <field name="place_of_birth" groups="hr.group_hr_user" />
-                                <field name="country_of_birth" groups="hr.group_hr_user" />
-                            </group>
-                            <group string="Estado Marital">
-                                <field name="marital" />
-                                <field name="spouse_complete_name" attrs="{'invisible': [('marital', 'not in', ['married', 'cohabitant'])]}" groups="hr.group_hr_user" />
-                                <field name="spouse_birthdate" attrs="{'invisible': [('marital', 'not in', ['married', 'cohabitant'])]}" groups="hr.group_hr_user" />
-                            </group>
-                            <group string="Educacion">
-                                <field name="certificate" />
-                                <field name="study_field" />
-                                <field name="study_school" />
-                            </group>
-                            <group string="Datos de Contacto">
-                                <field name="address_home_id" context="{'show_address': 1,'default_type': 'private','form_view_ref': 'base.res_partner_view_form_private'}" options="{'always_reload': True, 'highlight_first_line': True}" />
-                                <field name="private_email" string="Email" />
-                                <field name="phone" class="o_force_ltr" groups="hr.group_hr_user" string="Telefono" readonly="True" />
-                                <field name="bank_account_id" context="{'default_partner_id': address_home_id}" />
-                            </group>
-                            <group string="Contacto de Emergencias">
-                                <field name="emergency_contact" />
-                                <field name="emergency_phone" class="o_force_ltr" />
-                            </group>
-                            <group string="Ciudadania y Fiscal">
-                                <field name="country_id" options="{'no_open': True, 'no_create': True}" />
-                                <field name="identification_type_id" can_create="true" can_write="true" modifiers="{}" />
-                                <field name="identification_id" groups="hr.group_hr_user" />
-                                <field name="identification_expiry_date" modifiers="{}" />
-                            </group>
-                            <group string="Dependiente">
-                                <field name="children" />
-                            </group>
+    <!-- hr.employee inherit form view -->
+    <record id="hr.employee_view_form_inherit_hr_employee_ux" model="ir.ui.view">
+        <field name="name">hr.employee.view.form.inherit.hr_employee_ux</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form" />
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <!-- Replace all hr.employee notebook content pages -->
+            <xpath expr="//notebook" position="inside">
+                <page name="personal_information" string="Informacion Personal" groups="hr.group_hr_user">
+                    <group>
+                        <group string="Datos Personales">
+                            <field name="gender" />
+                            <field name="birthday" />
+                            <field name="age" modifiers="{'readonly':true}" />
+                            <field name="place_of_birth" groups="hr.group_hr_user" />
+                            <field name="country_of_birth" groups="hr.group_hr_user" />
                         </group>
-                    </page>
-                    <page name="public" string="Informacion de Trabajo">
-                        <div id="o_work_employee_container">
-                            <!-- These two div are used to position org_chart -->
-                            <div id="o_work_employee_main">
-                                <group string="Ubicacion de Trabajo">
-                                    <field name="address_id" context="{'show_address': 1}" options="{'always_reload': True, 'highlight_first_line': True}" />
-                                </group>
-                                <group name="managers" string="Responsables y Jefes">
-                                    <field name="leave_manager_id" can_create="true" can_write="true" modifiers="{}" />
-                                    <field name="expense_manager_id" context="{'default_company_id': company_id}" can_create="true" can_write="true" modifiers="{}" />
-                                </group>
-                                <group string="Horario y Calendario" groups="base.group_no_one">
-                                    <field name="calendar_mismatch" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
-                                    <label for="resource_calendar_id" modifiers="{}" />
-                                    <div modifiers="{}">
-                                        <field name="resource_calendar_id" required="1" nolabel="1" invisible="1" on_change="1" can_create="true" can_write="true" modifiers="{'invisible':true,'required':true}" />
-                                        <field name="calendar_ids" modifiers="{}" />
-                                        <span attrs="{'invisible': [('calendar_mismatch', '=', False)]}" class="fa fa-exclamation-triangle text-danger o_calendar_warning pl-3" modifiers="{'invisible':[['calendar_mismatch','=',false]]}" />
-                                        <span class="o_calendar_warning_tooltip text-danger" modifiers="{}">
+                        <group string="Estado Marital">
+                            <field name="marital" />
+                            <field name="spouse_complete_name" attrs="{'invisible': [('marital', 'not in', ['married', 'cohabitant'])]}" groups="hr.group_hr_user" />
+                            <field name="spouse_birthdate" attrs="{'invisible': [('marital', 'not in', ['married', 'cohabitant'])]}" groups="hr.group_hr_user" />
+                        </group>
+                        <group string="Educacion">
+                            <field name="certificate" />
+                            <field name="study_field" />
+                            <field name="study_school" />
+                        </group>
+                        <group string="Datos de Contacto">
+                            <field name="address_home_id" context="{'show_address': 1,'default_type': 'private','form_view_ref': 'base.res_partner_view_form_private'}" options="{'always_reload': True, 'highlight_first_line': True}" />
+                            <field name="private_email" string="Email" />
+                            <field name="phone" class="o_force_ltr" groups="hr.group_hr_user" string="Telefono" readonly="True" />
+                            <field name="bank_account_id" context="{'default_partner_id': address_home_id}" />
+                        </group>
+                        <group string="Contacto de Emergencias">
+                            <field name="emergency_contact" />
+                            <field name="emergency_phone" class="o_force_ltr" />
+                        </group>
+                        <group string="Ciudadania y Fiscal">
+                            <field name="country_id" options="{'no_open': True, 'no_create': True}" />
+                            <field name="identification_type_id" can_create="true" can_write="true" modifiers="{}" />
+                            <field name="identification_id" groups="hr.group_hr_user" />
+                            <field name="identification_expiry_date" modifiers="{}" />
+                        </group>
+                        <group string="Dependiente">
+                            <field name="children" />
+                        </group>
+                    </group>
+                </page>
+                <page name="public" string="Informacion de Trabajo">
+                    <div id="o_work_employee_container">
+                        <!-- These two div are used to position org_chart -->
+                        <div id="o_work_employee_main">
+                            <group string="Ubicacion de Trabajo">
+                                <field name="address_id" context="{'show_address': 1}" options="{'always_reload': True, 'highlight_first_line': True}" />
+                            </group>
+                            <group name="managers" string="Responsables y Jefes">
+                                <field name="leave_manager_id" can_create="true" can_write="true" modifiers="{}" />
+                                <field name="expense_manager_id" context="{'default_company_id': company_id}" can_create="true" can_write="true" modifiers="{}" />
+                            </group>
+                            <group string="Horario y Calendario" groups="base.group_no_one">
+                                <field name="calendar_mismatch" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
+                                <label for="resource_calendar_id" modifiers="{}" />
+                                <div modifiers="{}">
+                                    <field name="resource_calendar_id" required="1" nolabel="1" invisible="1" on_change="1" can_create="true" can_write="true" modifiers="{'invisible':true,'required':true}" />
+                                    <field name="calendar_ids" modifiers="{}" />
+                                    <span attrs="{'invisible': [('calendar_mismatch', '=', False)]}" class="fa fa-exclamation-triangle text-danger o_calendar_warning pl-3" modifiers="{'invisible':[['calendar_mismatch','=',false]]}" />
+                                    <span class="o_calendar_warning_tooltip text-danger" modifiers="{}">
                                             Calendar Mismatch : The employee's calendar does not match its current contract calendar. This could lead to unexpected behaviors.
                                         </span>
-                                    </div>
-                                    <field name="tz" />
-                                </group>
-                                <group name="service_information" string="Informacion de Servicio" modifiers="{}">
-                                    <field name="service_hire_date" on_change="1" modifiers="{}" />
-                                    <field name="service_start_date" on_change="1" modifiers="{'readonly':true}" />
-                                    <field name="service_termination_date" on_change="1" modifiers="{'readonly':true}" />
-                                    <field name="service_duration" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
-                                    <label for="service_duration" string="Antiguedad" modifiers="{}" />
-                                    <div modifiers="{}">
-                                        <field name="service_duration_years" nolabel="1" modifiers="{'readonly':true}" />
-                                        <span class="ml8 mr8" modifiers="{}">
+                                </div>
+                                <field name="tz" />
+                            </group>
+                            <group name="service_information" string="Informacion de Servicio" modifiers="{}">
+                                <field name="service_hire_date" on_change="1" modifiers="{}" />
+                                <field name="service_start_date" on_change="1" modifiers="{'readonly':true}" />
+                                <field name="service_termination_date" on_change="1" modifiers="{'readonly':true}" />
+                                <field name="service_duration" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
+                                <label for="service_duration" string="Antiguedad" modifiers="{}" />
+                                <div modifiers="{}">
+                                    <field name="service_duration_years" nolabel="1" modifiers="{'readonly':true}" />
+                                    <span class="ml8 mr8" modifiers="{}">
                                             año(s)
                                         </span>
-                                        <field name="service_duration_months" nolabel="1" modifiers="{'readonly':true}" />
-                                        <span class="ml8 mr8" modifiers="{}">
+                                    <field name="service_duration_months" nolabel="1" modifiers="{'readonly':true}" />
+                                    <span class="ml8 mr8" modifiers="{}">
                                             mes(es)
                                         </span>
-                                        <field name="service_duration_days" nolabel="1" modifiers="{'readonly':true}" />
-                                        <span class="ml8" modifiers="{}">
+                                    <field name="service_duration_days" nolabel="1" modifiers="{'readonly':true}" />
+                                    <span class="ml8" modifiers="{}">
                                             dia(s)
                                         </span>
-                                    </div>
-                                </group>
-                                <group name="departure" string="Fin de Relacion Laboral" attrs="{'invisible': [('active', '=', True)]}">
-                                    <field name="departure_reason" />
-                                    <field name="departure_description" />
-                                </group>
-                            </div>
-                            <div id="o_employee_right" modifiers="{}">
-                                <h4 class="o_org_chart_title mb16 mt0" modifiers="{}">
+                                </div>
+                            </group>
+                            <group name="departure" string="Fin de Relacion Laboral" attrs="{'invisible': [('active', '=', True)]}">
+                                <field name="departure_reason" />
+                                <field name="departure_description" />
+                            </group>
+                        </div>
+                        <div id="o_employee_right" modifiers="{}">
+                            <h4 class="o_org_chart_title mb16 mt0" modifiers="{}">
                                     Organigrama
                                 </h4>
-                                <field name="child_ids" widget="hr_org_chart" modifiers="{}" />
-                            </div>
+                            <field name="child_ids" widget="hr_org_chart" modifiers="{}" />
                         </div>
-                    </page>
-                    <page name="hr_settings" string="Configuracion de HR" groups="hr.group_hr_user">
-                        <group>
-                            <group string="Estado" name="active_group" modifiers="{}">
-                                <field name="user_id" string="Usuario Relacionado" on_change="1" can_create="true" can_write="true" modifiers="{}" />
-                            </group>
-                            <group string="Asistencia" name="identification_group" modifiers="{}">
-                                <field name="theoretical_hours_start_date" modifiers="{}" string="Fecha Inicio (teorica)" />
-                                <field name="pin" string="Codigo PIN" modifiers="{}" />
-                                <label for="barcode" modifiers="{}" />
-                                <div class="o_row" modifiers="{}">
-                                    <field name="barcode" modifiers="{}" />
-                                    <button string="Generar" class="btn btn-link" type="object" name="generate_random_barcode" attrs="{'invisible': [('barcode', '!=', False)]}" modifiers="{'invisible':[['barcode','!=',false]]}" options="{}" />
-                                    <button name="192" string="Imprimir Credencial" class="btn btn-link" type="action" attrs="{'invisible': [('barcode', '=', False)]}" modifiers="{'invisible':[['barcode','=',false]]}" options="{}" />
-                                </div>
-                                <field name="no_autoclose" modifiers="{}" />
-                            </group>
+                    </div>
+                </page>
+                <page name="hr_settings" string="Configuracion de HR" groups="hr.group_hr_user">
+                    <group>
+                        <group string="Estado" name="active_group" modifiers="{}">
+                            <field name="user_id" string="Usuario Relacionado" on_change="1" can_create="true" can_write="true" modifiers="{}" />
                         </group>
-                    </page>
-                    <page string="PPE" modifiers="{}">
-                        <group string="Equipo de Proteccion Personal (PPE)" modifiers="{}">
-                            <field name="ppe_ids" context="{'default_employee_id': active_id}" nolabel="1" modifiers="{}" />
+                        <group string="Asistencia" name="identification_group" modifiers="{}">
+                            <field name="theoretical_hours_start_date" modifiers="{}" string="Fecha Inicio (teorica)" />
+                            <field name="pin" string="Codigo PIN" modifiers="{}" />
+                            <label for="barcode" modifiers="{}" />
+                            <div class="o_row" modifiers="{}">
+                                <field name="barcode" modifiers="{}" />
+                                <button string="Generar" class="btn btn-link" type="object" name="generate_random_barcode" attrs="{'invisible': [('barcode', '!=', False)]}" modifiers="{'invisible':[['barcode','!=',false]]}" options="{}" />
+                                <button name="192" string="Imprimir Credencial" class="btn btn-link" type="action" attrs="{'invisible': [('barcode', '=', False)]}" modifiers="{'invisible':[['barcode','=',false]]}" options="{}" />
+                            </div>
+                            <field name="no_autoclose" modifiers="{}" />
                         </group>
-                    </page>
-                </notebook>
-                <!-- hr.employee: <notebook> replace -->
-            </field>
-        </record>
-        <!-- hr.employee inherit form view -->
-    </data>
+                    </group>
+                </page>
+                <page string="PPE" modifiers="{}">
+                    <group string="Equipo de Proteccion Personal (PPE)" modifiers="{}">
+                        <field name="ppe_ids" context="{'default_employee_id': active_id}" nolabel="1" modifiers="{}" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
 </odoo>
