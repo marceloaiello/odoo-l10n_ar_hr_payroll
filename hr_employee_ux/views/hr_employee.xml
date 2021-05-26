@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- hr.employee inherit form view -->
-    <record id="hr.employee_view_form_inherit_hr_employee_ux" model="ir.ui.view">
-        <field name="name">hr.employee.view.form.inherit.hr_employee_ux</field>
+    <!-- 'hr.employee' Inherit: View Form -->
+    <record id="hr.view_employee_form" model="ir.ui.view">
+        <field name="name">hr.employee.view.form</field>
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form" />
         <field name="priority" eval="100" />
         <field name="arch" type="xml">
-            <!-- Replace all hr.employee notebook content pages -->
+            <!-- Replace 'hr.employee' <notebook> -->
             <xpath expr="//notebook" position="inside">
                 <page name="personal_information" string="Informacion Personal" groups="hr.group_hr_user">
                     <group>
