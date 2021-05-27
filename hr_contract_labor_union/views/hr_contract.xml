@@ -5,8 +5,6 @@
         <field name="model">hr.contract</field>
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
         <field name="arch" type="xml">
-            <field name="wage" nolabel="1" required="1" on_change="1" modifiers="{'required':true}"
-            attrs="{'readonly':[('aplica_cct','=','true')]}" position="replace"/>
             <xpath expr="//group[@name='salary_and_advantages']" position="after">
                 <group name='sindicato_cct' string="Sindicatos y C.C.T">
                     <field name="aplica_cct" />
@@ -14,6 +12,8 @@
                     <field name="cct_category_id" attrs="{'invisible':[('aplica_cct', '=', False)]}" />
                 </group>
             </xpath>
+            <field name="wage" nolabel="1" required="1" on_change="1" modifiers="{'required':true}"
+            attrs="{'readonly':[('aplica_cct','=','true')]}" position="replace"/>
         </field>
     </record>
 </odoo>

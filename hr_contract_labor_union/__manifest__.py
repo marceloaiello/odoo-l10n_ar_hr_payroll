@@ -11,9 +11,7 @@
     'license': 'LGPL-3',
     'category': 'Human Resources',
     'depends': [
-        'base',
-        'hr_contract',
-        'hr'
+        'base', 'hr_contract', 'hr', 'payroll'
     ],
     'data': [
         'security/ir.model.access.csv',
