@@ -12,8 +12,6 @@
                     <field name="cct_category_id" attrs="{'invisible':[('aplica_cct', '=', False)]}" />
                 </group>
             </xpath>
-            <field name="wage" nolabel="1" required="1" on_change="1" modifiers="{'required':true}"
-            attrs="{'readonly':[('aplica_cct','=','true')]}" position="replace"/>
         </field>
     </record>
 </odoo>
