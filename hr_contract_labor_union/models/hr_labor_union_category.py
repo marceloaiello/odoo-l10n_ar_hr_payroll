@@ -5,11 +5,11 @@ from odoo import api, fields, models
 
 class HrLaborUnionCategory(models.Model):
     _name = 'hr.labor_union.category'
-    _description = 'Categorias de C.C.T'
+    _description = 'Categorias de C.C.T / Sindicatos'
 
     name = fields.Char(string='Categoria C.C.T', required=True)
-    current_value = fields.Float(string='Valor Actual', computed="_compute_current_value")
     categories_prices = fields.One2many(comodel_name='hr.labor_union.category.price', inverse_name='labor_union_category_id', string='Valores de Categoria')
+    current_value = fields.Float(string='Valor Actual', computed="_compute_current_value")
     labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato', required=True, ondelete="cascade")
     company_id = fields.Many2one('res.company', string='Company', required=True,
         default=lambda self: self.env.user.company_id)
@@ -24,7 +24,7 @@ class HrLaborUnionCategory(models.Model):
 
 class HrLaborUnionCategoryPrice(models.Model):
     _name = 'hr.labor_union.category.price'
-    _description = 'Precios de Categorias C.C.T'
+    _description = 'Valores de Categorias C.C.T'
 
     name = fields.Char(string='Valor Periodo', required=True)
     from_date = fields.Date(string='Fecha Desde', required=True)

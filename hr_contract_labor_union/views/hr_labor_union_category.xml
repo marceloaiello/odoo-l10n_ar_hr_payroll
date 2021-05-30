@@ -41,7 +41,7 @@
                             <field name="name" placeholder="Categoria C.C.T" />
                         </h1>
                     </div>
-                    <group string="Valores de Categorias">
+                    <group string="Valores de la Categoria">
                         <field name="categories_prices" context="{'default_labor_union_category_id': active_id}" nolabel="1" />
                     </group>
                 </form>
