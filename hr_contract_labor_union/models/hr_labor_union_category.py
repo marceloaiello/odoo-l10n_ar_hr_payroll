@@ -8,8 +8,9 @@ class HrLaborUnionCategory(models.Model):
     _description = 'Categorias de C.C.T / Sindicatos'
 
     name = fields.Char(string='Categoria C.C.T', required=True)
-    categories_prices = fields.One2many(comodel_name='hr.labor_union.category.price', inverse_name='labor_union_category_id', string='Valores de Categoria')
     current_value = fields.Float(string='Valor Actual', computed="_compute_current_value")
+    categories_prices = fields.One2many(comodel_name='hr.labor_union.category.price', inverse_name='labor_union_category_id',
+        string='Valores de Categoria')
     labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato', required=True, ondelete="cascade")
     company_id = fields.Many2one('res.company', string='Company', required=True,
         default=lambda self: self.env.user.company_id)
