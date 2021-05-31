@@ -15,7 +15,7 @@ class HrLaborUnionCategory(models.Model):
     labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato',
                         required=True, ondelete="cascade", check_company=True, options="{'currency_field': 'currency_id'}")
     currency_id = fields.Many2one('res.currency', string='Moneda', required=True,
-        default=lambda self: self.user.company_id.currency_id.id)
+        default=lambda self: self.env.user.company_id.currency_id.id)
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
 
@@ -42,7 +42,7 @@ class HrLaborUnionCategoryPrice(models.Model):
     labor_union_category_id = fields.Many2one(comodel_name='hr.labor_union.category', string='C.C.T Categorias - Precios',
                                 equired=True, ondelete="cascade", check_company=True)
     currency_id = fields.Many2one('res.currency', string='Moneda', required=True,
-        default=lambda self: self.user.company_id.currency_id.id)
+        default=lambda self: self.env.user.company_id.currency_id.id)
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
 

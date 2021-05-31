@@ -18,7 +18,7 @@ class HrLaborUnion(models.Model):
     svco_current_value = fields.Monetary(compute='_compute_svco_current_value', string='Valor Actual (SVCO)',
         options="{'currency_field': 'currency_id'}")
     currency_id = fields.Many2one('res.currency', string='Moneda', required=True,
-        default=lambda self: self.user.company_id.currency_id.id)
+        default=lambda self: self.env.user.company_id.currency_id.id)
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
 
