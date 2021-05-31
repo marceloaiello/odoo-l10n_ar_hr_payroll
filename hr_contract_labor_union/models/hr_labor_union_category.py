@@ -21,7 +21,7 @@ class HrLaborUnionCategory(models.Model):
     def _compute_current_value(self):
         for record in self.categories_prices:
             value = 0
-            if record.date_from <= fields.Date.today() <= record.date_to:
+            if record.from_date <= fields.Date.today() <= record.to_date:
                 value = record.value
         record.current_value = value
 
@@ -42,17 +42,17 @@ class HrLaborUnionCategoryPrice(models.Model):
     @api.constrains('to_date', 'from_date', 'company_id')
     def _check_dates(self):
         for record in self:
-            if record.date_from == record.date_to:
+            if record.from_date == record.to_date:
                 raise ValidationError("'Fecha Desde' y 'Fecha Hasta' no pueden ser el mismo valor.")
-            if record.date_to < record.date_from:
+            if record.to_date < record.from_date:
                 raise ValidationError("'Fecha Hasta' no puede ser menor a 'Fecha Desde'.")
             domain = [
                     ('id', '!=', record.id),
                     ('company_id', '=', record.company_id.id),
                     '|', '|',
-                    '&', ('from_date', '<=', record.date_from), ('to_date', '>=', record.date_from),
-                    '&', ('from_date', '<=', record.date_to), ('to_date', '>=', record.date_to),
-                    '&', ('from_date', '<=', record.date_from), ('to_date', '>=', record.date_to),
+                    '&', ('from_date', '<=', record.from_date), ('to_date', '>=', record.from_date),
+                    '&', ('from_date', '<=', record.to_date), ('to_date', '>=', record.to_date),
+                    '&', ('from_date', '<=', record.from_date), ('to_date', '>=', record.to_date),
                 ]
             if self.search_count(domain) > 0:
                 raise ValidationError('No puedes ingresar fechas que se superpongan a los periodos ya ingresados de categorias.')
