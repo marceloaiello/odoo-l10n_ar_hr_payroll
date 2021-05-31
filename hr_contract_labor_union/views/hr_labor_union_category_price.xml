@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main View Start -->
+    <record id="actions_hr_labor_union_category_price" model="ir.actions.act_window">
+        <field name="name">Importe de Categorias - C.C.T / Sindicatos</field>
+        <field name="res_model">hr.labor_union.category.price</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Main View End -->
+
+    <!-- Tree View Start-->
+    <record id="hr_labor_union_category_price_view_tree" model="ir.ui.view">
+        <field name="name">hr.labor_union.category.price.view.tree</field>
+        <field name="model">hr.labor_union.category.price</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="labor_union_category_id" string="Categoria C.C.T - Sindicato" />
+                <field name="from_date" string="Fecha Desde" />
+                <field name="to_date" string="Fecha Hasta" />
+                <field name="value" monetary="true" string="Importe" />
+                <field name="name" string="Referencia" />
+            </tree>
+        </field>
+    </record>
+    <!-- Tree View End-->
+
+    <!-- Menu Configuration -->
+    <menuitem id="hr.contract_labor_union_category_price" name="Importes de Categorias" parent="hr.menu_contract_labor_union"
+        action="actions_hr_labor_union_category_price" sequence="1" />
+    <!-- Menu Configuration -->
+</odoo>

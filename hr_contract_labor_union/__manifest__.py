@@ -16,6 +16,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/hr_labor_union.xml',
+        'views/hr_labor_union_category_price.xml',
         'views/hr_contract.xml'
     ],
     'installable': True,
