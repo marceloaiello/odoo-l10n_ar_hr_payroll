@@ -73,7 +73,7 @@ class HrLaborUnionCategoryPrice(models.Model):
                     '&', ('from_date', '<=', record.to_date), ('to_date', '>=', record.to_date),
                     '&', ('from_date', '<=', record.from_date), ('to_date', '>=', record.to_date),
                 ]
-            if self.search_count(domain) > 0:
+            if self.search_count(domain) > 1:
                 raise ValidationError('No puedes ingresar fechas que se superpongan a los periodos ya ingresados de categorias.')
             return True
 
