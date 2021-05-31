@@ -64,7 +64,6 @@
                         <tree editable="top">
                             <field name="from_date" />
                             <field name="to_date" />
-                            <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}"/>
                             <field name="value" />
                             <field name="name" string="Referencia" />
                         </tree>
