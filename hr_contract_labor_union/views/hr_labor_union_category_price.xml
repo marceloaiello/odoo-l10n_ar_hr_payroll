@@ -23,7 +23,7 @@
                 <field name="labor_union_category_id" string="Categoria C.C.T - Sindicato" />
                 <field name="from_date" string="Fecha Desde" />
                 <field name="to_date" string="Fecha Hasta" />
-                <field name="value" monetary="true" string="Importe" />
+                <field name="value" string="Importe" />
                 <field name="name" string="Referencia" />
             </tree>
         </field>
