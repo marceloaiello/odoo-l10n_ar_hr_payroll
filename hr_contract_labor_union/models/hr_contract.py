@@ -7,13 +7,11 @@ class HrContract(models.Model):
     _inherit = 'hr.contract'
     aplica_cct = fields.Boolean(string='Aplica C.C.T / Convenio?')
     cct_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato')
-    cct_category_id = fields.Many2one(comodel_name='hr.labor_union.category', string='Categoria C.C.T', onchange='_on_change_cct_category_id')
-    cct_value = fields.Monetary(related="cct_category_id.current_value", string="Importe Categoria")
+    cct_category_id = fields.Many2one(comodel_name='hr.labor_union.category', string='Categoria C.C.T')
 
-    @api.depends('cct_category_id', 'cct_value')
-    @api.onchange(cct_category_id)
-    def _on_change_cct_category_id(self):
-        if self.cct_value > 0:
-            self.amount = self.cct_value
+    @api.onchange("cct_category_id")
+    def _onchange_cct_category_id(self):
+        if self.cct_category_id & self.aplica_cct == True:
+            self.amount = self.cct_category_id.current_value
         else:
-            self.amount = self.amount
+            self.amount = self.cct_category_id.current_value
