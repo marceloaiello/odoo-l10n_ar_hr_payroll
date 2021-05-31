@@ -56,7 +56,7 @@
                             <tree editable="top">
                                 <field name="name" />
                                 <field name="current_value" />
-                                <field name="categories_prices" string="Editar Valores de Categoria" widget ="url"/>
+                                <field name="categories_prices" widget="selection"/>
                             </tree>
                         </field>
                     </group>
