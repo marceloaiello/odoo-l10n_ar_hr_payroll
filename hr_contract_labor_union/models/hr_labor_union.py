@@ -24,9 +24,9 @@ class HrLaborUnion(models.Model):
         for record in self:
             today = fields.Date.context_today(self).strftime('%Y-%m-%d')
             svco_value = 0
-            domain = [('labor_union_id','=',record.id),('from_date','<=',today),('to_date','>=',today)]
-        if self.cct_svco_values.search_count(domain) == 1:
-            for svco in record.cct_svco_values.search(domain):
-                svco_value = svco.value
-        record.svco_current_value = svco_value
+            domain = [('labor_union_id', '=', record.id), ('from_date', '<=', today), ('to_date','>=',today)]
+            if record.cct_svco_values.search_count(domain) == 1:
+                for svco in record.cct_svco_values.search(domain):
+                    svco_value = svco.value
+            record.svco_current_value = svco_value
 
