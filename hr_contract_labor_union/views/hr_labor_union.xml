@@ -23,7 +23,7 @@
                 <field name="name" />
                 <field name="sindicato" />
                 <field name="convenio" />
-                <field name="cct_categories" widget='one2many' />
+                <field name="cct_categories" />
                 <field name="svco_current_value" widget='monetary' />
             </tree>
         </field>
