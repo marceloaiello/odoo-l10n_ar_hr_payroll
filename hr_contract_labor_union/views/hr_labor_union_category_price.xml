@@ -6,6 +6,11 @@
         <field name="res_model">hr.labor_union.category.price</field>
         <field name="type">ir.actions.act_window</field>
         <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Todavia no se registraron Precios para Sindicatos / C.C.T. Ingrese uno nuevo.
+            </p>
+        </field>
     </record>
     <!-- Main View End -->
 
