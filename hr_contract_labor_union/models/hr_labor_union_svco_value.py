@@ -13,6 +13,8 @@ class HrLaborUnionSvcoValue(models.Model):
     to_date = fields.Date(string='Fecha Hasta', required=True, help='Fecha de Inicio, incluida en el rango.')
     value = fields.Monetary(string='Valor', required=True)
     labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato', required=True, ondelete="cascade", check_company=True)
+    currency_id = fields.Many2one('res.currency', string='Moneda', required=True,
+        default=lambda self: self.user.company_id.currency_id.id)
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
 
