@@ -9,7 +9,7 @@ class HrLaborUnionCategory(models.Model):
     _check_company_auto = True
 
     name = fields.Char(string='Categoria C.C.T', required=True)
-    current_value = fields.Float(string='Valor Actual', computed="_compute_current_value")
+    current_value = fields.Float(string='Valor Actual', computed="_compute_current_value", readonly=True)
     categories_prices = fields.One2many(comodel_name='hr.labor_union.category.price', inverse_name='labor_union_category_id',
         string='Valores de Categoria')
     labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato',
@@ -23,7 +23,7 @@ class HrLaborUnionCategory(models.Model):
             value = 0
             if record.from_date <= fields.Date.today() <= record.to_date:
                 value = record.value
-        record.current_value = value
+            record.current_value = value
 
 class HrLaborUnionCategoryPrice(models.Model):
     _name = 'hr.labor_union.category.price'
@@ -56,5 +56,5 @@ class HrLaborUnionCategoryPrice(models.Model):
                 ]
             if self.search_count(domain) > 0:
                 raise ValidationError('No puedes ingresar fechas que se superpongan a los periodos ya ingresados de categorias.')
-        return True
+            return True
 
