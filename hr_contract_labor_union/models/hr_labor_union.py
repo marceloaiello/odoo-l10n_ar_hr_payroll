@@ -5,7 +5,7 @@ from odoo import api, fields, models
 
 class HrLaborUnion(models.Model):
     _name = 'hr.labor_union'
-    _inherit = 'mail.thread' # Add Chatter Tracking
+    _inherit = 'mail.thread'
     _description = 'Union Laboral / Sindicatos'
 
     name = fields.Char(string='C.C.T / Sindicato', compute="_compute_name")
