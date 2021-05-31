@@ -16,4 +16,3 @@ class HrContract(models.Model):
                 record.amount = record.cct_category_id.current_value
             else:
                 record.amount = record.amount
-
