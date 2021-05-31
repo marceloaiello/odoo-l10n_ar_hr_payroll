@@ -61,7 +61,7 @@
                 </group>
                 <group string="Seguro de Vida Colectivo (S.V.C.O)">
                     <field name="cct_svco_values">
-                        <tree editable="top" default_order="from_date,to_date desc" decoration-success="state=='active'">
+                        <tree editable="top" default_order="from_date,to_date asc" decoration-success="state=='active'">
                             <field name="from_date" />
                             <field name="to_date" />
                             <field name="value" widget='monetary'/>
