@@ -13,10 +13,21 @@ class HrLaborUnionSvcoValue(models.Model):
     to_date = fields.Date(string='Fecha Hasta', required=True, help='Fecha de Inicio, incluida en el rango.')
     value = fields.Monetary(string='Valor', required=True, options="{'currency_field': 'currency_id'}")
     labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato', required=True, ondelete="cascade", check_company=True)
+    state = fields.Selection([('active', 'Activo'),('inactive', 'Inactivo')],default='inactive',compute='_compute_state')
     currency_id = fields.Many2one('res.currency', string='Moneda', required=True,
         default=lambda self: self.env.user.company_id.currency_id.id)
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
+
+    @api.depends('from_date', 'to_date')
+    def _compute_state(self):
+        for record in self:
+            today = fields.Date.context_today(self).strftime('%Y-%m-%d')
+            domain = [('labor_union_category_id', '=', record.id), ('from_date', '<=', today), ('to_date','>=',today)]
+            if record.categories_prices.search_count(domain) == 1:
+                record.state = 'active'
+            else:
+                record.state = 'inactive'
 
     @api.constrains('to_date', 'from_date', 'company_id')
     def _check_svco_dates(self):
