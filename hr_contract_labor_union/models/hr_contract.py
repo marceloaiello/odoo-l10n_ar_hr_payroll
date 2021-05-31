@@ -11,7 +11,7 @@ class HrContract(models.Model):
 
     @api.onchange("cct_category_id")
     def _onchange_cct_category_id(self):
-        if self.cct_category_id is not None & self.aplica_cct == True:
+        if ((self.cct_category_id) and (self.aplica_cct == True)):
             self.amount = self.cct_category_id.current_value
         else:
             self.amount = self.amount
