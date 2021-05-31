@@ -9,7 +9,7 @@ class HrLaborUnionCategory(models.Model):
     _check_company_auto = True
 
     name = fields.Char(string='Categoria C.C.T', required=True)
-    current_value = fields.Float(string='Valor Actual', computed="_compute_current_value")
+    current_value = fields.Float(compute="_compute_current_value", string='Valor Actual')
     categories_prices = fields.One2many(comodel_name='hr.labor_union.category.price', inverse_name='labor_union_category_id',
         string='Valores de Categoria')
     labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato',
