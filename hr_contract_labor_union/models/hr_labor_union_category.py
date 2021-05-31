@@ -22,7 +22,7 @@ class HrLaborUnionCategory(models.Model):
         for record in self:
             today = fields.Date.context_today(self).strftime('%Y-%m-%d')
             category_value = 0
-            domain = [('labor_union_id', '=', record.id), ('from_date', '<=', today), ('to_date','>=',today)]
+            domain = [('labor_union_category_id', '=', record.id), ('from_date', '<=', today), ('to_date','>=',today)]
             if record.categories_prices.search_count(domain) == 1:
                 for cprice in record.categories_prices.search(domain):
                     category_value = cprice.value
