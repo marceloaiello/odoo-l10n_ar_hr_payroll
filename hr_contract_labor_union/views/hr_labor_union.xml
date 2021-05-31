@@ -56,8 +56,9 @@
                             <tree editable="top">
                                 <field name="name" />
                                 <field name="current_value" />
+                                <field name="categories_prices"/>
                                 <footer>
-                                    <button name="categories_prices" type="object" string="Condigurar Importes" class="oe_highlight"/>
+                                    <button name="hr.labor_union.category.price.form" type="action" string="Configurar Importes" class="oe_highlight"/>
                                 </footer>
                             </tree>
                         </field>
@@ -78,7 +79,7 @@
         <!-- Form View End -->
 
         <!-- Menu Configuration -->
-        <menuitem id="hr.contract_labor_union" name="C.C.T / Sindicatos" parent="hr.menu_hr_employee_payroll" action="actions_hr_labor_union" sequence="3"/>
+        <menuitem id="hr.contract_labor_union" name="C.C.T / Sindicatos" parent="hr.menu_hr_employee_payroll" action="actions_hr_labor_union" sequence="10"/>
         <!-- Menu Configuration -->
     </data>
 </odoo>
