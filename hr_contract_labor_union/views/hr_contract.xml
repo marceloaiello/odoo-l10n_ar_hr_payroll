@@ -11,11 +11,10 @@
                     <field name="aplica_cct" />
                     <field name="cct_id" attrs="{'invisible':[('aplica_cct', '=', False)]}" />
                     <field name="cct_category_id" attrs="{'invisible':[('aplica_cct', '=', False)]}" domain="[('labor_union_id', '=', cct_id)]" />
-                    <field name="cct_value" />
                 </group>
             </xpath>
             <xpath expr="//field[@name='amount']" position="attributes">
-                <attribute name="attrs">{'readonly':[('aplica_cct','=', True)]}</attribute>
+                <attribute name="attrs">{'readonly':[('aplica_cct','=', True)], 'force_save':"1"}</attribute>
             </xpath>
         </field>
     </record>
