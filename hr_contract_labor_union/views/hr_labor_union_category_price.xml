@@ -20,6 +20,7 @@
         <field name="model">hr.labor_union.category.price</field>
         <field name="arch" type="xml">
             <tree editable="top">
+                <field name="company_id" groups="base.group_multi_company"/>
                 <field name="labor_union_category_id" string="Categoria C.C.T - Sindicato" />
                 <field name="from_date" string="Fecha Desde" />
                 <field name="to_date" string="Fecha Hasta" />
