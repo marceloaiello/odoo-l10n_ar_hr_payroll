@@ -4,7 +4,12 @@
         <field name="name">hr.contract.view.form</field>
         <field name="model">hr.contract</field>
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+        <field name="priority" eval="100" />
         <field name="arch" type="xml">
+            <field name="amount" nolabel="1" required="1" on_change="1" modifiers="{'required':true}" position="replace">
+                <field name="amount" nolabel="1" required="1" on_change="1" modifiers="{'required':true}" position="replace"
+                    string="Importe" attrs="{'readonly':[('aplica_cct','=', True)]}" />
+            </field>
             <xpath expr="//group[@name='salary_and_advantages']" position="after">
                 <group name='sindicato_cct' string="Sindicatos y C.C.T">
                     <field name="aplica_cct" />

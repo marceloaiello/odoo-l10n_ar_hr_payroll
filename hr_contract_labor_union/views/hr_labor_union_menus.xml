@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu - For Parents -->
+    <menuitem id="hr.labor_union" name="C.C.T / Sindicatos" parent="hr.menu_human_resources_configuration" sequence="100" />
+    <!-- Sindicatos Menu  -->
+    <menuitem id="hr.menu_contract_labor_union" name="C.C.T / Sindicatos" parent="hr.labor_union" action="actions_hr_labor_union" sequence="10" />
+    <!-- Sindicatos Category Prices Menu  -->
+    <menuitem id="hr.labor_union_category_price" name="Importes de Categorias" parent="hr.menu_contract_labor_union" action="actions_hr_labor_union_category_price" sequence="1" />
+</odoo>

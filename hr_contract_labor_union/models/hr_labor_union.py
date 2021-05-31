@@ -5,8 +5,9 @@ from odoo import api, fields, models
 
 class HrLaborUnion(models.Model):
     _name = 'hr.labor_union'
-    _inherit = 'mail.thread' # Here we add chatter to the new module.
+    _inherit = 'mail.thread' # Add Chatter Tracking
     _description = 'Union Laboral / Sindicatos'
+    _check_company_auto = True
 
     name = fields.Char(string='C.C.T / Sindicato', track_visibility='onchange')
     sindicato = fields.Char(string='Sindicato', track_visibility='onchange')
@@ -24,7 +25,7 @@ class HrLaborUnion(models.Model):
         for record in self:
             today = fields.Date.context_today(self).strftime('%Y-%m-%d')
             svco_value = 0
-            domain = [('labor_union_id','=',record.id),('from_date','<=',today),('to_date','>=',today)]
+            domain = [('company_id','=',record.company_id.id),('labor_union_id','=',record.id),('from_date','<=',today),('to_date','>=',today)]
         if self.cct_svco_values.search_count(domain) == 1:
             for svco in record.cct_svco_values.search(domain):
                 svco_value = svco.value

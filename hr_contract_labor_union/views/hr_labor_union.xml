@@ -71,10 +71,10 @@
                 </group>
             </form>
         </field>
+        <div class="oe_chatter" modifiers="{}">
+            <field name="message_follower_ids" widget="mail_followers" modifiers="{}"/>
+            <field name="message_ids" widget="mail_thread" modifiers="{}" options="{'display_log_button': True}"/>
+        </div>
     </record>
     <!-- Form View End -->
-
-    <!-- Menu Configuration -->
-    <menuitem id="hr.menu_contract_labor_union" name="C.C.T / Sindicatos" parent="hr.menu_hr_employee_payroll" action="actions_hr_labor_union" sequence="10" />
-    <!-- Menu Configuration -->
 </odoo>

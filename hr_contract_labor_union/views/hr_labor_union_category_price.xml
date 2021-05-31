@@ -30,8 +30,4 @@
         </field>
     </record>
     <!-- Tree View End-->
-
-    <!-- Menu Configuration -->
-    <menuitem id="hr.labor_union_category_price" name="Importes de Categorias" parent="hr.menu_contract_labor_union" action="actions_hr_labor_union_category_price" sequence="1" />
-    <!-- Menu Configuration -->
 </odoo>
