@@ -54,6 +54,7 @@
                     <field name="cct_categories">
                         <tree editable="top">
                             <field name="name" />
+                            <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}"/>
                             <field name="current_value" widget='monetary'/>
                         </tree>
                     </field>

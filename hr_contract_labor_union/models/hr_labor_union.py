@@ -12,10 +12,13 @@ class HrLaborUnion(models.Model):
     sindicato = fields.Char(string='Sindicato', track_visibility='onchange')
     convenio = fields.Char(string='Codigo C.C.T / RAMA', track_visibility='onchange')
     cct_categories = fields.One2many(comodel_name='hr.labor_union.category',inverse_name='labor_union_id',
-                                        string='Categorias C.C.T', track_visibility='onchange')
+                        string='Categorias C.C.T', track_visibility='onchange')
     cct_svco_values = fields.One2many(comodel_name='hr.labor_union.svco_value',inverse_name='labor_union_id',
-                                        string=' CCT SVCO', track_visibility='onchange')
-    svco_current_value = fields.Monetary(compute='_compute_svco_current_value', string='Valor Actual (SVCO)')
+                        string=' CCT SVCO', track_visibility='onchange')
+    svco_current_value = fields.Monetary(compute='_compute_svco_current_value', string='Valor Actual (SVCO)',
+        options="{'currency_field': 'currency_id'}")
+    currency_id = fields.Many2one('res.currency', string='Moneda', required=True,
+        default=lambda self: self.user.company_id.currency_id.id)
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
 
