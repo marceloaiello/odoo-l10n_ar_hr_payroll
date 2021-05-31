@@ -56,7 +56,9 @@
                             <tree editable="top">
                                 <field name="name" />
                                 <field name="current_value" />
-                                <field name="categories_prices" widget="selection"/>
+                                <footer>
+                                    <button name="categories_prices" string="Condigurar Importes" />
+                                </footer>
                             </tree>
                         </field>
                     </group>
