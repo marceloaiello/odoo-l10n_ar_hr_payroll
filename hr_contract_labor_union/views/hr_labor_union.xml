@@ -56,11 +56,9 @@
                             <tree editable="top">
                                 <field name="name" />
                                 <field name="current_value" />
-                                <field name="categories_prices"/>
-                                <footer>
-                                    <button name="hr.labor_union.category.price.form" type="action" string="Configurar Importes" class="oe_highlight"/>
-                                </footer>
+                                <field name="categories_prices" />
                             </tree>
+                            <button name="hr.labor_union.category.price.form" type="action" string="Configurar Importes" class="oe_highlight"/>
                         </field>
                     </group>
                     <group string="Seguro de Vida Colectivo (S.V.C.O)">
