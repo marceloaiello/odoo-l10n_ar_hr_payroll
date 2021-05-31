@@ -7,5 +7,5 @@ class HrContract(models.Model):
     _inherit = 'hr.contract'
     aplica_cct = fields.Boolean(string='Aplica C.C.T / Convenio?')
     cct_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato')
-    cct_category_id = fields.Many2one(comodel_name='hr.labor_union.category', string='Categoria C.C.T', domain=[('labor_union_id', '=', cct_id)])
+    cct_category_id = fields.Many2one(comodel_name='hr.labor_union.category', string='Categoria C.C.T')
 
