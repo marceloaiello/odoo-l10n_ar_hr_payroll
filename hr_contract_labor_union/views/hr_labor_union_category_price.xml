@@ -5,7 +5,7 @@
         <field name="name">Importes de Categorias</field>
         <field name="res_model">hr.labor_union.category.price</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree</field>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
                 Todavia no se registraron Precios para Sindicatos / C.C.T. Ingrese uno nuevo.
@@ -19,7 +19,7 @@
         <field name="name">hr.labor_union.category.price.view.tree</field>
         <field name="model">hr.labor_union.category.price</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="top">
                 <field name="labor_union_category_id" string="Categoria C.C.T - Sindicato" />
                 <field name="from_date" string="Fecha Desde" />
                 <field name="to_date" string="Fecha Hasta" />
