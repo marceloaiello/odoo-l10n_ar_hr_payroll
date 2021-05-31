@@ -55,6 +55,7 @@
                         <tree editable="top">
                             <field name="name" />
                             <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}"/>
+                            <field name="category_period_type" string="Periodo de Importe"/>
                             <field name="current_value" widget='monetary'/>
                         </tree>
                     </field>

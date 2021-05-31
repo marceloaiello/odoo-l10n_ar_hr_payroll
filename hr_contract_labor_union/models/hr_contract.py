@@ -13,5 +13,6 @@ class HrContract(models.Model):
     def _onchange_cct_category_id(self):
         if ((self.cct_category_id) and (self.aplica_cct == True)):
             self.amount = self.cct_category_id.current_value
+            self.amount_period = self.cct_category_id.category_period_type
         else:
             self.amount = self.amount

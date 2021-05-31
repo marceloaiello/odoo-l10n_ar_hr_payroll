@@ -9,6 +9,18 @@ class HrLaborUnionCategory(models.Model):
     _check_company_auto = True
 
     name = fields.Char(string='Categoria C.C.T', required=True)
+    category_period_type = fields.Selection(string="Periodo de Importe",
+        selection=[
+            ("hour", "Por Hora"),
+            ("day", "Diario"),
+            ("week", "Semanal"),
+            ("month", "Mensual"),
+            ("quarter", "Quincenal"),
+            ("year", "Anual"),
+        ],
+        default="hour",
+        help="Periodo de calculo del importe registrado",
+    )
     current_value = fields.Monetary(compute="_compute_current_value", string='Valor Actual')
     categories_prices = fields.One2many(comodel_name='hr.labor_union.category.price', inverse_name='labor_union_category_id',
         string='Valores de Categoria')
