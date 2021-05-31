@@ -14,4 +14,4 @@ class HrContract(models.Model):
         if self.cct_category_id & self.aplica_cct == True:
             self.amount = self.cct_category_id.current_value
         else:
-            self.amount = self.cct_category_id.current_value
+            self.amount = self.amount
