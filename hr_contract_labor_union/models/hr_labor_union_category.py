@@ -9,7 +9,7 @@ class HrLaborUnionCategory(models.Model):
     _check_company_auto = True
 
     name = fields.Char(string='Categoria C.C.T', required=True)
-    current_value = fields.Float(string='Valor Actual', computed="_compute_current_value", readonly=True)
+    current_value = fields.Float(string='Valor Actual', computed="_compute_current_value")
     categories_prices = fields.One2many(comodel_name='hr.labor_union.category.price', inverse_name='labor_union_category_id',
         string='Valores de Categoria')
     labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato',
@@ -21,12 +21,12 @@ class HrLaborUnionCategory(models.Model):
     def _compute_current_value(self):
         for record in self:
             today = fields.Date.context_today(self).strftime('%Y-%m-%d')
-            value = 0
+            category_value = 0
             domain = [('labor_union_id', '=', record.id), ('from_date', '<=', today), ('to_date','>=',today)]
             if record.categories_prices.search_count(domain) == 1:
                 for cprice in record.categories_prices.search(domain):
-                    value = cprice.value
-            record.current_value = value
+                    category_value = cprice.value
+            record.current_value = category_value
 
 class HrLaborUnionCategoryPrice(models.Model):
     _name = 'hr.labor_union.category.price'
