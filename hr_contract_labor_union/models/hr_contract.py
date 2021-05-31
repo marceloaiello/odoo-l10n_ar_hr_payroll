@@ -16,3 +16,4 @@ class HrContract(models.Model):
             self.amount_period = self.cct_category_id.category_period_type
         else:
             self.amount = self.amount
+            self.amount_period = self.amount_period
