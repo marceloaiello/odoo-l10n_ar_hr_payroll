@@ -38,9 +38,11 @@ class HrLaborUnionCategoryPrice(models.Model):
     name = fields.Char(string='Referencia', required=True)
     from_date = fields.Date(string='Fecha Desde', required=True)
     to_date = fields.Date(string='Fecha Hasta', required=True)
-    value = fields.Monetary(string='Valor Actual', required=True)
+    value = fields.Monetary(string='Valor Actual', required=True, options="{'currency_field': 'currency_id'}")
     labor_union_category_id = fields.Many2one(comodel_name='hr.labor_union.category', string='C.C.T Categorias - Precios',
                                 equired=True, ondelete="cascade", check_company=True)
+    currency_id = fields.Many2one('res.currency', string='Moneda', required=True,
+        default=lambda self: self.user.company_id.currency_id.id)
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
 
