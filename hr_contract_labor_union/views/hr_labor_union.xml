@@ -55,7 +55,6 @@
                         <tree editable="top">
                             <field name="name" />
                             <field name="current_value" />
-                            <field name="categories_prices" />
                         </tree>
                     </field>
                 </group>
@@ -70,11 +69,11 @@
                     </field>
                 </group>
             </form>
+            <div class="oe_chatter" modifiers="{}">
+                <field name="message_follower_ids" widget="mail_followers" modifiers="{}"/>
+                <field name="message_ids" widget="mail_thread" modifiers="{}" options="{'display_log_button': True}"/>
+            </div>
         </field>
-        <div class="oe_chatter" modifiers="{}">
-            <field name="message_follower_ids" widget="mail_followers" modifiers="{}"/>
-            <field name="message_ids" widget="mail_thread" modifiers="{}" options="{'display_log_button': True}"/>
-        </div>
     </record>
     <!-- Form View End -->
 </odoo>
