@@ -15,7 +15,6 @@
             </xpath>
             <xpath expr="//field[@name='amount']" position="attributes">
                 <attribute name="attrs">{'readonly':[('aplica_cct','=', True)]}</attribute>
-                <attribute name="on_change">on_change_cct_category_id(cct_category_id)</attribute>
             </xpath>
         </field>
     </record>

@@ -16,7 +16,6 @@
         'hr',
         'payroll',
         'hr_contract_rate',
-        'hr_employee_age',
     ],
     'data': [
         'security/ir.model.access.csv',
