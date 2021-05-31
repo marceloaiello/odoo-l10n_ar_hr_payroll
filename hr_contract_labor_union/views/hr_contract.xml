@@ -14,10 +14,12 @@
                 </group>
             </xpath>
             <xpath expr="//field[@name='amount']" position="attributes">
-                <attribute name="attrs">{'readonly':[('aplica_cct','=', True)], 'force_save':"1"}</attribute>
+                <attribute name="attrs">{'readonly':[('aplica_cct','=', True)]}</attribute>
+                <attribute name="force_save">True</attribute>
             </xpath>
             <xpath expr="//field[@name='amount_period']" position="attributes">
-                <attribute name="attrs">{'readonly':[('aplica_cct','=', True)], 'force_save':"1"}</attribute>
+                <attribute name="attrs">{'readonly':[('aplica_cct','=', True)]}</attribute>
+                <attribute name="force_save">True</attribute>
             </xpath>
         </field>
     </record>
