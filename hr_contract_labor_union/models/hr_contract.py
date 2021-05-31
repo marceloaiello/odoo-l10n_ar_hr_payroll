@@ -15,5 +15,5 @@ class HrContract(models.Model):
             if record.cct_category_id is not None & record.aplica_cct == True:
                 record.amount = record.cct_category_id.current_value
             else:
-                break
+                record.amount = record.amount
 

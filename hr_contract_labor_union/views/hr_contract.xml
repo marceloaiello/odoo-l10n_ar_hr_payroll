@@ -10,7 +10,7 @@
                 <group name='sindicato_cct' string="Sindicatos y C.C.T">
                     <field name="aplica_cct" />
                     <field name="cct_id" attrs="{'invisible':[('aplica_cct', '=', False)]}" />
-                    <field name="cct_category_id" attrs="{'invisible':[('aplica_cct', '=', False)]}" domain="[('is_investor', '=', True)]" />
+                    <field name="cct_category_id" attrs="{'invisible':[('aplica_cct', '=', False)]}" domain="[('labor_union_id', '=', cct_id)]" />
                 </group>
             </xpath>
             <xpath expr="//field[@name='amount']" position="attributes">
