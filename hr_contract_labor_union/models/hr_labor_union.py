@@ -15,7 +15,7 @@ class HrLaborUnion(models.Model):
                                         string='Categorias C.C.T', track_visibility='onchange')
     cct_svco_values = fields.One2many(comodel_name='hr.labor_union.svco_value',inverse_name='labor_union_id',
                                         string=' CCT SVCO', track_visibility='onchange')
-    svco_current_value = fields.Float(compute='_compute_svco_current_value', string='Valor Actual (SVCO)')
+    svco_current_value = fields.Monetary(compute='_compute_svco_current_value', string='Valor Actual (SVCO)')
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
 

@@ -9,7 +9,7 @@ class HrLaborUnionCategory(models.Model):
     _check_company_auto = True
 
     name = fields.Char(string='Categoria C.C.T', required=True)
-    current_value = fields.Float(compute="_compute_current_value", string='Valor Actual')
+    current_value = fields.Monetary(compute="_compute_current_value", string='Valor Actual')
     categories_prices = fields.One2many(comodel_name='hr.labor_union.category.price', inverse_name='labor_union_category_id',
         string='Valores de Categoria')
     labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato',
@@ -36,7 +36,7 @@ class HrLaborUnionCategoryPrice(models.Model):
     name = fields.Char(string='Referencia', required=True)
     from_date = fields.Date(string='Fecha Desde', required=True)
     to_date = fields.Date(string='Fecha Hasta', required=True)
-    value = fields.Float(string='Valor Actual', required=True)
+    value = fields.Monetary(string='Valor Actual', required=True)
     labor_union_category_id = fields.Many2one(comodel_name='hr.labor_union.category', string='C.C.T Categorias - Precios',
                                 equired=True, ondelete="cascade", check_company=True)
     company_id = fields.Many2one('res.company', string='Empresa', required=True,

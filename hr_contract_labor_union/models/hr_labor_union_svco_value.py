@@ -11,7 +11,7 @@ class HrLaborUnionSvcoValue(models.Model):
     name = fields.Char(string='Referencia', required=True)
     from_date = fields.Date(string='Fecha Desde', required=True, help='Fecha de Fin, incluida en el rango.')
     to_date = fields.Date(string='Fecha Hasta', required=True, help='Fecha de Inicio, incluida en el rango.')
-    value = fields.Float(string='Valor', required=True)
+    value = fields.Monetary(string='Valor', required=True)
     labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato', required=True, ondelete="cascade", check_company=True)
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
