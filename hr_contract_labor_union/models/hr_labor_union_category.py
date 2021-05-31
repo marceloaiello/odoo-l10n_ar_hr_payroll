@@ -6,13 +6,15 @@ from odoo import api, fields, models
 class HrLaborUnionCategory(models.Model):
     _name = 'hr.labor_union.category'
     _description = 'Categorias de C.C.T / Sindicatos'
+    _check_company_auto = True
 
     name = fields.Char(string='Categoria C.C.T', required=True)
     current_value = fields.Float(string='Valor Actual', computed="_compute_current_value")
     categories_prices = fields.One2many(comodel_name='hr.labor_union.category.price', inverse_name='labor_union_category_id',
         string='Valores de Categoria')
-    labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato', required=True, ondelete="cascade")
-    company_id = fields.Many2one('res.company', string='Company', required=True,
+    labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato',
+                        required=True, ondelete="cascade", check_company=True)
+    company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
 
     @api.depends('categories_prices')
@@ -26,15 +28,17 @@ class HrLaborUnionCategory(models.Model):
 class HrLaborUnionCategoryPrice(models.Model):
     _name = 'hr.labor_union.category.price'
     _description = 'Valores de Categorias C.C.T'
+    _check_company_auto = True
 
     name = fields.Char(string='Referencia', required=True)
     from_date = fields.Date(string='Fecha Desde', required=True)
     to_date = fields.Date(string='Fecha Hasta', required=True)
     value = fields.Float(string='Valor Actual', required=True)
-    labor_union_category_id = fields.Many2one(comodel_name='hr.labor_union.category', string='C.C.T Categorias - Precios', required=True, ondelete="cascade")
+    labor_union_category_id = fields.Many2one(comodel_name='hr.labor_union.category', string='C.C.T Categorias - Precios',
+                                equired=True, ondelete="cascade", check_company=True)
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
-        
+
     @api.constrains('to_date', 'from_date', 'company_id')
     def _check_dates(self):
         for record in self:
