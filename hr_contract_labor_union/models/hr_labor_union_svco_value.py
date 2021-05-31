@@ -15,7 +15,7 @@ class HrLaborUnionSvcoValue(models.Model):
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
 
-    @api.constrains('to_date', 'from_date', 'company_id')
+    @api.constrains('to_date', 'from_date')
     def _check_svco_dates(self):
         for record in self:
             if record.from_date == record.to_date:
@@ -32,4 +32,4 @@ class HrLaborUnionSvcoValue(models.Model):
                 ]
             if self.search_count(domain) > 0:
                 raise ValidationError('No puedes ingresra fechas que se superpongan a los periodos ya ingresados de S.V.C.O.')
-        return True
+            return True

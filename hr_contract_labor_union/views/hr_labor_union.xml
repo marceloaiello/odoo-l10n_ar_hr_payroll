@@ -57,7 +57,7 @@
                                 <field name="name" />
                                 <field name="current_value" />
                                 <footer>
-                                    <button name="categories_prices" string="Condigurar Importes" />
+                                    <button name="categories_prices" type="object" string="Condigurar Importes" class="oe_highlight"/>
                                 </footer>
                             </tree>
                         </field>
