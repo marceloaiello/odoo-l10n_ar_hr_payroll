@@ -66,7 +66,7 @@ class HrLaborUnionCategoryPrice(models.Model):
             if record.to_date < record.from_date:
                 raise ValidationError("'Fecha Hasta' no puede ser menor a 'Fecha Desde'.")
             domain = [
-                    ('id', '!=', record.id),
+                    ('id', '=', record.id),
                     ('company_id', '=', record.company_id.id),
                     '|', '|',
                     '&', ('from_date', '<=', record.from_date), ('to_date', '>=', record.from_date),
