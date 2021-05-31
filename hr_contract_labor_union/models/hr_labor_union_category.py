@@ -20,11 +20,11 @@ class HrLaborUnionCategory(models.Model):
     @api.depends('categories_prices')
     def _compute_current_value(self):
         for record in self:
-            for category in record.categories_prices:
+            for category_price in record.categories_prices:
                 value = 0
-                if category.from_date <= fields.Date.today() <= record.to_date:
-                    value = category.value
-            record.current_value = value
+                if category_price.from_date <= fields.Date.today() <= category_price.to_date:
+                    value = category_price.value
+                    record.current_value = value
 
 class HrLaborUnionCategoryPrice(models.Model):
     _name = 'hr.labor_union.category.price'
