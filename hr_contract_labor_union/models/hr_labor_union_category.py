@@ -32,8 +32,6 @@ class HrLaborUnionCategoryPrice(models.Model):
     to_date = fields.Date(string='Fecha Hasta', required=True)
     value = fields.Float(string='Valor Actual', required=True)
     labor_union_category_id = fields.Many2one(comodel_name='hr.labor_union.category', string='C.C.T Categorias - Precios', required=True, ondelete="cascade")
-    company_id = fields.Many2one('res.company', string='Empresa', required=True,
-        default=lambda self: self.env.user.company_id)
 
     @api.constrains('to_date', 'from_date', 'company_id')
     def _check_dates(self):
