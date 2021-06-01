@@ -38,7 +38,6 @@
     'data': [
         'security/ir.model.access.csv',
         'security/security.xml',
-        'views/salary_structure.xml',
         'views/salary_advance.xml',
     ],
     'demo': [],
