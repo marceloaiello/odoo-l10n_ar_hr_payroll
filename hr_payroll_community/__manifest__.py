@@ -26,7 +26,6 @@
         'views/hr_employee_views.xml',
         'data/hr_payroll_sequence.xml',
         'views/hr_payroll_report.xml',
-        'data/hr_payroll_data.xml',
         'wizard/hr_payroll_contribution_register_report_views.xml',
         'views/res_config_settings_views.xml',
         'views/report_contributionregister_templates.xml',
@@ -34,5 +33,4 @@
         'views/report_payslipdetails_templates.xml',
     ],
     'license': 'AGPL-3',
-    # 'demo': ['data/hr_payroll_demo.xml'],
 }
