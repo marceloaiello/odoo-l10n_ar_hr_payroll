@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <data>
     <!-- Main View Start -->
     <record id="actions_hr_labor_union" model="ir.actions.act_window">
         <field name="name">C.C.T / Sindicatos</field>
@@ -78,4 +79,5 @@
         </field>
     </record>
     <!-- Form View End -->
+    </data>
 </odoo>
