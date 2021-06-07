@@ -1,83 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <!-- Main View Start -->
-        <record id="actions_hr_labor_union" model="ir.actions.act_window">
-            <field name="name">C.C.T / Sindicatos</field>
-            <field name="res_model">hr.labor_union</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">
+    <!-- Main View Start -->
+    <record id="actions_hr_labor_union" model="ir.actions.act_window">
+        <field name="name">C.C.T / Sindicatos</field>
+        <field name="res_model">hr.labor_union</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
                 Todavia no se registraron Sindicatos / C.C.T. Ingrese uno nuevo.
             </p>
-            </field>
-        </record>
-        <!-- Main View End -->
+        </field>
+    </record>
+    <!-- Main View End -->
 
-        <!-- Tree View Start-->
-        <record id="hr_labor_union_view_tree" model="ir.ui.view">
-            <field name="name">hr.labor_union.view.tree</field>
-            <field name="model">hr.labor_union</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <field name="name" />
-                    <field name="sindicato" />
-                    <field name="convenio" />
-                    <field name="cct_categories" />
-                    <field name="svco_current_value" widget='monetary' />
-                </tree>
-            </field>
-        </record>
-        <!-- Tree View End-->
+    <!-- Tree View Start-->
+    <record id="hr_labor_union_view_tree" model="ir.ui.view">
+        <field name="name">hr.labor_union.view.tree</field>
+        <field name="model">hr.labor_union</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="sindicato" />
+                <field name="convenio" />
+                <field name="cct_categories" />
+                <field name="svco_current_value" widget='monetary' />
+            </tree>
+        </field>
+    </record>
+    <!-- Tree View End-->
 
-        <!-- Form View Start -->
-        <record id="action_hr_labor_union_form" model="ir.ui.view">
-            <field name="name">hr.labor_union.form</field>
-            <field name="model">hr.labor_union</field>
-            <field name="arch" type="xml">
-                <form>
-                    <div class="oe_title pr-0" name="title">
-                        <h1 class="d-flex flex-row justify-content-between">
-                            <field name="name" placeholder="C.C.T / Sindicato" />
-                        </h1>
-                    </div>
-                    <group>
-                        <group>
-                            <field name="sindicato" />
-                            <field name="convenio" />
-                        </group>
-                        <group>
-                            <field name="company_id" groups="base.group_multi_company" />
-                        </group>
-                    </group>
-                    <group string="Categorias - CCT">
-                        <field name="cct_categories">
-                            <tree editable="top">
-                                <field name="name" />
-                                <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
-                                <field name="category_period_type" string="Periodo de Importe" />
-                                <field name="current_value" widget='monetary' />
-                            </tree>
-                        </field>
-                    </group>
-                    <group string="Seguro de Vida Colectivo (S.V.C.O)">
-                        <field name="cct_svco_values">
-                            <tree editable="top" default_order="from_date,to_date asc">
-                                <field name="from_date" />
-                                <field name="to_date" />
-                                <field name="value" widget='monetary' />
-                                <field name="name" string="Referencia" />
-                            </tree>
-                        </field>
-                    </group>
-                </form>
-                <div class="oe_chatter" modifiers="{}">
-                    <field name="message_follower_ids" widget="mail_followers" modifiers="{}" />
-                    <field name="message_ids" widget="mail_thread" modifiers="{}" options="{'display_log_button': True}" />
+    <!-- Form View Start -->
+    <record id="action_hr_labor_union_form" model="ir.ui.view">
+        <field name="name">hr.labor_union.form</field>
+        <field name="model">hr.labor_union</field>
+        <field name="arch" type="xml">
+            <form>
+                <div class="oe_title pr-0" name="title">
+                    <h1 class="d-flex flex-row justify-content-between">
+                        <field name="name" placeholder="C.C.T / Sindicato" />
+                    </h1>
                 </div>
-            </field>
-        </record>
-        <!-- Form View End -->
-    </data>
+                <group>
+                    <group>
+                        <field name="sindicato" />
+                        <field name="convenio" />
+                    </group>
+                    <group>
+                        <field name="company_id" groups="base.group_multi_company" />
+                    </group>
+                </group>
+                <group string="Categorias - CCT">
+                    <field name="cct_categories">
+                        <tree editable="top">
+                            <field name="name" />
+                            <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
+                            <field name="category_period_type" string="Periodo de Importe" />
+                            <field name="current_value" widget='monetary' />
+                        </tree>
+                    </field>
+                </group>
+                <group string="Seguro de Vida Colectivo (S.V.C.O)">
+                    <field name="cct_svco_values">
+                        <tree editable="top" default_order="from_date,to_date asc">
+                            <field name="from_date" />
+                            <field name="to_date" />
+                            <field name="value" widget='monetary' />
+                            <field name="name" string="Referencia" />
+                        </tree>
+                    </field>
+                </group>
+            </form>
+        </field>
+    </record>
+    <!-- Form View End -->
 </odoo>
