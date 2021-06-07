@@ -47,7 +47,7 @@ class HrLaborUnionCategoryPrice(models.Model):
     _description = 'Valores de Categorias C.C.T'
     _check_company_auto = True
 
-    name = fields.Char(string='Referencia', required=True)
+    name = fields.Char(string='Referencia', compute="_compute_name")
     from_date = fields.Date(string='Fecha Desde', required=True)
     to_date = fields.Date(string='Fecha Hasta', required=True)
     value = fields.Monetary(string='Valor Actual', required=True, options="{'currency_field': 'currency_id'}")
@@ -57,6 +57,14 @@ class HrLaborUnionCategoryPrice(models.Model):
         default=lambda self: self.env.user.company_id.currency_id.id)
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
+
+    @api.depends('labor_union_category_id', 'from_date', 'to_date')
+    def _compute_name(self):
+        for record in self:
+            if record.labor_union_category_id and record.from_date and record.to_date:
+                record.name = "Categoria: " + record.labor_union_category_id.name + " >> " + "Desde " + record.from_date + "Hasta " + record.to_date
+            else:
+                record.name = "Nuevo registro..."
 
     @api.constrains('to_date', 'from_date', 'company_id')
     def _check_dates(self):

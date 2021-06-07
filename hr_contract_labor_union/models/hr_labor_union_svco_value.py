@@ -8,7 +8,7 @@ class HrLaborUnionSvcoValue(models.Model):
     _description = 'Valores de S.V.C.O de C.C.T'
     _check_company_auto = True
 
-    name = fields.Char(string='Referencia', required=True)
+    name = fields.Char(string='Referencia', compute="_compute_name")
     from_date = fields.Date(string='Fecha Desde', required=True, help='Fecha de Fin, incluida en el rango.')
     to_date = fields.Date(string='Fecha Hasta', required=True, help='Fecha de Inicio, incluida en el rango.')
     value = fields.Monetary(string='Valor', required=True, options="{'currency_field': 'currency_id'}")
@@ -17,6 +17,14 @@ class HrLaborUnionSvcoValue(models.Model):
         default=lambda self: self.env.user.company_id.currency_id.id)
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
         default=lambda self: self.env.user.company_id)
+
+    @api.depends('labor_union_id', 'from_date', 'to_date')
+    def _compute_name(self):
+        for record in self:
+            if record.labor_union_category_id and record.from_date and record.to_date:
+                record.name = "SVCO: " + record.labor_union_id.name + " >> " + "Desde " + record.from_date + "Hasta " + record.to_date
+            else:
+                record.name = "Nuevo registro..."
 
     @api.constrains('to_date', 'from_date', 'company_id')
     def _check_svco_dates(self):
