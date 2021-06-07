@@ -27,6 +27,7 @@ class HrLaborUnionSvcoValue(models.Model):
                 raise ValidationError("'Fecha Hasta' no puede ser menor a 'Fecha Desde'.")
             domain = [
                     ('id', '!=', record.id),
+                    ('labor_union_id', '=', record.labor_union_id.id)
                     ('company_id', '=', record.company_id.id),
                     '|', '|',
                     '&', ('from_date', '<=', record.from_date), ('to_date', '>=', record.from_date),
