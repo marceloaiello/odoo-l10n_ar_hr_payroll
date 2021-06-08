@@ -8,7 +8,7 @@
         <field name="priority">200</field>
         <field name="arch" type="xml">
             <!-- Better arrangement of the "Ciudadania" Group -->
-            <group string="Ciudadanía" modifiers="{}" position="replace">
+            <xpath expr="//page[@name=personal_information]/group[0]/group[2]" position="inside">
                 <separator string="Ciudadania"/>
                 <field name="country_id" options="{'no_open': True, 'no_create': True}" can_create="true" can_write="true" modifiers="{}"/>
                 <field name="country_of_birth" can_create="true" can_write="true" modifiers="{}"/>
@@ -29,7 +29,7 @@
                     <field name="birthday" on_change="1" modifiers="{}"/>
                     <field name="age" modifiers="{'readonly':true}"/>
                 </group>
-            </group>
+            </xpath>
 
             <!-- Remove the Marital Status Group -->
             <xpath expr="//page[@name=personal_information]/group[0]/group[3]" />
