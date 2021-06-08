@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- hr.employee inherit form view -->
-    <record id="hr.view_employee_form" model="ir.ui.view">
-        <field name="name">hr.employee_ux.inherit.view.form</field>
+    <record id="hr.view_employee_form_ux_changes_inherit" model="ir.ui.view">
+        <field name="name">hr.view_employee_form.ux_changes.inherit</field>
         <field name="model">hr.employee</field>
-        <field name="inherit_id" ref="hr.employee.form"/>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="priority">200</field>
         <field name="arch" type="xml">
             <!-- Better arrangement of the "Ciudadania" Group -->
