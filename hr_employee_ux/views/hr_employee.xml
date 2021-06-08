@@ -32,7 +32,7 @@
             </group>
 
             <!-- Remove the Marital Status Group -->
-            <xpath expr="//group[@string='Estado civil']" />
+            <xpath expr="//page[@name=personal_information]/group[0]/group[3]" />
         </field>
     </record>
 </odoo>
