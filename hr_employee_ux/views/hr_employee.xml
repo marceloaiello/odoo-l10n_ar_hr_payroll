@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- hr.employee inherit form view -->
+    <record id="hr.employee.form" model="ir.ui.view">
+        <field name="name">hr.employee_ux.inherit.view.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.employee.form"/>
+        <field name="arch" type="xml">
+
+            <!-- Better arrangement of the "Ciudadania" Group -->
+            <group string="Ciudadanía" modifiers="{}" position="replace">
+                <separator string="Ciudadania"/>
+                <field name="country_id" options="{'no_open': True, 'no_create': True}" can_create="true" can_write="true" modifiers="{}"/>
+                <field name="country_of_birth" can_create="true" can_write="true" modifiers="{}"/>
+                <field name="place_of_birth" modifiers="{}"/>
+                <separator string="Documentacion"/>
+                <group>
+                    <field name="identification_type_id" can_create="true" can_write="true" modifiers="{}"/>
+                    <field name="identification_id" modifiers="{}"/>
+                </group>
+                <group>
+                    <field name="identification_expiry_date" modifiers="{}"/>
+                    <field name="passport_id" modifiers="{}"/>
+                </group>
+                <separator string="Informacion Personal"/>
+                <field name="gender" modifiers="{}"/>
+                <field name="marital" modifiers="{}"/>
+                <group>
+                    <field name="birthday" on_change="1" modifiers="{}"/>
+                    <field name="age" modifiers="{'readonly':true}"/>
+                </group>
+            </group>
+
+            <!-- Remove the Marital Status Group -->
+            <xpath expr="//group[@string='Estado civil']" />
+
+        </field>
+    </record>
+</odoo>
