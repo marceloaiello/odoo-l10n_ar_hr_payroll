@@ -27,8 +27,6 @@ class HrLaborUnion(models.Model):
         for record in self:
             if record.sindicato and record.convenio:
                 record.name = "( " + record.convenio + " ) " + record.sindicato
-            else:
-                record.name = "Nuevo registro..."
 
     @api.depends('cct_svco_values')
     def _compute_svco_current_value(self):

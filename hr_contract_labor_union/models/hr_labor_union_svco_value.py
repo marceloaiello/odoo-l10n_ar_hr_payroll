@@ -1,7 +1,7 @@
 # Copyright (C) 2021 Nimarosa (Nicolas Rodriguez) (<nicolasrsande@gmail.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models
+from odoo import api, fields, models, exceptions, _
 
 class HrLaborUnionSvcoValue(models.Model):
     _name = 'hr.labor_union.svco_value'
@@ -23,16 +23,15 @@ class HrLaborUnionSvcoValue(models.Model):
         for record in self:
             if record.labor_union_id and record.from_date and record.to_date:
                 record.name = "SVCO: " + record.labor_union_id.name + " >> " + "Desde " + record.from_date + "Hasta " + record.to_date
-            else:
-                record.name = "Nuevo registro..."
 
     @api.constrains('to_date', 'from_date', 'company_id', 'labor_union_id')
     def _check_svco_dates(self):
+        """ make sure dates dont overlap """
         for record in self:
             if record.from_date == record.to_date:
-                raise ValidationError("'Fecha Desde' y 'Fecha Hasta' no pueden ser el mismo valor.")
+                raise exceptions.ValidationError(_("'Fecha Desde' y 'Fecha Hasta' no pueden ser el mismo valor."))
             if record.to_date < record.from_date:
-                raise ValidationError("'Fecha Hasta' no puede ser menor a 'Fecha Desde'.")
+                raise exceptions.ValidationError(_("'Fecha Hasta' no puede ser menor a 'Fecha Desde'."))
             domain = [
                     ('id', '!=', record.id),
                     ('labor_union_id', '=', record.labor_union_id.id),
@@ -43,5 +42,5 @@ class HrLaborUnionSvcoValue(models.Model):
                     '&', ('from_date', '<=', record.from_date), ('to_date', '>=', record.to_date),
                 ]
             if self.search_count(domain) > 0:
-                raise ValidationError('No puedes ingresra fechas que se superpongan a los periodos ya ingresados de S.V.C.O.')
+                raise exceptions.ValidationError(_('No puedes ingresra fechas que se superpongan a los periodos ya ingresados de S.V.C.O.'))
             return True
