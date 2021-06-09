@@ -11,16 +11,16 @@
                 <page name="personal_information" string="Información Privada" modifiers="{}">
                     <group modifiers="{}">
                         <group string="Citizenship" modifiers="{}">
-                            <separator string="Residencia"/>
+                            <separator/>
                             <field name="country_id" options="{'no_open': True, 'no_create': True}" can_create="true" can_write="true" modifiers="{}" />
                             <field name="place_of_birth" modifiers="{}" />
                             <field name="country_of_birth" can_create="true" can_write="true" modifiers="{}" />
-                            <separator string="Documentacion"/>
+                            <separator/>
                             <field name="identification_type_id" can_create="true" can_write="true" modifiers="{}" />
                             <field name="identification_id" modifiers="{}" />
                             <field name="identification_expiry_date" modifiers="{}" />
                             <field name="passport_id" modifiers="{}" />
-                            <separator string="Informacion Personal"/>
+                            <separator/>
                             <field name="gender" modifiers="{}" />
                             <field name="birthday" on_change="1" modifiers="{}" />
                             <field name="age" modifiers="{'readonly':true}" />
