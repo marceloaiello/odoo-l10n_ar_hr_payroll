@@ -18,7 +18,6 @@
         'hr_employee_identification',
         'hr_employee_service'
         'hr_holidays',
-        'hr_holidays_attendance',
         'hr_attendance_autoclose',
     ],
     'data': [
