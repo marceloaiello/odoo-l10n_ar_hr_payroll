@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="hr.view_employee_form" />
         <field name="priority">200</field>
         <field name="arch" type="xml">
-            <page name="personal_information" string="Private Information" position="replace" modifiers="{}" >
+            <page name="personal_information" position="replace" >
                 <group modifiers="{}">
                     <group string="Private Contact" modifiers="{}">
                         <field name="address_home_id" context="{'show_address': 1,'default_type': 'private', 'form_view_ref': 'base.res_partner_view_form_private'}" options="{'always_reload': True, 'highlight_first_line': True}" on_change="1" can_create="true" can_write="true" modifiers="{}" />
