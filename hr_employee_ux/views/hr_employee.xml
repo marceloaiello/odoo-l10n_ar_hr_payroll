@@ -4,35 +4,38 @@
     <record id="hr_employee_ux.hr_employee_view_form" model="ir.ui.view">
         <field name="name">hr.employee.view.form</field>
         <field name="model">hr.employee</field>
-        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="inherit_id" ref="hr.view_employee_form" />
         <field name="priority">200</field>
         <field name="arch" type="xml">
-            <!-- Better arrangement of the "Ciudadania" Group -->
-            <xpath expr="//page[@name=personal_information]/group[0]/group[2]" position="inside">
-                <separator string="Ciudadania"/>
-                <field name="country_id" options="{'no_open': True, 'no_create': True}" can_create="true" can_write="true" modifiers="{}"/>
-                <field name="country_of_birth" can_create="true" can_write="true" modifiers="{}"/>
-                <field name="place_of_birth" modifiers="{}"/>
-                <separator string="Documentacion"/>
-                <group>
-                    <field name="identification_type_id" can_create="true" can_write="true" modifiers="{}"/>
-                    <field name="identification_id" modifiers="{}"/>
-                </group>
-                <group>
-                    <field name="identification_expiry_date" modifiers="{}"/>
-                    <field name="passport_id" modifiers="{}"/>
-                </group>
-                <separator string="Informacion Personal"/>
-                <field name="gender" modifiers="{}"/>
-                <field name="marital" modifiers="{}"/>
-                <group>
-                    <field name="birthday" on_change="1" modifiers="{}"/>
-                    <field name="age" modifiers="{'readonly':true}"/>
-                </group>
-            </xpath>
+            <page name="personal_information" string="Private Information" position="replace" modifiers="{}" >
+                <group modifiers="{}">
+                    <group string="Private Contact" modifiers="{}">
+                        <field name="address_home_id" context="{'show_address': 1,'default_type': 'private', 'form_view_ref': 'base.res_partner_view_form_private'}" options="{'always_reload': True, 'highlight_first_line': True}" on_change="1" can_create="true" can_write="true" modifiers="{}" />
+                        <field name="private_email" string="Email" modifiers="{'readonly':true}" />
+                        <field name="phone" class="o_force_ltr" string="Phone" readonly="True" modifiers="{'readonly':true}" />
+                        <field name="bank_account_id" context="{'display_partner':True}" attrs="{'invisible' : [('address_home_id', '=', False)]}" can_create="true" can_write="true" modifiers="{'invisible':[['address_home_id','=',false]]}" />
+                    </group>
+                    <group string="Citizenship" modifiers="{}">
+                        <field name="country_id" options="{'no_open': True, 'no_create': True}" can_create="true" can_write="true" modifiers="{}" />
+                        <field name="place_of_birth" modifiers="{}" />
+                        <field name="country_of_birth" can_create="true" can_write="true" modifiers="{}" />
 
-            <!-- Remove the Marital Status Group -->
-            <xpath expr="//page[@name=personal_information]/group[0]/group[3]" />
+                        <field name="identification_type_id" can_create="true" can_write="true" modifiers="{}" />
+                        <field name="identification_id" modifiers="{}" />
+                        <field name="identification_expiry_date" modifiers="{}" />
+                        <field name="passport_id" modifiers="{}" />
+
+                        <field name="gender" modifiers="{}" />
+                        <field name="birthday" on_change="1" modifiers="{}" />
+                        <field name="age" modifiers="{'readonly':true}" />
+                        <field name="marital" modifiers="{}" />
+                    </group>
+                    <group string="Emergency" modifiers="{}">
+                        <field name="emergency_contact" modifiers="{}" />
+                        <field name="emergency_phone" class="o_force_ltr" modifiers="{}" />
+                    </group>
+                </group>
+            </page>
         </field>
     </record>
 </odoo>
