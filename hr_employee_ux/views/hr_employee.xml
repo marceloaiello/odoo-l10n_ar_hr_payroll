@@ -5,18 +5,12 @@
         <field name="name">hr.employee.view.form</field>
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form" />
-        <field name="priority">200</field>
+        <field name="priority">19</field>
         <field name="arch" type="xml">
             <!-- Personal Information Page / Tab -->
             <page name="personal_information" position="replace">
                 <page name="personal_information" string="Información Privada" modifiers="{}">
                     <group modifiers="{}">
-                        <group string="Private Contact" modifiers="{}">
-                            <field name="address_home_id" context="{'show_address': 1,'default_type': 'private', 'form_view_ref': 'base.res_partner_view_form_private'}" options="{'always_reload': True, 'highlight_first_line': True}" on_change="1" can_create="true" can_write="true" modifiers="{}" />
-                            <field name="private_email" string="Email" modifiers="{'readonly':true}" />
-                            <field name="phone" class="o_force_ltr" string="Phone" readonly="True" modifiers="{'readonly':true}" />
-                            <field name="bank_account_id" context="{'display_partner':True}" attrs="{'invisible' : [('address_home_id', '=', False)]}" can_create="true" can_write="true" modifiers="{'invisible':[['address_home_id','=',false]]}" />
-                        </group>
                         <group string="Citizenship" modifiers="{}">
                             <separator/>
                             <field name="country_id" options="{'no_open': True, 'no_create': True}" can_create="true" can_write="true" modifiers="{}" />
@@ -32,6 +26,12 @@
                             <field name="birthday" on_change="1" modifiers="{}" />
                             <field name="age" modifiers="{'readonly':true}" />
                             <field name="marital" modifiers="{}" />
+                        </group>
+                        <group string="Private Contact" modifiers="{}">
+                            <field name="address_home_id" context="{'show_address': 1,'default_type': 'private', 'form_view_ref': 'base.res_partner_view_form_private'}" options="{'always_reload': True, 'highlight_first_line': True}" on_change="1" can_create="true" can_write="true" modifiers="{}" />
+                            <field name="private_email" string="Email" modifiers="{'readonly':true}" />
+                            <field name="phone" class="o_force_ltr" string="Phone" readonly="True" modifiers="{'readonly':true}" />
+                            <field name="bank_account_id" context="{'display_partner':True}" attrs="{'invisible' : [('address_home_id', '=', False)]}" can_create="true" can_write="true" modifiers="{'invisible':[['address_home_id','=',false]]}" />
                         </group>
                         <newline/>
                         <group string="Emergency" modifiers="{}">
