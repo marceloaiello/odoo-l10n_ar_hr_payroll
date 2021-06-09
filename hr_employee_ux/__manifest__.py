@@ -16,7 +16,7 @@
         'hr_attendance',
         'hr_employee_age',
         'hr_employee_identification',
-        'hr_employee_service'
+        'hr_employee_service',
         'hr_holidays',
         'hr_attendance_autoclose',
     ],
