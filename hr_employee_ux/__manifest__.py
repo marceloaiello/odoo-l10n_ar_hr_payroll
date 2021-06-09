@@ -11,7 +11,13 @@
     'license': 'LGPL-3',
     'category': 'Human Resources',
     'depends': [
-        'hr'
+        'hr',
+        'hr_contract',
+        'hr_attendance',
+        'hr_attendance_autoclose',
+        'hr_employee_age',
+        'hr_employee_identification',
+        'hr_employee_service'
     ],
     'data': [
         'views/hr_employee.xml'
