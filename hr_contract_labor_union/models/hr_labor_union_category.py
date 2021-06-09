@@ -66,7 +66,7 @@ class HrLaborUnionCategoryPrice(models.Model):
             else:
                 record.name = "Nuevo registro..."
 
-    @api.constrains('to_date', 'from_date', 'company_id')
+    @api.constrains('to_date', 'from_date', 'company_id', 'labor_union_category_id')
     def _check_dates(self):
         for record in self:
             if record.from_date == record.to_date:

@@ -32,10 +32,10 @@
                             <field name="private_email" string="Email" modifiers="{'readonly':true}" />
                             <field name="phone" class="o_force_ltr" string="Phone" readonly="True" modifiers="{'readonly':true}" />
                             <field name="bank_account_id" context="{'display_partner':True}" attrs="{'invisible' : [('address_home_id', '=', False)]}" can_create="true" can_write="true" modifiers="{'invisible':[['address_home_id','=',false]]}" />
-                            <separator string="Emergency" modifiers="{}">
+                            <group string="Emergency" modifiers="{}">
                                 <field name="emergency_contact" modifiers="{}" />
                                 <field name="emergency_phone" class="o_force_ltr" modifiers="{}" />
-                            </separator>
+                            </group>
                         </group>
                     </group>
                 </page>

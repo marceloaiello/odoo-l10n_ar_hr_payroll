@@ -21,12 +21,12 @@ class HrLaborUnionSvcoValue(models.Model):
     @api.depends('labor_union_id', 'from_date', 'to_date')
     def _compute_name(self):
         for record in self:
-            if record.labor_union_category_id and record.from_date and record.to_date:
+            if record.labor_union_id and record.from_date and record.to_date:
                 record.name = "SVCO: " + record.labor_union_id.name + " >> " + "Desde " + record.from_date + "Hasta " + record.to_date
             else:
                 record.name = "Nuevo registro..."
 
-    @api.constrains('to_date', 'from_date', 'company_id')
+    @api.constrains('to_date', 'from_date', 'company_id', 'labor_union_id')
     def _check_svco_dates(self):
         for record in self:
             if record.from_date == record.to_date:
