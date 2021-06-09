@@ -7,21 +7,21 @@
         <field name="inherit_id" ref="hr.view_employee_form" />
         <field name="priority">1000</field>
         <field name="arch" type="xml">
-            <!-- Personal Information Page / Tab -->
+            <!-- Personal Information Page / Tab XPATH!!! -->
             <page name="personal_information" position="replace">
                 <page name="personal_information" string="Información Privada" modifiers="{}">
                     <group modifiers="{}">
                         <group string="Citizenship" modifiers="{}">
-                            <separator/>
+                            <separator />
                             <field name="country_id" options="{'no_open': True, 'no_create': True}" can_create="true" can_write="true" modifiers="{}" />
                             <field name="place_of_birth" modifiers="{}" />
                             <field name="country_of_birth" can_create="true" can_write="true" modifiers="{}" />
-                            <separator/>
+                            <separator />
                             <field name="identification_type_id" can_create="true" can_write="true" modifiers="{}" />
                             <field name="identification_id" modifiers="{}" />
                             <field name="identification_expiry_date" modifiers="{}" />
                             <field name="passport_id" modifiers="{}" />
-                            <separator/>
+                            <separator />
                             <field name="gender" modifiers="{}" />
                             <field name="birthday" on_change="1" modifiers="{}" />
                             <field name="age" modifiers="{'readonly':true}" />
@@ -39,45 +39,46 @@
                         </group>
                     </group>
                 </page>
-                <!-- Hr Settings Page / Tab -->
-                <page name="hr_settings" position="replace">
-                    <page name="hr_settings" string="HR Settings" modifiers="{}">
-                        <group modifiers="{}">
-                            <group name="service_information" string="Service Information" modifiers="{}">
-                                <field name="service_hire_date" on_change="1" modifiers="{}"/>
-                                <field name="service_start_date" on_change="1" modifiers="{'readonly':true}"/>
-                                <field name="service_termination_date" on_change="1" modifiers="{'readonly':true}"/>
-                                <field name="service_duration" invisible="1" modifiers="{'invisible':true,'readonly':true}"/>
-                                <label for="service_duration" string="Service Duration" modifiers="{}"/>
-                                <div modifiers="{}">
-                                    <field name="service_duration_years" nolabel="1" modifiers="{'readonly':true}"/>
-                                    <span class="ml8 mr8" modifiers="{}">
-                                        year(s)
-                                    </span>
-                                    <field name="service_duration_months" nolabel="1" modifiers="{'readonly':true}"/>
-                                    <span class="ml8 mr8" modifiers="{}">
-                                        month(s)
-                                    </span>
-                                    <field name="service_duration_days" nolabel="1" modifiers="{'readonly':true}"/>
-                                    <span class="ml8" modifiers="{}">
-                                        day(s)
-                                    </span>
-                                </div>
-                            </group>
-                            <group string="Attendance" name="identification_group" modifiers="{}">
-                                <field name="pin" string="PIN Code" modifiers="{}"/>
-                                <label for="barcode" modifiers="{}"/>
-                                <div class="o_row" modifiers="{}">
-                                    <field name="barcode" modifiers="{}"/>
-                                    <button string="Generate" class="btn btn-link" type="object" name="generate_random_barcode" attrs="{'invisible': [('barcode', '!=', False)]}" modifiers="{'invisible':[['barcode','!=',false]]}" options="{}"/>
-                                    <button name="163" string="Print Badge" class="btn btn-link" type="action" attrs="{'invisible': [('barcode', '=', False)]}" modifiers="{'invisible':[['barcode','=',false]]}" options="{}"/>
-                                </div>
-                            </group>
-                            <group string="Configuracion Usuario" name="active_group" modifiers="{}">
-                                <field name="user_id" string="Usuario Relacionado" on_change="1" can_create="true" can_write="true" modifiers="{}"/>
-                            </group>
+            </page>
+            <!-- Hr Settings Page / Tab -->
+            <page name="hr_settings" position="replace">
+                <page name="hr_settings" string="HR Settings" modifiers="{}">
+                    <group modifiers="{}">
+                        <group name="service_information" string="Service Information" modifiers="{}">
+                            <field name="service_hire_date" on_change="1" modifiers="{}" />
+                            <field name="service_start_date" on_change="1" modifiers="{'readonly':true}" />
+                            <field name="service_termination_date" on_change="1" modifiers="{'readonly':true}" />
+                            <field name="service_duration" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
+                            <label for="service_duration" string="Service Duration" modifiers="{}" />
+                            <div modifiers="{}">
+                                <field name="service_duration_years" nolabel="1" modifiers="{'readonly':true}" />
+                                <span class="ml8 mr8" modifiers="{}">
+                                                    year(s)
+                                                </span>
+                                <field name="service_duration_months" nolabel="1" modifiers="{'readonly':true}" />
+                                <span class="ml8 mr8" modifiers="{}">
+                                                    month(s)
+                                                </span>
+                                <field name="service_duration_days" nolabel="1" modifiers="{'readonly':true}" />
+                                <span class="ml8" modifiers="{}">
+                                                    day(s)
+                                                </span>
+                            </div>
                         </group>
-                    </page>
+                        <group string="Attendance" name="identification_group" modifiers="{}">
+                            <field name="pin" string="PIN Code" modifiers="{}" />
+                            <label for="barcode" modifiers="{}" />
+                            <div class="o_row" modifiers="{}">
+                                <field name="barcode" modifiers="{}" />
+                                <button string="Generate" class="btn btn-link" type="object" name="generate_random_barcode" attrs="{'invisible': [('barcode', '!=', False)]}" modifiers="{'invisible':[['barcode','!=',false]]}" options="{}" />
+                                <button name="163" string="Print Badge" class="btn btn-link" type="action" attrs="{'invisible': [('barcode', '=', False)]}" modifiers="{'invisible':[['barcode','=',false]]}" options="{}" />
+                            </div>
+                            <field name="no_autoclose" modifiers="{}" />
+                        </group>
+                        <group string="Configuracion Usuario" name="active_group" modifiers="{}">
+                            <field name="user_id" string="Usuario Relacionado" on_change="1" can_create="true" can_write="true" modifiers="{}" />
+                        </group>
+                    </group>
                 </page>
             </page>
         </field>
