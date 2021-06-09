@@ -14,10 +14,12 @@
         'hr',
         'hr_contract',
         'hr_attendance',
-        'hr_attendance_autoclose',
         'hr_employee_age',
         'hr_employee_identification',
         'hr_employee_service'
+        'hr_holidays',
+        'hr_holidays_attendance',
+        'hr_attendance_autoclose',
     ],
     'data': [
         'views/hr_employee.xml'

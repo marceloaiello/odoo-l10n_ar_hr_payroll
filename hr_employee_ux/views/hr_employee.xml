@@ -73,7 +73,6 @@
                                     <button string="Generate" class="btn btn-link" type="object" name="generate_random_barcode" attrs="{'invisible': [('barcode', '!=', False)]}" modifiers="{'invisible':[['barcode','!=',false]]}" options="{}"/>
                                     <button name="163" string="Print Badge" class="btn btn-link" type="action" attrs="{'invisible': [('barcode', '=', False)]}" modifiers="{'invisible':[['barcode','=',false]]}" options="{}"/>
                                 </div>
-                                <field name="no_autoclose" modifiers="{}"/>
                             </group>
                             <group string="Configuracion Usuario" name="active_group" modifiers="{}">
                                 <field name="user_id" string="Usuario Relacionado" on_change="1" can_create="true" can_write="true" modifiers="{}"/>
