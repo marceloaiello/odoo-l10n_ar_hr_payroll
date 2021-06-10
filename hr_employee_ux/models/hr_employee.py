@@ -13,4 +13,11 @@ class HrEmployee(models.Model):
             if record.identification_id:
                 record.passport_id = record.identification_id.split('-')[1]
 
-    
+    # Badge code and password is DNI
+    @api.onchange('passport_id')
+    def _compute_attendance_badge_codes(self):
+        for record in self:
+            if record.passport_id:
+                record.pin = record.passport_id
+                record.barcode = record.passport_id
+
