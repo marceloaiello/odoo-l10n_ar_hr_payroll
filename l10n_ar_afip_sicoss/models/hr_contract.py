@@ -3,7 +3,7 @@
 
 from odoo import fields, models
 
-class ContractAfip(models.Model):
+class HrContract(models.Model):
     _inherit = 'hr.contract'
 
     afip_situacion_revista_id = fields.Many2one(comodel_name='hr.afip.situacion_revista', string='Situacion de Revista',
