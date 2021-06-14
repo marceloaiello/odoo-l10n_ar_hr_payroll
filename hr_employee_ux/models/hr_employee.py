@@ -6,6 +6,11 @@ from odoo import api, fields, models
 class HrEmployee(models.Model):
     _inherit = 'hr.employee'
 
+    employee_bank_titular = fields.Char(string='Titular', related="bank_account_id.acc_holder_name")
+    employee_bank = fields.Char(string='Banco', related='bank_account_id.bank_id.name')
+    employee_cbu = fields.Char(string='CBU', related='bank_account_id.cbu')
+    employee_account_number = fields.Char(string='Numero de Cuenta', related='bank_account_id.acc_number')
+
     # Extract the document number from cuil
     @api.onchange('identification_id')
     def _compute_passport_id(self):
