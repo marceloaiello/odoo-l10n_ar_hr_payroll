@@ -1,0 +1,1600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- AFIP: Data -->
+    <data>
+        <!-- AFIP: Situacion de Revista -->
+        <record id="tablas_afip.hr_afip_situacion_revista_0" model="hr.afip.situacion_revista">
+            <field name="afip_id">0</field>
+            <field name="name">Baja por fallecimiento</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_1" model="hr.afip.situacion_revista">
+            <field name="afip_id">1</field>
+            <field name="name">Activo</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_2" model="hr.afip.situacion_revista">
+            <field name="afip_id">2</field>
+            <field name="name">Baja por otras causales</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_3" model="hr.afip.situacion_revista">
+            <field name="afip_id">3</field>
+            <field name="name">Activo Decreto  N° 796/97</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_4" model="hr.afip.situacion_revista">
+            <field name="afip_id">4</field>
+            <field name="name">Bajas otras causales Decreto N° 796/97</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_5" model="hr.afip.situacion_revista">
+            <field name="afip_id">5</field>
+            <field name="name">Licencia por maternidad</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_6" model="hr.afip.situacion_revista">
+            <field name="afip_id">6</field>
+            <field name="name">Suspensiones otras causales</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_7" model="hr.afip.situacion_revista">
+            <field name="afip_id">7</field>
+            <field name="name">Baja por despido</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_8" model="hr.afip.situacion_revista">
+            <field name="afip_id">8</field>
+            <field name="name">Baja por despido Decreto N° 796/97 </field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_9" model="hr.afip.situacion_revista">
+            <field name="afip_id">9</field>
+            <field name="name">Suspendido. Art. 223 bis de la Ley N° 20.744.</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_10" model="hr.afip.situacion_revista">
+            <field name="afip_id">10</field>
+            <field name="name">Licencia por excedencia</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_11" model="hr.afip.situacion_revista">
+            <field name="afip_id">11</field>
+            <field name="name">Licencia por maternidad Down</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_12" model="hr.afip.situacion_revista">
+            <field name="afip_id">12</field>
+            <field name="name">Licencia por vacaciones</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_13" model="hr.afip.situacion_revista">
+            <field name="afip_id">13</field>
+            <field name="name">Licencia sin goce de haberes</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_14" model="hr.afip.situacion_revista">
+            <field name="afip_id">14</field>
+            <field name="name">Reserva de puesto</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_15" model="hr.afip.situacion_revista">
+            <field name="afip_id">15</field>
+            <field name="name">E.S.E. Cese transitorio de servicios (Art. 6°, incisos 6 y 7 del Decreto N° 342/92)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_16" model="hr.afip.situacion_revista">
+            <field name="afip_id">16</field>
+            <field name="name">Personal Siniestrado de terceros uso por la ART</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_17" model="hr.afip.situacion_revista">
+            <field name="afip_id">17</field>
+            <field name="name">Reingreso por disposición judicial</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_18" model="hr.afip.situacion_revista">
+            <field name="afip_id">18</field>
+            <field name="name">ILT (Incapacidad Laboral Transitoria) primeros DIEZ (10) días</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_19" model="hr.afip.situacion_revista">
+            <field name="afip_id">19</field>
+            <field name="name">ILT (Incapacidad Laboral Transitoria) días ONCE (11) y siguientes</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_20" model="hr.afip.situacion_revista">
+            <field name="afip_id">20</field>
+            <field name="name">Trabajador siniestrado en nómina de A.R.T.</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_21" model="hr.afip.situacion_revista">
+            <field name="afip_id">21</field>
+            <field name="name">Trabajador de temporada Reserva de puesto</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_31" model="hr.afip.situacion_revista">
+            <field name="afip_id">31</field>
+            <field name="name">Activo- Funciones en el exterior</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_32" model="hr.afip.situacion_revista">
+            <field name="afip_id">32</field>
+            <field name="name">Licencia por paternidad </field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_33" model="hr.afip.situacion_revista">
+            <field name="afip_id">33</field>
+            <field name="name">Licencia por fuerza mayor (Art. 221 LCT)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_42" model="hr.afip.situacion_revista">
+            <field name="afip_id">42</field>
+            <field name="name">Empleado Eventual en Empresa Usuaria (para uso de la E.S.E.)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_43" model="hr.afip.situacion_revista">
+            <field name="afip_id">43</field>
+            <field name="name">Empleado eventual en EU (para uso de la ESE) mes incompleto </field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_44" model="hr.afip.situacion_revista">
+            <field name="afip_id">44</field>
+            <field name="name">Conservacion del empleo p/accidente o enf. Inculpable art. 211 LCT</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_45" model="hr.afip.situacion_revista">
+            <field name="afip_id">45</field>
+            <field name="name">Suspensiones p/causas disciplinarias</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_48" model="hr.afip.situacion_revista">
+            <field name="afip_id">48</field>
+            <field name="name">Suspendido. Res. 397/2020 MTEySS c/Aportes OS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_49" model="hr.afip.situacion_revista">
+            <field name="afip_id">49</field>
+            <field name="name">Susp. período parcial L 20744 art.223bis / Res. 397 MTEySS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_situacion_revista_50" model="hr.afip.situacion_revista">
+            <field name="afip_id">50</field>
+            <field name="name">Dto 792/20 - Mayores 60 años, embarazadas, grupo de riesgo</field>
+        </record>
+        <!-- AFIP: Situacion de Revista -->
+
+        <!-- AFIP: Condicion -->
+        <record id="tablas_afip.hr_afip_condicion_0" model="hr.afip.condicion">
+            <field name="afip_id">0</field>
+            <field name="name">Jubilado Decreto N° 894/01 y/o Dec 2288/02</field>
+        </record>
+        <record id="tablas_afip.hr_afip_condicion_1" model="hr.afip.condicion">
+            <field name="afip_id">1</field>
+            <field name="name">SERVICIOS COMUNES Mayor de 18 años</field>
+        </record>
+        <record id="tablas_afip.hr_afip_condicion_2" model="hr.afip.condicion">
+            <field name="afip_id">2</field>
+            <field name="name">Jubilado</field>
+        </record>
+        <record id="tablas_afip.hr_afip_condicion_3" model="hr.afip.condicion">
+            <field name="afip_id">3</field>
+            <field name="name">Menor</field>
+        </record>
+        <record id="tablas_afip.hr_afip_condicion_5" model="hr.afip.condicion">
+            <field name="afip_id">5</field>
+            <field name="name">SERVICIOS DIFERENCIADOS Mayor de 18 años</field>
+        </record>
+        <record id="tablas_afip.hr_afip_condicion_6" model="hr.afip.condicion">
+            <field name="afip_id">6</field>
+            <field name="name">Pre- jubilables Sin relacion de dependencia -Sin servicios reales</field>
+        </record>
+        <record id="tablas_afip.hr_afip_condicion_9" model="hr.afip.condicion">
+            <field name="afip_id">9</field>
+            <field name="name">Jubilado Decreto N° 206/00 y/o Decreto Nº 894/01.</field>
+        </record>
+        <record id="tablas_afip.hr_afip_condicion_10" model="hr.afip.condicion">
+            <field name="afip_id">10</field>
+            <field name="name">Pensión (NO SIPA)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_condicion_11" model="hr.afip.condicion">
+            <field name="afip_id">11</field>
+            <field name="name">Pensión no Contributiva (NO SIPA)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_condicion_12" model="hr.afip.condicion">
+            <field name="afip_id">12</field>
+            <field name="name">Art. 8º Ley Nº 27426</field>
+        </record>
+        <record id="tablas_afip.hr_afip_condicion_13" model="hr.afip.condicion">
+            <field name="afip_id">13</field>
+            <field name="name">Servicios Diferenciados no alcanzados por el Dto. 633/2018</field>
+        </record>
+        <!-- AFIP: Condicion -->
+
+        <!-- AFIP: Actividad -->
+        <record id="tablas_afip.hr_afip_actividad_118" model="hr.afip.actividad">
+            <field name="afip_id">118</field>
+            <field name="name">Acuerdo preventivo de crisis</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_125" model="hr.afip.actividad">
+            <field name="afip_id">125</field>
+            <field name="name">Actividades no clasificadas-Detracción Ampliada - Dcto. 688/2019 - Dcto. 34/2021 - Dcto 242/2021</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_126" model="hr.afip.actividad">
+            <field name="afip_id">126</field>
+            <field name="name">Ley Nº 15223 con obra social-Detracción Ampliada - Dcto. 688/2019 - Dcto. 34/2021 - Dcto 242/2021</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_127" model="hr.afip.actividad">
+            <field name="afip_id">127</field>
+            <field name="name">Actividades no clasificadas - Sector Salud Dcto. 34/2021 - Dcto 242/2021</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_128" model="hr.afip.actividad">
+            <field name="afip_id">128</field>
+            <field name="name">Ley Nº 15223 con obra social - Sector Salud Dcto. 34/2021 - Dcto 242/2021</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_129" model="hr.afip.actividad">
+            <field name="afip_id">129</field>
+            <field name="name">Actividades no clasificadas-Detracción Ampliada - Dcto. 688/2019</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_130" model="hr.afip.actividad">
+            <field name="afip_id">130</field>
+            <field name="name">Ley Nº 15223 con obra social-Detracción Ampliada - Dcto. 688/2019.</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_132" model="hr.afip.actividad">
+            <field name="afip_id">132</field>
+            <field name="name">Economía del conocimiento - Ley 27.506. Art. 8</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_133" model="hr.afip.actividad">
+            <field name="afip_id">133</field>
+            <field name="name">Economía del conocimiento - Ley 27.506. Art. 9</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_0" model="hr.afip.actividad">
+            <field name="afip_id">0</field>
+            <field name="name">Zona de Desastre. Decreto 1386/01 excepto actividad agropecuaria</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_1" model="hr.afip.actividad">
+            <field name="afip_id">1</field>
+            <field name="name">Producción Primaria excepto actividad agropecuaria</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_2" model="hr.afip.actividad">
+            <field name="afip_id">2</field>
+            <field name="name">Producción de bienes sin comercialización</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_3" model="hr.afip.actividad">
+            <field name="afip_id">3</field>
+            <field name="name">Construcción de inmuebles</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_4" model="h.afip.actividad">
+            <field name="afip_id">4</field>
+            <field name="name">Turismo</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_5" model="h.afip.actividad">
+            <field name="afip_id">5</field>
+            <field name="name">Investigación Científica y Tecnológica</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_6" model="h.afip.actividad">
+            <field name="afip_id">6</field>
+            <field name="name">Administración Publica. CON OBRA SOCIAL 23660</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_7" model="h.afip.actividad">
+            <field name="afip_id">7</field>
+            <field name="name">Enseñanza Privada L.13047 no comprendidos en el D 137/05</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_8" model="h.afip.actividad">
+            <field name="afip_id">8</field>
+            <field name="name">Servicio Doméstico</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_9" model="h.afip.actividad">
+            <field name="afip_id">9</field>
+            <field name="name">Servicios energéticos Res.MTESS 268 y 824/09</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_10" model="hr.afip.actividad">
+            <field name="afip_id">10</field>
+            <field name="name">UNIVERSIDADES PRIVADAS. Personal no Docente D.1123/99</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_11" model="hr.afip.actividad">
+            <field name="afip_id">11</field>
+            <field name="name">Personal Permanente Discont. Empresas de Servicios Eventuales</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_12" model="hr.afip.actividad">
+            <field name="afip_id">12</field>
+            <field name="name">PIT -Programas Intensivos de Trabajo</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_13" model="hr.afip.actividad">
+            <field name="afip_id">13</field>
+            <field name="name">Personal embarcado.</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_14" model="hr.afip.actividad">
+            <field name="afip_id">14</field>
+            <field name="name">Personal embarcado Dec 1255 S/res SSS 18/99</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_15" model="hr.afip.actividad">
+            <field name="afip_id">15</field>
+            <field name="name">L.R.T.-Directores SA, municipios, org, cent y descent. Emp mixt provin y otros-</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_16" model="hr.afip.actividad">
+            <field name="afip_id">16</field>
+            <field name="name">No obligados con el SIJP (colegios, reciprocidad previsional y otros)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_17" model="hr.afip.actividad">
+            <field name="afip_id">17</field>
+            <field name="name">Obligados al SIJP -sin Obra Social Nacional (Adm Púb y otros)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_18" model="hr.afip.actividad">
+            <field name="afip_id">18</field>
+            <field name="name">Provincia incorporada al SIJP sin obra social nacional con ART</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_19" model="hr.afip.actividad">
+            <field name="afip_id">19</field>
+            <field name="name">Provincia incorporada al SIJP sin obra social nacional sin ART</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_20" model="hr.afip.actividad">
+            <field name="afip_id">20</field>
+            <field name="name">Ley N° 24.331 Zona Franca</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_21" model="hr.afip.actividad">
+            <field name="afip_id">21</field>
+            <field name="name">Dec N° 1024/93 Empr del Estado, Org. y Entes Públicos con OS y FNE</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_22" model="hr.afip.actividad">
+            <field name="afip_id">22</field>
+            <field name="name">Dec N° 1024/93 Empr del Estado, Org. y Entes Públicos sin OS y con FNE</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_27" model="hr.afip.actividad">
+            <field name="afip_id">27</field>
+            <field name="name">Servicio exterior Ley N° 22731</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_29" model="hr.afip.actividad">
+            <field name="afip_id">29</field>
+            <field name="name">Personal embarcado Dec 1255 S/res SSS 18/99 con Obra Social</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_30" model="hr.afip.actividad">
+            <field name="afip_id">30</field>
+            <field name="name">AFA Decreto Nº 1212/03. Aportante autonomo</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_31" model="hr.afip.actividad">
+            <field name="afip_id">31</field>
+            <field name="name">Trabajador rural de la Armada Argentina Ley 26727</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_32" model="hr.afip.actividad">
+            <field name="afip_id">32</field>
+            <field name="name">CSJN Corte Supr de Justicia, Magistrados provinciales, Revisores de Cta con ART</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_33" model="hr.afip.actividad">
+            <field name="afip_id">33</field>
+            <field name="name">Representante gremial en uso de licencia</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_34" model="hr.afip.actividad">
+            <field name="afip_id">34</field>
+            <field name="name">Docentes estatales nacionales. CON OBRA SOCIAL 23660- Dec 137/05</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_35" model="hr.afip.actividad">
+            <field name="afip_id">35</field>
+            <field name="name">Docentes estatales nacionales.SIN OBRA SOCIAL 23660 Dec 137/05</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_36" model="hr.afip.actividad">
+            <field name="afip_id">36</field>
+            <field name="name">Invest cientifico/tecnológico/docente universitario estatal nacional CON OBRA SOCIAL 23660 Dec 160/05-</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_37" model="hr.afip.actividad">
+            <field name="afip_id">37</field>
+            <field name="name">Invest cientifico/tecnológico/docente universitario estatal nacional SIN OBRA SOCIAL 23660 Dec 160/05-</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_38" model="hr.afip.actividad">
+            <field name="afip_id">38</field>
+            <field name="name">Docentes privados Res 71/99 SSS - Dec 137/05</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_39" model="hr.afip.actividad">
+            <field name="afip_id">39</field>
+            <field name="name">No docentes privados Res 71/99 SSS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_40" model="hr.afip.actividad">
+            <field name="afip_id">40</field>
+            <field name="name">Industria del software Ley N° 25922</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_41" model="hr.afip.actividad">
+            <field name="afip_id">41</field>
+            <field name="name">Trabajador de la Construcción Ley 25345 art. 36</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_42" model="hr.afip.actividad">
+            <field name="afip_id">42</field>
+            <field name="name">Asignaciones Familiares y FNE con Obra Social Nacional (Ley 15223)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_43" model="hr.afip.actividad">
+            <field name="afip_id">43</field>
+            <field name="name">Asignaciones Familiares y FNE sin Obra Social Nacional (Ley 15223)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_44" model="hr.afip.actividad">
+            <field name="afip_id">44</field>
+            <field name="name">Ley N° 24061 Dto.249/92</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_45" model="hr.afip.actividad">
+            <field name="afip_id">45</field>
+            <field name="name">Provincia incorporada al SIJP con obra social nacional con ART</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_46" model="hr.afip.actividad">
+            <field name="afip_id">46</field>
+            <field name="name">Provincia incorporada al SIJP CON obra social nacional SIN ART</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_47" model="hr.afip.actividad">
+            <field name="afip_id">47</field>
+            <field name="name">Ley Nº 15223 con obra social</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_48" model="hr.afip.actividad">
+            <field name="afip_id">48</field>
+            <field name="name">Regimen nacional sin obra social nacional</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_49" model="hr.afip.actividad">
+            <field name="afip_id">49</field>
+            <field name="name">Actividades no clasificadas</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_50" model="hr.afip.actividad">
+            <field name="afip_id">50</field>
+            <field name="name">POLICIA DE LA RIOJA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_51" model="hr.afip.actividad">
+            <field name="afip_id">51</field>
+            <field name="name">POLICIA DE JUJUY</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_52" model="hr.afip.actividad">
+            <field name="afip_id">52</field>
+            <field name="name">POLICIA DE TUCUMAN</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_53" model="hr.afip.actividad">
+            <field name="afip_id">53</field>
+            <field name="name">POLICIA DE CATAMARCA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_54" model="hr.afip.actividad">
+            <field name="afip_id">54</field>
+            <field name="name">POLICIA DE RIO NEGRO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_55" model="hr.afip.actividad">
+            <field name="afip_id">55</field>
+            <field name="name">POLICIA DE MENDOZA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_56" model="hr.afip.actividad">
+            <field name="afip_id">56</field>
+            <field name="name">POLICIA DE SANTIAGO DEL ESTERO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_57" model="hr.afip.actividad">
+            <field name="afip_id">57</field>
+            <field name="name">POLICIA DE SALTA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_58" model="hr.afip.actividad">
+            <field name="afip_id">58</field>
+            <field name="name">POLICIA DE SAN JUAN</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_59" model="hr.afip.actividad">
+            <field name="afip_id">59</field>
+            <field name="name">POLICIA DE SAN LUIS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_60" model="hr.afip.actividad">
+            <field name="afip_id">60</field>
+            <field name="name">SERVICIO PENITENCIARIO DE SAN LUIS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_61" model="hr.afip.actividad">
+            <field name="afip_id">61</field>
+            <field name="name">POLICIA METROPOLITANA DEL GOBIERNO DE LA CIUDAD DE BS AS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_62" model="hr.afip.actividad">
+            <field name="afip_id">62</field>
+            <field name="name">Personal sin estado policial POLICIA METROPOLITANA DEL GOB.CIUDAD DE BS AS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_63" model="hr.afip.actividad">
+            <field name="afip_id">63</field>
+            <field name="name">SERVICIO PENITENCIARIO DE LA RIOJA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_64" model="hr.afip.actividad">
+            <field name="afip_id">64</field>
+            <field name="name">SERVICIO PENITENCIARIO DE JUJUY</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_65" model="hr.afip.actividad">
+            <field name="afip_id">65</field>
+            <field name="name">SERVICIO PENITENCIARIO DE TUCUMAN</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_66" model="hr.afip.actividad">
+            <field name="afip_id">66</field>
+            <field name="name">SERVICIO PENITENCIARIO DE CATAMARCA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_67" model="hr.afip.actividad">
+            <field name="afip_id">67</field>
+            <field name="name">SERVICIO PENITENCIARIO DE RIO NEGRO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_68" model="hr.afip.actividad">
+            <field name="afip_id">68</field>
+            <field name="name">SERVICIO PENITENCIARIO DE MENDOZA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_69" model="hr.afip.actividad">
+            <field name="afip_id">69</field>
+            <field name="name">Legisladores nacionales (diputados y senadores)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_70" model="hr.afip.actividad">
+            <field name="afip_id">70</field>
+            <field name="name">SERVICIO PENITENCIARIO DE SANTIAGO DEL ESTERO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_71" model="hr.afip.actividad">
+            <field name="afip_id">71</field>
+            <field name="name">SERVICIO PENITENCIARIO DE SALTA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_72" model="hr.afip.actividad">
+            <field name="afip_id">72</field>
+            <field name="name">SERVICIO PENITENCIARIO DE SAN JUAN</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_73" model="hr.afip.actividad">
+            <field name="afip_id">73</field>
+            <field name="name">Internas Unidad 31 c/Asignaciones Familiares</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_75" model="hr.afip.actividad">
+            <field name="afip_id">75</field>
+            <field name="name">Docente de Prov incorporada/SIJP S/obra social nacional C/ART Dec 137/05</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_76" model="hr.afip.actividad">
+            <field name="afip_id">76</field>
+            <field name="name">Docente de Prov incorporada/SIJP S/obra social nacional S/ART Dec 137/05</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_77" model="hr.afip.actividad">
+            <field name="afip_id">77</field>
+            <field name="name">Docente de Prov incorporada/SIJP c/obra social nacional c/ART Dec 137/05</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_78" model="hr.afip.actividad">
+            <field name="afip_id">78</field>
+            <field name="name">Investig cientif/tecnológ/docente univ Prov incorp/SIPA S/O.Social Nac c/ART -Dec 160/05</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_79" model="hr.afip.actividad">
+            <field name="afip_id">79</field>
+            <field name="name">Investigador cientif/tecnológ/Prov incorporada al SIJP c/O Social NAC c/ART -Dec 160/05</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_81" model="hr.afip.actividad">
+            <field name="afip_id">81</field>
+            <field name="name">Funcionarios del Poder Judicial de la Nación Ley N° 24018</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_82" model="hr.afip.actividad">
+            <field name="afip_id">82</field>
+            <field name="name">Funcionarios del Poder Ejecutivo y otros Ley N° 24018</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_83" model="hr.afip.actividad">
+            <field name="afip_id">83</field>
+            <field name="name">Presidente de la Nacion y Vicepresidente de la Nación</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_84" model="hr.afip.actividad">
+            <field name="afip_id">84</field>
+            <field name="name">Docentes privados Res 71/99 SSS - Dec 137/05 sin Obra Social</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_85" model="hr.afip.actividad">
+            <field name="afip_id">85</field>
+            <field name="name">Magistrados provinciales, Revisores de Cta -docentes con ART</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_86" model="hr.afip.actividad">
+            <field name="afip_id">86</field>
+            <field name="name">Decreto 1474/2007 actividad minera</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_87" model="hr.afip.actividad">
+            <field name="afip_id">87</field>
+            <field name="name">Ley 26508 docentes universitarios con Obra Social Nacional</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_88" model="hr.afip.actividad">
+            <field name="afip_id">88</field>
+            <field name="name">Ley 26508 docentes universitarios Sin Obra Social Nacional</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_91" model="hr.afip.actividad">
+            <field name="afip_id">91</field>
+            <field name="name">Regimen previsional propio. Obra Social L.23660 Y 24714</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_92" model="hr.afip.actividad">
+            <field name="afip_id">92</field>
+            <field name="name">Res 71/99 SSS y otros</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_93" model="hr.afip.actividad">
+            <field name="afip_id">93</field>
+            <field name="name">UNIVERSIDADES PRIVADAS. Personal Docente D.1123/99</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_94" model="hr.afip.actividad">
+            <field name="afip_id">94</field>
+            <field name="name">Decreto 953/99</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_95" model="hr.afip.actividad">
+            <field name="afip_id">95</field>
+            <field name="name">Ley Nº 15223 sin obra social</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_97" model="hr.afip.actividad">
+            <field name="afip_id">97</field>
+            <field name="name">Trabajador Agrario. Ley 26727</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_98" model="hr.afip.actividad">
+            <field name="afip_id">98</field>
+            <field name="name">Zona de Desastre Decreto N° 1386/01. Actividad Agropecuaria Ley N°26727</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_99" model="hr.afip.actividad">
+            <field name="afip_id">99</field>
+            <field name="name">Trabajador Agrario Ley 25191</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_100" model="hr.afip.actividad">
+            <field name="afip_id">100</field>
+            <field name="name">CSJN Corte Supr de Justicia, Magistrados provinciales, Revisores de Cta sin ART</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_101" model="hr.afip.actividad">
+            <field name="afip_id">101</field>
+            <field name="name">Magistrados provinciales, Revisores de Cta -docentes sin ART</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_102" model="hr.afip.actividad">
+            <field name="afip_id">102</field>
+            <field name="name">Zona de Desastre Decreto N° 1386/01. Actividad Agropecuaria Ley N° 25191</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_103" model="hr.afip.actividad">
+            <field name="afip_id">103</field>
+            <field name="name">Trabajador Agrario Ley 23808 y otros regímenes</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_104" model="hr.afip.actividad">
+            <field name="afip_id">104</field>
+            <field name="name">Zona de Desastre Decreto N° 1386/01. Actividad Agropecuaria Ley N° 23808 y otros regímenes</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_105" model="hr.afip.actividad">
+            <field name="afip_id">105</field>
+            <field name="name">Dto. 637/13. Personal civil de las Fuerzas Armadas y de Seguridad excepto personal civil docente perteneciente a otra OS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_106" model="hr.afip.actividad">
+            <field name="afip_id">106</field>
+            <field name="name">Administración Pública CON OBRA SOCIAL 23660 (con PAMI) Tipo de empleador especial</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_107" model="hr.afip.actividad">
+            <field name="afip_id">107</field>
+            <field name="name">Serv. energéticos Res. MTESS 268 y 824/09 Empr del Estado, Org. y Entes Públicos (Dto. 1024/93) s/OS, c/FNE s/ As. Fs.</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_108" model="hr.afip.actividad">
+            <field name="afip_id">108</field>
+            <field name="name">Serv. energéticos Res. MTESS 268 y 824/09 Emp. del estado y Org. y Entes públicos ( Dto. 1024/93) con OS y FNE sin As. Fs.</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_109" model="hr.afip.actividad">
+            <field name="afip_id">109</field>
+            <field name="name">Servicios energéticos Res.MTESS 268 y 824/09 - Provincias (sin PAMI y sin OS)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_110" model="hr.afip.actividad">
+            <field name="afip_id">110</field>
+            <field name="name">Servicios energéticos Res.MTESS 268 y 824/09 - Provincias con OS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_111" model="hr.afip.actividad">
+            <field name="afip_id">111</field>
+            <field name="name">Servicios energéticos Res.MTESS 268 y 824/09 - Provincias (sin PAMI y sin OS) sin ART</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_112" model="hr.afip.actividad">
+            <field name="afip_id">112</field>
+            <field name="name">Servicios energéticos Res.MTESS 268 y 824/09 - Provincias con OS sin ART</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_113" model="hr.afip.actividad">
+            <field name="afip_id">113</field>
+            <field name="name">Policía Federal del Gobierno de la Ciudad de Buenos Aires</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_117" model="hr.afip.actividad">
+            <field name="afip_id">117</field>
+            <field name="name">Obligados al SIJP -sin Obra Social Nacional (Adm Púb y otros) y SIN PAMI - Tipo de empleador especial</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_119" model="hr.afip.actividad">
+            <field name="afip_id">119</field>
+            <field name="name">Detracción especial - Ley Nº 27430 - Textiles</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_120" model="hr.afip.actividad">
+            <field name="afip_id">120</field>
+            <field name="name">Detracción Ampliada - Dcto. 128/2019</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_122" model="hr.afip.actividad">
+            <field name="afip_id">122</field>
+            <field name="name">Trabajador Agrario. Ley 26727 - Detracción Ampliada Dcto. 128/2019</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_123" model="hr.afip.actividad">
+            <field name="afip_id">123</field>
+            <field name="name">Trabajador Agrario Ley 25191 - Detracción Ampliada Dcto. 128/2019</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_124" model="hr.afip.actividad">
+            <field name="afip_id">124</field>
+            <field name="name">Trabajador Agrario Ley 23808 y otros regímenes - Detracción Ampliada Dcto. 128/2019</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_125" model="hr.afip.actividad">
+            <field name="afip_id">125</field>
+            <field name="name">Actividades no clasificadas-Detracción Ampliada - Dcto. 688/2019</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_126" model="hr.afip.actividad">
+            <field name="afip_id">126</field>
+            <field name="name">Ley Nº 15223 con obra social-Detracción Ampliada - Dcto. 688/2019.</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_131" model="hr.afip.actividad">
+            <field name="afip_id">131</field>
+            <field name="name">Regimen previsional propio. Obra Social L.23660 Y FNE</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_901" model="hr.afip.actividad">
+            <field name="afip_id">901</field>
+            <field name="name">Poder judicial (sin ART)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_902" model="hr.afip.actividad">
+            <field name="afip_id">902</field>
+            <field name="name">Poder judicial (con ART)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_903" model="hr.afip.actividad">
+            <field name="afip_id">903</field>
+            <field name="name">Poder Legislativo (sin ART)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_904" model="hr.afip.actividad">
+            <field name="afip_id">904</field>
+            <field name="name">Poder Legislativo (con ART)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_905" model="hr.afip.actividad">
+            <field name="afip_id">905</field>
+            <field name="name">Empleo público en gral (sin ART)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_906" model="hr.afip.actividad">
+            <field name="afip_id">906</field>
+            <field name="name">Empleo público en gral (con ART)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_907" model="hr.afip.actividad">
+            <field name="afip_id">907</field>
+            <field name="name">Docente (sin ART)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_908" model="hr.afip.actividad">
+            <field name="afip_id">908</field>
+            <field name="name">Docente (con ART)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_909" model="hr.afip.actividad">
+            <field name="afip_id">909</field>
+            <field name="name">Fuerza de seguridad (sin ART)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_910" model="hr.afip.actividad">
+            <field name="afip_id">910</field>
+            <field name="name">Fuerza de seguridad (con ART)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_911" model="hr.afip.actividad">
+            <field name="afip_id">911</field>
+            <field name="name">No clasificados (sin ART)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_912" model="hr.afip.actividad">
+            <field name="afip_id">912</field>
+            <field name="name">No clasificados (con ART)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_913" model="hr.afip.actividad">
+            <field name="afip_id">913</field>
+            <field name="name">Prestadores de servicios (monotributo y/o autónomos)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_920" model="hr.afip.actividad">
+            <field name="afip_id">920</field>
+            <field name="name">No obligados al SIPA - informativo (sin ART)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_actividad_921" model="hr.afip.actividad">
+            <field name="afip_id">921</field>
+            <field name="name">No obligados al SIPA - informativo (con ART)</field>
+        </record>
+        <!-- AFIP: Actividad -->
+
+        <!-- AFIP: Modalidad de Contratacion -->
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_301" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">301</field>
+            <field name="name">Art. 19 Ley 26940. Tiempo indeterminado</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_302" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">302</field>
+            <field name="name">Art. 19 Ley 26940. Trabajador discapacitado art. 34 L 24147. Tiempo indeterminado</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_303" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">303</field>
+            <field name="name">Art. 19 Ley 26940. Trabajador discapacitado art. 87 L 24013. Tiempo indeterminado</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_304" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">304</field>
+            <field name="name">Art. 19 Ley 26940. Tiempo parcial. Art. 92 ter LCT</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_305" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">305</field>
+            <field name="name">Art. 19 Ley 26940. Trabajador discapacitado art. 34 L 24147. Tiempo parcial. Art. 92 ter LCT</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_306" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">306</field>
+            <field name="name">Art. 19 Ley 26940. Trabajador discapacitado art. 87 L 24013. Tiempo parcial. Art. 92 ter LCT</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_401" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">401</field>
+            <field name="name">Puesto nuevo Art 2 inc. a Decreto 191/ 2021. Primeros 12 meses</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_404" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">404</field>
+            <field name="name">Puesto nuevo Art 2 inc. d Decreto 191/ 2021. Primeros 12 meses</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_407" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">407</field>
+            <field name="name">Tiempo parcial. Puesto nuevo Art 2 inc. a Decreto 191/ 2021. Primeros 12 meses</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_410" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">410</field>
+            <field name="name">Tiempo parcial. Puesto nuevo Art 2 inc. d Decreto 191/ 2021. Primeros 12 meses</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_413" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">413</field>
+            <field name="name">Discapacitado Ley 24.013 y Puesto nuevo Art 2 inc. a Decreto 191/ 2021</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_414" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">414</field>
+            <field name="name">Discapacitado Ley 24.013 y Puesto nuevo Art 2 inc. d Decreto 191/ 2021</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_415" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">415</field>
+            <field name="name">Discapacitado Ley 24.013 y Tiempo parcial Puesto nuevo Art 2 inc. a Decreto 191/ 2021</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_416" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">416</field>
+            <field name="name">Discapacitado Ley 24.013 y Tiempo parcial Puesto nuevo Art 2 inc. d Decreto 191/ 2021</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_402" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">402</field>
+            <field name="name">Puesto nuevo Art 2 inc. b Decreto 191/ 2021. Segundos 12 meses</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_405" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">405</field>
+            <field name="name">Puesto nuevo Art 2 inc. e Decreto 191/ 2021 segundos 12 meses</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_408" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">408</field>
+            <field name="name">Tiempo parcial. Puesto nuevo Art 2 inc. b Decreto 191/ 2021. Segundos 12 meses</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_411" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">411</field>
+            <field name="name">Tiempo parcial. Puesto nuevo Art 2 inc. e Decreto 191/ 2021. Segundos 12 meses</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_403" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">403</field>
+            <field name="name">Puesto nuevo Art 2 inc. c Decreto 191/ 2021. Terceros 12 meses</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_406" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">406</field>
+            <field name="name">Puesto nuevo Art 2 inc. f Decreto 191/ 2021 terceros 12 meses</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_409" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">409</field>
+            <field name="name">Tiempo parcial. Puesto nuevo Art 2 inc. c Decreto 191/ 2021. Terceros 12 meses</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_412" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">412</field>
+            <field name="name">Tiempo parcial. Puesto nuevo Art 2 inc. f Decreto 191/ 2021. Terceros 12 meses</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_2" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">2</field>
+            <field name="name">Becarios- Residencias médicas Ley 22127</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_3" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">3</field>
+            <field name="name">De aprendizaje l.25013</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_8" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">8</field>
+            <field name="name">A Tiempo completo indeterminado / Trabajo permanente</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_10" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">10</field>
+            <field name="name">Práctica profesionalizante-Dcto. 1374/11-Pasantías -sin obra social</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_11" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">11</field>
+            <field name="name">Trabajo de temporada.</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_12" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">12</field>
+            <field name="name">Trabajo eventual.</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_14" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">14</field>
+            <field name="name">Nuevo Período de Prueba .</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_15" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">15</field>
+            <field name="name">Puesto Nuevo Varones y Mujeres de 25 a 44 años Ley 25250</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_16" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">16</field>
+            <field name="name">Nuevo Periodo de Prueba Trabajador Discapacitado Art.34 Ley 24147</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_17" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">17</field>
+            <field name="name">Puesto Nuevo menor de 25 años, Varones y Mujeres de 45 o más años y Mujer Jefe de flia. S/límite/edad Ley 25250</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_18" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">18</field>
+            <field name="name">Trabajador Discapacitado Art. 34. Ley 24147</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_19" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">19</field>
+            <field name="name">Puesto Nuevo. Varones y Mujeres 25 a 44 años Art. 34. Ley 24147 Ley 25250</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_20" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">20</field>
+            <field name="name">Pto. Nuevo Menor 25 años, Varones y Mujeres 45 ó más y Mujer Jefe de flia. S/límite de edad. Art 34 L. 24147Ley 25250</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_21" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">21</field>
+            <field name="name">A tiempo parcial determinado (contrato a plazo fijo)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_22" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">22</field>
+            <field name="name">A Tiempo completo determinado (contrato a plazo fijo)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_23" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">23</field>
+            <field name="name">Personal no permanente L 22248</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_24" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">24</field>
+            <field name="name">Personal de la Construcción L 22250</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_25" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">25</field>
+            <field name="name">Empleo público provincial</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_26" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">26</field>
+            <field name="name">Beneficiario de programa de empleo, capacitación y de recuperación productiva</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_27" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">27</field>
+            <field name="name">Pasantías Ley 26427 -con obra social-</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_28" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">28</field>
+            <field name="name">Programas Jefes y Jefas de Hogar</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_29" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">29</field>
+            <field name="name">Decreto Nº 1212/03 Aportante Autónomo</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_30" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">30</field>
+            <field name="name">Nuevo Periodo de Prueba Trabajador Discapacitado Art. 87. L 24013</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_31" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">31</field>
+            <field name="name">Trabajador Discapacitado Art. 87 L 24013</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_44" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">44</field>
+            <field name="name">Changa Solidaria. CCT 62/75</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_45" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">45</field>
+            <field name="name">Personal no permanente hoteles CCT 362/03 art.68 inc b</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_46" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">46</field>
+            <field name="name">Planta transitoria Adm Pública Nacional, Provincial y/o Municipal</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_47" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">47</field>
+            <field name="name">Representación gremial</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_48" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">48</field>
+            <field name="name">Art 4°L 24241.Traslado temporario desde el exterior ó Conv bilaterales de Seg Social</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_49" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">49</field>
+            <field name="name">Directores - empleado SA con Obra Social y LRT</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_51" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">51</field>
+            <field name="name">Pasantías Ley 26427 -con obra social-beneficiario pension de discapacidad</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_59" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">59</field>
+            <field name="name">Taller Protegido de Producción Ley 26816, art. 2º punto 2</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_60" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">60</field>
+            <field name="name">Taller Protegido Especial para el Empleo (TPEE) Ley 26816, art. 2º punto 1</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_61" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">61</field>
+            <field name="name">Actor - Intérprete en Empleador Contratante Ley 27.203- c/Obra Social</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_62" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">62</field>
+            <field name="name">Actor - Intérprete en Empleador Contratante Ley 27.203- s/Obra Social</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_95" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">95</field>
+            <field name="name">Planes Ministerio de Trabajo</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_96" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">96</field>
+            <field name="name">Plan Trabajo por San Luis Ley 5411/03</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_97" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">97</field>
+            <field name="name">Programa Trabajo para jovenes tucumanos</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_98" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">98</field>
+            <field name="name">BONUS 2da Oportunidad</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_99" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">99</field>
+            <field name="name">LRT (Directores SA, municipios, org, cent y descent. Emp mixt docentes privados o publicos de jurisdicciones incorporadas o no al SIJP)</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_102" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">102</field>
+            <field name="name">Personal permanente discontínuo con ART (para uso de la EU) Decreto Nº 762/14</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_103" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">103</field>
+            <field name="name">Retiro Voluntario - Decreto 263/2018 y otros</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_110" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">110</field>
+            <field name="name">Trabajo permanente prestación continua Ley 26727</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_111" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">111</field>
+            <field name="name">Trabajo temporario Ley 26727</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_112" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">112</field>
+            <field name="name">Trabajo permanente discontinuo ley 26727</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_113" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">113</field>
+            <field name="name">Trabajo por equipo o cuadrilla fafmilar Ley 26727</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_984" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">984</field>
+            <field name="name">CCG foresto industrial de Chaco</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_988" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">988</field>
+            <field name="name">CCG limón Tucumán, Salta y Jujuy</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_989" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">989</field>
+            <field name="name">CCG Tabaco Salta</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_990" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">990</field>
+            <field name="name">CCG Tabaco Jujuy</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_992" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">992</field>
+            <field name="name">CCG multiproducto del Chaco</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_993" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">993 (***)</field>
+            <field name="name">CCG frutihortícola de San Juan</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_994" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">994</field>
+            <field name="name">CCG yerba mate Misiones y Corrientes</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_997" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">997</field>
+            <field name="name">CCG forestal del Chaco</field>
+        </record>
+        <record id="tablas_afip.hr_afip_modalidad_contratacion_998" model="hr.afip.modalidad_contratacion">
+            <field name="afip_id">998</field>
+            <field name="name">CCG tabaco Virginia del Chaco</field>
+        </record>
+        <!-- AFIP: Modalidad de Contratacion -->
+        
+        <!-- AFIP: Codigo Siniestrado -->
+        <record id="tablas_afip.hr_afip_codigo_siniestrado_0" model="hr.afip.codigo_siniestrado">
+            <field name="afip_id">0</field>
+            <field name="name">No Incapacitado</field>
+        </record>
+        <record id="tablas_afip.hr_afip_codigo_siniestrado_1" model="hr.afip.codigo_siniestrado">
+            <field name="afip_id">1</field>
+            <field name="name">ILT Incapacidad Laboral Temporaria</field>
+        </record>
+        <record id="tablas_afip.hr_afip_codigo_siniestrado_2" model="hr.afip.codigo_siniestrado">
+            <field name="afip_id">2</field>
+            <field name="name">ILPPP Incapacidad Laboral Permanente Parcial Provisoria.</field>
+        </record>
+        <record id="tablas_afip.hr_afip_codigo_siniestrado_3" model="hr.afip.codigo_siniestrado">
+            <field name="afip_id">3</field>
+            <field name="name">ILPPD Incapacidad Laboral Permanente Parcial Definitiva.</field>
+        </record>
+        <record id="tablas_afip.hr_afip_codigo_siniestrado_4" model="hr.afip.codigo_siniestrado">
+            <field name="afip_id">4</field>
+            <field name="name">ILPTP Incapacidad Laboral Permanente Total Provisoria</field>
+        </record>
+        <record id="tablas_afip.hr_afip_codigo_siniestrado_4" model="hr.afip.codigo_siniestrado">
+            <field name="afip_id">4</field>
+            <field name="name">ILPTP Incapacidad Laboral Permanente Total Provisoria</field>
+        </record>
+        <record id="tablas_afip.hr_afip_codigo_siniestrado_5" model="hr.afip.codigo_siniestrado">
+            <field name="afip_id">5</field>
+            <field name="name">Capital de recomposición Art. 15, ap. 3, Ley 24557</field>
+        </record>
+        <record id="tablas_afip.hr_afip_codigo_siniestrado_6" model="hr.afip.codigo_siniestrado">
+            <field name="afip_id">6</field>
+            <field name="name">"Ajuste Definitivo ILPPD de pago mensual"</field>
+        </record>
+        <record id="tablas_afip.hr_afip_codigo_siniestrado_7" model="hr.afip.codigo_siniestrado">
+            <field name="afip_id">7</field>
+            <field name="name">RENTA PERIODICA ILPPD Inc Lab Perm Parc Def 50%</field>
+        </record>
+        <record id="tablas_afip.hr_afip_codigo_siniestrado_8" model="hr.afip.codigo_siniestrado">
+            <field name="afip_id">8</field>
+            <field name="name">SRT/SSN F.Garantía/F Reserva ILT Incapacidad Laboral Temporaria</field>
+        </record>
+        <record id="tablas_afip.hr_afip_codigo_siniestrado_9" model="hr.afip.codigo_siniestrado">
+            <field name="afip_id">9</field>
+            <field name="name">SRT/SSN F.Garantía/F Reserva ILPPP Inc Lab Perm Parc Prov</field>
+        </record>
+        <record id="tablas_afip.hr_afip_codigo_siniestrado_10" model="hr.afip.codigo_siniestrado">
+            <field name="afip_id">10</field>
+            <field name="name">SRT/SSN F.Garantía/F Reserva ILPTP Inc Lab Perm Total Prov</field>
+        </record>
+        <record id="tablas_afip.hr_afip_codigo_siniestrado_11" model="hr.afip.codigo_siniestrado">
+            <field name="afip_id">11</field>
+            <field name="name">SRT/SSN F.Garantía/F Reserva ILPPD Inc Laboral Perm Parc Definitiva</field>
+        </record>
+        <record id="tablas_afip.hr_afip_codigo_siniestrado_12" model="hr.afip.codigo_siniestrado">
+            <field name="afip_id">12</field>
+            <field name="name">ILPPD Beneficios devengados art. 11 p.4</field>
+        </record>
+        <record id="tablas_afip.hr_afip_codigo_siniestrado_13" model="hr.afip.codigo_siniestrado">
+            <field name="afip_id">13</field>
+            <field name="name">INFORME Incremento salarial de trabajador siniestrado a ART</field>
+        </record>
+        <!-- AFIP: Codigo Siniestrado -->
+
+        <!-- AFIP: Localidad -->
+        <record id="tablas_afip.hr_afip_localidad_1" model="hr.afip.localidad">
+            <field name="afip_id">1</field>
+            <field name="name">CAPITAL FEDERAL</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - ALMIRANTE BROWN</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - AVELLANEDA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - BERAZATEGUI</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - ESTEBAN ECHEVERRIA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - FLORENCIO VARELA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - GENERAL SAN MARTIN</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - GENERAL SARMIENTO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - LA MATANZA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - LANUS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - LOMAS DE ZAMORA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS.- MERLO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - MORENO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - MORON</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - OUILMES</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - SAN FERNANDO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - SAN ISIDRO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - TIGRE</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - TRES DE FEBRERO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_2" model="hr.afip.localidad">
+            <field name="afip_id">2</field>
+            <field name="name">GRAN BS. AS. - VICENTE LOPEZ</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_3" model="hr.afip.localidad">
+            <field name="afip_id">3</field>
+            <field name="name">3ER CINTUR. - LA PLATA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_3" model="hr.afip.localidad">
+            <field name="afip_id">3</field>
+            <field name="name">3ER. CINTUR. -BERISSO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_3" model="hr.afip.localidad">
+            <field name="afip_id">3</field>
+            <field name="name">3ER. CINTUR. - ENSENADA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_3" model="hr.afip.localidad">
+            <field name="afip_id">3</field>
+            <field name="name">3ER. CINTUR.. - PILAR</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_3" model="hr.afip.localidad">
+            <field name="afip_id">3</field>
+            <field name="name">3ER. CINTUR. - GENERAL RODRIGUEZ</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_3" model="hr.afip.localidad">
+            <field name="afip_id">3</field>
+            <field name="name">3ER. CINTUR. - ESCOBAR</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_3" model="hr.afip.localidad">
+            <field name="afip_id">3</field>
+            <field name="name">3ER. CINTUR. - MARCOS PAZ</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_3" model="hr.afip.localidad">
+            <field name="afip_id">3</field>
+            <field name="name">3ER. CINTUR. - SAN VICENTE</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_3" model="hr.afip.localidad">
+            <field name="afip_id">3</field>
+            <field name="name">3ER. CINTUR. - CAÑUELAS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_4" model="hr.afip.localidad">
+            <field name="afip_id">4</field>
+            <field name="name">CARMEN DE PATAGONES</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_5" model="hr.afip.localidad">
+            <field name="afip_id">5</field>
+            <field name="name">PATAGONES</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_6" model="hr.afip.localidad">
+            <field name="afip_id">6</field>
+            <field name="name">VILLARINO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_7" model="hr.afip.localidad">
+            <field name="afip_id">7</field>
+            <field name="name">RESTO BUENOS AIRES</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_8" model="hr.afip.localidad">
+            <field name="afip_id">8</field>
+            <field name="name">GRAN CATAMARCA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_9" model="hr.afip.localidad">
+            <field name="afip_id">9</field>
+            <field name="name">RESTO CATAMARCA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_10" model="hr.afip.localidad">
+            <field name="afip_id">10</field>
+            <field name="name">SOBREMONTE</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_11" model="hr.afip.localidad">
+            <field name="afip_id">11</field>
+            <field name="name">RIO SECO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_12" model="hr.afip.localidad">
+            <field name="afip_id">12</field>
+            <field name="name">TULUMBA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_13" model="hr.afip.localidad">
+            <field name="afip_id">13</field>
+            <field name="name">CRUZ DEL EJE</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_14" model="hr.afip.localidad">
+            <field name="afip_id">14</field>
+            <field name="name">MINAS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_15" model="hr.afip.localidad">
+            <field name="afip_id">15</field>
+            <field name="name">POCHO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_16" model="hr.afip.localidad">
+            <field name="afip_id">16</field>
+            <field name="name">SAN ALBERTO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_17" model="hr.afip.localidad">
+            <field name="afip_id">17</field>
+            <field name="name">SAN JAVIER</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_18" model="hr.afip.localidad">
+            <field name="afip_id">18</field>
+            <field name="name">GRANCORDOBA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_19" model="hr.afip.localidad">
+            <field name="afip_id">19</field>
+            <field name="name">RESTO CORDOBA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_20" model="hr.afip.localidad">
+            <field name="afip_id">20</field>
+            <field name="name">ESOUINA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_21" model="hr.afip.localidad">
+            <field name="afip_id">21</field>
+            <field name="name">SAUCE</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_22" model="hr.afip.localidad">
+            <field name="afip_id">22</field>
+            <field name="name">CURUZU-CUATIA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_23" model="hr.afip.localidad">
+            <field name="afip_id">23</field>
+            <field name="name">MONTE CASEROS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_24" model="hr.afip.localidad">
+            <field name="afip_id">24</field>
+            <field name="name">CIUDAD DE CORRIENTES</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_25" model="hr.afip.localidad">
+            <field name="afip_id">25</field>
+            <field name="name">RESTO CÓRRIENTES</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_26" model="hr.afip.localidad">
+            <field name="afip_id">26</field>
+            <field name="name">GRAN RESISTENCIA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_27" model="hr.afip.localidad">
+            <field name="afip_id">27</field>
+            <field name="name">RESTO CHACO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_28" model="hr.afip.localidad">
+            <field name="afip_id">28</field>
+            <field name="name">RAWSON/TRELEW</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_29" model="hr.afip.localidad">
+            <field name="afip_id">29</field>
+            <field name="name">RESTO CHUBUT</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_30" model="hr.afip.localidad">
+            <field name="afip_id">30</field>
+            <field name="name">FEDERACION</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_31" model="hr.afip.localidad">
+            <field name="afip_id">31</field>
+            <field name="name">FELICIANO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_32" model="hr.afip.localidad">
+            <field name="afip_id">32</field>
+            <field name="name">PARANA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_33" model="hr.afip.localidad">
+            <field name="afip_id">33</field>
+            <field name="name">RESTO ENTRE RIOS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_34" model="hr.afip.localidad">
+            <field name="afip_id">34</field>
+            <field name="name">CIUDAD DE FORMOSA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_35" model="hr.afip.localidad">
+            <field name="afip_id">35</field>
+            <field name="name">RESTO FORMOSA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_36" model="hr.afip.localidad">
+            <field name="afip_id">36</field>
+            <field name="name">CIUDAD DE JUJUY</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_37" model="hr.afip.localidad">
+            <field name="afip_id">37</field>
+            <field name="name">RESTO JUJUY</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_38" model="hr.afip.localidad">
+            <field name="afip_id">38</field>
+            <field name="name">CHICAL-CO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_39" model="hr.afip.localidad">
+            <field name="afip_id">39</field>
+            <field name="name">CHALILEO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_40" model="hr.afip.localidad">
+            <field name="afip_id">40</field>
+            <field name="name">PUELEN</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_41" model="hr.afip.localidad">
+            <field name="afip_id">41</field>
+            <field name="name">LIMAY-MAHUIDA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_42" model="hr.afip.localidad">
+            <field name="afip_id">42</field>
+            <field name="name">CURACO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_43" model="hr.afip.localidad">
+            <field name="afip_id">43</field>
+            <field name="name">LIHUEL-CALEL</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_44" model="hr.afip.localidad">
+            <field name="afip_id">44</field>
+            <field name="name">SANTA ROSA/TOAY</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_45" model="hr.afip.localidad">
+            <field name="afip_id">45</field>
+            <field name="name">RESTO LA PAMPA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_46" model="hr.afip.localidad">
+            <field name="afip_id">46</field>
+            <field name="name">CIUDAD DE LA RIOJA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_47" model="hr.afip.localidad">
+            <field name="afip_id">47</field>
+            <field name="name">RESTO LA RIOJA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_48" model="hr.afip.localidad">
+            <field name="afip_id">48</field>
+            <field name="name">GRAN MENDOZA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_49" model="hr.afip.localidad">
+            <field name="afip_id">49</field>
+            <field name="name">RESTO MENDOZA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_50" model="hr.afip.localidad">
+            <field name="afip_id">50</field>
+            <field name="name">POSADAS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_51" model="hr.afip.localidad">
+            <field name="afip_id">51</field>
+            <field name="name">RESTO MISIONES</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_52" model="hr.afip.localidad">
+            <field name="afip_id">52</field>
+            <field name="name">CDAD. DEL NEUOUEN/PLOTTIER</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_53" model="hr.afip.localidad">
+            <field name="afip_id">53</field>
+            <field name="name">CENTENARIO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_54" model="hr.afip.localidad">
+            <field name="afip_id">54</field>
+            <field name="name">CUTRAL-CO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_55" model="hr.afip.localidad">
+            <field name="afip_id">55</field>
+            <field name="name">PLAZA HUINCUL</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_56" model="hr.afip.localidad">
+            <field name="afip_id">56</field>
+            <field name="name">RESTO NEUOUEN</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_57" model="hr.afip.localidad">
+            <field name="afip_id">57</field>
+            <field name="name">SUR HASTA PARALELO 42</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_58" model="hr.afip.localidad">
+            <field name="afip_id">58</field>
+            <field name="name">VIEDMA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_59" model="hr.afip.localidad">
+            <field name="afip_id">59</field>
+            <field name="name">ALTO VALLE - CINCO SALTOS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_59" model="hr.afip.localidad">
+            <field name="afip_id">59</field>
+            <field name="name">ALTO VALLE - CONTRALMIRANTE CORDERO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_59" model="hr.afip.localidad">
+            <field name="afip_id">59</field>
+            <field name="name">ALTO VALLE - CIPOLLETTI</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_59" model="hr.afip.localidad">
+            <field name="afip_id">59</field>
+            <field name="name">ALTO VALLE - ALLEN</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_59" model="hr.afip.localidad">
+            <field name="afip_id">59</field>
+            <field name="name">ALTO VALLE - GENERAL ROCA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_59" model="hr.afip.localidad">
+            <field name="afip_id">59</field>
+            <field name="name">ALTO VALLE - CERVANTES</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_59" model="hr.afip.localidad">
+            <field name="afip_id">59</field>
+            <field name="name">ALTO VALLE - MAINQUE</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_59" model="hr.afip.localidad">
+            <field name="afip_id">59</field>
+            <field name="name">ALTO VALLE - INGENIERO L. A. HUERGO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_59" model="hr.afip.localidad">
+            <field name="afip_id">59</field>
+            <field name="name">ALTO VALLE - GENERAL ENRIOUE GODOY</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_59" model="hr.afip.localidad">
+            <field name="afip_id">59</field>
+            <field name="name">ALTO VALLE - VILLA REGINA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_59" model="hr.afip.localidad">
+            <field name="afip_id">59</field>
+            <field name="name">ALTO VALLE - CHICHINALES</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_59" model="hr.afip.localidad">
+            <field name="afip_id">59</field>
+            <field name="name">ALTO VALLE - FERNANDEZ ORO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_60" model="hr.afip.localidad">
+            <field name="afip_id">60</field>
+            <field name="name">RESTO RIO NEGRO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_61" model="hr.afip.localidad">
+            <field name="afip_id">61</field>
+            <field name="name">GRAN SALTA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_62" model="hr.afip.localidad">
+            <field name="afip_id">62</field>
+            <field name="name">RESTO SALTA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_63" model="hr.afip.localidad">
+            <field name="afip_id">63</field>
+            <field name="name">GRAN SAN JUAN</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_64" model="hr.afip.localidad">
+            <field name="afip_id">64</field>
+            <field name="name">RESTO SAN JUAN</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_65" model="hr.afip.localidad">
+            <field name="afip_id">65</field>
+            <field name="name">CIUDAD DE SAN LUIS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_66" model="hr.afip.localidad">
+            <field name="afip_id">66</field>
+            <field name="name">RESTO SAN LUIS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_67" model="hr.afip.localidad">
+            <field name="afip_id">67</field>
+            <field name="name">CALETA OLIVIA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_68" model="hr.afip.localidad">
+            <field name="afip_id">68</field>
+            <field name="name">RIO GALLEGOS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_69" model="hr.afip.localidad">
+            <field name="afip_id">69</field>
+            <field name="name">RESTO SANTA CRUZ</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_70" model="hr.afip.localidad">
+            <field name="afip_id">70</field>
+            <field name="name">GRAL. OBLIGADO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_71" model="hr.afip.localidad">
+            <field name="afip_id">71</field>
+            <field name="name">SAN JAVIER</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_72" model="hr.afip.localidad">
+            <field name="afip_id">72</field>
+            <field name="name">SANTA FE/SANTO TOME</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_73" model="hr.afip.localidad">
+            <field name="afip_id">73</field>
+            <field name="name">9 DE julio</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_74" model="hr.afip.localidad">
+            <field name="afip_id">74</field>
+            <field name="name">VERA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_75" model="hr.afip.localidad">
+            <field name="afip_id">75</field>
+            <field name="name">RESTO SANTA FE</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_76" model="hr.afip.localidad">
+            <field name="afip_id">76</field>
+            <field name="name">CDAD. SGO. DEL EST./LA BANDA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_77" model="hr.afip.localidad">
+            <field name="afip_id">77</field>
+            <field name="name">. OJO DE AGUA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_78" model="hr.afip.localidad">
+            <field name="afip_id">78</field>
+            <field name="name">. QUEBRACHOS</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_79" model="hr.afip.localidad">
+            <field name="afip_id">79</field>
+            <field name="name">. RIVADAVIA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_80" model="hr.afip.localidad">
+            <field name="afip_id">80</field>
+            <field name="name">. RESTO SGO. DEL EST.</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_81" model="hr.afip.localidad">
+            <field name="afip_id">81</field>
+            <field name="name">RIO GRANDE</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_82" model="hr.afip.localidad">
+            <field name="afip_id">82</field>
+            <field name="name">USHUAIA</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_83" model="hr.afip.localidad">
+            <field name="afip_id">83</field>
+            <field name="name">RESTO T. D. FUEGO</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_84" model="hr.afip.localidad">
+            <field name="afip_id">84</field>
+            <field name="name">GRAN TUCUMAN</field>
+        </record>
+        <record id="tablas_afip.hr_afip_localidad_85" model="hr.afip.localidad">
+            <field name="afip_id">85</field>
+            <field name="name">RESTO TUCUMAN</field>
+        </record>
+        <!-- AFIP: Localidad -->
+    <!-- AFIP: Data -->
+    </data>
+</odoo>

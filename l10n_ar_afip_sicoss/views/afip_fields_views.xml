@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- hr.contract inherit form view -->
+    <record id="l10n_ar_afip_sicoss.hr_contract" model="ir.ui.view">
+        <field name="name">hr.contract.inherit.view.form</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="base_module.view_id"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='information']" position="after">
+                <page name="afip_fields" string="AFIP">
+                    <group>
+                        <group name="perfil_afip" string="Perfil del Trabajador">
+                            <field name="afip_situacion_revista_id"/>
+                            <field name="afip_condicion_id"/>
+                            <field name="afip_actividad_id"/>
+                            <field name="afip_modalidad_contratacion_id"/>
+                            <field name="afip_codigo_siniestrado_id"/>
+                            <field name="afip_localidad_id"/>
+                        </group>
+                        <group name="obra_social" string="Obra Social">
+                            <field name="afip_obra_social_id"/>
+                            <field name="os_adherentes" />
+                            <field name="os_aporte_adicional" />
+                            <field name="os_contribucion_adicional" />
+                        </group>
+                        <group name="otros_afip" string="Seguridad Social">
+                            <field name="ss_aporte_adicional" help="Porcentaje de aporte adicional que realiza el empleado."/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//group[@name='sindicato_cct']" position="after">
+                <group string="Obra Social y Aportes">
+                    <field name="cobertura_svco"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

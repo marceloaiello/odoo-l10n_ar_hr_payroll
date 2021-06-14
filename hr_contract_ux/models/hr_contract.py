@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
+from datetime import datetime
 class HrContract(models.Model):
     _inherit = 'hr.contract'
 
@@ -13,7 +14,7 @@ class HrContract(models.Model):
     def _compute_name(self):
         for record in self:
             if record.employee_id:
-                record.name = "Contrato de: " + record.employee_id.name + "de fecha: " + record.date_start
+                record.name = "Contrato de: " + record.employee_id.name + "de fecha: " + datetime.strptime(record.date_start,'%d/%m/%Y')
 
     # Auto calculate e"nd of trial period"
     @api.onchange('date_start')
