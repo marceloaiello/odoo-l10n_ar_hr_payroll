@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- res.company inherit form view -->
+    <record id="l10n_ar_afip_sicoss_res_company_form" model="ir.ui.view">
+        <field name="name">res.company.inherit.view.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='social_media']" position="after">
+                <group name="afip_sicoss" string="AFIP SICOSS - Empleadores">
+                    <field name="afip_sicoss_type"></field>
+                </group>
+            </xpath>
+        </field>
+    </record>
     <!-- hr.contract inherit form view -->
     <record id="l10n_ar_afip_sicoss.hr_contract" model="ir.ui.view">
         <field name="name">hr.contract.inherit.view.form</field>
         <field name="model">hr.contract</field>
-        <field name="inherit_id" ref="base_module.view_id" />
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
         <field name="arch" type="xml">
             <xpath expr="//page[@name='information']" position="after">
                 <page name="afip_fields" string="AFIP">
