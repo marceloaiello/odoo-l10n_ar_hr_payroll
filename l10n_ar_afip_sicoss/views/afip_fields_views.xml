@@ -79,8 +79,8 @@
         <field name="name">hr.afip.actividad.action</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.afip.actividad</field>
-        <field name="view_mode">tree,form</field>
-        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_type">tree</field>
     </record>
     <!-- hr.afip.actividad tree view -->
     <record id="hr.afip_actividad_view_tree" model="ir.ui.view">
@@ -98,8 +98,8 @@
         <field name="name">hr.afip.modalidad_contratacion.action</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.afip.modalidad_contratacion</field>
-        <field name="view_mode">tree,form</field>
-        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_type">tree</field>
     </record>
     <!-- hr.afip.modalidad_contratacion tree view -->
     <record id="hr.afip_modalidad_contratacion_view_tree" model="ir.ui.view">
@@ -117,8 +117,8 @@
         <field name="name">hr.afip.codigo_siniestrado.action</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.afip.codigo_siniestrado</field>
-        <field name="view_mode">tree,form</field>
-        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_type">tree</field>
     </record>
     <!-- hr.afip.codigo_siniestrado tree view -->
     <record id="hr.afip_codigo_siniestrado_view_tree" model="ir.ui.view">
@@ -136,8 +136,8 @@
         <field name="name">hr.afip.localidad.action</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.afip.localidad</field>
-        <field name="view_mode">tree,form</field>
-        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_type">tree</field>
     </record>
     <!-- hr.afip.localidad tree view -->
     <record id="hr.afip_localidad_view_tree" model="ir.ui.view">
@@ -155,8 +155,8 @@
         <field name="name">hr.afip.obra_social.action</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.afip.obra_social</field>
-        <field name="view_mode">tree,form</field>
-        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_type">tree</field>
     </record>
     <!-- hr.afip.obra_social tree view -->
     <record id="hr.afip_localidad_view_tree" model="ir.ui.view">
