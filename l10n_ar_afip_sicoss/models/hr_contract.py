@@ -21,6 +21,3 @@ class ContractAfip(models.Model):
     os_aporte_adicional = fields.Float(string='Aporte Adicional', default="0")
     os_contribucion_adicional = fields.Float(string='Contribucion Adicional', defualt="0")
     ss_aporte_adicional = fields.Float(string='Aporte Adicional', default="0")
-
-
-

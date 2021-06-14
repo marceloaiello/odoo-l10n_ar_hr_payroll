@@ -47,4 +47,4 @@ class HrAfipObraSocial(models.Model):
     _description = 'AFIP: Afip Obra Social'
 
     afip_id = fields.Integer(string='Codigo AFIP')
-    name = fields.Char(string='Nombre Obra Social')
+    name = fields.Char(string='Obra Social')
