@@ -11,7 +11,7 @@
     'category': 'Human Resources',
     'author': "Nimarosa",
     'maintainer': "httpsNimarosa",
-    'website': "https://www.nimarosa.com",
+    'website': 'https://github.com/nimarosa/hr',
     'depends': [
         'hr', 'account', 'hr_contract'
     ],

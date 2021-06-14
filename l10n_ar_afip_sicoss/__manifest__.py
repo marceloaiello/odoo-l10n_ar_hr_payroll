@@ -7,14 +7,17 @@
     'description': 'Adds afip fields to the hr and payroll modules to support import/export',
     'summary': 'Adds afip fields to the hr and payroll modules to support import/export',
     'author': 'Nimarosa',
-    'website': 'www.nimarosa.com',
+    'website': 'https://github.com/nimarosa/hr',
     'license': 'LGPL-3',
-    'category': 'Payroll',
+    'category': 'Payroll, Human Resources',
     'depends': [
         'hr', 'hr_contract', 'payroll', 'hr_employee_ux', 'hr_contract_ux'
     ],
     'data': [
-        'views/afip_fields_views.xml', 'views/menus.xml', 'data/tablas_afip.xml'
+        'security/ir.model.access.csv',
+        'views/afip_fields_views.xml',
+        'views/menus.xml',
+        'data/tablas_afip.xml',
     ],
     'installable': True,
     'auto_install': False,

@@ -7,7 +7,7 @@
     'description': 'Payroll Payslips localization for Argentina',
     'summary': 'Payroll Payslips localization for Argentina',
     'author': 'Nimarosa',
-    'website': 'www.nimarosa.com',
+    'website': 'https://github.com/nimarosa/hr',
     'license': 'LGPL-3',
     'category': 'Human Resources',
     'depends': [

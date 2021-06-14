@@ -7,7 +7,7 @@
     'description': 'Adds labor union management to hr_contract and hr_payroll',
     'summary': 'This module allow to manage the Labor Union salary prices acording to Argentina',
     'author': 'Nimarosa',
-    'website': 'www.nimarosa.com',
+    'website': 'https://github.com/nimarosa/hr',
     'license': 'LGPL-3',
     'category': 'Human Resources',
     'depends': [

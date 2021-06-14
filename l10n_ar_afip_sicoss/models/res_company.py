@@ -15,4 +15,5 @@ class ResCompany(models.Model):
          '5', 'Servicios eventuales. Dto. 814/01, art. 2, inc. a).',
          '6', 'Dto. 814/01, art. 2, inc. b). Provincias. Ley 22.016.',
          '7', 'Colegios privados.')
-    ], string='AFIP SICOSS - Tipo Empleador', default="TODO", help="Para seleccionar este campo correctamente, verificar en sus Form931 Anteriores.")
+    ], string='AFIP SICOSS - Tipo Empleador', default="1",
+        help="Para seleccionar este campo correctamente, verificar en sus declaraciones 931 anteriores.")

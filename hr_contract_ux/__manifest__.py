@@ -7,7 +7,7 @@
     'description': 'Some Ux improvements to the hr_contract ux to make the views more readeable.',
     'summary': 'Some Ux improvements to the hr_contract ux to make the views more readeable.',
     'author': 'Nimarosa',
-    'website': 'www.nimarosa.com',
+    'website': 'https://github.com/nimarosa/hr"',
     'license': 'LGPL-3',
     'category': 'Human Resources',
     'depends': [
