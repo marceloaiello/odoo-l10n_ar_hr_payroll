@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_afip_situacion_revista_user,l10n_ar_afip_sicoss.hr.afip.situacion_revista,model_hr_afip_situacion_revista,base.group_user,1,1,1,1
+access_hr_afip_condicion_user,l10n_ar_afip_sicoss.hr.afip.condicion,model_hr_afip_condicion,base.group_user,1,1,1,1
+access_hr_afip_actividad_user,l10n_ar_afip_sicoss.hr.afip.actividad,model_hr_afip_actividad,base.group_user,1,1,1,1
+access_hr_afip_modalidad_contratacion_user,l10n_ar_afip_sicoss.hr.afip.modalidad_contratacion,model_hr_afip_modalidad_contratacion,base.group_user,1,1,1,1
+access_hr_afip_codigo_siniestrado_user,l10n_ar_afip_sicoss.hr.afip.codigo_siniestrado,model_hr_afip_codigo_siniestrado,base.group_user,1,1,1,1
+access_hr_afip_localidad_user,l10n_ar_afip_sicoss.hr.afip.localidad,model_hr_afip_localidad,base.group_user,1,1,1,1
+access_hr_afip_obra_social_user,l10n_ar_afip_sicoss.hr.afip.obra_social,model_hr_afip_obra_social,base.group_user,1,1,1,1
