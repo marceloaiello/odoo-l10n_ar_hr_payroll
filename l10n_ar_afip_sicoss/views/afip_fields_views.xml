@@ -24,7 +24,7 @@
                     <group>
                         <group name="perfil_afip" string="Perfil del Trabajador">
                             <field name="afip_situacion_revista_id" />
-                            <field name="afip_condicion_id" />
+                            <field name="aip_condicion_id" />
                             <field name="afip_actividad_id" />
                             <field name="afip_modalidad_contratacion_id" />
                             <field name="afip_codigo_siniestrado_id" />
