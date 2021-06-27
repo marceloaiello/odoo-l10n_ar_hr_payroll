@@ -9,7 +9,7 @@ class HrLaborUnionSvcoValue(models.Model):
     _description = 'Valores de S.V.C.O de C.C.T'
     _check_company_auto = True
 
-    name = fields.Char(string='Referencia', compute="_compute_name")
+    name = fields.Char(string='Referencia', readonly=True)
     from_date = fields.Date(string='Fecha Desde', required=True,
                             help='Fecha de Fin, incluida en el rango.')
     to_date = fields.Date(string='Fecha Hasta', required=True,
@@ -23,12 +23,11 @@ class HrLaborUnionSvcoValue(models.Model):
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
                                  default=lambda self: self.env.user.company_id)
 
-    @api.depends('labor_union_id', 'from_date', 'to_date')
-    def _compute_name(self):
-        for record in self:
-            if record.labor_union_id and record.from_date and record.to_date:
-                record.name = "SVCO: " + record.labor_union_id.name + " >> " + \
-                    "Desde " + record.from_date + "Hasta " + record.to_date
+    @api.onchange("labor_union_id", "from_date", "to_date")
+    def _onchange_labor_union_dates(self):
+        if self.labor_union_id or self.from_date or self.to_date:
+            self.name = "SVCO: " + self.labor_union_id.name + " >> " + \
+                "Desde " + self.from_date + "Hasta " + self.to_date
 
     @api.constrains('to_date', 'from_date', 'company_id', 'labor_union_id')
     def _check_svco_dates(self):

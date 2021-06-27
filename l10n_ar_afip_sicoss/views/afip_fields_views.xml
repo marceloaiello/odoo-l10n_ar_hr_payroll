@@ -43,10 +43,8 @@
                     </group>
                 </page>
             </xpath>
-            <xpath expr="//group[@name='sindicato_cct']" position="after">
-                <group string="Obra Social y Aportes">
-                    <field name="cobertura_svco" />
-                </group>
+            <xpath expr="//field[@name='aplica_cct']" position="after">
+                <field name="cobertura_svco" />
             </xpath>
         </field>
     </record>

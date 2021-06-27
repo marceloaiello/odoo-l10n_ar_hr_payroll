@@ -3,39 +3,39 @@
 
 from odoo import api, fields, models
 
+
 class HrLaborUnion(models.Model):
     _name = 'hr.labor_union'
     _inherit = 'mail.thread'
     _description = 'Union Laboral / Sindicatos'
 
-    name = fields.Char(string='C.C.T / Sindicato', compute="_compute_name")
+    name = fields.Char(string='C.C.T / Sindicato', readonly=True)
     sindicato = fields.Char(string='Sindicato', track_visibility='onchange')
     convenio = fields.Char(string='Codigo C.C.T / RAMA', track_visibility='onchange')
-    cct_categories = fields.One2many(comodel_name='hr.labor_union.category',inverse_name='labor_union_id',
-                        string='Categorias C.C.T', track_visibility='onchange')
-    cct_svco_values = fields.One2many(comodel_name='hr.labor_union.svco_value',inverse_name='labor_union_id',
-                        string=' CCT SVCO', track_visibility='onchange')
-    svco_current_value = fields.Monetary(compute='_compute_svco_current_value', string='Valor Actual (SVCO)',
-        options="{'currency_field': 'currency_id'}")
+    cct_categories = fields.One2many(comodel_name='hr.labor_union.category',
+                                     inverse_name='labor_union_id', string='Categorias C.C.T', track_visibility='onchange')
+    cct_svco_values = fields.One2many(comodel_name='hr.labor_union.svco_value',
+                                      inverse_name='labor_union_id', string=' CCT SVCO', track_visibility='onchange')
+    svco_current_value = fields.Monetary(compute='_compute_svco_current_value',
+                                         string='Valor Actual (SVCO)', options="{'currency_field': 'currency_id'}")
     currency_id = fields.Many2one('res.currency', string='Moneda', required=True,
-        default=lambda self: self.env.user.company_id.currency_id.id)
-    company_id = fields.Many2one('res.company', string='Empresa', required=True,
-        default=lambda self: self.env.user.company_id)
+                                  default=lambda self: self.env.user.company_id.currency_id.id)
+    company_id = fields.Many2one('res.company', string='Empresa',
+                                 required=True, default=lambda self: self.env.user.company_id)
 
-    @api.depends('sindicato', 'convenio')
-    def _compute_name(self):
-        for record in self:
-            if record.sindicato and record.convenio:
-                record.name = "( " + record.convenio + " ) " + record.sindicato
+    @api.onchange("sindicato", "convenio")
+    def _onchange_sindicato_convenio(self):
+        if self.sindicato and self.convenio:
+            self.name = "( " + self.convenio + " ) " + self.sindicato
 
     @api.depends('cct_svco_values')
     def _compute_svco_current_value(self):
         for record in self:
             today = fields.Date.context_today(self).strftime('%Y-%m-%d')
             svco_value = 0
-            domain = [('labor_union_id', '=', record.id), ('from_date', '<=', today), ('to_date','>=',today)]
+            domain = [('labor_union_id', '=', record.id),
+                      ('from_date', '<=', today), ('to_date', '>=', today)]
             if record.cct_svco_values.search_count(domain) == 1:
                 for svco in record.cct_svco_values.search(domain):
                     svco_value = svco.value
             record.svco_current_value = svco_value
-
