@@ -172,7 +172,7 @@
         <field name="view_type">tree</field>
     </record>
     <!-- hr.afip.obra_social tree view -->
-    <record id="hr.afip_localidad_view_tree" model="ir.ui.view">
+    <record id="hr.afip_obra_social_view_tree" model="ir.ui.view">
         <field name="name">hr.afip.obra_social.view.tree</field>
         <field name="model">hr.afip.obra_social</field>
         <field name="arch" type="xml">
