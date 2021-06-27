@@ -2,81 +2,77 @@
 <odoo>
     <data noupdate="1">
         <!-- Categorias Basicas para el Calculo -->
-        <record id="GROSS" model="hr_salary_rule_category">
+        <record id="l10n_ar_payroll.GROSS" model="hr_salary_rule_category">
             <field name="name">(001) REMUNERACION BRUTA</field>
             <field name="code">GROSS</field>
         </record>
-        <record id="GROSS" model="hr_salary_rule_category">
-            <field name="name">(001) REMUNERACION BRUTA</field>
-            <field name="code">GROSS</field>
-        </record>
-        <record id="DESC" model="hr_salary_rule_category">
+        <record id="l10n_ar_payroll.DESC" model="hr_salary_rule_category">
             <field name="name">(002) DESCUENTOS</field>
             <field name="code">DESC</field>
         </record>
-        <record id="RET" model="hr_salary_rule_category">
+        <record id="l10n_ar_payroll.RET" model="hr_salary_rule_category">
             <field name="name">(003) RETENCIONES</field>
             <field name="code">RET</field>
         </record>
-        <record id="DED" model="hr_salary_rule_category">
+        <record id="l10n_ar_payroll.DED" model="hr_salary_rule_category">
             <field name="name">(004) DEDUCCIONES</field>
             <field name="code">DED</field>
         </record>
-        <record id="NET" model="hr_salary_rule_category">
+        <record id="l10n_ar_payroll.NET" model="hr_salary_rule_category">
             <field name="name">(005) REMUNERACION NETA</field>
-            <field name="code">DED</field>
+            <field name="code">NET</field>
         </record>
 
         <!-- Categorias para SICOSS - 931 -->
-        <record id="BASIC" model="hr_salary_rule_category">
+        <record id="l10n_ar_payroll.BASIC" model="hr_salary_rule_category">
             <field name="name">(931) SUELDO</field>
             <field name="code">BASIC</field>
-            <field name="parent_id">GROSS</field>
+            <field name="parent_id">l10n_ar_payroll.GROSS</field>
         </record>
-        <record id="ADIC" model="hr_salary_rule_category">
+        <record id="l10n_ar_payroll.ADIC" model="hr_salary_rule_category">
             <field name="name">(931) ADICIONALES</field>
             <field name="code">ADIC</field>
-            <field name="parent_id">GROSS</field>
+            <field name="parent_id">l10n_ar_payroll.GROSS</field>
         </record>
-        <record id="PLUSZDESF" model="hr_salary_rule_category">
+        <record id="l10n_ar_payroll.PLUSZDESF" model="hr_salary_rule_category">
             <field name="name">(931) PLUS POR ZONA DESFAVORABLE</field>
             <field name="code">PLUSZDESF</field>
-            <field name="parent_id">GROSS</field>
+            <field name="parent_id">l10n_ar_payroll.GROSS</field>
         </record>
-        <record id="SAC" model="hr_salary_rule_category">
+        <record id="l10n_ar_payroll.SAC" model="hr_salary_rule_category">
             <field name="name">(931) S.A.C</field>
             <field name="code">SAC</field>
-            <field name="parent_id">GROSS</field>
+            <field name="parent_id">l10n_ar_payroll.GROSS</field>
         </record>
-        <record id="VAC" model="hr_salary_rule_category">
+        <record id="l10n_ar_payroll.VAC" model="hr_salary_rule_category">
             <field name="name">(931) VACACIONES</field>
             <field name="code">VAC</field>
-            <field name="parent_id">GROSS</field>
+            <field name="parent_id">l10n_ar_payroll.GROSS</field>
         </record>
-        <record id="PREM" model="hr_salary_rule_category">
+        <record id="l10n_ar_payroll.PREM" model="hr_salary_rule_category">
             <field name="name">(931) PREMIOS</field>
             <field name="code">PREM</field>
-            <field name="parent_id">GROSS</field>
+            <field name="parent_id">l10n_ar_payroll.GROSS</field>
         </record>
-        <record id="NOREM" model="hr_salary_rule_category">
+        <record id="l10n_ar_payroll.NOREM" model="hr_salary_rule_category">
             <field name="name">(931) NO REMUNERATIVO</field>
             <field name="code">NOREM</field>
-            <field name="parent_id">GROSS</field>
+            <field name="parent_id"></field>
         </record>
-        <record id="MATERN" model="hr_salary_rule_category">
+        <record id="l10n_ar_payroll.MATERN" model="hr_salary_rule_category">
             <field name="name">(931) MATERNIDAD</field>
             <field name="code">MATERN</field>
-            <field name="parent_id">GROSS</field>
+            <field name="parent_id">l10n_ar_payroll.GROSS</field>
         </record>
-        <record id="RECTREM" model="hr_salary_rule_category">
+        <record id="l10n_ar_payroll.RECTREM" model="hr_salary_rule_category">
             <field name="name">(931) RECTIFICATIVA REMUNERACION</field>
             <field name="code">RECTREM</field>
-            <field name="parent_id">GROSS</field>
+            <field name="parent_id">l10n_ar_payroll.GROSS</field>
         </record>
-        <record id="INCRSAL" model="hr_salary_rule_category">
+        <record id="l10n_ar_payroll.INCRSAL" model="hr_salary_rule_category">
             <field name="name">(931) INCREMENTO SALARIAL (deprecated)</field>
             <field name="code">INCRSAL</field>
-            <field name="parent_id">GROSS</field>
+            <field name="parent_id">l10n_ar_payroll.GROSS</field>
         </record>
     </data>
 </odoo>

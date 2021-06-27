@@ -2,25 +2,25 @@
 <odoo>
     <data noupdate="1">
         <!-- Centros de Contribucion por default en Sueldos Argentina -->
-        <record id="AFIP-JUB" model="hr_contribution_register">
+        <record id="l10n_ar_payroll.AFIP-JUB" model="hr_contribution_register">
             <field name="name">(AFIP-APORTES) JUBILACION (retenidos) </field>
         </record>
-        <record id="AFIP-INS" model="hr_contribution_register">
+        <record id="l10n_ar_payroll.AFIP-INS" model="hr_contribution_register">
             <field name="name">(AFIP-APORTES) LEY 19.032 - INSSJP (retenidos) </field>
         </record>
-        <record id="AFIP-OS" model="hr_contribution_register">
+        <record id="l10n_ar_payroll.AFIP-OS" model="hr_contribution_register">
             <field name="name">(AFIP-APORTES) OBRAS SOCIALES (retenidos) </field>
         </record>
-        <record id="SIND" model="hr_contribution_register">
+        <record id="l10n_ar_payroll.SIND" model="hr_contribution_register">
             <field name="name">(AFIP-APORTES) SINDICALES (retenidos) </field>
         </record>
-        <record id="SIND-SVCO" model="hr_contribution_register">
+        <record id="l10n_ar_payroll.SIND-SVCO" model="hr_contribution_register">
             <field name="name">(AFIP-APORTES) SINDICALES SVCO (retenidos) </field>
         </record>
-        <record id="JUD" model="hr_contribution_register">
+        <record id="l10n_ar_payroll.JUD" model="hr_contribution_register">
             <field name="name">(JUDICIALES) EMBARGOS JUDICIALES (retenidos) </field>
         </record>
-        <record id="OWN" model="hr_contribution_register">
+        <record id="l10n_ar_payroll.OWN" model="hr_contribution_register">
             <field name="name">(EMPRESA) DEDUCCIONES DE ADELANTOS Y PAGOS A CUENTA (retenidos) </field>
         </record>
     </data>

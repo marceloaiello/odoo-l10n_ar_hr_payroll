@@ -233,27 +233,27 @@
             <field name="afip_id">3</field>
             <field name="name">Construcción de inmuebles</field>
         </record>
-        <record id="l10n_ar_afip_sicoss.hr_afip_actividad_4" model="h.afip.actividad">
+        <record id="l10n_ar_afip_sicoss.hr_afip_actividad_4" model="hr.afip.actividad">
             <field name="afip_id">4</field>
             <field name="name">Turismo</field>
         </record>
-        <record id="l10n_ar_afip_sicoss.hr_afip_actividad_5" model="h.afip.actividad">
+        <record id="l10n_ar_afip_sicoss.hr_afip_actividad_5" model="hr.afip.actividad">
             <field name="afip_id">5</field>
             <field name="name">Investigación Científica y Tecnológica</field>
         </record>
-        <record id="l10n_ar_afip_sicoss.hr_afip_actividad_6" model="h.afip.actividad">
+        <record id="l10n_ar_afip_sicoss.hr_afip_actividad_6" model="hr.afip.actividad">
             <field name="afip_id">6</field>
             <field name="name">Administración Publica. CON OBRA SOCIAL 23660</field>
         </record>
-        <record id="l10n_ar_afip_sicoss.hr_afip_actividad_7" model="h.afip.actividad">
+        <record id="l10n_ar_afip_sicoss.hr_afip_actividad_7" model="hr.afip.actividad">
             <field name="afip_id">7</field>
             <field name="name">Enseñanza Privada L.13047 no comprendidos en el D 137/05</field>
         </record>
-        <record id="l10n_ar_afip_sicoss.hr_afip_actividad_8" model="h.afip.actividad">
+        <record id="l10n_ar_afip_sicoss.hr_afip_actividad_8" model="hr.afip.actividad">
             <field name="afip_id">8</field>
             <field name="name">Servicio Doméstico</field>
         </record>
-        <record id="l10n_ar_afip_sicoss.hr_afip_actividad_9" model="h.afip.actividad">
+        <record id="l10n_ar_afip_sicoss.hr_afip_actividad_9" model="hr.afip.actividad">
             <field name="afip_id">9</field>
             <field name="name">Servicios energéticos Res.MTESS 268 y 824/09</field>
         </record>
@@ -1025,7 +1025,7 @@
             <field name="name">CCG multiproducto del Chaco</field>
         </record>
         <record id="l10n_ar_afip_sicoss.hr_afip_modalidad_contratacion_993" model="hr.afip.modalidad_contratacion">
-            <field name="afip_id">993 (***)</field>
+            <field name="afip_id">993</field>
             <field name="name">CCG frutihortícola de San Juan</field>
         </record>
         <record id="l10n_ar_afip_sicoss.hr_afip_modalidad_contratacion_994" model="hr.afip.modalidad_contratacion">

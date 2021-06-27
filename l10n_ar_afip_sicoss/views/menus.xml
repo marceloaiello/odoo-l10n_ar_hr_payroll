@@ -4,17 +4,17 @@
     <!-- Main Menu - For Parents -->
     <menuitem id="hr.menu_afip" name="AFIP" parent="hr.menu_human_resources_configuration" sequence="200" />
         <!-- AFIP Situacion de Revista Menu  -->
-        <menuitem id="hr.menu_afip_situacion_revista" name="Situaciones de Revista" parent="hr.menu_afip" action="actions_hr_afip_situacion_revista" sequence="201" />
+        <menuitem id="hr.menu_afip_situacion_revista" name="Situaciones de Revista" parent="hr.menu_afip" action="hr_afip_situacion_revista_action" sequence="201" />
         <!-- AFIP Condicion Menu  -->
-        <menuitem id="hr.menu_afip_condicion" name="Condiciones" parent="hr.menu_afip" action="actions_hr_afip_condicion" sequence="202" />
+        <menuitem id="hr.menu_afip_condicion" name="Condiciones" parent="hr.menu_afip" action="hr_afip_condicion_action" sequence="202" />
         <!-- AFIP Actividades Menu  -->
-        <menuitem id="hr.menu_afip_actividades" name="Actividades" parent="hr.menu_afip" action="actions_hr_afip_actividades" sequence="203" />
+        <menuitem id="hr.menu_afip_actividades" name="Actividades" parent="hr.menu_afip" action="hr_afip_actividad_action" sequence="203" />
         <!-- AFIP Modalidad Contratacion Menu  -->
-        <menuitem id="hr.menu_afip_modalidad_contratacion" name="Modalidades de Contratacion" parent="hr.menu_afip" action="actions_hr_afip_modalidad_contratacion" sequence="204" />
+        <menuitem id="hr.menu_afip_modalidad_contratacion" name="Modalidades de Contratacion" parent="hr.menu_afip" action="hr_afip_modalidad_contratacion_action" sequence="204" />
         <!-- AFIP Codigo Siniestrado Menu  -->
-        <menuitem id="hr.menu_afip_codigo_siniestrado" name="Codigos de Siniestro" parent="hr.menu_afip" action="actions_hr_afip_codigo_siniestrado" sequence="205" />
+        <menuitem id="hr.menu_afip_codigo_siniestrado" name="Codigos de Siniestro" parent="hr.menu_afip" action="hr_afip_codigo_siniestrado_action" sequence="205" />
         <!-- AFIP Localidades Menu  -->
-        <menuitem id="hr.menu_afip_localidades" name="Localidades" parent="hr.menu_afip" action="actions_hr_afip_localidades" sequence="206" />
+        <menuitem id="hr.menu_afip_localidades" name="Localidades" parent="hr.menu_afip" action="hr_afip_localidad_action" sequence="206" />
         <!-- AFIP Obra Social Menu  -->
-        <menuitem id="hr.menu_afip_obra_social" name="Obras Sociales" parent="hr.menu_afip" action="actions_hr_afip_obra_social" sequence="207" />
+        <menuitem id="hr.menu_afip_obra_social" name="Obras Sociales" parent="hr.menu_afip" action="hr_afip_obra_social_action" sequence="207" />
 </odoo>

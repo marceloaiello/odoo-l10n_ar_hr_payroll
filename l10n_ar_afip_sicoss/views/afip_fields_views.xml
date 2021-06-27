@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- res.company inherit form view -->
-    <record id="l10n_ar_afip_sicoss_res_company_form" model="ir.ui.view">
+    <record id="l10n_ar_afip_sicoss.res_company_form" model="ir.ui.view">
         <field name="name">res.company.inherit.view.form</field>
         <field name="model">res.company</field>
         <field name="inherit_id" ref="base.view_company_form"/>
@@ -14,17 +14,18 @@
         </field>
     </record>
     <!-- hr.contract inherit form view -->
-    <record id="l10n_ar_afip_sicoss.hr_contract" model="ir.ui.view">
+    <record id="l10n_ar_afip_sicoss.hr_contract_form" model="ir.ui.view">
         <field name="name">hr.contract.inherit.view.form</field>
         <field name="model">hr.contract</field>
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+        <field name="priority" eval="200"/>
         <field name="arch" type="xml">
             <xpath expr="//page[@name='information']" position="after">
                 <page name="afip_fields" string="AFIP">
                     <group>
                         <group name="perfil_afip" string="Perfil del Trabajador">
                             <field name="afip_situacion_revista_id" />
-                            <field name="aip_condicion_id" />
+                            <field name="afip_condicion_id" />
                             <field name="afip_actividad_id" />
                             <field name="afip_modalidad_contratacion_id" />
                             <field name="afip_codigo_siniestrado_id" />
@@ -50,15 +51,14 @@
         </field>
     </record>
     <!-- hr.afip.situacion_revista action window -->
-    <record id="hr.afip_situacion_revista_action" model="ir.actions.act_window">
-        <field name="name">hr.afip.situacion_revista.action</field>
+    <record id="l10n_ar_afip_sicoss.hr_afip_situacion_revista_action" model="ir.actions.act_window">
+        <field name="name">AFIP: Situacion de Revista</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.afip.situacion_revista</field>
         <field name="view_mode">tree</field>
-        <field name="view_type">tree</field>
     </record>
     <!-- hr.afip.situacion_revista tree view -->
-    <record id="hr.afip_situacion_revista_view_tree" model="ir.ui.view">
+    <record id="l10n_ar_afip_sicoss.hr_afip_situacion_revista_view_tree" model="ir.ui.view">
         <field name="name">hr.afip.situacion_revista.view.tree</field>
         <field name="model">hr.afip.situacion_revista</field>
         <field name="arch" type="xml">
@@ -69,15 +69,14 @@
         </field>
     </record>
     <!-- hr.afip.condicion action window -->
-    <record id="hr.afip_condicion_action" model="ir.actions.act_window">
-        <field name="name">hr.afip.condicion.action</field>
+    <record id="l10n_ar_afip_sicoss.hr_afip_condicion_action" model="ir.actions.act_window">
+        <field name="name">AFIP: Condicion de Contratacion</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.afip.condicion</field>
         <field name="view_mode">tree</field>
-        <field name="view_type">tree</field>
     </record>
     <!-- hr.afip.condicion tree view -->
-    <record id="hr.afip_condicion_view_tree" model="ir.ui.view">
+    <record id="l10n_ar_afip_sicoss.hr_afip_condicion_view_tree" model="ir.ui.view">
         <field name="name">hr.afip.condicion.view.tree</field>
         <field name="model">hr.afip.condicion</field>
         <field name="arch" type="xml">
@@ -88,15 +87,14 @@
         </field>
     </record>
     <!-- hr.afip.actividad action window -->
-    <record id="hr.afip_actividad_action" model="ir.actions.act_window">
-        <field name="name">hr.afip.actividad.action</field>
+    <record id="l10n_ar_afip_sicoss.hr_afip_actividad_action" model="ir.actions.act_window">
+        <field name="name">AFIP: Actividades</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.afip.actividad</field>
         <field name="view_mode">tree</field>
-        <field name="view_type">tree</field>
     </record>
     <!-- hr.afip.actividad tree view -->
-    <record id="hr.afip_actividad_view_tree" model="ir.ui.view">
+    <record id="l10n_ar_afip_sicoss.hr_afip_actividad_view_tree" model="ir.ui.view">
         <field name="name">hr.afip.actividad.view.tree</field>
         <field name="model">hr.afip.actividad</field>
         <field name="arch" type="xml">
@@ -107,15 +105,14 @@
         </field>
     </record>
     <!-- hr.afip.modalidad_contratacion action window -->
-    <record id="hr.afip_modalidad_contratacion_action" model="ir.actions.act_window">
-        <field name="name">hr.afip.modalidad_contratacion.action</field>
+    <record id="l10n_ar_afip_sicoss.hr_afip_modalidad_contratacion_action" model="ir.actions.act_window">
+        <field name="name">AFIP: Modalidad de Contratacion</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.afip.modalidad_contratacion</field>
         <field name="view_mode">tree</field>
-        <field name="view_type">tree</field>
     </record>
     <!-- hr.afip.modalidad_contratacion tree view -->
-    <record id="hr.afip_modalidad_contratacion_view_tree" model="ir.ui.view">
+    <record id="l10n_ar_afip_sicoss.hr_afip_modalidad_contratacion_view_tree" model="ir.ui.view">
         <field name="name">hr.afip.modalidad_contratacion.view.tree</field>
         <field name="model">hr.afip.modalidad_contratacion</field>
         <field name="arch" type="xml">
@@ -126,15 +123,14 @@
         </field>
     </record>
     <!-- hr.afip.codigo_siniestrado action window -->
-    <record id="hr.afip.codigo_siniestrado_action" model="ir.actions.act_window">
-        <field name="name">hr.afip.codigo_siniestrado.action</field>
+    <record id="l10n_ar_afip_sicoss.hr_afip_codigo_siniestrado_action" model="ir.actions.act_window">
+        <field name="name">AFIP: Codigos de Siniestro</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.afip.codigo_siniestrado</field>
         <field name="view_mode">tree</field>
-        <field name="view_type">tree</field>
     </record>
     <!-- hr.afip.codigo_siniestrado tree view -->
-    <record id="hr.afip_codigo_siniestrado_view_tree" model="ir.ui.view">
+    <record id="l10n_ar_afip_sicoss.hr_afip_codigo_siniestrado_view_tree" model="ir.ui.view">
         <field name="name">hr.afip.codigo_siniestrado.view.tree</field>
         <field name="model">hr.afip.codigo_siniestrado</field>
         <field name="arch" type="xml">
@@ -145,15 +141,14 @@
         </field>
     </record>
     <!-- hr.afip.localidad action window -->
-    <record id="hr.afip_localidad_action" model="ir.actions.act_window">
-        <field name="name">hr.afip.localidad.action</field>
+    <record id="l10n_ar_afip_sicoss.hr_afip_localidad_action" model="ir.actions.act_window">
+        <field name="name">AFIP: Localidades</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.afip.localidad</field>
         <field name="view_mode">tree</field>
-        <field name="view_type">tree</field>
     </record>
     <!-- hr.afip.localidad tree view -->
-    <record id="hr.afip_localidad_view_tree" model="ir.ui.view">
+    <record id="l10n_ar_afip_sicoss.hr_afip_localidad_view_tree" model="ir.ui.view">
         <field name="name">hr.afip.localidad.view.tree</field>
         <field name="model">hr.afip.localidad</field>
         <field name="arch" type="xml">
@@ -164,15 +159,14 @@
         </field>
     </record>
     <!-- hr.afip.obra_social action window -->
-    <record id="hr.afip_obra_social_action" model="ir.actions.act_window">
-        <field name="name">hr.afip.obra_social.action</field>
+    <record id="l10n_ar_afip_sicoss.hr_afip_obra_social_action" model="ir.actions.act_window">
+        <field name="name">AFIP: Obras Sociales</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.afip.obra_social</field>
         <field name="view_mode">tree</field>
-        <field name="view_type">tree</field>
     </record>
     <!-- hr.afip.obra_social tree view -->
-    <record id="hr.afip_obra_social_view_tree" model="ir.ui.view">
+    <record id="l10n_ar_afip_sicoss.hr_afip_obra_social_view_tree" model="ir.ui.view">
         <field name="name">hr.afip.obra_social.view.tree</field>
         <field name="model">hr.afip.obra_social</field>
         <field name="arch" type="xml">
