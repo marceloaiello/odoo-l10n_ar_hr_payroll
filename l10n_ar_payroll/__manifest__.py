@@ -5,7 +5,7 @@
     'name': 'Configuracion de Payroll AFIP ARG (l10n_ar)',
     'version': '13.0.1.0',
     'description': 'Configuracion de Payroll - Localizacion Argentina',
-    'summary': 'Defaults para AFIP SICOSS - Localizacion Argentina',
+    'summary': 'Configuracion de Payrol- Localizacion Argentina',
     'author': 'Nimarosa',
     'website': 'https://www.github.com/nimarosa/hr',
     'license': 'LGPL-3',

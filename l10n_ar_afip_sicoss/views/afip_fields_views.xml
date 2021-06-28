@@ -24,12 +24,12 @@
                 <page name="afip_fields" string="AFIP">
                     <group>
                         <group name="perfil_afip" string="Perfil del Trabajador">
-                            <field name="afip_situacion_revista_id" />
-                            <field name="afip_condicion_id" />
-                            <field name="afip_actividad_id" />
-                            <field name="afip_modalidad_contratacion_id" />
-                            <field name="afip_codigo_siniestrado_id" />
-                            <field name="afip_localidad_id" />
+                            <field name="afip_situacion_revista_id" ref="l10n_ar_afip_sicoss.hr_afip_situacion_revista_1"/>
+                            <field name="afip_condicion_id" ref="l10n_ar_afip_sicoss.hr_afip_condicion_1"/>
+                            <field name="afip_actividad_id" ref="l10n_ar_afip_sicoss.hr_afip_actividad_49"/>
+                            <field name="afip_modalidad_contratacion_id" ref="l10n_ar_afip_sicoss.hr_afip_modalidad_contratacion_8"/>
+                            <field name="afip_codigo_siniestrado_id" ref="l10n_ar_afip_sicoss.hr_afip_codigo_siniestrado_0"/>
+                            <field name="afip_localidad_id" ref="l10n_ar_afip_sicoss.hr_afip_localidad_1"/>
                         </group>
                         <group name="obra_social" string="Obra Social">
                             <field name="afip_obra_social_id" />
@@ -60,7 +60,7 @@
         <field name="name">hr.afip.situacion_revista.view.tree</field>
         <field name="model">hr.afip.situacion_revista</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="top">
                 <field name="afip_id" />
                 <field name="name" />
             </tree>
@@ -78,7 +78,7 @@
         <field name="name">hr.afip.condicion.view.tree</field>
         <field name="model">hr.afip.condicion</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="top">
                 <field name="afip_id" />
                 <field name="name" />
             </tree>
@@ -96,7 +96,7 @@
         <field name="name">hr.afip.actividad.view.tree</field>
         <field name="model">hr.afip.actividad</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="top">
                 <field name="afip_id" />
                 <field name="name" />
             </tree>
@@ -114,7 +114,7 @@
         <field name="name">hr.afip.modalidad_contratacion.view.tree</field>
         <field name="model">hr.afip.modalidad_contratacion</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="top">
                 <field name="afip_id" />
                 <field name="name" />
             </tree>
@@ -132,7 +132,7 @@
         <field name="name">hr.afip.codigo_siniestrado.view.tree</field>
         <field name="model">hr.afip.codigo_siniestrado</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="top">
                 <field name="afip_id" />
                 <field name="name" />
             </tree>
@@ -150,7 +150,7 @@
         <field name="name">hr.afip.localidad.view.tree</field>
         <field name="model">hr.afip.localidad</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="top">
                 <field name="afip_id" />
                 <field name="name" />
             </tree>
@@ -168,7 +168,7 @@
         <field name="name">hr.afip.obra_social.view.tree</field>
         <field name="model">hr.afip.obra_social</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="top">
                 <field name="afip_id" />
                 <field name="name" />
             </tree>

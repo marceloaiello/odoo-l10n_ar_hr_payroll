@@ -3,23 +3,27 @@
     <data noupdate="1">
         <!-- Categorias Basicas para el Calculo -->
         <record id="l10n_ar_payroll.GROSS" model="hr_salary_rule_category">
-            <field name="name">(001) REMUNERACION BRUTA</field>
+            <field name="name">REMUNERACION BRUTA</field>
             <field name="code">GROSS</field>
         </record>
+        <record id="l10n_ar_payroll.GROSS" model="hr_salary_rule_category">
+            <field name="name">REMUNERACION NO REMUNERATIVA</field>
+            <field name="code">NOREM</field>
+        </record>
         <record id="l10n_ar_payroll.DESC" model="hr_salary_rule_category">
-            <field name="name">(002) DESCUENTOS</field>
+            <field name="name">DESCUENTOS</field>
             <field name="code">DESC</field>
         </record>
         <record id="l10n_ar_payroll.RET" model="hr_salary_rule_category">
-            <field name="name">(003) RETENCIONES</field>
+            <field name="name">RETENCIONES</field>
             <field name="code">RET</field>
         </record>
         <record id="l10n_ar_payroll.DED" model="hr_salary_rule_category">
-            <field name="name">(004) DEDUCCIONES</field>
+            <field name="name">DEDUCCIONES</field>
             <field name="code">DED</field>
         </record>
         <record id="l10n_ar_payroll.NET" model="hr_salary_rule_category">
-            <field name="name">(005) REMUNERACION NETA</field>
+            <field name="name">REMUNERACION NETA</field>
             <field name="code">NET</field>
         </record>
 
@@ -32,6 +36,11 @@
         <record id="l10n_ar_payroll.ADIC" model="hr_salary_rule_category">
             <field name="name">(931) ADICIONALES</field>
             <field name="code">ADIC</field>
+            <field name="parent_id">l10n_ar_payroll.GROSS</field>
+        </record>
+        <record id="l10n_ar_payroll.HEXT" model="hr_salary_rule_category">
+            <field name="name">(931) HORAS EXTRA</field>
+            <field name="code">EXT</field>
             <field name="parent_id">l10n_ar_payroll.GROSS</field>
         </record>
         <record id="l10n_ar_payroll.PLUSZDESF" model="hr_salary_rule_category">
@@ -57,7 +66,7 @@
         <record id="l10n_ar_payroll.NOREM" model="hr_salary_rule_category">
             <field name="name">(931) NO REMUNERATIVO</field>
             <field name="code">NOREM</field>
-            <field name="parent_id"></field>
+            <field name="parent_id">l10n_ar_payroll.NOREM</field>
         </record>
         <record id="l10n_ar_payroll.MATERN" model="hr_salary_rule_category">
             <field name="name">(931) MATERNIDAD</field>

@@ -19,8 +19,7 @@
         'hr_contract_document',
         'hr_contract_labor_union'
     ],
-    'data': [
-    ],
+    'data': ['views/hr_contract.xml'],
     'installable': True,
     'auto_install': False,
     'application': False,

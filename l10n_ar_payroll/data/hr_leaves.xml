@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="l10n_ar_payroll.WORK0" model="hr.leave.type">
+        <field name="field_name">field_value</field>
+    </record>
+
+</odoo>

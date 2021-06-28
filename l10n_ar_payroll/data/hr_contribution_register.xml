@@ -2,26 +2,26 @@
 <odoo>
     <data noupdate="1">
         <!-- Centros de Contribucion por default en Sueldos Argentina -->
-        <record id="l10n_ar_payroll.AFIP-JUB" model="hr_contribution_register">
-            <field name="name">(AFIP-APORTES) JUBILACION (retenidos) </field>
+        <record id="l10n_ar_payroll.AFIP-APORT-JUB" model="hr_contribution_register">
+            <field name="name">AFIP APORTES - JUBILACION (retenidos) </field>
         </record>
-        <record id="l10n_ar_payroll.AFIP-INS" model="hr_contribution_register">
-            <field name="name">(AFIP-APORTES) LEY 19.032 - INSSJP (retenidos) </field>
+        <record id="l10n_ar_payroll.AFIP-APORT-INSSJP" model="hr_contribution_register">
+            <field name="name">AFIP APORTES - LEY 19.032 - INSSJP (retenidos) </field>
         </record>
-        <record id="l10n_ar_payroll.AFIP-OS" model="hr_contribution_register">
-            <field name="name">(AFIP-APORTES) OBRAS SOCIALES (retenidos) </field>
+        <record id="l10n_ar_payroll.AFIP-APORT-OS" model="hr_contribution_register">
+            <field name="name">AFIP APORTES - OBRAS SOCIALES</field>
         </record>
-        <record id="l10n_ar_payroll.SIND" model="hr_contribution_register">
-            <field name="name">(AFIP-APORTES) SINDICALES (retenidos) </field>
+        <record id="l10n_ar_payroll.SIND-APORT" model="hr_contribution_register">
+            <field name="name">SINDICALES APORTES - CUOTA SINDICAL</field>
         </record>
-        <record id="l10n_ar_payroll.SIND-SVCO" model="hr_contribution_register">
-            <field name="name">(AFIP-APORTES) SINDICALES SVCO (retenidos) </field>
+        <record id="l10n_ar_payroll.SIND-RET-SVCO" model="hr_contribution_register">
+            <field name="name">SINDICALES RETENCIOENS - SVCO</field>
         </record>
-        <record id="l10n_ar_payroll.JUD" model="hr_contribution_register">
-            <field name="name">(JUDICIALES) EMBARGOS JUDICIALES (retenidos) </field>
+        <record id="l10n_ar_payroll.EMGO-JUD" model="hr_contribution_register">
+            <field name="name">OTROS - EMBARGOS JUDICIALES</field>
         </record>
-        <record id="l10n_ar_payroll.OWN" model="hr_contribution_register">
-            <field name="name">(EMPRESA) DEDUCCIONES DE ADELANTOS Y PAGOS A CUENTA (retenidos) </field>
+        <record id="l10n_ar_payroll.OWN-DED-ADV" model="hr_contribution_register">
+            <field name="name">DEDUCCIONES DE ADELANTOS Y PAGOS A CUENTA</field>
         </record>
     </data>
 </odoo>
