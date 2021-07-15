@@ -29,13 +29,14 @@
                         </group>
                         <group string="Private Contact" modifiers="{}">
                             <field name="address_home_id" context="{'show_address': 1,'default_type': 'private', 'form_view_ref': 'base.res_partner_view_form_private'}" options="{'always_reload': True, 'highlight_first_line': True}" on_change="1" can_create="true" can_write="true" modifiers="{}" />
-                            <field name="private_email" string="Email" modifiers="{'readonly':true}" />
-                            <field name="phone" class="o_force_ltr" string="Phone" readonly="True" modifiers="{'readonly':true}" />
+                            <field name="private_email" string="Email" attrs="{'invisible' : [('address_home_id', '=', False)]}" />
+                            <field name="phone" class="o_force_ltr" string="Telefono" readonly="True" modifiers="{'readonly':true}" attrs="{'invisible' : [('address_home_id', '=', False)]}" />
+                            <separator />
                             <field name="bank_account_id" context="{'display_partner':True}" attrs="{'invisible' : [('address_home_id', '=', False)]}" can_create="true" can_write="true" modifiers="{'invisible':[['address_home_id','=',false]]}" />
-                            <field name="employee_bank_titular" nolabel="1" readonly="True" attrs="{'invisible' : [('bank_account_id', '=', False)]}" />
-                            <field name="employee_bank" nolabel="1" readonly="True" attrs="{'invisible' : [('bank_account_id', '=', False)]}" modifiers="{'invisible':[['bank_account_id','=',false]]}" />
-                            <field name="employee_account_number" nolabel="1" readonly="True" attrs="{'invisible' : [('bank_account_id', '=', False)]}" modifiers="{'invisible':[['bank_account_id','=',false]]}" />
-                            <field name="employee_cbu" nolabel="1" readonly="True" attrs="{'invisible' : [('bank_account_id', '=', False)]}" modifiers="{'invisible':[['bank_account_id','=',false]]}" />
+                            <field name="employee_bank_titular" readonly="True" attrs="{'invisible' : [('bank_account_id', '=', False)]}" modifiers="{'invisible':[['bank_account_id','=',false]]}" />
+                            <field name="employee_bank" readonly="True" attrs="{'invisible' : [('bank_account_id', '=', False)]}" modifiers="{'invisible':[['bank_account_id','=',false]]}" />
+                            <field name="employee_account_number" readonly="True" attrs="{'invisible' : [('bank_account_id', '=', False)]}" modifiers="{'invisible':[['bank_account_id','=',false]]}" />
+                            <field name="employee_cbu" readonly="True" attrs="{'invisible' : [('bank_account_id', '=', False)]}" modifiers="{'invisible':[['bank_account_id','=',false]]}" />
                         </group>
                         <group string="Emergency" modifiers="{}">
                             <field name="emergency_contact" modifiers="{}" />
@@ -58,15 +59,15 @@
                             <div modifiers="{}">
                                 <field name="service_duration_years" nolabel="1" modifiers="{'readonly':true}" />
                                 <span class="ml8 mr8" modifiers="{}">
-                                                    year(s)
+                                                    año(s)
                                                 </span>
                                 <field name="service_duration_months" nolabel="1" modifiers="{'readonly':true}" />
                                 <span class="ml8 mr8" modifiers="{}">
-                                                    month(s)
+                                                    mes(es)
                                                 </span>
                                 <field name="service_duration_days" nolabel="1" modifiers="{'readonly':true}" />
                                 <span class="ml8" modifiers="{}">
-                                                    day(s)
+                                                    dia(s)
                                                 </span>
                             </div>
                         </group>

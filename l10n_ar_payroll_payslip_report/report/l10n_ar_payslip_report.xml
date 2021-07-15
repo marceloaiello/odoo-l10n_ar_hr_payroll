@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="payroll.report_payslipdetails" model="ir.actions.report"> <!-- TODO: Ver el tema de la inheritance -->
+        <field name="report_type">py3o</field>
+        <field name="py3o_filetype">pdf</field>
+        <field name="module">l10n_ar_payslip_report</field>
+        <field name="py3o_template_fallback">report/payslip_report_2copies.odt</field>
+    </record>
+</odoo>
