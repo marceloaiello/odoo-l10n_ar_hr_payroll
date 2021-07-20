@@ -1,78 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+    <data>
         <!-- Haberes y Descuentos: 10.000 - 10.999 -->
         <record id="l10n_ar_payroll.BASIC_HOURS" model="hr_salary_rule">
             <field name="name">HORAS NORMALES</field>
             <field name="code">BASIC_HOURS</field>
             <field name="sequence">10100</field>
             <field name="category_id">l10n_ar_payroll.BASIC</field>
-            <field name="register_id">  TODO   </field>
             <field name="active">True</field>
             <field name="appears_on_payslip">True</field>
-            <field name="note">Sueldo basico del trabajador por convenio o CCT.</field>
-            <!-- Parametrizacion de Logica -->
+            <field name="note">Sueldo basico del trabajador por convenio, contrato o CCT.</field>
+            <!-- Condition Select -->
             <field name="condition_select">none</field>
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">
-                result_qty = worked_days.WORK100.number_of_hours
-                result = contract.amount
-            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">fix</field>
+            <field name="amount_fix">contract.amount</field>
+            <field name="quantity">worked_days.WORK100.number_of_hours</field>
         </record>
         <record id="l10n_ar_payroll.BASIC" model="hr_salary_rule">
             <field name="name">SUELDO BASICO</field>
             <field name="code">BASIC</field>
             <field name="sequence">10100</field>
             <field name="category_id">l10n_ar_payroll.BASIC</field>
-            <field name="register_id">TODO</field>
             <field name="active">True</field>
             <field name="appears_on_payslip">True</field>
             <field name="note">Sueldo basico del trabajador por convenio o CCT.</field>
-            <!-- Parametrizacion de Logica -->
+            <!-- Condition Select -->
             <field name="condition_select">none</field>
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">
-                result_qty = worked_days.WORK100.number_of_days
-                result = contract.amount
-            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">fix</field>
+            <field name="amount_fix">contract.amount</field>
+            <field name="quantity">worked_days.WORK100.number_of_days</field>
         </record>
         <record id="l10n_ar_payroll.ANTG" model="hr_salary_rule">
             <field name="name">ANTIGUEDAD</field>
             <field name="code">ANTG</field>
             <field name="sequence">10101</field>
-            <field name="quantity">1</field>
             <field name="category_id">l10n_ar_payroll.ADIC</field>
-            <field name="register_id">TODO</field>
             <field name="active">True</field>
             <field name="appears_on_payslip">True</field>
             <field name="note">Extra por antiguedad del trabajador.</field>
-            <!-- Parametrizacion de Logica -->
+            <!-- Condition Select -->
             <field name="condition_select">range</field>
             <field name="condition_range">employee.service_duration_years</field>
             <field name="condition_range_min">1</field>
-            <field name="condition_range_max">1</field>
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">
-                result_rate = 1.00 * employee.service_duration_years
-                result = categories.BASIC
-            </field>
-            <!-- Parametrizacion de Logica -->
+            <field name="condition_range_max">999</field>
+            <!-- Amount Select -->
+            <field name="amount_select">percentage</field>
+            <field name="amount_percentage_base">categories.BASIC</field>
+            <field name="amount_percentage">1.00</field> <!-- 1% Antiguedad -->
+            <field name="quantity">employee.service_duration_years</field> <!-- Por cada año de trabajo-->
         </record>
         <record id="l10n_ar_payroll.HOL" model="hr_salary_rule">
             <field name="name">FERIADOS</field>
             <field name="code">HOL</field>
             <field name="sequence">10105</field>
-            <field name="quantity">field_value</field>
-            <field name="category_id">l10n_ar_payroll.DESC</field>
+            <field name="category_id">l10n_ar_payroll.ADIC</field>
             <field name="active">True</field>
             <field name="appears_on_payslip">True</field>
             <field name="note">Feriados y dias festivos discriminados.</field>
-            <field name="parent_rule_id"></field>
-            <!-- Parametrizacion de Logica -->
+            <!-- Condition Select -->
             <field name="condition_select">range</field>
             <field name="condition_range">worked_days.HOL.number_of_days</field>
             <field name="condition_range_min">1</field>
             <field name="condition_range_max">999</field>
+            <!-- Amount Select -->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
                 if contract.is_wage_accurate:
@@ -94,8 +86,9 @@
             <field name="appears_on_payslip">True</field>
             <field name="note">Descuentos de horas / dias por ausentismo del trabajador.</field>
             <field name="parent_rule_id"></field>
-            <!-- Parametrizacion de Logica -->
+            <!-- Condition Select -->
             <field name="condition_select">none</field>
+            <!-- Amount Select -->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
                 if not contract.is_wage_accurate:
@@ -110,18 +103,17 @@
             <field name="name">HORAS EXTRA AL 50%</field>
             <field name="code">EXT50</field>
             <field name="sequence">10120</field>
-            <field name="quantity">field_value</field>
             <field name="category_id">l10n_ar_payroll.EXT</field>
-            <field name="register_id">TODO</field>
             <field name="active">True</field>
             <field name="appears_on_payslip">True</field>
             <field name="note">Horas extra devengadas en el periodo pagadas al 50% (150%).</field>
-            <!-- Parametrizacion de Logica -->
+            <!-- Condition Select -->
             <field name="condition_select">range</field>
             <field name="condition_range">worked_days.WORK150.number_of_hours</field>
             <field name="condition_range_min">1</field>
             <field name="condition_range_max">999</field>
-             <field name="amount_select">code</field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
             <field name="amount_python_compute">
                 result_rate = 150.00
                 if not contract.is_wage_accurate:
@@ -129,25 +121,24 @@
                     result = contract.amount
                 else:
                     result_qty = worked_days.WORK150.number_of_days
-                    result = contract.wage / worked_days.WORK100.number_of_days
+                    result = contract.wage / worked_days.WORK100.number_of_days <!-- TODO: Ver como se calcula en mensuales -->
             </field>
         </record>
         <record id="l10n_ar_payroll.EXT100" model="hr_salary_rule">
             <field name="name">HORAS EXTRA AL 100%</field>
             <field name="code">EXT100</field>
             <field name="sequence">10122</field>
-            <field name="quantity">field_value</field>
             <field name="category_id">l10n_ar_payroll.EXT</field>
-            <field name="register_id">TODO</field>
             <field name="active">True</field>
             <field name="appears_on_payslip">True</field>
             <field name="note">Horas extra devengadas en el periodo pagadas al 100% (200%).</field>
-            <!-- Parametrizacion de Logica -->
+            <!-- Condition Select -->
             <field name="condition_select">range</field>
             <field name="condition_range">worked_days.EXT50.number_of_hours</field>
             <field name="condition_range_min">1</field>
             <field name="condition_range_max">999</field>
-             <field name="amount_select">code</field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
             <field name="amount_python_compute">
                 result_rate = 200.00
                 if not contract.is_wage_accurate:
@@ -162,26 +153,24 @@
             <field name="name">PREMIO PRESENTISMO</field>
             <field name="code">PRES</field>
             <field name="sequence">10130</field>
-            <field name="quantity">field_value</field>
             <field name="category_id">l10n_ar_payroll.PREM</field>
-            <field name="register_id">TODO</field>
             <field name="active">True</field>
             <field name="appears_on_payslip">True</field>
-            <field name="note">Horas extra devengadas en el periodo pagadas al 100% (200%).</field>
+            <field name="note">Premio por presentismo perfecto.</field>
             <!-- Parametrizacion de Logica -->
             <field name="condition_select">range</field>
             <field name="condition_range">worked_days.NOWORK100.number_of_days</field>
-            <field name="condition_range_min">1</field>
-            <field name="condition_range_max">999</field>
-             <field name="amount_select">code</field>
+            <field name="condition_range_min">0</field>
+            <field name="condition_range_max">0</field>
+            <field name="amount_select">code</field>
             <field name="amount_python_compute">
                 if contract.schedule_pay == 'bi-weekly':
-                    result = 2000.0 <!-- TODO: Ver si es posible parametrizar esto en algun lado, ya que el presentismo es comun -->
+                    result = 2000.0
+                <!-- TODO: Ver si es posible parametrizar esto en algun lado, ya que el presentismo es comun -->
                 else:
                     result = 4000.0
             </field>
         </record>
-
         <!-- Retenciones: 20.000 - 20.999 -->
         <record id="l10n_ar_payroll.JUB11" model="hr_salary_rule">
             <field name="name">APORTES JUBILATORIOS</field>
@@ -194,7 +183,7 @@
             <field name="note">Retencion y descuento de aportes destinados a AFIP-JUBILACION.</field>
             <!-- Parametrizacion de Logica -->
             <field name="condition_select">none</field>
-             <field name="amount_select">code</field>
+            <field name="amount_select">code</field>
             <field name="amount_python_compute">
                 result_rate = -11.00
                 result = categories.GROSS
@@ -247,7 +236,8 @@
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
-                result_rate = -2.50  <!--  TODO: VER COMO MANEJAR ESTO -->
+                result_rate = -2.50
+                <!--  TODO: VER COMO MANEJAR ESTO -->
                 result = categories.GROSS
             </field>
         </record>

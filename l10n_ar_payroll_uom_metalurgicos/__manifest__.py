@@ -10,6 +10,12 @@
     'website': 'https://www.github.com/nimarosa/hr',
     'license': 'LGPL-3',
     'category': ['Human Resources'],
+    'depends': [
+        'payroll', 'hr_attendance', 'hr_contract'
+    ],
+    'data': [
+        ''
+    ],
     'installable': True,
     'auto_install': False,
     'application': False,

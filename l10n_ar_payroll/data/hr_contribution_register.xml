@@ -3,22 +3,19 @@
     <data noupdate="1">
         <!-- Centros de Contribucion por default en Sueldos Argentina -->
         <record id="l10n_ar_payroll.AFIP-APORT-JUB" model="hr_contribution_register">
-            <field name="name">AFIP APORTES - JUBILACION (retenidos) </field>
+            <field name="name">( AFIP ) APORTES JUBILATORIOS (retenidos) </field>
+            <field name="partner_id">l10n_ar.partner_afip</field>
         </record>
         <record id="l10n_ar_payroll.AFIP-APORT-INSSJP" model="hr_contribution_register">
-            <field name="name">AFIP APORTES - LEY 19.032 - INSSJP (retenidos) </field>
+            <field name="name">( AFIP ) APORTES LEY 19.032 INSSJP (retenidos) </field>
+            <field name="partner_id">l10n_ar.partner_afip</field>
         </record>
         <record id="l10n_ar_payroll.AFIP-APORT-OS" model="hr_contribution_register">
-            <field name="name">AFIP APORTES - OBRAS SOCIALES</field>
-        </record>
-        <record id="l10n_ar_payroll.SIND-APORT" model="hr_contribution_register">
-            <field name="name">SINDICALES APORTES - CUOTA SINDICAL</field>
-        </record>
-        <record id="l10n_ar_payroll.SIND-RET-SVCO" model="hr_contribution_register">
-            <field name="name">SINDICALES RETENCIOENS - SVCO</field>
+            <field name="name">( AFIP ) APORTES OBRAS SOCIALES</field>
+            <field name="partner_id">l10n_ar.partner_afip</field>
         </record>
         <record id="l10n_ar_payroll.EMGO-JUD" model="hr_contribution_register">
-            <field name="name">OTROS - EMBARGOS JUDICIALES</field>
+            <field name="name">( OTROS ) EMBARGOS JUDICIALES</field>
         </record>
         <record id="l10n_ar_payroll.OWN-DED-ADV" model="hr_contribution_register">
             <field name="name">DEDUCCIONES DE ADELANTOS Y PAGOS A CUENTA</field>
