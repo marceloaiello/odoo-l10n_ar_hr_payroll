@@ -43,7 +43,7 @@
                     </group>
                 </page>
             </xpath>
-            <xpath expr="//field[@name='aplica_cct']" position="after">
+            <xpath expr="//field[@name='cct_category_id']" position="after">
                 <field name="cobertura_svco" />
             </xpath>
         </field>

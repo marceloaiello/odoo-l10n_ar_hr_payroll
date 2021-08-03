@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="hr_overtime_management_types_tree" model="ir.ui.view">
+        <field name="name">hr.overtime.type.tree</field>
+        <field name="model">hr.overtime.type</field>
+        <field name="arch" type="xml">
+            <tree string="Tipos de Horas Extra">
+                <field name="payroll_code" />
+                <field name="description" />
+                <field name="name" string="Referencia" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action View -->
+    <record id="action_hr_overtime_management_types" model="ir.actions.act_window">
+        <field name="name">Horas Extras</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.overtime.type</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Aun no se han creado tipos de horas extra. Cree uno.
+            </p>
+        </field>
+    </record>
+
+</odoo>

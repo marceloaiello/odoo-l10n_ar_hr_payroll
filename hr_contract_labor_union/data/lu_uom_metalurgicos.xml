@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- SINDICATO -->
+        <record id="lu_uom_metalurgicos_rama3_art4" model="hr.labor_union">
+            <field name="sindicato">UOM</field>
+            <field name="convenio">CCT 260/75 Rama 3 Art 4</field>
+        </record>
+        <!-- CATEGORIAS -->
+        <record id="category_ingresante" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Ingresante</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="category_operario_calificado" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Operario Calificado</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="category_medio_of_mecanico" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">1/2 Oficial Mecanico</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="category_medio_of_electricista" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">1/2 Oficial Electricista</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="category_of_servicio_2da" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Oficial de Servicio de 2º</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="category_of_reclamista" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Oficial Reclamista</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="category_of_mecanico" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Oficial Mecanico</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="category_of_electricista" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Oficial Electricista</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="category_of_servicio_1ra" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Oficial de Servicio de 1º</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="category_of_multiple" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Oficial Multiple</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="category_of_montador" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Oficial Montador</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="category_of_calibrador_2da" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Oficial Calibrador de 2º</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="category_of_calibrador_1ra" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Oficial Calibrador de 1º</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="category_of_superior" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Oficial Superior</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="category_of_multiple_superior" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Oficial Multiple Superior</field>
+            <field name="category_period_type">hour</field>
+        </record>
+    </data>
+</odoo>

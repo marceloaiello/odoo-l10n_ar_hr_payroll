@@ -33,10 +33,6 @@
                             <field name="phone" class="o_force_ltr" string="Telefono" readonly="True" modifiers="{'readonly':true}" attrs="{'invisible' : [('address_home_id', '=', False)]}" />
                             <separator />
                             <field name="bank_account_id" context="{'display_partner':True}" attrs="{'invisible' : [('address_home_id', '=', False)]}" can_create="true" can_write="true" modifiers="{'invisible':[['address_home_id','=',false]]}" />
-                            <field name="employee_bank_titular" readonly="True" attrs="{'invisible' : [('bank_account_id', '=', False)]}" modifiers="{'invisible':[['bank_account_id','=',false]]}" />
-                            <field name="employee_bank" readonly="True" attrs="{'invisible' : [('bank_account_id', '=', False)]}" modifiers="{'invisible':[['bank_account_id','=',false]]}" />
-                            <field name="employee_account_number" readonly="True" attrs="{'invisible' : [('bank_account_id', '=', False)]}" modifiers="{'invisible':[['bank_account_id','=',false]]}" />
-                            <field name="employee_cbu" readonly="True" attrs="{'invisible' : [('bank_account_id', '=', False)]}" modifiers="{'invisible':[['bank_account_id','=',false]]}" />
                         </group>
                         <group string="Emergency" modifiers="{}">
                             <field name="emergency_contact" modifiers="{}" />

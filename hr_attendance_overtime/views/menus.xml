@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem name="Horas Extras" id="overtime_management_main_menu" sequence="10" />
+    <menuitem id="overtime_managment_main_submenu" parent="overtime_management_main_menu" sequence="1" name="Horas Extras" />
+    <menuitem action="action_hr_overtime_management" name="Registros de Horas Extras" id="menu_action_hr_overtime_management" parent="overtime_managment_main_submenu" sequence="1" />
+    <menuitem action="action_hr_overtime_management_types" name="Tipos de Hora Extra" id="menu_action_hr_overtime_management_types" parent="overtime_managment_main_submenu" sequence="2" />
+</odoo>

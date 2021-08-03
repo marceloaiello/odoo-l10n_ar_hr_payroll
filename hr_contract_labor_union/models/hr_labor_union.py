@@ -9,7 +9,7 @@ class HrLaborUnion(models.Model):
     _inherit = 'mail.thread'
     _description = 'Union Laboral / Sindicatos'
 
-    name = fields.Char(string='C.C.T / Sindicato', readonly=True)
+    name = fields.Char(string='C.C.T / Sindicato', compute='_compute_name')
     sindicato = fields.Char(string='Sindicato', track_visibility='onchange')
     convenio = fields.Char(string='Codigo C.C.T / RAMA', track_visibility='onchange')
     cct_categories = fields.One2many(comodel_name='hr.labor_union.category',
@@ -23,8 +23,8 @@ class HrLaborUnion(models.Model):
     company_id = fields.Many2one('res.company', string='Empresa',
                                  required=True, default=lambda self: self.env.user.company_id)
 
-    @api.onchange("sindicato", "convenio")
-    def _onchange_sindicato_convenio(self):
+    @api.depends("sindicato", "convenio")
+    def _compute_name(self):
         if self.sindicato and self.convenio:
             self.name = "( " + self.convenio + " ) " + self.sindicato
 
@@ -32,10 +32,19 @@ class HrLaborUnion(models.Model):
     def _compute_svco_current_value(self):
         for record in self:
             today = fields.Date.context_today(self).strftime('%Y-%m-%d')
-            svco_value = 0
+            svco_value = 0.00
             domain = [('labor_union_id', '=', record.id),
                       ('from_date', '<=', today), ('to_date', '>=', today)]
             if record.cct_svco_values.search_count(domain) == 1:
                 for svco in record.cct_svco_values.search(domain):
                     svco_value = svco.value
             record.svco_current_value = svco_value
+
+    def define_prices_form(self):
+        return {
+            'name': "Definir Importes",
+            'type': 'ir.actions.act_url',
+            # The url is the same as above
+            'url': "/web?&#action=276&model=hr.labor_union.category.price&view_type=list",
+            'target': 'new'
+        }

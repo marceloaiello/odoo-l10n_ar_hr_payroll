@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_attendance.view_attendance_tree_inherit_hr_attendance" model="ir.ui.view">
+        <field name="name">hr.attendance.view.list.inherit</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='attendance_reason_ids']" position="after">
+                <field name="overtime_created" readonly="true" widget="toggle_button" options="{'active': 'Horas Extras devengadas', 'inactive': 'Sin horas extras'}" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models, exceptions, _
+from odoo.exceptions import ValidationError
 
 
 class HrLaborUnionCategory(models.Model):
@@ -51,7 +52,7 @@ class HrLaborUnionCategoryPrice(models.Model):
     _description = 'Valores de Categorias C.C.T'
     _check_company_auto = True
 
-    name = fields.Char(string='Referencia', readonly=True)
+    name = fields.Char(string='Referencia', compute='_compute_name')
     from_date = fields.Date(string='Fecha Desde', required=True)
     to_date = fields.Date(string='Fecha Hasta', required=True)
     value = fields.Monetary(string='Valor Actual', required=True,
@@ -63,11 +64,14 @@ class HrLaborUnionCategoryPrice(models.Model):
     company_id = fields.Many2one('res.company', string='Empresa', required=True,
                                  default=lambda self: self.env.user.company_id)
 
-    @api.onchange("labor_union_category_id", "from_date", "to_date")
-    def _onchange_labor_union_category_dates(self):
-        if self.labor_union_category_id or self.from_date or self.to_date:
-            self.name = "Categoria: " + self.labor_union_category_id.name + \
-                " >> " + "Desde " + self.from_date + "Hasta " + self.to_date
+    @api.depends("labor_union_category_id", "from_date", "to_date")
+    def _compute_name(self):
+        for record in self:
+            if record.labor_union_category_id and record.from_date and record.to_date:
+                record.name = "Categoria: " + record.labor_union_category_id.name + \
+                    " >> " + "Desde " + \
+                    record.from_date.strftime(
+                        "%d-%m-%Y") + " Hasta " + record.to_date.strftime("%d-%m-%Y")
 
     @api.constrains('to_date', 'from_date', 'company_id', 'labor_union_category_id')
     def _check_category_dates(self):
@@ -92,5 +96,5 @@ class HrLaborUnionCategoryPrice(models.Model):
                                                              '>=', record.to_date),
             ]
             if self.search_count(domain) > 0:
-                raise exceptions.ValidationError(
+                raise ValidationError(
                     _('No puedes ingresar fechas que se superpongan a los periodos ya ingresados de categorias.'))

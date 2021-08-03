@@ -2,19 +2,27 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'Configuracion de Payroll AFIP ARG (l10n_ar)',
-    'version': '13.0.1.0',
+    'name': 'Localizacion de Payroll Argentina (l10n_ar)',
+    'version': '13.0.2.0.0',
     'description': 'Configuracion de Payroll - Localizacion Argentina',
-    'summary': 'Configuracion de Payrol- Localizacion Argentina',
+    'summary': 'Configuracion de Payrol - Localizacion Argentina',
     'author': 'Nimarosa',
-    'website': 'https://www.github.com/nimarosa/hr',
+    'website': 'https://www.github.com/nimarosa/hr/l10n_ar_payroll',
     'license': 'LGPL-3',
-    'category': 'Human Resources',
+    'category': 'Payroll',
     'depends': [
-        'hr', 'hr_contract', 'payroll', 'l10n_ar_afip_sicoss', 'l10n_ar_payroll_payslip_report'
+        'hr_contract',
+        'hr_contract_labor_union',
+        'hr_attendance',
+        'hr_attendance_report_theoretical_time',
+        'payroll'
     ],
     'data': [
-        'data/hr_contribution_register.xml', 'data/hr_salary_rule.xml', 'data/hr_salary_rule_category.xml'
+        'views/views.xml',
+        'data/hr_contribution_register.xml',
+        'data/hr_leaves.xml',
+        'data/hr_salary_rule_category.xml',
+        'data/hr_salary_rule.xml',
     ],
     'installable': True,
     'auto_install': False,

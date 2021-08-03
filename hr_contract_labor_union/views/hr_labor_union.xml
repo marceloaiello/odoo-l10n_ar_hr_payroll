@@ -35,6 +35,9 @@
         <field name="name">hr.labor_union.form</field>
         <field name="model">hr.labor_union</field>
         <field name="arch" type="xml">
+            <header>
+                <button string="Definir los importes de categorias" name="define_prices_form" type="object" class="oe_highlight"/>
+            </header>
             <form>
                 <div class="oe_title pr-0" name="title">
                     <h1 class="d-flex flex-row justify-content-between">
@@ -51,7 +54,7 @@
                     </group>
                 </group>
                 <group string="Categorias - CCT">
-                    <field name="cct_categories">
+                    <field name="cct_categories" nolabel="1">
                         <tree editable="bottom">
                             <field name="name" />
                             <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
@@ -61,12 +64,13 @@
                     </field>
                 </group>
                 <group string="Seguro de Vida Colectivo (S.V.C.O)">
-                    <field name="cct_svco_values">
+                    <field name="cct_svco_values" nolabel="1">
                         <tree editable="bottom" default_order="from_date,to_date asc">
                             <field name="from_date" />
                             <field name="to_date" />
                             <field name="value" widget='monetary' />
                             <field name="name" string="Referencia" />
+                            <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
                         </tree>
                     </field>
                 </group>

@@ -24,8 +24,9 @@
                 <field name="labor_union_category_id" string="Categoria C.C.T - Sindicato" />
                 <field name="from_date" string="Fecha Desde" />
                 <field name="to_date" string="Fecha Hasta" />
-                <field name="value" string="Importe" />
+                <field name="value" string="Importe" widget='monetary'/>
                 <field name="name" string="Referencia" />
+                <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
             </tree>
         </field>
     </record>

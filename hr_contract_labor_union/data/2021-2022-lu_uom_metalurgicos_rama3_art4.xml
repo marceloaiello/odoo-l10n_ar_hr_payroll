@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- PRECIOS CATEGORIAS: 2021-07-01 (Rama 3 Art 4)-->
+        <record id="hr_contract_labor_union.category_price_ingresante_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="hr_contract_labor_union.category_ingresante"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">210.65</field>
+        </record>
+        <record id="hr_contract_labor_union.category_price_operario_calificado_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="hr_contract_labor_union.category_operario_calificado"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">228.18</field>
+        </record>
+        <record id="hr_contract_labor_union.category_price_medio_of_mecanico_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="hr_contract_labor_union.category_medio_of_mecanico"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">245.93</field>
+        </record>
+        <record id="hr_contract_labor_union.category_price_medio_of_electricista_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="hr_contract_labor_union.category_medio_of_electricista"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">245.93</field>
+        </record>
+        <record id="hr_contract_labor_union.category_price_of_servicio_1ra_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="hr_contract_labor_union.category_of_servicio_2da"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">258.99</field>
+        </record>
+        <record id="hr_contract_labor_union.category_price_of_reclamista_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="hr_contract_labor_union.category_of_reclamista"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">291.20</field>
+        </record>
+        <record id="hr_contract_labor_union.category_price_of_mecanico_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="hr_contract_labor_union.category_of_mecanico"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">291.20</field>
+        </record>
+        <record id="hr_contract_labor_union.category_price_of_electricista_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="hr_contract_labor_union.category_of_electricista"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">291.20</field>
+        </record>
+        <record id="hr_contract_labor_union.category_price_of_servicios_1ra_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="hr_contract_labor_union.category_of_servicio_1ra"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">291.20</field>
+        </record>
+        <record id="hr_contract_labor_union.category_price_of_multiple_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="hr_contract_labor_union.category_of_multiple"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">313.43</field>
+        </record>
+        <record id="hr_contract_labor_union.category_price_of_montador_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="hr_contract_labor_union.category_of_montador"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">321.74</field>
+        </record>
+        <record id="hr_contract_labor_union.category_price_of_calibrador_2ra_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="hr_contract_labor_union.category_of_calibrador_2da"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">356.55</field>
+        </record>
+        <record id="hr_contract_labor_union.category_price_of_calibrador_1ra_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="hr_contract_labor_union.category_of_calibrador_1ra"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">383.59</field>
+        </record>
+        <record id="hr_contract_labor_union.category_price_of_superior_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="hr_contract_labor_union.category_of_superior"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">313.43</field>
+        </record>
+        <record id="hr_contract_labor_union.category_price_of_multiple_superior_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="hr_contract_labor_union.category_of_multiple_superior"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">335.40</field>
+        </record>
+
+        <!-- SVCO CONVENIO: 2021-07-01 -->
+        <record id="hr_contract_labor_union.svco_value_202107" model="hr.labor_union.svco_value">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">377.62</field>
+        </record>
+        <!-- SVCO CONVENIO: 2021-10-01 -->
+        <record id="hr_contract_labor_union.svco_value_202110" model="hr.labor_union.svco_value">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="from_date">2021-10-01</field>
+            <field name="to_date">2021-12-31</field>
+            <field name="value">410.45</field>
+        </record>
+        <!-- SVCO CONVENIO: 2022-01-01 -->
+        <record id="hr_contract_labor_union.svco_value_202201" model="hr.labor_union.svco_value">
+            <field name="labor_union_id" ref="hr_contract_labor_union.lu_uom_metalurgicos_rama3_art4" />
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-02-01</field>
+            <field name="value">443.94</field>
+        </record>
+    </data>
+</odoo>

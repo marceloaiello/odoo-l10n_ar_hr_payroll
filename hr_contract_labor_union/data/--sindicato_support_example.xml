@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Alta de nuevo sindicato o rama -->
+        <record id="lu_uom_metalurgicos_rama3_art4" model="hr.labor_union">
+            <field name="sindicato">Nombre del Sindicato</field>
+            <field name="convenio">CCT / Rama / Division / Extra Info</field>
+        </record>
+
+        <!-- Crear Categoria de Sindicato / Rama -->
+        <record id="category_operario_calificado" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="id_externo_del_sindicato o id_real_en_db" />
+            <field name="name">Nombre de la Categoria</field>
+            <field name="category_period_type">periodo del precio indicado (hora, mensual, trimestral, etc)</field>
+        </record>
+
+        <!-- Crear nuevo precio para una categoria (con fechas) -->
+        <record id="hr_contract_labor_union.category_price_operario_calificado_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="id_externo_de_categoria o id_real_en_db" />
+            <field name="from_date">Fecha Desde</field>
+            <field name="to_date">Fecha Hasta</field>
+            <field name="value">Importe Vigente en esas fechas</field>
+        </record>
+
+        <!-- Crear nuevos precios para svco -->
+        <record id="hr_contract_labor_union.svco_value_202201" model="hr.labor_union.svco_value">
+            <field name="labor_union_id" ref="id_externo_del_sindicato o id_real_en_db" />
+            <field name="from_date">Fecha Desde</field>
+            <field name="to_date">Fecha Hasta</field>
+            <field name="value">Importe Vigente en esas fechas</field>
+        </record>
+    </data>
+</odoo>
