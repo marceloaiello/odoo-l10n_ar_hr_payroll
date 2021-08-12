@@ -40,3 +40,50 @@ class HrPayslip(models.Model):
         res.extend(overtimes.values())
 
         return res
+
+    @api.model
+    def get_inputs(self, contracts, date_from, date_to):
+        """
+        Here we override the get_inputs function to add some computed inputs values
+        (which might be editable then if the calculation is not ok.)
+        """
+        res = []
+
+        structure_ids = contracts.get_all_structures()
+        rule_ids = (
+            self.env["hr.payroll.structure"].browse(structure_ids).get_all_rules()
+        )
+        sorted_rule_ids = [id for id, sequence in sorted(rule_ids, key=lambda x: x[1])]
+        payslip_inputs = (
+            self.env["hr.salary.rule"].browse(sorted_rule_ids).mapped("input_ids")
+        )
+
+        for contract in contracts:
+            for payslip_input in payslip_inputs:
+                res.append(
+                    {
+                        "name": payslip_input.name,
+                        "code": payslip_input.code,
+                        "contract_id": contract.id,
+                        "amount": 0.00
+                    }
+                )
+        return res
+
+    @api.model
+    def _compute_sac_input(self):
+        """
+        Calculo de mejor sueldo para Base de Calculo del SAC (Aguinaldo).
+        El mejor sueldo debe ser calculado sobre los sueldos del ultimo periodo de 6 meses
+        dependiendo del semestre en que se encuentre.
+        (enero-junio / julio-diciembre).
+        """
+        domain = [
+            ('contract_id', '=', contract_id),
+            ('date_from', '>=', date_from),
+            ('date_to', '<=', date_to)
+            ('state', '=', 'validated')
+        ]
+        semester_payslips = self.env['hr_payslip'].search(domain)
+
+

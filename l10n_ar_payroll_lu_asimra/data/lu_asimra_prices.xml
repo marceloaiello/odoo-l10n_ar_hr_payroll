@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- PRECIOS CATEGORIAS: 2021-07-01 (Rama 3 Art 4)-->
+        <record id="category_price_ingresante_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_asimra.category_ingresante"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">210.65</field>
+        </record>
+        <!-- SVCO CONVENIO: 2021-07-01 -->
+        <record id="svco_value_202107" model="hr.labor_union.svco_value">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_asimra.lu_asimra_metalurgicos" />
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">377.62</field>
+        </record>
+
+        <!-- PRECIOS CATEGORIAS: 2021-10-01 (Rama 3 Art 4)-->
+        <record id="category_price_ingresante_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_asimra.category_ingresante"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">210.65</field>
+        </record>
+        <!-- SVCO CONVENIO: 2021-10-01 -->
+        <record id="svco_value_202107" model="hr.labor_union.svco_value">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_asimra.lu_asimra_metalurgicos" />
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">377.62</field>
+        </record>
+
+
+        <!-- PRECIOS CATEGORIAS: 2021-10-01 (Rama 3 Art 4)-->
+        <record id="category_price_ingresante_202107" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_asimra.category_ingresante"/>
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">210.65</field>
+        </record>
+        <!-- SVCO CONVENIO: 2021-07-01 -->
+        <record id="svco_value_202107" model="hr.labor_union.svco_value">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_asimra.lu_asimra_metalurgicos" />
+            <field name="from_date">2021-07-01</field>
+            <field name="to_date">2021-09-30</field>
+            <field name="value">377.62</field>
+        </record>
+    </data>
+</odoo>

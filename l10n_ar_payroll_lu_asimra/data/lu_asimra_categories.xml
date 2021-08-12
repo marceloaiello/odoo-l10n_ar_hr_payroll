@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- SINDICATO -->
+        <record id="lu_asimra_metalurgicos" model="hr.labor_union">
+            <field name="sindicato">ASIMRA</field>
+            <field name="convenio">TODO</field>
+        </record>
+        <!-- CATEGORIAS -->
+        <record id="category_supervisor_serv_generales" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_asimra.lu_asimra_metalurgicos" />
+            <field name="name">Supervisor Serv. Generales</field>
+            <field name="category_period_type">month</field>
+        </record>
+    </data>
+</odoo>

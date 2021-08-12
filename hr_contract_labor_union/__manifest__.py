@@ -19,9 +19,6 @@
         'views/hr_labor_union_category_price.xml',
         'views/hr_contract.xml',
         'views/hr_labor_union_menus.xml',
-        'data/lu_uom_metalurgicos.xml',
-        'data/2021-2022-lu_uom_metalurgicos_rama3_art4.xml',
-
     ],
     'installable': True,
     'auto_install': False,

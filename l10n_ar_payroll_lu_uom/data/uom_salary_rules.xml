@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="rules.UOM1" model="hr_salary_rule">
+        <field name="name">UOM SINDICAL (SOLIDARIO)</field>
+        <field name="code">UOM1</field>
+        <field name="sequence">20900</field>
+        <field name="category_id" ref="l10n_ar_payroll.categories.RET" />
+        <field name="active">true</field>
+        <field name="appears_on_payslip">true</field>
+        <field name="note">Aporte sindical UOM - Solidario (2.5%)</field>
+        <!-- Condition Select -->
+        <field name="condition_select">none</field>
+        <!-- Amount Select -->
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+            result_rate = -2.5
+            result = categories.GROSS
+        </field>
+    </record>
+    <record id="rules.UOM2" model="hr_salary_rule">
+        <field name="name">UOM SINDICAL (AFILIADO)</field>
+        <field name="code">UOM2</field>
+        <field name="sequence">20900</field>
+        <field name="category_id" ref="l10n_ar_payroll.categories.RET" />
+        <field name="active">true</field>
+        <field name="appears_on_payslip">true</field>
+        <field name="note">Aporte sindical UOM - Sindical (3%)</field>
+        <!-- Condition Select -->
+        <field name="condition_select">none</field>
+        <!-- Amount Select -->
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+            result_rate = -3.00
+            result = categories.GROSS
+        </field>
+    </record>
+    <record id="rules.UOMSVCO" model="hr_salary_rule">
+        <field name="name">UOM SVCO</field>
+        <field name="code">UOMSVCO</field>
+        <field name="sequence">20901</field>
+        <field name="category_id" ref="l10n_ar_payroll.categories.RET" />
+        <field name="active">true</field>
+        <field name="appears_on_payslip">true</field>
+        <field name="note">Seguro de vida colectivo, sindicato UOM. Importe Fijo (Mensual).</field>
+        <!-- Condition Select -->
+        <field name="condition_select">none</field>
+        <!-- Amount Select -->
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+            result = contract.cct_id.svco_current_value
+        </field>
+    </record>
+    <record id="rules.UOMSVCOQ" model="hr_salary_rule">
+        <field name="name">UOM SVCO</field>
+        <field name="code">UOMSVCOQ</field>
+        <field name="sequence">20901</field>
+        <field name="category_id" ref="l10n_ar_payroll.categories.RET" />
+        <field name="active">true</field>
+        <field name="appears_on_payslip">true</field>
+        <field name="note">Seguro de vida colectivo, sindicato UOM. Importe Fijo (Quincenal).</field>
+        <!-- Condition Select -->
+        <field name="condition_select">none</field>
+        <!-- Amount Select -->
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+            result = contract.cct_id.svco_current_value / 2.00
+        </field>
+    </record>
+</odoo>

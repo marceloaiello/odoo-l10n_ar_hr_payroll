@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="structures.UOM-MEN" model="hr.payroll.structure">
+        <field name="name">LIQUIDACION UOM - MENSUALES (SUELDO FIJO)</field>
+        <field name="parent_id" ref="l10n_ar_payroll.monthly_basic" />
+        <field name="code">UOM-MEN</field>
+        <field name="rule_ids">
+            <field name="rule_id" ref="l10n_ar_payroll_lu_uom.rules.UOM1" />
+            <field name="rule_id" ref="l10n_ar_payroll_lu_uom.rules.UOMSVCO" />
+        </field>
+    </record>
+    <record id="structures.UOM-QUIN" model="hr.payroll.structure">
+        <field name="name">LIQUIDACION UOM - QUINCENALES (JORNALIZADOS)</field>
+        <field name="parent_id" ref="l10n_ar_payroll.biweekly_basic" />
+        <field name="code">UOM-QUIN</field>
+        <field name="rule_ids">
+            <field name="rule_id" ref="l10n_ar_payroll_lu_uom.rules.UOM1" />
+            <field name="rule_id" ref="l10n_ar_payroll_lu_uom.rules.UOMSVCOQ" />
+         </field>
+    </record>
+    <record id="structures.UOM-SAC" model="hr.payroll.structure">
+        <field name="name">LIQUIDACION UOM - SAC / AGUINALDOS</field>
+        <field name="parent_id" ref="l10n_ar_payroll.sac_aguinaldo" />
+        <field name="code">UOM-SAC</field>
+        <field name="rule_ids">
+            <field name="rule_id" ref="l10n_ar_payroll_lu_uom.rules.UOM1" />
+        </field>
+    </record>
+    <record id="structures.UOM-HOL" model="hr.payroll.structure">
+        <field name="name">LIQUIDACION UOM - VACACIONES</field>
+        <field name="parent_id" ref="l10n_ar_payroll.holidays" />
+        <field name="code">UOM-HOL</field>
+        <field name="rule_ids">
+            <field name="rule_id" ref="l10n_ar_payroll_lu_uom.rules.UOM1" />
+        </field>
+    </record>
+    <record id="structures.UOM-LIQF" model="hr.payroll.structure">
+        <field name="name">LIQUIDACION UOM - LIQUIDACION FINAL</field>
+        <field name="parent_id" ref="l10n_ar_payroll.final_lct" />
+        <field name="code">UOM-LIQF</field>
+        <field name="rule_ids">
+            <field name="rule_id" ref="l10n_ar_payroll_lu_uom.rules.UOM1" />
+            <field name="rule_id" ref="l10n_ar_payroll_lu_uom.rules.UOMSVCO" />
+        </field>
+    </record>
+</odoo>

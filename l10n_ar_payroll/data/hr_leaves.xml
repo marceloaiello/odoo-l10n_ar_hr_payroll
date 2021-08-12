@@ -1,7 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="l10n_ar_payroll.WORK0" model="hr.leave.type">
-        <field name="field_name">field_value</field>
+    <record id="leaves_WORK0" model="hr.leave.type">
+        <field name="name">Ausencias (impagadas)</field>
+        <field name="code">WORK0</field>
+        <field name="include_in_theoretical">true</field>
+        <field name="repeat">false</field>
+        <field name="allocation_type">no</field>
+        <field name="create_calendar_meeting">true</field>
+        <field name="color_name">brown</field>
+        <field name="active">true</field>
+        <field name="validation_type">both</field>
+        <field name="time_type">leave</field>
+        <field name="request_unit">hour</field>
+        <field name="exclude_public_holidays">true</field>
+        <field name="auto_approve_policy">no</field>
     </record>
-
+    <record id="leaves_WORK0P" model="hr.leave.type">
+        <field name="name">Ausencias (pagadas / justificadas)</field>
+        <field name="code">WORK0P</field>
+        <field name="include_in_theoretical">true</field>
+        <field name="repeat">false</field>
+        <field name="allocation_type">no</field>
+        <field name="create_calendar_meeting">true</field>
+        <field name="color_name">lightsalmon</field>
+        <field name="active">true</field>
+        <field name="validation_type">hr</field>
+        <field name="time_type">leave</field>
+        <field name="request_unit">hour</field>
+        <field name="exclude_public_holidays">true</field>
+        <field name="auto_approve_policy">no</field>
+    </record>
+    <record id="leaves_LEGALHOL" model="hr.leave.type">
+        <field name="name">Vacaciones Legales (pagadas)</field>
+        <field name="code">LEGALHOL</field>
+        <field name="include_in_theoretical">false</field>
+        <field name="repeat">false</field>
+        <field name="allocation_type">fixed_allocation</field>
+        <field name="create_calendar_meeting">true</field>
+        <field name="color_name">lightblue</field>
+        <field name="active">true</field>
+        <field name="validation_type">hr</field>
+        <field name="time_type">leave</field>
+        <field name="request_unit">natural_day</field>
+        <field name="exclude_public_holidays">false</field>
+        <field name="auto_approve_policy">no</field>
+    </record>
 </odoo>
