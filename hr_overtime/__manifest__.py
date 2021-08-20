@@ -4,8 +4,8 @@
 {
     'name': 'HR Overtime',
     'version': '13.0.1.0.0',
-    'description': 'This module adds overtime calculation funcionality to hr_attendance',
-    'summary': 'This module adds overtime calculation funcionality to hr_attendance',
+    'description': 'Crea el modelo hr_overtime que opera con hr_attendance para generar horas extras en base a la asistencia.',
+    'summary': 'hr_overtime permite calcular horas extras a partir de los registros de asistencias, o manualmente.',
     'author': 'Nimarosa',
     'website': 'https://www.github.com/hr/hr_overtime',
     'license': 'LGPL-3',

@@ -2,10 +2,10 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'Localizacion de Payroll Argentina (l10n_ar)',
+    'name': 'Payroll Argentina - l10n_ar',
     'version': '13.0.2.0.0',
-    'description': 'Configuracion de Payroll - Localizacion Argentina',
-    'summary': 'Configuracion de Payrol - Localizacion Argentina',
+    'description': 'Adaptacion del modulo payroll para Localizacion Argentina.',
+    'summary': 'Configuracion y adaptaicones modulo payroll para Argentina.',
     'author': 'Nimarosa',
     'website': 'https://www.github.com/nimarosa/hr/l10n_ar_payroll',
     'license': 'LGPL-3',

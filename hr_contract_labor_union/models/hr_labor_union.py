@@ -1,7 +1,7 @@
 # Copyright (C) 2021 Nimarosa (Nicolas Rodriguez) (<nicolasrsande@gmail.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 
 
 class HrLaborUnion(models.Model):
@@ -48,3 +48,23 @@ class HrLaborUnion(models.Model):
             'url': "/web?&#action=276&model=hr.labor_union.category.price&view_type=list",
             'target': 'new'
         }
+
+    def action_update_wizard(self): #TODO:
+        category_ids = self.env['hr.labor_union.category'].browse(self._context.get('cct_categories', False))
+        lines = []
+        for line in category_ids:
+            context = ({
+                'labor_union_category_id': line.id,
+                'from_date': fields.today(),
+                'to_date': fields.today(),
+                'amount': line.current_value,
+            })
+            lines.append(context)
+
+        return {'type': 'ir.actions.act_window',
+                'name': _('Update Prices'),
+                'res_model': 'hr.labor_union.category.prices.wizard',
+                'target': 'new',
+                'view_id': self.env.ref('hr_contract_labor_union.hr_labor_union_category_wizard').id,
+                'view_mode': 'form',
+                'context': {'labor_union_category_ids': lines}}

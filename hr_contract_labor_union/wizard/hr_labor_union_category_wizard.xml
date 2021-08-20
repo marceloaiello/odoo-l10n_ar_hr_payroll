@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_labor_union_category_wizard" model="ir.ui.view">
+        <field name="name">hr.labor_union.category.prices.update.wizard</field>
+        <field name="model">hr.labor_union.category.prices.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="labor_union_category_prices" widget="one2many_list">
+                    <tree editable="true">
+                        <field name="labor_union_category_id" />
+                        <field name="from_date" />
+                        <field name="to_date" />
+                        <field name="amount" />
+                    </tree>
+                </field>
+                <footer>
+                    <button class="btn-primary" string="Actualizar"  name="update_wizard" type="object"/>
+                    <button class="btn-primary" string="Cancelar" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

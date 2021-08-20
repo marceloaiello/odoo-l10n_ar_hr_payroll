@@ -2,10 +2,10 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'HR Payroll - Localizacion Argentina',
+    'name': 'AFIP SICOSS - l10n_ar',
     'version': '13.0.1.0',
-    'description': 'Adds afip fields to the hr and payroll modules to support import/export',
-    'summary': 'Adds afip fields to the hr and payroll modules to support import/export',
+    'description': 'Añade campos, datos y funcionalidades para integracion payroll con AFIP SICOSS.',
+    'summary': 'Añade campos, datos y funcionalidades para integracion payroll con AFIP SICOSS.',
     'author': 'Nimarosa',
     'website': 'https://github.com/nimarosa/hr',
     'license': 'LGPL-3',
