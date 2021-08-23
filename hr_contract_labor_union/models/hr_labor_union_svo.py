@@ -28,7 +28,9 @@ class HrLaborUnionSvcoValue(models.Model):
         for record in self:
             if record.labor_union_id and record.from_date and record.to_date:
                 record.name = "SVCO: " + record.labor_union_id.name + " >> " + \
-                    "Desde " + record.from_date.strftime("%d/%m/%Y") + " Hasta " + record.to_date.strftime("%d/%m/%Y")
+                    "Desde " + \
+                    record.from_date.strftime(
+                        "%d/%m/%Y") + " Hasta " + record.to_date.strftime("%d/%m/%Y")
 
     @api.constrains('to_date', 'from_date', 'company_id', 'labor_union_id')
     def _check_svco_dates(self):

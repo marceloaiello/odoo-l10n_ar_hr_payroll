@@ -15,7 +15,6 @@
     ],
     'data': [
         'data/uom_salary_rules.xml',
-        'data/uom_salary_structure.xml',
         'data/lu_uom_categories_rama3_art4.xml',
         'data/lu_uom_prices_rama3_art4.xml',
     ],

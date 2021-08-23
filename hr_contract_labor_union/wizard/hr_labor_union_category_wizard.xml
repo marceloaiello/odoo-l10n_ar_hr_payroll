@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="hr_labor_union_category_wizard" model="ir.ui.view">
-        <field name="name">hr.labor_union.category.prices.update.wizard</field>
-        <field name="model">hr.labor_union.category.prices.wizard</field>
+        <field name="name">hr.labor_union.update_prices.wizard.form</field>
+        <field name="model">hr.labor_union.update_prices.wizard</field>
         <field name="arch" type="xml">
             <form>
-                <field name="labor_union_category_prices" widget="one2many_list">
-                    <tree editable="true">
-                        <field name="labor_union_category_id" />
+                <field name="update_prices_line_ids" widget="one2many_list">
+                    <tree editable="top" create="false" delete="false" decoration-warning="is_changed==True">
+                        <field name="labor_union_category_id" readonly="1"  force_save="1" />
                         <field name="from_date" />
                         <field name="to_date" />
                         <field name="amount" />
+                        <field name="is_changed"  invisible="1" />
+                        <field name="company_id"  invisible="1" />
+                        <field name="currency_id"  invisible="1" />
                     </tree>
                 </field>
                 <footer>

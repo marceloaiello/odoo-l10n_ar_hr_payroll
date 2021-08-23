@@ -36,7 +36,6 @@
         <field name="model">hr.labor_union</field>
         <field name="arch" type="xml">
             <header>
-                <button string="Definir los importes de categorias" name="define_prices_form" type="object" class="oe_highlight"/>
                 <button name="action_update_wizard" string="Actualizar Precios" type="object" class="oe_highlight"/>
             </header>
             <form>
@@ -55,14 +54,13 @@
                     </group>
                 </group>
                 <group string="Categorias - CCT">
-                    <field name="cct_categories" nolabel="1">
+                    <field name="cct_categories" nolabel="1" widget="one2many">
                         <tree editable="bottom">
                             <field name="name" />
-                            <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
                             <field name="category_period_type" string="Periodo de Importe" />
                             <field name="current_value" widget='monetary' />
+                            <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
                         </tree>
-                        <button name="action_update_wizard" string="Actualizar Precios" type="object" class="oe_highlight"/>
                     </field>
                 </group>
                 <group string="Seguro de Vida Colectivo (S.V.C.O)">

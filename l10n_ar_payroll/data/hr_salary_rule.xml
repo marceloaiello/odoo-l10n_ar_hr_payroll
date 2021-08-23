@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
+    <data noupdate="1">
         <!-- Haberes y Descuentos: 10.000 - 10.999 -->
         <record id="rules_BASIC_HOURS" model="hr.salary.rule">
             <field name="name">HORAS NORMALES</field>
@@ -326,83 +326,6 @@
             <field name="name">Porcentual de Embargos</field>
             <field name="code">EMBG-RATE</field>
             <field name="input_id" ref="l10n_ar_payroll.rules_EMBG-JUD" />
-        </record>
-        <!-- Total Rules -->
-        <record id="rules_GROSS" model="hr.salary.rule">
-            <field name="name">SUBTOTAL HABERES</field>
-            <field name="code">GROSS</field>
-            <field name="sequence">90100</field>
-            <field name="active">true</field>
-            <field name="appears_on_payslip">true</field>
-            <field name="note">Sueldo bruto (haberes) del empleado.</field>
-            <!-- Condition Select -->
-            <field name="condition_select">none</field>
-            <!-- Amount Select -->
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">
-                result = categories.GROSS
-            </field>
-        </record>
-        <record id="rules_DESC" model="hr.salary.rule">
-            <field name="name">SUBTOTAL DESCUENTOS</field>
-            <field name="code">DESC</field>
-            <field name="sequence">90200</field>
-            <field name="active">true</field>
-            <field name="appears_on_payslip">true</field>
-            <field name="note">Total de descuentos y retenciones realizadas en la liquidacion.</field>
-            <!-- Condition Select -->
-            <field name="condition_select">none</field>
-            <!-- Amount Select -->
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">
-                result = categories.RET + categories.DESC
-            </field>
-        </record>
-        <record id="rules_NOREM" model="hr.salary.rule">
-            <field name="name">SUBTOTAL NO REMUNERATIVO</field>
-            <field name="code">NOREM</field>
-            <field name="sequence">90300</field>
-            <field name="active">true</field>
-            <field name="appears_on_payslip">true</field>
-            <field name="note">Total de ingresos no remunerativos del empleado.</field>
-            <!-- Condition Select -->
-            <field name="condition_select">none</field>
-            <!-- Amount Select -->
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">
-                result = categories.NOREM
-            </field>
-        </record>
-        <record id="rules_DED" model="hr.salary.rule">
-            <field name="name">SUBTOTAL DEDUCCIONES</field>
-            <field name="code">DED</field>
-            <field name="sequence">90400</field>
-            <field name="active">true</field>
-            <field name="appears_on_payslip">true</field>
-            <field name="note">Deducciones de pagos a cuenta, adelantos, prestamos, y otros descuentos sobre el neto.</field>
-            <!-- Condition Select -->
-            <field name="condition_select">none</field>
-            <!-- Amount Select -->
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">
-                result = categories.DED
-            </field>
-        </record>
-        <record id="rules_NET" model="hr.salary.rule">
-            <field name="name">SUBTOTAL NO REMUNERATIVO</field>
-            <field name="code">NET</field>
-            <field name="register_id" ref="l10n_ar_payroll.contribution_register_NET" />
-            <field name="sequence">90900</field>
-            <field name="active">true</field>
-            <field name="appears_on_payslip">true</field>
-            <field name="note">Sueldo neto del empleado (a pagar).</field>
-            <!-- Condition Select -->
-            <field name="condition_select">none</field>
-            <!-- Amount Select -->
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">
-                result = categories.GROSS + categories.DESC + categories.RET + categories.NOREM + categories.DED
-            </field>
         </record>
     </data>
 </odoo>
