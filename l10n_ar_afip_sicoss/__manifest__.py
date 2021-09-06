@@ -3,7 +3,7 @@
 
 {
     'name': 'AFIP SICOSS - l10n_ar',
-    'version': '13.0.1.0',
+    'version': '14.0.1.0.0',
     'description': 'Añade campos, datos y funcionalidades para integracion payroll con AFIP SICOSS.',
     'summary': 'Añade campos, datos y funcionalidades para integracion payroll con AFIP SICOSS.',
     'author': 'Nimarosa',

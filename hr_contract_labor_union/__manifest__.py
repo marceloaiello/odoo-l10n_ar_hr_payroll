@@ -3,7 +3,7 @@
 
 {
     'name': 'HR Labor Union (Sindicatos) - Argentina',
-    'version': '13.0.2.0',
+    'version': '14.0.1.0.0',
     'description': 'Añade la funcionalidad de manejar sindicatos y su integracion con hr_payroll.',
     'summary': 'Permite manejar sindicatos en odoo de acuerdo a la ley Argntina.',
     'author': 'Nimarosa',

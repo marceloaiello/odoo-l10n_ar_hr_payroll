@@ -3,7 +3,7 @@
 
 {
     'name': 'HR Overtime',
-    'version': '13.0.1.0.0',
+    'version': '14.0.1.0.0',
     'description': 'Crea el modelo hr_overtime que opera con hr_attendance para generar horas extras en base a la asistencia.',
     'summary': 'hr_overtime permite calcular horas extras a partir de los registros de asistencias, o manualmente.',
     'author': 'Nimarosa',
