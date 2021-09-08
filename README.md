@@ -1,6 +1,8 @@
 # Odoo Payroll - Localizacion Argentina 
 Odoo Payroll and HR Addons - l10n_ar: Localización Argentina
 
+La localizacion argentina de payroll para odoo, permite liquidar sueldos de acuerdo a las leyes y regulaciones Argentinas, asi como liquidar las cargas sociales correctamente con los sistemas de AFIP. Provee soporte para sindicatos, integracion con sistemas AFIP, y demas funciones que extienden y mejoran la implementacion actual de payroll de odoo.
+
 ## Descripcion de los Modulos
 
 * "hr_labor_union" - Soporte para sindicatos en Argentina. Agrega la posibilidad de parametrizar sindicatos, sus escalas, precios, actualizaciones y seguros sindicales, 
