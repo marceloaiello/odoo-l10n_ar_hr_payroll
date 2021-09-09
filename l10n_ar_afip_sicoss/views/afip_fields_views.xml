@@ -24,12 +24,17 @@
                 <page name="afip_fields" string="AFIP">
                     <group>
                         <group name="perfil_afip" string="Perfil del Trabajador">
-                            <field name="afip_situacion_revista_id" ref="l10n_ar_afip_sicoss.hr_afip_situacion_revista_1"/>
-                            <field name="afip_condicion_id" ref="l10n_ar_afip_sicoss.hr_afip_condicion_1"/>
-                            <field name="afip_actividad_id" ref="l10n_ar_afip_sicoss.hr_afip_actividad_49"/>
-                            <field name="afip_modalidad_contratacion_id" ref="l10n_ar_afip_sicoss.hr_afip_modalidad_contratacion_8"/>
-                            <field name="afip_codigo_siniestrado_id" ref="l10n_ar_afip_sicoss.hr_afip_codigo_siniestrado_0"/>
-                            <field name="afip_localidad_id" ref="l10n_ar_afip_sicoss.hr_afip_localidad_1"/>
+                            <field name="afip_situacion_revista_id" ref="l10n_ar_afip_sicoss.hr_afip_situacion_revista_1" 
+                                context="{'default_afip_situacion_revista_id': ref('l10n_ar_afip_sicoss.hr_afip_situacion_revista_1')}" />
+                            <field name="afip_condicion_id" ref="l10n_ar_afip_sicoss.hr_afip_condicion_1" 
+                                context="{'default_afip_condicion_id': ref('l10n_ar_afip_sicoss.hr_afip_condicion_1')}" />
+                            <field name="afip_actividad_id" ref="l10n_ar_afip_sicoss.hr_afip_actividad_49"
+                                context="{'default_afip_actividad_id': ref('l10n_ar_afip_sicoss.hr_afip_actividad_49')}" />
+                            <field name="afip_modalidad_contratacion_id" ref="l10n_ar_afip_sicoss.hr_afip_modalidad_contratacion_8" />
+                            <field name="afip_codigo_siniestrado_id" ref="l10n_ar_afip_sicoss.hr_afip_codigo_siniestrado_0"
+                                context="{'default_afip_codigo_siniestrado_id': ref('l10n_ar_afip_sicoss.hr_afip_codigo_siniestrado_0')}" />
+                            <field name="afip_localidad_id" ref="l10n_ar_afip_sicoss.hr_afip_localidad_1" 
+                                context="{'default_afip_localidad_id': ref('l10n_ar_afip_sicoss.hr_afip_localidad_1')}" />
                         </group>
                         <group name="obra_social" string="Obra Social">
                             <field name="afip_obra_social_id" />
