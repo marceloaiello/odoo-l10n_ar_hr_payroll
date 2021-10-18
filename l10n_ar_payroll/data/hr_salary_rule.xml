@@ -33,7 +33,8 @@ result = contract.amount
             <!-- Amount Select -->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
-result = contract.amount
+result_qty = worked_days.WORK100.number_of_days
+result = contract.amount / worked_days.WORK100.number_of_days
             </field>
         </record>
 
@@ -82,7 +83,7 @@ result = ((inputs.SACBASE / 2) / 180) * inputs.SACDAYS
             <field name="amount_python_compute">
                 result_rate = 1.00
                 result_qty = employee.service_duration_years
-                result = categories_BASIC
+                result = categories.BASIC
             </field>
         </record>
 
@@ -160,7 +161,7 @@ result = ((inputs.SACBASE / 2) / 180) * inputs.SACDAYS
                     result = contract.amount
                 else:
                     result_qty = worked_days.OVT50.number_of_days
-                    result = contract.wage / worked_days.WORK100.number_of_days
+                    result = contract.wage / contract.work_days_per_month
                 <!-- TODO: Ver como se calcula en mensuales -->
             </field>
         </record>
@@ -207,15 +208,18 @@ result = ((inputs.SACBASE / 2) / 180) * inputs.SACDAYS
             <field name="condition_range_max">0</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
-                if contract.schedule_pay == 'bi-weekly':
-                    result = 2000.0
-                <!-- TODO: Ver si es posible parametrizar esto en algun lado, ya que el presentismo es comun -->
+                if inputs.PRES-OVR is 0:
+                    if contract.schedule_pay == 'bi-weekly':
+                        result = 2000.0
+                        <!-- TODO: Ver si es posible parametrizar esto en algun lado, ya que el presentismo es comun -->
+                    else:
+                        result = 4000.0
                 else:
-                    result = 4000.0
+                    result = 0.00
             </field>
         </record>
         <record id="payslip_inputs_PRES-OVR" model="hr.rule.input">
-            <field name="name">Presentismo Manual</field>
+            <field name="name">Presentismo (Override)</field>
             <field name="code">PRES-OVR</field>
             <field name="input_id" ref="l10n_ar_payroll.rules_PRES" />
         </record>
@@ -236,7 +240,7 @@ result = ((inputs.SACBASE / 2) / 180) * inputs.SACDAYS
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
                 result_rate = -11.00
-                result = categories_GROSS
+                result = categories.GROSS
             </field>
         </record>
 
@@ -255,7 +259,7 @@ result = ((inputs.SACBASE / 2) / 180) * inputs.SACDAYS
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
                 result_rate = -3.00
-                result = categories_GROSS
+                result = categories.GROSS
             </field>
         </record>
 
@@ -274,7 +278,7 @@ result = ((inputs.SACBASE / 2) / 180) * inputs.SACDAYS
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
                 result_rate = -3.00
-                result = categories_GROSS
+                result = categories.GROSS
             </field>
         </record>
 
@@ -338,8 +342,8 @@ result = ((inputs.SACBASE / 2) / 180) * inputs.SACDAYS
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
                 result_rate = -(inputs.EMBG-RATE)
-                result = categories_NET
-            </field>
+                result = categories.NET
+            </field> <!-- TODO: Ver como poner los embargos -->
         </record>
         <record id="payslip_inputs_EMBG-RATE" model="hr.rule.input">
             <field name="name">Porcentual de Embargos</field>
