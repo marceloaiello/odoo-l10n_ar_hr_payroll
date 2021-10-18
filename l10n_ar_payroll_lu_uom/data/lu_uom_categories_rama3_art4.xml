@@ -3,8 +3,8 @@
     <data>
         <!-- SINDICATO -->
         <record id="lu_uom_metalurgicos_rama3_art4" model="hr.labor_union">
-            <field name="sindicato">UOM</field>
-            <field name="convenio">CCT 260/75 Rama 3 Art 4</field>
+            <field name="sindicato">UOM - METALURGICOS</field>
+            <field name="convenio">CCT 260/75 (Rama 3, Art 4)</field>
         </record>
 
         <!-- CATEGORIAS -->

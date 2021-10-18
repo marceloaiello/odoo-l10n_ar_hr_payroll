@@ -116,7 +116,7 @@ result = ((inputs.SACBASE / 2) / 180) * inputs.SACDAYS
             <field name="code">AUS</field>
             <field name="sequence">10110</field>
             <field name="quantity">field_value</field>
-            <field name="category_id" ref="l10n_ar_payroll.categories_DESC" />
+            <field name="category_id" ref="l10n_ar_payroll.categories_BASIC" />
             <field name="active">true</field>
             <field name="appears_on_payslip">true</field>
             <field name="note">Descuentos de horas / dias por ausentismo del trabajador.</field>

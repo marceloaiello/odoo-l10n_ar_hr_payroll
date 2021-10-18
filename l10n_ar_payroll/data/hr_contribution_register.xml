@@ -11,14 +11,14 @@
             <field name="partner_id" ref="l10n_ar.partner_afip" />
         </record>
         <record id="contribution_register_AFIP-OS" model="hr.contribution.register">
-            <field name="name">( AFIP-302 ) APORTES OBRAS SOCIALES</field>
+            <field name="name">( AFIP-302 ) APORTES OBRAS SOCIALES (retenidos)</field>
             <field name="partner_id" ref="l10n_ar.partner_afip" />
         </record>
         <record id="contribution_register_JUD-EMBG" model="hr.contribution.register">
-            <field name="name">( JUD ) EMBARGOS JUDICIALES</field>
+            <field name="name">( JUD ) EMBARGOS JUDICIALES (retenidos)</field>
         </record>
         <record id="contribution_register_NET" model="hr.contribution.register">
-            <field name="name">( EMPRESA ) SUELDOS A PAGAR</field>
+            <field name="name">SUELDOS A PAGAR</field>
         </record>
     </data>
 </odoo>

@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="basic_structure" model="hr.payroll.structure">
-            <field name="name">(BASE) LIQUIDACION BASICA LCT</field>
-            <field name="code">DEFAULT</field>
+        <record id="AR-DEFAULT-H" model="hr.payroll.structure">
+            <field name="name">( BASE ) LIQUIDACION BASICA LCT (Jornalizados)</field>
+            <field name="code">AR-DEFAULT</field>
             <field name="company_id" ref="base.main_company" />
             <field name="note">Base de liquidacion de sueldos en Argentina. Requerido por ley LCT.
-                Utilice esta estructura como base para otras.
+                Utilice esta estructura como base para otras. - EMPLEADOS JORNALIZADOS POR HORA
             </field>
-            <field eval="[(6, 0, [ref('hr_salary_rule_ca_demo'), ref('hr_salary_rule_meal_voucher')])]"
-                   name="rule_ids" />
+            <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_BASIC_HOURS'),
+                                    ref('l10n_ar_payroll.rules_ANTG'),
+                                    ref('l10n_ar_payroll.rules_HFRD'),
+                                    ref('l10n_ar_payroll.rules_AUS'),
+                                    ref('l10n_ar_payroll.rules_OVT50'),
+                                    ref('l10n_ar_payroll.rules_OVT100'),
+                                    ref('l10n_ar_payroll.rules_AFIP-JUB11'),
+                                    ref('l10n_ar_payroll.rules_AFIP-INSSJP3'),
+                                    ref('l10n_ar_payroll.rules_AFIP-OS3'),
+                                    ref('l10n_ar_payroll.rules_ADV'),
+                                    ref('l10n_ar_payroll.rules_LOAN'),
+                                    ref('l10n_ar_payroll.rules_EMBG-JUD')])]" name="rule_ids" />
+        </record>
+        <record id="AR-DEFAULT-M" model="hr.payroll.structure">
+            <field name="name">( BASE ) LIQUIDACION BASICA LCT (Mensualizados)</field>
+            <field name="code">AR-DEFAULT</field>
+            <field name="company_id" ref="base.main_company" />
+            <field name="note">Base de liquidacion de sueldos en Argentina. Requerido por ley LCT.
+                Utilice esta estructura como base para otras. - EMPLEADOS JORNALIZADOS POR HORA
+            </field>
+            <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_BASIC'),
+                                    ref('l10n_ar_payroll.rules_ANTG'),
+                                    ref('l10n_ar_payroll.rules_HFRD'),
+                                    ref('l10n_ar_payroll.rules_AUS'),
+                                    ref('l10n_ar_payroll.rules_OVT50'),
+                                    ref('l10n_ar_payroll.rules_OVT100'),
+                                    ref('l10n_ar_payroll.rules_AFIP-JUB11'),
+                                    ref('l10n_ar_payroll.rules_AFIP-INSSJP3'),
+                                    ref('l10n_ar_payroll.rules_AFIP-OS3'),
+                                    ref('l10n_ar_payroll.rules_ADV'),
+                                    ref('l10n_ar_payroll.rules_LOAN'),
+                                    ref('l10n_ar_payroll.rules_EMBG-JUD')])]" name="rule_ids" />
         </record>
     </data>
 </odoo>

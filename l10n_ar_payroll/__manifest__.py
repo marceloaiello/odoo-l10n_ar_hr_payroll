@@ -27,6 +27,7 @@
         'data/hr_leaves.xml',
         'data/hr_salary_rule_category.xml',
         'data/hr_salary_rule.xml',
+        'data/hr_payroll_structure.xml',
     ],
     'installable': True,
     'auto_install': False,
