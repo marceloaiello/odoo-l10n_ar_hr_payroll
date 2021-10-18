@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
-        <record id="hr_contract_labor_union.hr_contract_view_form" model="ir.ui.view">
-            <field name="name">hr.contract.view.form</field>
-            <field name="model">hr.contract</field>
-            <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
-            <field name="arch" type="xml">
-                <xpath expr="//group[@name='salary_and_advantages']" position="before">
-                    <group name='sindicato_cct' string="Sindicatos y C.C.T">
-                        <field name="aplica_cct" />
-                        <field name="cct_id" attrs="{'invisible':[('aplica_cct', '=', False)]}" />
-                        <field name="cct_category_id" attrs="{'invisible':[('aplica_cct', '=', False)]}" domain="[('labor_union_id', '=', cct_id)]" />
-                    </group>
-                </xpath>
-                <xpath expr="//field[@name='amount']" position="attributes">
-                    <attribute name="attrs">{'readonly':[('aplica_cct','=', True)]}</attribute>
-                    <attribute name="force_save">True</attribute>
-                </xpath>
-                <xpath expr="//field[@name='amount_period']" position="attributes">
-                    <attribute name="attrs">{'readonly':[('aplica_cct','=', True)]}</attribute>
-                    <attribute name="force_save">True</attribute>
-                </xpath>
-            </field>
-        </record>
-    </data>
+    <record id="hr_contract_labor_union.hr_contract_view_form" model="ir.ui.view">
+        <field name="name">hr.contract.view.form</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='salary_and_advantages']" position="before">
+                <group name='sindicato_cct' string="Sindicatos y C.C.T">
+                    <field name="aplica_cct" />
+                    <field name="cct_id" attrs="{'invisible':[('aplica_cct', '=', False)]}" />
+                    <field name="cct_category_id" attrs="{'invisible':[('aplica_cct', '=', False)]}" domain="[('labor_union_id', '=', cct_id)]" />
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='amount']" position="attributes">
+                <attribute name="attrs">{'readonly':[('aplica_cct','=', True)]}</attribute>
+                <attribute name="force_save">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_period']" position="attributes">
+                <attribute name="attrs">{'readonly':[('aplica_cct','=', True)]}</attribute>
+                <attribute name="force_save">True</attribute>
+            </xpath>
+        </field>
+    </record>
 </odoo>

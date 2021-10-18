@@ -28,6 +28,8 @@ class HrLaborUnion(models.Model):
     def _compute_name(self):
         if self.sindicato and self.convenio:
             self.name = "( " + self.convenio + " ) " + self.sindicato
+        else:
+            self.name = 'Nuevo sindicato / conveio...'
 
     @api.depends('cct_svco_values')
     def _compute_svco_current_value(self):

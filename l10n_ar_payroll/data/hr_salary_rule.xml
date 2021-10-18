@@ -15,10 +15,11 @@
             <!-- Amount Select -->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
-                result_qty = worked_days.WORK100.number_of_hours
-                result = contract.amount
+result_qty = worked_days.WORK100.number_of_hours
+result = contract.amount
             </field>
         </record>
+
         <record id="rules_BASIC" model="hr.salary.rule">
             <field name="name">SUELDO BASICO</field>
             <field name="code">BASIC</field>
@@ -32,9 +33,10 @@
             <!-- Amount Select -->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
-                result = contract.amount
+result = contract.amount
             </field>
         </record>
+
         <record id="rules_SAC" model="hr.salary.rule">
             <field name="name">S.A.C</field>
             <field name="code">SAC</field>
@@ -48,14 +50,20 @@
             <!-- Amount Select -->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
-                result = (inputs.SACBASE / 2) <!-- TODO: Ver los casos de semestres incompletos, hacer el prorrateo.-->
+result = ((inputs.SACBASE / 2) / 180) * inputs.SACDAYS
             </field>
         </record>
         <record id="payslip_inputs_SACBASE" model="hr.rule.input">
-            <field name="name">Mejor Sueldo Semestral - Base de S.A.C</field>
+            <field name="name">Mejor Sueldo Semestral - S.A.C</field>
             <field name="code">SACBASE</field>
-            <field name="input_id" ref="l10n_ar_payroll.rules_SAC" />
+            <field name="input_id" ref="l10n_ar_payroll.rules_SAC" /> <!-- TODO: Calcular mejor sueldo -->
         </record>
+        <record id="payslip_inputs_SACWORKDAYS" model="hr.rule.input">
+            <field name="name">Dias Trabajados - S.A.C</field>
+            <field name="code">SACDAYS</field>
+            <field name="input_id" ref="l10n_ar_payroll.rules_SAC" /> <!-- TODO: Calcular Dias -->
+        </record>
+
         <record id="rules_ANTG" model="hr.salary.rule">
             <field name="name">ANTIGUEDAD</field>
             <field name="code">ANTG</field>
@@ -77,6 +85,7 @@
                 result = categories_BASIC
             </field>
         </record>
+
         <record id="rules_HFRD" model="hr.salary.rule">
             <field name="name">FERIADOS</field>
             <field name="code">HFRD</field>
@@ -101,6 +110,7 @@
                     result = contract.amount
             </field>
         </record>
+
         <record id="rules_AUS" model="hr.salary.rule">
             <field name="name">AUSENTISMO</field>
             <field name="code">AUS</field>
@@ -127,6 +137,7 @@
                     result = contract.wage / worked_days.WORK100.number_of_days
             </field>
         </record>
+
         <record id="rules_OVT50" model="hr.salary.rule">
             <field name="name">HORAS EXTRA AL 50%</field>
             <field name="code">OVT50</field>
@@ -153,6 +164,7 @@
                 <!-- TODO: Ver como se calcula en mensuales -->
             </field>
         </record>
+
         <record id="rules_OVT100" model="hr.salary.rule">
             <field name="name">HORAS EXTRA AL 100%</field>
             <field name="code">OVT100</field>
@@ -179,6 +191,7 @@
                 <!-- TODO: Ver como se calcula en mensuales -->
             </field>
         </record>
+
         <record id="rules_PRES" model="hr.salary.rule">
             <field name="name">PREMIO PRESENTISMO</field>
             <field name="code">PRES</field>
@@ -206,6 +219,7 @@
             <field name="code">PRES-OVR</field>
             <field name="input_id" ref="l10n_ar_payroll.rules_PRES" />
         </record>
+
         <!-- Retenciones: 20.000 - 20.999 -->
         <record id="rules_AFIP-JUB11" model="hr.salary.rule">
             <field name="name">APORTES JUBILATORIOS</field>
@@ -225,6 +239,7 @@
                 result = categories_GROSS
             </field>
         </record>
+
         <record id="rules_AFIP-INSSJP3" model="hr.salary.rule">
             <field name="name">LEY 19.032 - INSSJP</field>
             <field name="code">INSSJP3</field>
@@ -243,6 +258,7 @@
                 result = categories_GROSS
             </field>
         </record>
+
         <record id="rules_AFIP-OS3" model="hr.salary.rule">
             <field name="name">APORTES OBRA SOCIAL</field>
             <field name="code">OS3</field>
@@ -261,6 +277,7 @@
                 result = categories_GROSS
             </field>
         </record>
+
         <!-- Deducciones: 30.000 - 30.999 -->
         <record id="rules_ADV" model="hr.salary.rule">
             <field name="name">ADELANTOS OTORGADOS</field>
@@ -283,6 +300,7 @@
             <field name="code">ADV-AMOUNT</field>
             <field name="input_id" ref="l10n_ar_payroll.rules_ADV" />
         </record>
+
         <record id="rules_LOAN" model="hr.salary.rule">
             <field name="name">PLANES PRESTAMOS OTORGADOS</field>
             <field name="code">LOAN</field>
@@ -304,6 +322,7 @@
             <field name="code">LOAN-AMOUNT</field>
             <field name="input_id" ref="l10n_ar_payroll.rules_LOAN" />
         </record>
+
         <record id="rules_EMBG-JUD" model="hr.salary.rule">
             <field name="name">EMBARGOS JUDICIALES</field>
             <field name="code">EMBG-JUD</field>
@@ -327,5 +346,6 @@
             <field name="code">EMBG-RATE</field>
             <field name="input_id" ref="l10n_ar_payroll.rules_EMBG-JUD" />
         </record>
+
     </data>
 </odoo>

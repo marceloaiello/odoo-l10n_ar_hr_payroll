@@ -25,8 +25,7 @@ class HrLaborUnionCategory(models.Model):
                                             )
     categories_prices = fields.One2many(comodel_name='hr.labor_union.category.price', inverse_name='labor_union_category_id',
                                         string='Importes Vigentes')
-    current_value = fields.Monetary(
-        compute="_compute_current_value", string='Valor Actual')
+    current_value = fields.Monetary(compute="_compute_current_value", string='Valor Actual')
     labor_union_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato',
                                      required=True, ondelete="cascade", check_company=True, options="{'currency_field': 'currency_id'}")
     currency_id = fields.Many2one('res.currency', string='Moneda', required=True,
@@ -38,15 +37,13 @@ class HrLaborUnionCategory(models.Model):
     def _compute_current_value(self):
         for record in self:
             today = fields.Date.context_today(self).strftime('%Y-%m-%d')
-            category_value = 0
             domain = [('labor_union_category_id', '=', record.id),
                       ('from_date', '<=', today), ('to_date', '>=', today)]
             if record.categories_prices.search_count(domain) == 1:
                 for cprice in record.categories_prices.search(domain):
-                    category_value = cprice.value
-                    cprice_record = cprice
-            record.current_value = category_value
-            record.current_price_id = cprice_record.id
+                    record.current_value = cprice.value
+            else:
+                record.current_value = 0
 
 
 class HrLaborUnionCategoryPrice(models.Model):

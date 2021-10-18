@@ -78,12 +78,5 @@ class HrPayslip(models.Model):
         dependiendo del semestre en que se encuentre.
         (enero-junio / julio-diciembre).
         """
-        domain = [
-            ('contract_id', '=', contract_id),
-            ('date_from', '>=', date_from),
-            ('date_to', '<=', date_to)
-            ('state', '=', 'validated')
-        ]
-        semester_payslips = self.env['hr_payslip'].search(domain)
 
 

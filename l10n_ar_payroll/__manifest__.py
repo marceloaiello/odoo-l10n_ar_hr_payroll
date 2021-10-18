@@ -11,14 +11,18 @@
     'license': 'LGPL-3',
     'category': 'Payroll',
     'depends': [
+        'base',
         'hr_contract',
-        'hr_contract_labor_union',
         'hr_attendance',
         'hr_attendance_report_theoretical_time',
-        'payroll'
+        'payroll',
+        'l10n_ar'
     ],
     'data': [
-        'views/views.xml',
+        'security/ir.model.access.csv',
+        'data/tablas_afip_sicoss.xml',
+        'views/afip_fields_views.xml',
+        'views/menus.xml',
         'data/hr_contribution_register.xml',
         'data/hr_leaves.xml',
         'data/hr_salary_rule_category.xml',

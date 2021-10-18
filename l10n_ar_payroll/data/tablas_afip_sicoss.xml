@@ -1595,6 +1595,1170 @@
             <field name="name">RESTO TUCUMAN</field>
         </record>
         <!-- AFIP: Localidad -->
-    <!-- AFIP: Data -->
+
+        <!-- AFIP: Obras Sociales -->
+        <record id="hr_afip_obra_social_208" model="hr.afip.obra_social">
+            <field name="afip_id">208</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA GRAFICA DE LA PROVINCIA DE CORDOBA</field>
+        </record>
+        <record id="hr_afip_obra_social_307" model="hr.afip.obra_social">
+            <field name="afip_id">307</field>
+            <field name="name">O.S.PORTUARIOS ARGENTINOS DE MAR DEL PLATA</field>
+        </record>
+        <record id="hr_afip_obra_social_406" model="hr.afip.obra_social">
+            <field name="afip_id">406</field>
+            <field name="name">O.S.DEL PERSONAL DE ORGANISMOS DE CONTROL EXTERNO</field>
+        </record>
+        <record id="hr_afip_obra_social_505" model="hr.afip.obra_social">
+            <field name="afip_id">505</field>
+            <field name="name">O.S.DE CAPITANES,PILOTOS Y PATRONES DE PESCA</field>
+        </record>
+        <record id="hr_afip_obra_social_604" model="hr.afip.obra_social">
+            <field name="afip_id">604</field>
+            <field name="name">O.S.DE AGENTES DE LOTERIAS Y AFINES DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_703" model="hr.afip.obra_social">
+            <field name="afip_id">703</field>
+            <field name="name">MUTUAL DEL PERSONAL DE AGUA Y ENERGIA DE MENDOZA</field>
+        </record>
+        <record id="hr_afip_obra_social_901" model="hr.afip.obra_social">
+            <field name="afip_id">901</field>
+            <field name="name">O.S.DE LA ACTIVIDAD DE SEGUROS,REASEGUROS,CAPITALIZACION Y AHORRO Y PRESTAMO PARA LA VIVIENDA</field>
+        </record>
+        <record id="hr_afip_obra_social_1102" model="hr.afip.obra_social">
+            <field name="afip_id">1102</field>
+            <field name="name">O.S.PARA LA ACTIVIDAD DOCENTE</field>
+        </record>
+        <record id="hr_afip_obra_social_1201" model="hr.afip.obra_social">
+            <field name="afip_id">1201</field>
+            <field name="name">O.S.PARA EL PERSONAL DEL MINISTERIO DE ECONOMIA Y OBRAS PUBLICAS</field>
+        </record>
+        <record id="hr_afip_obra_social_1300" model="hr.afip.obra_social">
+            <field name="afip_id">1300</field>
+            <field name="name">O.S.FERROVIARIA</field>
+        </record>
+        <record id="hr_afip_obra_social_1607" model="hr.afip.obra_social">
+            <field name="afip_id">1607</field>
+            <field name="name">O.S.DEL SINDICATO UNIDO DE TRABAJADORES DE LA INDUSTRIA DE AGUAS GASEOSAS DE LA PROVINCIA DE SANTA FE</field>
+        </record>
+        <record id="hr_afip_obra_social_1706" model="hr.afip.obra_social">
+            <field name="afip_id">1706</field>
+            <field name="name">O.S.DEL PERSONAL JERARQUICO DE LA REPUBLICA ARGENTINA PARA EL PERSONAL JERARQUICO DE LA INDUSTRIA GRAFICA  Y EL PERSONAL JERARQUICO DE AGUA Y ENERGIA</field>
+        </record>
+        <record id="hr_afip_obra_social_100106" model="hr.afip.obra_social">
+            <field name="afip_id">100106</field>
+            <field name="name">O.S.PARA EL PERSONAL DE LA INDUSTRIA ACEITERA Y AFINES</field>
+        </record>
+        <record id="hr_afip_obra_social_100205" model="hr.afip.obra_social">
+            <field name="afip_id">100205</field>
+            <field name="name">O.S.DE  ACTORES</field>
+        </record>
+        <record id="hr_afip_obra_social_100304" model="hr.afip.obra_social">
+            <field name="afip_id">100304</field>
+            <field name="name">O.S.DE  TECNICOS DE VUELO DE LINEAS AEREAS</field>
+        </record>
+        <record id="hr_afip_obra_social_100403" model="hr.afip.obra_social">
+            <field name="afip_id">100403</field>
+            <field name="name">O.S.DEL PERSONAL SUPERIOR Y PROFESIONAL DE EMPRESAS AEROCOMERCIALES</field>
+        </record>
+        <record id="hr_afip_obra_social_100502" model="hr.afip.obra_social">
+            <field name="afip_id">100502</field>
+            <field name="name">O.S.DEL PERSONAL AERONAUTICO</field>
+        </record>
+        <record id="hr_afip_obra_social_100601" model="hr.afip.obra_social">
+            <field name="afip_id">100601</field>
+            <field name="name">O.S.DEL PERSONAL AERONAVEGACION DE ENTES PRIVADOS</field>
+        </record>
+        <record id="hr_afip_obra_social_100700" model="hr.afip.obra_social">
+            <field name="afip_id">100700</field>
+            <field name="name">O.S.DEL PERSONAL TECNICO AERONAUTICO</field>
+        </record>
+        <record id="hr_afip_obra_social_100809" model="hr.afip.obra_social">
+            <field name="afip_id">100809</field>
+            <field name="name">O.S.DE  AERONAVEGANTES</field>
+        </record>
+        <record id="hr_afip_obra_social_100908" model="hr.afip.obra_social">
+            <field name="afip_id">100908</field>
+            <field name="name">O.S.DE EMPLEADOS DE AGENCIAS DE INFORMES</field>
+        </record>
+        <record id="hr_afip_obra_social_101000" model="hr.afip.obra_social">
+            <field name="afip_id">101000</field>
+            <field name="name">O.S.DEL PERSONAL DE AGUAS GASEOSAS Y AFINES</field>
+        </record>
+        <record id="hr_afip_obra_social_101109" model="hr.afip.obra_social">
+            <field name="afip_id">101109</field>
+            <field name="name">O.S.DE ALFAJOREROS,REPOSTEROS,PIZZEROS Y HELADEROS (MAR DEL PLATA Y ALEDAÑOS</field>
+        </record>
+        <record id="hr_afip_obra_social_101208" model="hr.afip.obra_social">
+            <field name="afip_id">101208</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA DE LA ALIMENTACION</field>
+        </record>
+        <record id="hr_afip_obra_social_101604" model="hr.afip.obra_social">
+            <field name="afip_id">101604</field>
+            <field name="name">O.S.DEL PERSONAL DEL AUTOMOVIL CLUB ARGENTINO</field>
+        </record>
+        <record id="hr_afip_obra_social_101802" model="hr.afip.obra_social">
+            <field name="afip_id">101802</field>
+            <field name="name">O.S.DEL PERSONAL DE AZUCAR DEL INGENIO LA ESPERANZA</field>
+        </record>
+        <record id="hr_afip_obra_social_101901" model="hr.afip.obra_social">
+            <field name="afip_id">101901</field>
+            <field name="name">O.S.DEL PERSONAL DE AZUCAR DEL INGENIO LEDESMA</field>
+        </record>
+        <record id="hr_afip_obra_social_102300" model="hr.afip.obra_social">
+            <field name="afip_id">102300</field>
+            <field name="name">O.S.DEL PERSONAL DE AZUCAR DEL INGENIO SAN MARTIN</field>
+        </record>
+        <record id="hr_afip_obra_social_102706" model="hr.afip.obra_social">
+            <field name="afip_id">102706</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA AZUCARERA</field>
+        </record>
+        <record id="hr_afip_obra_social_102904" model="hr.afip.obra_social">
+            <field name="afip_id">102904</field>
+            <field name="name">O.S.DEL PERSONAL DE BARRACAS DE LANAS,CUEROS Y ANEXOS</field>
+        </record>
+        <record id="hr_afip_obra_social_103006" model="hr.afip.obra_social">
+            <field name="afip_id">103006</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA BOTONERA</field>
+        </record>
+        <record id="hr_afip_obra_social_103105" model="hr.afip.obra_social">
+            <field name="afip_id">103105</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA DEL CALZADO</field>
+        </record>
+        <record id="hr_afip_obra_social_103204" model="hr.afip.obra_social">
+            <field name="afip_id">103204</field>
+            <field name="name">O.S.DE CONDUCTORES CAMIONEROS Y PERSONAL DEL TRANSPORTE AUTOMOTOR DE CARGAS</field>
+        </record>
+        <record id="hr_afip_obra_social_103402" model="hr.afip.obra_social">
+            <field name="afip_id">103402</field>
+            <field name="name">O.S.DEL PERSONAL DE CARGA Y DESCARGA</field>
+        </record>
+        <record id="hr_afip_obra_social_103600" model="hr.afip.obra_social">
+            <field name="afip_id">103600</field>
+            <field name="name">O.S.DEL PERSONAL AUXILIAR DE CASAS PARTICULARES</field>
+        </record>
+        <record id="hr_afip_obra_social_103709" model="hr.afip.obra_social">
+            <field name="afip_id">103709</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA DEL CAUCHO</field>
+        </record>
+        <record id="hr_afip_obra_social_103808" model="hr.afip.obra_social">
+            <field name="afip_id">103808</field>
+            <field name="name">O.S.DEL PERSONAL DEL CAUCHO</field>
+        </record>
+        <record id="hr_afip_obra_social_103907" model="hr.afip.obra_social">
+            <field name="afip_id">103907</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA DEL CAUCHO DE SANTA FE</field>
+        </record>
+        <record id="hr_afip_obra_social_104009" model="hr.afip.obra_social">
+            <field name="afip_id">104009</field>
+            <field name="name">O.S.DEL PERSONAL DE CEMENTERIOS DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_104108" model="hr.afip.obra_social">
+            <field name="afip_id">104108</field>
+            <field name="name">O.S.DE CERAMISTAS</field>
+        </record>
+        <record id="hr_afip_obra_social_104207" model="hr.afip.obra_social">
+            <field name="afip_id">104207</field>
+            <field name="name">O.S.DEL PERSONAL DE LA CERAMICA,SANITARIOS,PORCELANAS DE MESA Y AFINES</field>
+        </record>
+        <record id="hr_afip_obra_social_104306" model="hr.afip.obra_social">
+            <field name="afip_id">104306</field>
+            <field name="name">O.S.DEL PERSONAL DE LA ACTIVIDAD CERVECERA Y AFINES</field>
+        </record>
+        <record id="hr_afip_obra_social_104405" model="hr.afip.obra_social">
+            <field name="afip_id">104405</field>
+            <field name="name">O.S.DEL PERSONAL CINEMATOGRAFICO DE MAR DEL PLATA</field>
+        </record>
+        <record id="hr_afip_obra_social_104504" model="hr.afip.obra_social">
+            <field name="afip_id">104504</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA CINEMATOGRAFICA</field>
+        </record>
+        <record id="hr_afip_obra_social_104603" model="hr.afip.obra_social">
+            <field name="afip_id">104603</field>
+            <field name="name">O.S.DE OPERADORES CINEMATOGRAFICOS</field>
+        </record>
+        <record id="hr_afip_obra_social_104801" model="hr.afip.obra_social">
+            <field name="afip_id">104801</field>
+            <field name="name">O.S.DE COLOCADORES DE AZULEJOS,MOSAICOS,GRANITEROS,LUSTRADORES Y PORCELANEROS</field>
+        </record>
+        <record id="hr_afip_obra_social_105002" model="hr.afip.obra_social">
+            <field name="afip_id">105002</field>
+            <field name="name">O.S.DE CONDUCTORES NAVALES (CONDUCTORES FUSIONADOS)</field>
+        </record>
+        <record id="hr_afip_obra_social_105309" model="hr.afip.obra_social">
+            <field name="afip_id">105309</field>
+            <field name="name">O.S.DEL PERSONAL ADMINISTRATIVO Y TECNICO DE LA CONSTRUCCION Y AFINES</field>
+        </record>
+        <record id="hr_afip_obra_social_105408" model="hr.afip.obra_social">
+            <field name="afip_id">105408</field>
+            <field name="name">O.S.DEL PERSONAL DE LA CONSTRUCCION</field>
+        </record>
+        <record id="hr_afip_obra_social_105507" model="hr.afip.obra_social">
+            <field name="afip_id">105507</field>
+            <field name="name">O.S.DE LOS CORTADORES DE LA INDUMENTARIA</field>
+        </record>
+        <record id="hr_afip_obra_social_105606" model="hr.afip.obra_social">
+            <field name="afip_id">105606</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA DEL CUERO Y AFINES</field>
+        </record>
+        <record id="hr_afip_obra_social_105705" model="hr.afip.obra_social">
+            <field name="afip_id">105705</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA DEL CHACINADO Y AFINES</field>
+        </record>
+        <record id="hr_afip_obra_social_105804" model="hr.afip.obra_social">
+            <field name="afip_id">105804</field>
+            <field name="name">O.S.DE CHOFERES DE CAMIONES</field>
+        </record>
+        <record id="hr_afip_obra_social_106005" model="hr.afip.obra_social">
+            <field name="afip_id">106005</field>
+            <field name="name">O.S.DEL PERSONAL DE  ENTIDADES DEPORTIVAS Y CIVILES</field>
+        </record>
+        <record id="hr_afip_obra_social_106104" model="hr.afip.obra_social">
+            <field name="afip_id">106104</field>
+            <field name="name">O.S.EMPLEADOS DE DESPACHANTES DE ADUANA</field>
+        </record>
+        <record id="hr_afip_obra_social_106203" model="hr.afip.obra_social">
+            <field name="afip_id">106203</field>
+            <field name="name">O.S.DEL PERSONAL DE DISTRIBUIDORAS CINEMATOGRAFICAS</field>
+        </record>
+        <record id="hr_afip_obra_social_106302" model="hr.afip.obra_social">
+            <field name="afip_id">106302</field>
+            <field name="name">O.S.DE DOCENTES PARTICULARES</field>
+        </record>
+        <record id="hr_afip_obra_social_106401" model="hr.afip.obra_social">
+            <field name="afip_id">106401</field>
+            <field name="name">O.S.DEL PERSONAL DE EDIFCIOS DE RENTA Y HORIZONTAL DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_106500" model="hr.afip.obra_social">
+            <field name="afip_id">106500</field>
+            <field name="name">O.S.DEL PERSONAL DE EDIFICIOS DE RENTAS Y HORIZONTAL DE CAPITAL FEDERAL Y GRAN BUENOS ARIES</field>
+        </record>
+        <record id="hr_afip_obra_social_106609" model="hr.afip.obra_social">
+            <field name="afip_id">106609</field>
+            <field name="name">O.S.ELECTRICISTAS NAVALES</field>
+        </record>
+        <record id="hr_afip_obra_social_106708" model="hr.afip.obra_social">
+            <field name="afip_id">106708</field>
+            <field name="name">O.S.DE OBREROS EMPACADORES DE FRUTA DE RIO NEGRO Y NEUQUEN</field>
+        </record>
+        <record id="hr_afip_obra_social_106807" model="hr.afip.obra_social">
+            <field name="afip_id">106807</field>
+            <field name="name">O.S.DEL PERSONAL DE LA ENSEÑANZA PRIVADA</field>
+        </record>
+        <record id="hr_afip_obra_social_106906" model="hr.afip.obra_social">
+            <field name="afip_id">106906</field>
+            <field name="name">O.S.DEL PERSONAL DE ESCRIBANIAS DE LA PROVINCIA DE BUENOS AIRES</field>
+        </record>
+        <record id="hr_afip_obra_social_107008" model="hr.afip.obra_social">
+            <field name="afip_id">107008</field>
+            <field name="name">O.S.DEL PERSONAL DE ESCRIBANOS</field>
+        </record>
+        <record id="hr_afip_obra_social_107107" model="hr.afip.obra_social">
+            <field name="afip_id">107107</field>
+            <field name="name">O.S.DEL PERSONAL DEL ESPECTACULO PUBLICO</field>
+        </record>
+        <record id="hr_afip_obra_social_107206" model="hr.afip.obra_social">
+            <field name="afip_id">107206</field>
+            <field name="name">O.S.DEL PERSONAL DE ESTACIONES DE SERVICIO Y GNC,GARAGES,PLAYAS DE ESTACIONAMIENTO Y LAVADEROS AUTOMATICOS</field>
+        </record>
+        <record id="hr_afip_obra_social_107404" model="hr.afip.obra_social">
+            <field name="afip_id">107404</field>
+            <field name="name">O.S.DEL PERSONAL DE FARMACIA</field>
+        </record>
+        <record id="hr_afip_obra_social_107800" model="hr.afip.obra_social">
+            <field name="afip_id">107800</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA DEL FIBROCEMENTO</field>
+        </record>
+        <record id="hr_afip_obra_social_107909" model="hr.afip.obra_social">
+            <field name="afip_id">107909</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA FIDEERA</field>
+        </record>
+        <record id="hr_afip_obra_social_108001" model="hr.afip.obra_social">
+            <field name="afip_id">108001</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA FORESTAL DE SANTIAGO DEL ESTERO</field>
+        </record>
+        <record id="hr_afip_obra_social_108100" model="hr.afip.obra_social">
+            <field name="afip_id">108100</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA DEL FOSFORO</field>
+        </record>
+        <record id="hr_afip_obra_social_108209" model="hr.afip.obra_social">
+            <field name="afip_id">108209</field>
+            <field name="name">O.S.DE FOTOGRAFOS</field>
+        </record>
+        <record id="hr_afip_obra_social_108407" model="hr.afip.obra_social">
+            <field name="afip_id">108407</field>
+            <field name="name">O.S.DEL PERSONAL DE LA ACTIVIDAD  FRUCTICOLA</field>
+        </record>
+        <record id="hr_afip_obra_social_108506" model="hr.afip.obra_social">
+            <field name="afip_id">108506</field>
+            <field name="name">O.S.DEL PERSONAL DE MANIPULEO,EMPAQUE Y EXPEDICION DE FRUTA FRESCA Y HORTALIZAS DE CUYO</field>
+        </record>
+        <record id="hr_afip_obra_social_108605" model="hr.afip.obra_social">
+            <field name="afip_id">108605</field>
+            <field name="name">O.S.DE FUTBOLISTAS</field>
+        </record>
+        <record id="hr_afip_obra_social_108704" model="hr.afip.obra_social">
+            <field name="afip_id">108704</field>
+            <field name="name">O.S.DE TECNICOS DE FUTBOL</field>
+        </record>
+        <record id="hr_afip_obra_social_108803" model="hr.afip.obra_social">
+            <field name="afip_id">108803</field>
+            <field name="name">OS DEL PERSONAL DE LA UNION DE TRABAJADORES DEL TURISMO, HOTELEROS Y GASTRONOMICOS DE LA RA (OSUTHGRA)</field>
+        </record>
+        <record id="hr_afip_obra_social_109004" model="hr.afip.obra_social">
+            <field name="afip_id">109004</field>
+            <field name="name">O.S.DEL PERSONAL GRAFICO</field>
+        </record>
+        <record id="hr_afip_obra_social_109202" model="hr.afip.obra_social">
+            <field name="afip_id">109202</field>
+            <field name="name">O.S.DE GUINCHEROS Y MAQUINISTAS DE GRUAS MOVILES</field>
+        </record>
+        <record id="hr_afip_obra_social_109301" model="hr.afip.obra_social">
+            <field name="afip_id">109301</field>
+            <field name="name">O.S.DEL PERSONAL DE CONSIGNATARIOS DEL MERCADO NACIONAL DE HACIENDA DE LINIERS</field>
+        </record>
+        <record id="hr_afip_obra_social_109400" model="hr.afip.obra_social">
+            <field name="afip_id">109400</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA DEL HIELO Y MERCADOS PARTICULARES</field>
+        </record>
+        <record id="hr_afip_obra_social_109509" model="hr.afip.obra_social">
+            <field name="afip_id">109509</field>
+            <field name="name">O.S.DEL PERSONAL DE LOS HIPODROMOS DE BUENOS AIRES Y SAN ISIDRO</field>
+        </record>
+        <record id="hr_afip_obra_social_109608" model="hr.afip.obra_social">
+            <field name="afip_id">109608</field>
+            <field name="name">O.S.Y SINDICATO DEL PERSONAL MENSUALIZADO DEL JOCKEY CLUB DE BUENOS AIRES Y LOS HIPODROMOS DE PALERMO Y SAN ISIDRO</field>
+        </record>
+        <record id="hr_afip_obra_social_109707" model="hr.afip.obra_social">
+            <field name="afip_id">109707</field>
+            <field name="name">O.S.DEL PERSONAL DE IMPRENTA, DIARIOS Y AFINES</field>
+        </record>
+        <record id="hr_afip_obra_social_110008" model="hr.afip.obra_social">
+            <field name="afip_id">110008</field>
+            <field name="name">O.S.DEL PERSONAL DE JABONEROS</field>
+        </record>
+        <record id="hr_afip_obra_social_110107" model="hr.afip.obra_social">
+            <field name="afip_id">110107</field>
+            <field name="name">O.S.DE JARDINEROS,PARQUISTAS,VIVERISTAS Y FLORICULTORES</field>
+        </record>
+        <record id="hr_afip_obra_social_110206" model="hr.afip.obra_social">
+            <field name="afip_id">110206</field>
+            <field name="name">O.S.DEL PERSONAL DEL JOCKEY CLUB DE ROSARIO</field>
+        </record>
+        <record id="hr_afip_obra_social_110305" model="hr.afip.obra_social">
+            <field name="afip_id">110305</field>
+            <field name="name">O.S.DEL PERSONAL LADRILLERO</field>
+        </record>
+        <record id="hr_afip_obra_social_110404" model="hr.afip.obra_social">
+            <field name="afip_id">110404</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA LADRILLERA A MAQUINA</field>
+        </record>
+        <record id="hr_afip_obra_social_110503" model="hr.afip.obra_social">
+            <field name="afip_id">110503</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA LECHERA</field>
+        </record>
+        <record id="hr_afip_obra_social_110602" model="hr.afip.obra_social">
+            <field name="afip_id">110602</field>
+            <field name="name">O.S.DE LOCUTORES</field>
+        </record>
+        <record id="hr_afip_obra_social_110701" model="hr.afip.obra_social">
+            <field name="afip_id">110701</field>
+            <field name="name">O.S.DE LA FEDERACION ARGENTINA DE TRABAJADORES DE LUZ Y FUERZA</field>
+        </record>
+        <record id="hr_afip_obra_social_110800" model="hr.afip.obra_social">
+            <field name="afip_id">110800</field>
+            <field name="name">O.S.DE LOS TRABAJADORES DE LAS EMPRESAS DE ELECTRICIDAD</field>
+        </record>
+        <record id="hr_afip_obra_social_110909" model="hr.afip.obra_social">
+            <field name="afip_id">110909</field>
+            <field name="name">O.S.DEL PERSONAL DE LUZ Y FUERZA DE CORDOBA</field>
+        </record>
+        <record id="hr_afip_obra_social_111001" model="hr.afip.obra_social">
+            <field name="afip_id">111001</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA MADERERA</field>
+        </record>
+        <record id="hr_afip_obra_social_111209" model="hr.afip.obra_social">
+            <field name="afip_id">111209</field>
+            <field name="name">O.S.DEL PERSONAL DE MAESTRANZA</field>
+        </record>
+        <record id="hr_afip_obra_social_111308" model="hr.afip.obra_social">
+            <field name="afip_id">111308</field>
+            <field name="name">O.S.DE MAQUINISTAS DE TEATRO Y TELEVISION</field>
+        </record>
+        <record id="hr_afip_obra_social_111407" model="hr.afip.obra_social">
+            <field name="afip_id">111407</field>
+            <field name="name">O.S.DE CAPITANES DE ULTRAMAR Y OFICIALES DE LA MARINA MERCANTE</field>
+        </record>
+        <record id="hr_afip_obra_social_111506" model="hr.afip.obra_social">
+            <field name="afip_id">111506</field>
+            <field name="name">O.S.DE CAPITANES BAQUEANOS FLUVIALES DE LA MARINA MERCANTE</field>
+        </record>
+        <record id="hr_afip_obra_social_111605" model="hr.afip.obra_social">
+            <field name="afip_id">111605</field>
+            <field name="name">O.S.DE EMPLEADOS DE LA MARINA MERCANTE</field>
+        </record>
+        <record id="hr_afip_obra_social_111704" model="hr.afip.obra_social">
+            <field name="afip_id">111704</field>
+            <field name="name">O.S.DE ENCARGADOS APUNTADORES MARITIMOS</field>
+        </record>
+        <record id="hr_afip_obra_social_111803" model="hr.afip.obra_social">
+            <field name="afip_id">111803</field>
+            <field name="name">O.S.DEL PERSONAL MARITIMO</field>
+        </record>
+        <record id="hr_afip_obra_social_111902" model="hr.afip.obra_social">
+            <field name="afip_id">111902</field>
+            <field name="name">O.S.DEL SINDICATO DE MECANICOS Y AFINES DEL TRANSPORTE AUTOMOTOR</field>
+        </record>
+        <record id="hr_afip_obra_social_112004" model="hr.afip.obra_social">
+            <field name="afip_id">112004</field>
+            <field name="name">O.S.DEL PERSONAL SUPERIOR DE MERCEDES BENZ ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_112103" model="hr.afip.obra_social">
+            <field name="afip_id">112103</field>
+            <field name="name">O.S. DE LA UNION OBRERA METALURGICO DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_112202" model="hr.afip.obra_social">
+            <field name="afip_id">112202</field>
+            <field name="name">O.S.DE LOS SUPERVISORES DE LA INDUSTRIA METALMECANICA DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_112301" model="hr.afip.obra_social">
+            <field name="afip_id">112301</field>
+            <field name="name">O.S.DEL PERSONAL DE MICROS Y OMNIBUS DE MENDOZA</field>
+        </record>
+        <record id="hr_afip_obra_social_112400" model="hr.afip.obra_social">
+            <field name="afip_id">112400</field>
+            <field name="name">O.S.DE LA ACTIVIDAD MINERA</field>
+        </record>
+        <record id="hr_afip_obra_social_112509" model="hr.afip.obra_social">
+            <field name="afip_id">112509</field>
+            <field name="name">O.S.MODELOS ARGENTINOS</field>
+        </record>
+        <record id="hr_afip_obra_social_112608" model="hr.afip.obra_social">
+            <field name="afip_id">112608</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA MOLINERA</field>
+        </record>
+        <record id="hr_afip_obra_social_112707" model="hr.afip.obra_social">
+            <field name="afip_id">112707</field>
+            <field name="name">O.S.DEL PERSONAL MOSAISTA</field>
+        </record>
+        <record id="hr_afip_obra_social_112806" model="hr.afip.obra_social">
+            <field name="afip_id">112806</field>
+            <field name="name">O.S.DE MUSICOS</field>
+        </record>
+        <record id="hr_afip_obra_social_113205" model="hr.afip.obra_social">
+            <field name="afip_id">113205</field>
+            <field name="name">O.S.DE JEFES Y OFICIALES NAVALES DE RADIOCOMUNICACIONES</field>
+        </record>
+        <record id="hr_afip_obra_social_113304" model="hr.afip.obra_social">
+            <field name="afip_id">113304</field>
+            <field name="name">O.S.DE JEFES Y OFICIALES MAQUINISTAS NAVALES</field>
+        </record>
+        <record id="hr_afip_obra_social_113403" model="hr.afip.obra_social">
+            <field name="afip_id">113403</field>
+            <field name="name">O.S.DEL PERSONAL NAVAL</field>
+        </record>
+        <record id="hr_afip_obra_social_113601" model="hr.afip.obra_social">
+            <field name="afip_id">113601</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA DEL NEUMATICO</field>
+        </record>
+        <record id="hr_afip_obra_social_113700" model="hr.afip.obra_social">
+            <field name="afip_id">113700</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA NAVAL</field>
+        </record>
+        <record id="hr_afip_obra_social_113809" model="hr.afip.obra_social">
+            <field name="afip_id">113809</field>
+            <field name="name">O.S.DE COMISARIOS NAVALES</field>
+        </record>
+        <record id="hr_afip_obra_social_113908" model="hr.afip.obra_social">
+            <field name="afip_id">113908</field>
+            <field name="name">O.S.DEL PERSONAL DE PANADERIAS</field>
+        </record>
+        <record id="hr_afip_obra_social_114000" model="hr.afip.obra_social">
+            <field name="afip_id">114000</field>
+            <field name="name">O.S.DE PANADEROS,PASTELEROS Y FACTUREROS DE ENTRE RIOS</field>
+        </record>
+        <record id="hr_afip_obra_social_114109" model="hr.afip.obra_social">
+            <field name="afip_id">114109</field>
+            <field name="name">O.S.DEL PERSONAL DEL PAPEL,CARTON Y QUIMICOS</field>
+        </record>
+        <record id="hr_afip_obra_social_114208" model="hr.afip.obra_social">
+            <field name="afip_id">114208</field>
+            <field name="name">O.S.DE LA INDUSTRIA DE PASTAS ALIMENTICIAS</field>
+        </record>
+        <record id="hr_afip_obra_social_114307" model="hr.afip.obra_social">
+            <field name="afip_id">114307</field>
+            <field name="name">O.S.DE PASTELEROS,CONFITEROS,PIZZEROS Y ALFAJOREROS DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_114505" model="hr.afip.obra_social">
+            <field name="afip_id">114505</field>
+            <field name="name">O.S.DE PATRONES DE CABOTAJE DE RIOS Y PUERTOS</field>
+        </record>
+        <record id="hr_afip_obra_social_114703" model="hr.afip.obra_social">
+            <field name="afip_id">114703</field>
+            <field name="name">O.S.DEL PERSONAL DE PELUQUERIAS,ESTETICA Y AFINES</field>
+        </record>
+        <record id="hr_afip_obra_social_114901" model="hr.afip.obra_social">
+            <field name="afip_id">114901</field>
+            <field name="name">O.S.DE OFICIALES PELUQUEROS Y PEINADORES DE ROSARIO</field>
+        </record>
+        <record id="hr_afip_obra_social_115003" model="hr.afip.obra_social">
+            <field name="afip_id">115003</field>
+            <field name="name">O.S.DEL PERSONAL DE LA ACTIVIDAD PERFUMISTA</field>
+        </record>
+        <record id="hr_afip_obra_social_115102" model="hr.afip.obra_social">
+            <field name="afip_id">115102</field>
+            <field name="name">O.S.DE TRABADORES DE PRENSA DE BUENOS AIRES</field>
+        </record>
+        <record id="hr_afip_obra_social_115201" model="hr.afip.obra_social">
+            <field name="afip_id">115201</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA DEL PESCADO DE MAR DEL PLATA</field>
+        </record>
+        <record id="hr_afip_obra_social_115300" model="hr.afip.obra_social">
+            <field name="afip_id">115300</field>
+            <field name="name">O.S.PETROLEROS</field>
+        </record>
+        <record id="hr_afip_obra_social_115409" model="hr.afip.obra_social">
+            <field name="afip_id">115409</field>
+            <field name="name">O.S.DEL PETROLEO Y GAS PRIVADO</field>
+        </record>
+        <record id="hr_afip_obra_social_115508" model="hr.afip.obra_social">
+            <field name="afip_id">115508</field>
+            <field name="name">O.S.DE PETROLEROS DE CORDOBA</field>
+        </record>
+        <record id="hr_afip_obra_social_115607" model="hr.afip.obra_social">
+            <field name="afip_id">115607</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA PETROQUIMICA</field>
+        </record>
+        <record id="hr_afip_obra_social_115706" model="hr.afip.obra_social">
+            <field name="afip_id">115706</field>
+            <field name="name">O.S.DE PILOTOS DE LINEAS AEREAS COMERCIALES Y REGULARES</field>
+        </record>
+        <record id="hr_afip_obra_social_115805" model="hr.afip.obra_social">
+            <field name="afip_id">115805</field>
+            <field name="name">O.S.DEL PERSONAL DE FABRICAS DE PINTURA</field>
+        </record>
+        <record id="hr_afip_obra_social_116006" model="hr.afip.obra_social">
+            <field name="afip_id">116006</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA DEL PLASTICO</field>
+        </record>
+        <record id="hr_afip_obra_social_116105" model="hr.afip.obra_social">
+            <field name="afip_id">116105</field>
+            <field name="name">O.S.DE CAPATACES Y ESTIBADORES PORTUARIOS</field>
+        </record>
+        <record id="hr_afip_obra_social_116204" model="hr.afip.obra_social">
+            <field name="afip_id">116204</field>
+            <field name="name">O.S.DE PORTUARIOS ARGENTINOS</field>
+        </record>
+        <record id="hr_afip_obra_social_116709" model="hr.afip.obra_social">
+            <field name="afip_id">116709</field>
+            <field name="name">O.S.PORTUARIOS DE PUERTO SAN MARTIN Y BELLA VISTA</field>
+        </record>
+        <record id="hr_afip_obra_social_117207" model="hr.afip.obra_social">
+            <field name="afip_id">117207</field>
+            <field name="name">O.S.DEL PERSONAL DE PRENSA DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_117405" model="hr.afip.obra_social">
+            <field name="afip_id">117405</field>
+            <field name="name">O.S.DEL PERSONAL DE PRENSA DE BAHIA BLANCA</field>
+        </record>
+        <record id="hr_afip_obra_social_117603" model="hr.afip.obra_social">
+            <field name="afip_id">117603</field>
+            <field name="name">O.S.DEL PERSONAL DE PRENSA DE LA PROVINCIA DE CHACO</field>
+        </record>
+        <record id="hr_afip_obra_social_117702" model="hr.afip.obra_social">
+            <field name="afip_id">117702</field>
+            <field name="name">O.S.DEL PERSONAL DE PRENSA DE MAR DEL PLATA</field>
+        </record>
+        <record id="hr_afip_obra_social_117801" model="hr.afip.obra_social">
+            <field name="afip_id">117801</field>
+            <field name="name">O.S.DEL PERSONAL DE PRENSA DE MENDOZA</field>
+        </record>
+        <record id="hr_afip_obra_social_118002" model="hr.afip.obra_social">
+            <field name="afip_id">118002</field>
+            <field name="name">O.S.DE EMPLEADOS DE PRENSA DE CORDOBA</field>
+        </record>
+        <record id="hr_afip_obra_social_118200" model="hr.afip.obra_social">
+            <field name="afip_id">118200</field>
+            <field name="name">O.S.DE AGENTES DE PROPAGANDA MEDICA DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_118309" model="hr.afip.obra_social">
+            <field name="afip_id">118309</field>
+            <field name="name">O.S.DE AGENTES DE PROPAGANDA MEDICA DE CORDOBA</field>
+        </record>
+        <record id="hr_afip_obra_social_118408" model="hr.afip.obra_social">
+            <field name="afip_id">118408</field>
+            <field name="name">O.S.DE AGENTES DE PROPAGANDA MEDICA DE ENTRE RIOS</field>
+        </record>
+        <record id="hr_afip_obra_social_118507" model="hr.afip.obra_social">
+            <field name="afip_id">118507</field>
+            <field name="name">O.S.DE AGENTES DE PROPAGANDA MEDICA DE ROSARIO</field>
+        </record>
+        <record id="hr_afip_obra_social_118606" model="hr.afip.obra_social">
+            <field name="afip_id">118606</field>
+            <field name="name">O.S.DEL PERSONAL DE LA PUBLICIDAD</field>
+        </record>
+        <record id="hr_afip_obra_social_118705" model="hr.afip.obra_social">
+            <field name="afip_id">118705</field>
+            <field name="name">O.S.DEL PERSONAL DE INDUSTRIAS QUIMICAS Y PETROQUIMICAS</field>
+        </record>
+        <record id="hr_afip_obra_social_118804" model="hr.afip.obra_social">
+            <field name="afip_id">118804</field>
+            <field name="name">O.S.DE RECIBIDORES DE GRANOS Y ANEXOS</field>
+        </record>
+        <record id="hr_afip_obra_social_118903" model="hr.afip.obra_social">
+            <field name="afip_id">118903</field>
+            <field name="name">O.S.DEL PERSONAL DE RECOLECCION Y BARRIDO DE ROSARIO</field>
+        </record>
+        <record id="hr_afip_obra_social_119005" model="hr.afip.obra_social">
+            <field name="afip_id">119005</field>
+            <field name="name">O.S.DEL PERSONAL DE REFINERIAS DE MAIZ</field>
+        </record>
+        <record id="hr_afip_obra_social_119203" model="hr.afip.obra_social">
+            <field name="afip_id">119203</field>
+            <field name="name">O.S.DE RELOJEROS Y JOYEROS</field>
+        </record>
+        <record id="hr_afip_obra_social_119302" model="hr.afip.obra_social">
+            <field name="afip_id">119302</field>
+            <field name="name">O.S.DEL PERSONAL RURAL Y ESTIBADORES DE LA REPUBLICA  ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_119500" model="hr.afip.obra_social">
+            <field name="afip_id">119500</field>
+            <field name="name">O.S.DEL PERSONAL DE LA SANIDAD ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_119609" model="hr.afip.obra_social">
+            <field name="afip_id">119609</field>
+            <field name="name">O.S.DEL PERSONAL DE INSTALACIONES SANITARIAS</field>
+        </record>
+        <record id="hr_afip_obra_social_119708" model="hr.afip.obra_social">
+            <field name="afip_id">119708</field>
+            <field name="name">O.S.DEL PERSONAL DE SEGURIDAD COMERCIAL,INDUSTRIAL E INVESTIGACIONES PRIVADAS</field>
+        </record>
+        <record id="hr_afip_obra_social_119906" model="hr.afip.obra_social">
+            <field name="afip_id">119906</field>
+            <field name="name">O.S.DE SERENOS DE BUQUES</field>
+        </record>
+        <record id="hr_afip_obra_social_120306" model="hr.afip.obra_social">
+            <field name="afip_id">120306</field>
+            <field name="name">O.S.DEL PERSONAL DE SUPERVISION DE LA EMPRESA SUBTERRANEOS DE BUENOS AIRES</field>
+        </record>
+        <record id="hr_afip_obra_social_120405" model="hr.afip.obra_social">
+            <field name="afip_id">120405</field>
+            <field name="name">O.S.DEL PERSONAL DE DIRECCION DE LA EMPRESA SUBTERRANEOS BUENOS AIRES</field>
+        </record>
+        <record id="hr_afip_obra_social_120504" model="hr.afip.obra_social">
+            <field name="afip_id">120504</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA DEL TABACO</field>
+        </record>
+        <record id="hr_afip_obra_social_120603" model="hr.afip.obra_social">
+            <field name="afip_id">120603</field>
+            <field name="name">O.S.DE EMPLEADOS DEL TABACO</field>
+        </record>
+        <record id="hr_afip_obra_social_120702" model="hr.afip.obra_social">
+            <field name="afip_id">120702</field>
+            <field name="name">O.S. DEL PERSONAL DE LAS TELECOMUNICACIONES DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_120801" model="hr.afip.obra_social">
+            <field name="afip_id">120801</field>
+            <field name="name">O.S.DE TRABAJADORES DE LAS COMUNICACIONES (OSTRAC)</field>
+        </record>
+        <record id="hr_afip_obra_social_120900" model="hr.afip.obra_social">
+            <field name="afip_id">120900</field>
+            <field name="name">O.S.DEL PERSONAL DE TELEVISION</field>
+        </record>
+        <record id="hr_afip_obra_social_121002" model="hr.afip.obra_social">
+            <field name="afip_id">121002</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA TEXTIL</field>
+        </record>
+        <record id="hr_afip_obra_social_121101" model="hr.afip.obra_social">
+            <field name="afip_id">121101</field>
+            <field name="name">O.S.DE EMPLEADOS TEXTILES Y AFINES</field>
+        </record>
+        <record id="hr_afip_obra_social_121309" model="hr.afip.obra_social">
+            <field name="afip_id">121309</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA DEL TRACTOR</field>
+        </record>
+        <record id="hr_afip_obra_social_121507" model="hr.afip.obra_social">
+            <field name="afip_id">121507</field>
+            <field name="name">O.S.DE LA INDUSTRIA DEL TRANSPORTE AUTOMOTOR DE CORDOBA</field>
+        </record>
+        <record id="hr_afip_obra_social_121606" model="hr.afip.obra_social">
+            <field name="afip_id">121606</field>
+            <field name="name">O.S.DE CONDUCTORES DE TRANSPORTE COLECTIVO DE PASAJEROS</field>
+        </record>
+        <record id="hr_afip_obra_social_121705" model="hr.afip.obra_social">
+            <field name="afip_id">121705</field>
+            <field name="name">O.S.DEL PERSONAL DE LA ACTIVIDAD DEL TURF</field>
+        </record>
+        <record id="hr_afip_obra_social_121804" model="hr.afip.obra_social">
+            <field name="afip_id">121804</field>
+            <field name="name">O.S.CONDUCTORES DE TAXIS DE CORDOBA</field>
+        </record>
+        <record id="hr_afip_obra_social_121903" model="hr.afip.obra_social">
+            <field name="afip_id">121903</field>
+            <field name="name">O.S.DE VAREADORES</field>
+        </record>
+        <record id="hr_afip_obra_social_122005" model="hr.afip.obra_social">
+            <field name="afip_id">122005</field>
+            <field name="name">O.S.PARA EL PERSONAL DE LA INDUSTRIA DEL VESTIDO Y AFINES</field>
+        </record>
+        <record id="hr_afip_obra_social_122104" model="hr.afip.obra_social">
+            <field name="afip_id">122104</field>
+            <field name="name">O.S.DE VIAJANTES VENDEDORES DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_122302" model="hr.afip.obra_social">
+            <field name="afip_id">122302</field>
+            <field name="name">O.S.DEL PERSONAL DE LA ACTIVIDAD VIAL</field>
+        </record>
+        <record id="hr_afip_obra_social_122401" model="hr.afip.obra_social">
+            <field name="afip_id">122401</field>
+            <field name="name">O.S.DE EMPLEADOS DE LA INDUSTRIA DEL VIDRIO</field>
+        </record>
+        <record id="hr_afip_obra_social_122500" model="hr.afip.obra_social">
+            <field name="afip_id">122500</field>
+            <field name="name">O.S.DEL PERSONAL DE LA INDUSTRIA DEL VIDRIO</field>
+        </record>
+        <record id="hr_afip_obra_social_122609" model="hr.afip.obra_social">
+            <field name="afip_id">122609</field>
+            <field name="name">O.S.DEL PERSONAL DE LA ACTIVIDAD VITIVINICOLA</field>
+        </record>
+        <record id="hr_afip_obra_social_122807" model="hr.afip.obra_social">
+            <field name="afip_id">122807</field>
+            <field name="name">O.S.DEL PERSONAL DE VIGILANCIA Y SEGURIDAD COMERCIAL,INDUSTRIAL E INVESTIGACIONES PRIVADAS DE CORDOBA</field>
+        </record>
+        <record id="hr_afip_obra_social_122906" model="hr.afip.obra_social">
+            <field name="afip_id">122906</field>
+            <field name="name">O.S.DEL PERSONAL DE ESTACIONES DE SERVICIO,GARAGES,PLAYAS DE ESTACIONAMIENTO Y LAVADEROS AUTOMATICOS DE SANTA FE</field>
+        </record>
+        <record id="hr_afip_obra_social_123008" model="hr.afip.obra_social">
+            <field name="afip_id">123008</field>
+            <field name="name">O.S.PARA EL PERSONAL DE ESTACIONES DE SERVICIO,GARAGES,PLAYAS DE ESTACIONAMIENTO,LAVADEROS AUTOMATICOS Y GOMERIAS DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_123107" model="hr.afip.obra_social">
+            <field name="afip_id">123107</field>
+            <field name="name">O.S.DE TALLERISTAS A DOMICILIO</field>
+        </record>
+        <record id="hr_afip_obra_social_123305" model="hr.afip.obra_social">
+            <field name="afip_id">123305</field>
+            <field name="name">O.S.DEL PERSONAL DE SOCIEDADES DE AUTORES Y AFINES</field>
+        </record>
+        <record id="hr_afip_obra_social_123404" model="hr.afip.obra_social">
+            <field name="afip_id">123404</field>
+            <field name="name">O.S.DEL PERSONAL DE PRENSA DE ROSARIO</field>
+        </record>
+        <record id="hr_afip_obra_social_123503" model="hr.afip.obra_social">
+            <field name="afip_id">123503</field>
+            <field name="name">O.S.DEL PERSONAL DE PRENSA DE TUCUMAN</field>
+        </record>
+        <record id="hr_afip_obra_social_123602" model="hr.afip.obra_social">
+            <field name="afip_id">123602</field>
+            <field name="name">O.S.DE TRABAJADORES DE PERKINS ARGENTINA S.A.I.C.</field>
+        </record>
+        <record id="hr_afip_obra_social_123701" model="hr.afip.obra_social">
+            <field name="afip_id">123701</field>
+            <field name="name">O.S.DE PEONES DE TAXIS DE LA CAPITAL FEDERAL</field>
+        </record>
+        <record id="hr_afip_obra_social_123800" model="hr.afip.obra_social">
+            <field name="afip_id">123800</field>
+            <field name="name">O.S.DEL PERSONAL GUARDAVIDAS Y AFINES DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_123909" model="hr.afip.obra_social">
+            <field name="afip_id">123909</field>
+            <field name="name">O.S.DE VENDEDORES AMBULANTES DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_124001" model="hr.afip.obra_social">
+            <field name="afip_id">124001</field>
+            <field name="name">O.S.DE BOXEADORES AGREMIADOS DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_124506" model="hr.afip.obra_social">
+            <field name="afip_id">124506</field>
+            <field name="name">O.S.DE LOS TRABAJADORES DE LA INDUSTRIA DEL GAS</field>
+        </record>
+        <record id="hr_afip_obra_social_125004" model="hr.afip.obra_social">
+            <field name="afip_id">125004</field>
+            <field name="name">O.S.YACIMIENTOS CARBONIFEROS</field>
+        </record>
+        <record id="hr_afip_obra_social_125103" model="hr.afip.obra_social">
+            <field name="afip_id">125103</field>
+            <field name="name">O.S.DE LOS PROFESIONALES UNIVERSITARIOS DEL AGUA Y ENERGIA ELECTRICA</field>
+        </record>
+        <record id="hr_afip_obra_social_125301" model="hr.afip.obra_social">
+            <field name="afip_id">125301</field>
+            <field name="name">O.S.FEDERAL NACIONAL DE OBRAS SANITARIAS</field>
+        </record>
+        <record id="hr_afip_obra_social_125509" model="hr.afip.obra_social">
+            <field name="afip_id">125509</field>
+            <field name="name">O.S.DE LA FEDERACION ARGENTINA DEL TRABAJADOR DE LAS UNIVERSIDADES NACIONALES</field>
+        </record>
+        <record id="hr_afip_obra_social_125707" model="hr.afip.obra_social">
+            <field name="afip_id">125707</field>
+            <field name="name">O.S.DEL PERSONAL CIVIL DE LA NACION</field>
+        </record>
+        <record id="hr_afip_obra_social_125905" model="hr.afip.obra_social">
+            <field name="afip_id">125905</field>
+            <field name="name">O.S.ARBITROS DEPORTIVOS DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_126007" model="hr.afip.obra_social">
+            <field name="afip_id">126007</field>
+            <field name="name">O.S.FEDERACION GREMIAL INDUSTRIA DE LA CARNE Y SUS DERIVADOS</field>
+        </record>
+        <record id="hr_afip_obra_social_126106" model="hr.afip.obra_social">
+            <field name="afip_id">126106</field>
+            <field name="name">O.S.DE LOS TRABAJADORES DE LA EDUCACION PRIVADA</field>
+        </record>
+        <record id="hr_afip_obra_social_126205" model="hr.afip.obra_social">
+            <field name="afip_id">126205</field>
+            <field name="name">O.S.DE LOS EMPLEADOS DE COMERCIO Y ACTIVIDADES CIVILES</field>
+        </record>
+        <record id="hr_afip_obra_social_126304" model="hr.afip.obra_social">
+            <field name="afip_id">126304</field>
+            <field name="name">O.S.BANCARIA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_200400" model="hr.afip.obra_social">
+            <field name="afip_id">200400</field>
+            <field name="name">O.S.DE LA EMPRESA NACIONAL DE CORREOS Y TELEGRAFOS S.A.Y DE LAS COMUNICACIONES DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_201502" model="hr.afip.obra_social">
+            <field name="afip_id">201502</field>
+            <field name="name">O.S.DIRECCION NACIONAL DE VIALIDAD</field>
+        </record>
+        <record id="hr_afip_obra_social_300704" model="hr.afip.obra_social">
+            <field name="afip_id">300704</field>
+            <field name="name">O.S.CERAS JOHNSON</field>
+        </record>
+        <record id="hr_afip_obra_social_301509" model="hr.afip.obra_social">
+            <field name="afip_id">301509</field>
+            <field name="name">O.S.MUTUALIDAD EMPLEADOS FIRESTONE</field>
+        </record>
+        <record id="hr_afip_obra_social_301707" model="hr.afip.obra_social">
+            <field name="afip_id">301707</field>
+            <field name="name">O.S.DE ALLIET DOMECO ARGENTINA. S.A. (EX-HIRAM WALKER S.A.)</field>
+        </record>
+        <record id="hr_afip_obra_social_302106" model="hr.afip.obra_social">
+            <field name="afip_id">302106</field>
+            <field name="name">O.S.PARA DIRECTIVOS,TECNICOS Y EMPLEADOS DE JOHN DEERE ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_302601" model="hr.afip.obra_social">
+            <field name="afip_id">302601</field>
+            <field name="name">O.S.COOPERATIVA DE ASISTENCIA MUTUA Y TURISMO DEL PERSONAL DE LAS SOCIEDADES PIRELLI LIMITADA</field>
+        </record>
+        <record id="hr_afip_obra_social_302809" model="hr.afip.obra_social">
+            <field name="afip_id">302809</field>
+            <field name="name">O.S.REFINERIAS DE MAIZ S.A.I.C.F.</field>
+        </record>
+        <record id="hr_afip_obra_social_303109" model="hr.afip.obra_social">
+            <field name="afip_id">303109</field>
+            <field name="name">O.S.SUPERCO</field>
+        </record>
+        <record id="hr_afip_obra_social_303307" model="hr.afip.obra_social">
+            <field name="afip_id">303307</field>
+            <field name="name">O.S.CABOT ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_303406" model="hr.afip.obra_social">
+            <field name="afip_id">303406</field>
+            <field name="name">O.S.DEL PERSONAL DE SHELL-CAPSA</field>
+        </record>
+        <record id="hr_afip_obra_social_303703" model="hr.afip.obra_social">
+            <field name="afip_id">303703</field>
+            <field name="name">O.S.DEL PERSONAL DE PBBPOLISUR DE BAHIA BLANCA</field>
+        </record>
+        <record id="hr_afip_obra_social_303901" model="hr.afip.obra_social">
+            <field name="afip_id">303901</field>
+            <field name="name">O.S.FORD ARGENTINA S.A.</field>
+        </record>
+        <record id="hr_afip_obra_social_304003" model="hr.afip.obra_social">
+            <field name="afip_id">304003</field>
+            <field name="name">O.S.VOLKSWAGEN ARGENTINA S.A.</field>
+        </record>
+        <record id="hr_afip_obra_social_400107" model="hr.afip.obra_social">
+            <field name="afip_id">400107</field>
+            <field name="name">O.S.DEL PERSONAL DE DIRECCION DE LAS EMPRESAS DE LA ALIMENTACION Y DEMAS ACTIVIDADES EMPRESARIAS</field>
+        </record>
+        <record id="hr_afip_obra_social_400206" model="hr.afip.obra_social">
+            <field name="afip_id">400206</field>
+            <field name="name">O.S.DEL PERSONAL DE DIRECCION DE LA INDUSTRIA AUTOMOTRIZ ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_400305" model="hr.afip.obra_social">
+            <field name="afip_id">400305</field>
+            <field name="name">O.S.COOPERATIVA LIMITADA DE ASISTENCIA MEDICA,FARMACEUTICA,CREDITO Y CONSUMO DEL PERSONAL SUPERIOR DE LA INDUSTRIA DEL CAUCHO Y OTRAS ACTIVIDADES INDUSTRIALES</field>
+        </record>
+        <record id="hr_afip_obra_social_400404" model="hr.afip.obra_social">
+            <field name="afip_id">400404</field>
+            <field name="name">O.S.DEL PERSONAL DE DIRECCION DE LA INDUSTRIA CERVECERA Y MALTERA</field>
+        </record>
+        <record id="hr_afip_obra_social_400503" model="hr.afip.obra_social">
+            <field name="afip_id">400503</field>
+            <field name="name">O.S.DEL PERSONAL DE DIRECCION Y JERARQUICO DE LA INDUSTRIA DEL CIGARRILLO</field>
+        </record>
+        <record id="hr_afip_obra_social_400602" model="hr.afip.obra_social">
+            <field name="afip_id">400602</field>
+            <field name="name">O.S.DEL PERSONAL DIRECTIVO DE LA INDUSTRIA DE LA CONSTRUCCION</field>
+        </record>
+        <record id="hr_afip_obra_social_400701" model="hr.afip.obra_social">
+            <field name="afip_id">400701</field>
+            <field name="name">O.S.CAMARA DE LA INDUSTRIA CURTIDORA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_400800" model="hr.afip.obra_social">
+            <field name="afip_id">400800</field>
+            <field name="name">ORGANIZACION DE SERVICIOS DIRECTOS EMPRESARIOS</field>
+        </record>
+        <record id="hr_afip_obra_social_400909" model="hr.afip.obra_social">
+            <field name="afip_id">400909</field>
+            <field name="name">O.S.ACCION SOCIAL DE EMPRESARIOS</field>
+        </record>
+        <record id="hr_afip_obra_social_401001" model="hr.afip.obra_social">
+            <field name="afip_id">401001</field>
+            <field name="name">O.S.DEL PERSONAL DE DIRECCION DE LAS EMPRESAS QUE ACTUAN EN FRUTOS DEL PAIS</field>
+        </record>
+        <record id="hr_afip_obra_social_401100" model="hr.afip.obra_social">
+            <field name="afip_id">401100</field>
+            <field name="name">O.S.DEL PERSONAL DE DIRECCION ALFREDO FORTABAT</field>
+        </record>
+        <record id="hr_afip_obra_social_401209" model="hr.afip.obra_social">
+            <field name="afip_id">401209</field>
+            <field name="name">O.S.DEL PERSONAL DE DIRECCION DE LA INDUSTRIA METALURGICA Y DEMAS ACT. EMPRESARIAS</field>
+        </record>
+        <record id="hr_afip_obra_social_401308" model="hr.afip.obra_social">
+            <field name="afip_id">401308</field>
+            <field name="name">O.S.PARA EL PERSONAL DE DIRECCION DE LA INDUSTRIA MADERERA</field>
+        </record>
+        <record id="hr_afip_obra_social_401605" model="hr.afip.obra_social">
+            <field name="afip_id">401605</field>
+            <field name="name">O.S.DEL PERSONAL DE DIRECCION DE LA INDUSTRIA PRIVADA DEL PETROLEO</field>
+        </record>
+        <record id="hr_afip_obra_social_401704" model="hr.afip.obra_social">
+            <field name="afip_id">401704</field>
+            <field name="name">O.S.EMPRESARIOS,PROFESIONALES Y MONOTRIBUTISTAS</field>
+        </record>
+        <record id="hr_afip_obra_social_401803" model="hr.afip.obra_social">
+            <field name="afip_id">401803</field>
+            <field name="name">O.S.ASOCIACION MUTUAL DEL PERSONAL DE PHILIPS ARGENTINA (AMPAR)</field>
+        </record>
+        <record id="hr_afip_obra_social_401902" model="hr.afip.obra_social">
+            <field name="afip_id">401902</field>
+            <field name="name">O.S.DEL PERSONAL DE DIRECCION DE PERFUMERIAS E.W.HOPE</field>
+        </record>
+        <record id="hr_afip_obra_social_402004" model="hr.afip.obra_social">
+            <field name="afip_id">402004</field>
+            <field name="name">O.S.DEL PERSONAL DE DIRECCION DE LA SANIDAD LUIS PASTEUR</field>
+        </record>
+        <record id="hr_afip_obra_social_402103" model="hr.afip.obra_social">
+            <field name="afip_id">402103</field>
+            <field name="name">O.S.ASOCIACION DEL PERSONAL DE DIRECCION DE LA INDUSTRIA SIDERURGICA</field>
+        </record>
+        <record id="hr_afip_obra_social_402202" model="hr.afip.obra_social">
+            <field name="afip_id">402202</field>
+            <field name="name">O.S.MUTUALIDAD INDUSTRIAL TEXTIL ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_402301" model="hr.afip.obra_social">
+            <field name="afip_id">402301</field>
+            <field name="name">O.S.ASOCIACION DEL PERSONAL SUPERIOR DE LA ORGANIZACIÓN TECHINT</field>
+        </record>
+        <record id="hr_afip_obra_social_402400" model="hr.afip.obra_social">
+            <field name="afip_id">402400</field>
+            <field name="name">O.S.DEL PERSONAL DE DIRECCION DE LA INDUSTRIA VITIVINICOLA Y AFINES</field>
+        </record>
+        <record id="hr_afip_obra_social_500807" model="hr.afip.obra_social">
+            <field name="afip_id">500807</field>
+            <field name="name">INSTITUTO NACIONAL DE SERVICIOS SOCIALES PARA JUBILADOS Y PENSIONADOS</field>
+        </record>
+        <record id="hr_afip_obra_social_600309" model="hr.afip.obra_social">
+            <field name="afip_id">600309</field>
+            <field name="name">ASOCIACION DE OBRAS SOCIALES DE BELLA VISTA</field>
+        </record>
+        <record id="hr_afip_obra_social_600408" model="hr.afip.obra_social">
+            <field name="afip_id">600408</field>
+            <field name="name">ASOCIACION DE OBRAS SOCIALES DE COMODORO RIVADAVIA</field>
+        </record>
+        <record id="hr_afip_obra_social_602305" model="hr.afip.obra_social">
+            <field name="afip_id">602305</field>
+            <field name="name">ASOCIACION DE OBRAS SOCIALES DE ROSARIO</field>
+        </record>
+        <record id="hr_afip_obra_social_603100" model="hr.afip.obra_social">
+            <field name="afip_id">603100</field>
+            <field name="name">ASOCIACION DE OBRAS SOCIALES DE TRELEW</field>
+        </record>
+        <record id="hr_afip_obra_social_700108" model="hr.afip.obra_social">
+            <field name="afip_id">700108</field>
+            <field name="name">O.S.DEL PERSONAL MUNICIPAL DE AVELLANEDA</field>
+        </record>
+        <record id="hr_afip_obra_social_700801" model="hr.afip.obra_social">
+            <field name="afip_id">700801</field>
+            <field name="name">O.S.DEL PERSONAL MUNICIPAL DE LA MATANZA</field>
+        </record>
+        <record id="hr_afip_obra_social_701002" model="hr.afip.obra_social">
+            <field name="afip_id">701002</field>
+            <field name="name">O.S.DEL PERSONAL MUNICIPAL DE TRES DE FEBRERO</field>
+        </record>
+        <record id="hr_afip_obra_social_800105" model="hr.afip.obra_social">
+            <field name="afip_id">800105</field>
+            <field name="name">O.S.ATANOR S.A.</field>
+        </record>
+        <record id="hr_afip_obra_social_800303" model="hr.afip.obra_social">
+            <field name="afip_id">800303</field>
+            <field name="name">O.S.PAPEL MISIONERO S.A.I.F.Y C.</field>
+        </record>
+        <record id="hr_afip_obra_social_800501" model="hr.afip.obra_social">
+            <field name="afip_id">800501</field>
+            <field name="name">O.S.ACEROS PARANA</field>
+        </record>
+        <record id="hr_afip_obra_social_900102" model="hr.afip.obra_social">
+            <field name="afip_id">900102</field>
+            <field name="name">O.S.DEL PERSONAL DE EMPRESAS FIAT Y EMPRESAS PEUGEOT CITROEN ARG.</field>
+        </record>
+        <record id="hr_afip_obra_social_1904" model="hr.afip.obra_social">
+            <field name="afip_id">1904</field>
+            <field name="name">O.S.DE LA FEDERACION DE CAMARAS Y CENTROS COMERCIALES ZONALES DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_126601" model="hr.afip.obra_social">
+            <field name="afip_id">126601</field>
+            <field name="name">O.S.PERSONAL DE INDUSTRIAS QUIMICAS Y PETROQUIMICAS ZARATE CAMPANA</field>
+        </record>
+        <record id="hr_afip_obra_social_402608" model="hr.afip.obra_social">
+            <field name="afip_id">402608</field>
+            <field name="name">OS ASOCIACION DE SERVICIOS SOCIALES PARA EMPRESARIOS Y PERSONAL DE DIRECCION DE EMPRESAS DEL COMERCIO, SERVICIOS, PRODUCCION, INDUSTRIA Y CIVIL (ASPE)</field>
+        </record>
+        <record id="hr_afip_obra_social_2204" model="hr.afip.obra_social">
+            <field name="afip_id">2204</field>
+            <field name="name">OS. EMPLEADOS Y PERSONAL JERARQUICO DEL NEUMATICO ARGENTINO DE NEUMATICOS GOOD YEAR S.R.L.</field>
+        </record>
+        <record id="hr_afip_obra_social_126809" model="hr.afip.obra_social">
+            <field name="afip_id">126809</field>
+            <field name="name">OS DE CONDUCTORES DE REMISES Y AUTOS AL INSTANTE Y AFINES</field>
+        </record>
+        <record id="hr_afip_obra_social_1508" model="hr.afip.obra_social">
+            <field name="afip_id">1508</field>
+            <field name="name">OS. ASOCIACION CIVIL PRO SINDICATO AMAS DE CASA DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_402509" model="hr.afip.obra_social">
+            <field name="afip_id">402509</field>
+            <field name="name">OS YPF</field>
+        </record>
+        <record id="hr_afip_obra_social_126502" model="hr.afip.obra_social">
+            <field name="afip_id">126502</field>
+            <field name="name">OS CONFEDERACION DE OBREROS Y EMPLEADOS MUNICIPALES ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_126700" model="hr.afip.obra_social">
+            <field name="afip_id">126700</field>
+            <field name="name">OS DEL PERSONAL DE LA ACTIVIDAD AZUCARERA TUCUMANA </field>
+        </record>
+        <record id="hr_afip_obra_social_126908" model="hr.afip.obra_social">
+            <field name="afip_id">126908</field>
+            <field name="name">OBRA SOCIAL DE LOS MEDICOS DE LA CIUDAD DE BUENOS AIRES</field>
+        </record>
+        <record id="hr_afip_obra_social_1805" model="hr.afip.obra_social">
+            <field name="afip_id">1805</field>
+            <field name="name">Obra Social de Legisladores de la Republica Argentina</field>
+        </record>
+        <record id="hr_afip_obra_social_2303" model="hr.afip.obra_social">
+            <field name="afip_id">2303</field>
+            <field name="name">O.S. PARA EL PERSONAL DE EMPRESAS DE LIMPIEZA, SERVICIOS Y MAESTRANZA DE MENDOZA</field>
+        </record>
+        <record id="hr_afip_obra_social_2105" model="hr.afip.obra_social">
+            <field name="afip_id">2105</field>
+            <field name="name">O.S. PROFESIONALES DEL TURF DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_2402" model="hr.afip.obra_social">
+            <field name="afip_id">2402</field>
+            <field name="name">O.S. DEL PERSONAL JERARQUICO DEL TRANSPORTE AUTOMOTOR DE PASAJEROS DE CORDOBA Y AFINES</field>
+        </record>
+        <record id="hr_afip_obra_social_127000" model="hr.afip.obra_social">
+            <field name="afip_id">127000</field>
+            <field name="name">O.S.DE TRABAJADORES DE ESTACIONES DE SERVICIO (OSTES)</field>
+        </record>
+        <record id="hr_afip_obra_social_2501" model="hr.afip.obra_social">
+            <field name="afip_id">2501</field>
+            <field name="name">O.S.DE MINISTROS, SECRETARIOS Y SUBSECRETARIOS</field>
+        </record>
+        <record id="hr_afip_obra_social_402707" model="hr.afip.obra_social">
+            <field name="afip_id">402707</field>
+            <field name="name">O.S. DE DIRECCION OSDO</field>
+        </record>
+        <record id="hr_afip_obra_social_2600" model="hr.afip.obra_social">
+            <field name="afip_id">2600</field>
+            <field name="name">O.S. DE LA TRABAJADORES DE LA CARNE Y AFINES DE LA R.A.</field>
+        </record>
+        <record id="hr_afip_obra_social_127208" model="hr.afip.obra_social">
+            <field name="afip_id">127208</field>
+            <field name="name">OS DE MANDOS MEDIOS DE LAS TELECOMUNICACIONES DE LA RA Y EL MERCOSUR - OSMMEDT</field>
+        </record>
+        <record id="hr_afip_obra_social_2709" model="hr.afip.obra_social">
+            <field name="afip_id">2709</field>
+            <field name="name">OS DE LOS TRABAJADORES ASOCIADOS A LA ASOCIACION MUTUAL MERCANTIL ARGENTINA (OSTAMMA)</field>
+        </record>
+        <record id="hr_afip_obra_social_127307" model="hr.afip.obra_social">
+            <field name="afip_id">127307</field>
+            <field name="name">OS DE TRABAJADORES VIALES Y AFINES DE LA REPUBLICA ARGENTINA</field>
+        </record>
+        <record id="hr_afip_obra_social_402806" model="hr.afip.obra_social">
+            <field name="afip_id">402806</field>
+            <field name="name">OS DE DIRECCION DE LA ACTIVIDAD AEROCOMERCIAL PRIVADA</field>
+        </record>
+        <record id="hr_afip_obra_social_2808" model="hr.afip.obra_social">
+            <field name="afip_id">2808</field>
+            <field name="name">OS DE LA CAMARA DE EMPRESARIOS DE AGENCIAS DE REMISES DE LA PROVINCIA DE BUENOS AIRES (O.S.C.E.A.R.B.A)</field>
+        </record>
+        <record id="hr_afip_obra_social_0" model="hr.afip.obra_social">
+            <field name="afip_id">0</field>
+            <field name="name">Sin Obra Social</field>
+        </record>
+        <record id="hr_afip_obra_social_127109" model="hr.afip.obra_social">
+            <field name="afip_id">127109</field>
+            <field name="name">OS DEL PERSONAL DE LAS TELECOMUNICACIONES SINDICATO BS AS (OSPETELCO)</field>
+        </record>
+        <record id="hr_afip_obra_social_2907" model="hr.afip.obra_social">
+            <field name="afip_id">2907</field>
+            <field name="name">O. S. ASOCIACION MUTUAL METALURGICA VILLA CONSTITUCION (O.S.A.M.M.V.C)</field>
+        </record>
+        <record id="hr_afip_obra_social_402905" model="hr.afip.obra_social">
+            <field name="afip_id">402905</field>
+            <field name="name">OS DE DIRECCION WITCEL</field>
+        </record>
+        <record id="hr_afip_obra_social_127505" model="hr.afip.obra_social">
+            <field name="afip_id">127505</field>
+            <field name="name">OS DE LAS ASOCIACIONES DE EMPLEADOS DE FARMACIA (OSADEF)</field>
+        </record>
+        <record id="hr_afip_obra_social_127406" model="hr.afip.obra_social">
+            <field name="afip_id">127406</field>
+            <field name="name">OS DE OBREROS Y EMPLEADOS TINTOREROS, SOMBREROS Y LAVADEROS DE LA R.A.</field>
+        </record>
+        <record id="hr_afip_obra_social_3009" model="hr.afip.obra_social">
+            <field name="afip_id">3009</field>
+            <field name="name"> O.S.PERSONAL ASOCIADO A ASOC.MUTUAL SANCOR (O.S.PERS.A.A.M.S)</field>
+        </record>
+        <record id="hr_afip_obra_social_127703" model="hr.afip.obra_social">
+            <field name="afip_id">127703</field>
+            <field name="name">OS PERSONAL ESTACIONES DE SERVICIO, GARAGES, PLAYAS Y LAVADEROS DE LA PCIA. CHACO</field>
+        </record>
+        <record id="hr_afip_obra_social_127604" model="hr.afip.obra_social">
+            <field name="afip_id">127604</field>
+            <field name="name">O.S. PARA EL PERSONAL DE OBRAS Y SERVICIOS SANITARIOS</field>
+        </record>
+        <record id="hr_afip_obra_social_3207" model="hr.afip.obra_social">
+            <field name="afip_id">3207</field>
+            <field name="name">OS DE TRABAJADORES SOCIOS DE LA ASOCIACION MUTUAL DEL PERSONAL JERARQUICO DE BANCOS OFICIALES - JERARQUICO SALUD</field>
+        </record>
+        <record id="hr_afip_obra_social_3306" model="hr.afip.obra_social">
+            <field name="afip_id">3306</field>
+            <field name="name">OS TRABAJADORES VENDEDORES DE DIARIOS, REVISTAS Y AFINES (OSTVENDRA)</field>
+        </record>
+        <record id="hr_afip_obra_social_127802" model="hr.afip.obra_social">
+            <field name="afip_id">127802</field>
+            <field name="name">OS DE LUZ Y FUERZA DE LA PATAGONIA</field>
+        </record>
+        <record id="hr_afip_obra_social_3108" model="hr.afip.obra_social">
+            <field name="afip_id">3108</field>
+            <field name="name">OS DE LOS INMIGRANTES ESPANOLES Y SUS DESCENDIENTES RESIDENTES DE LA RA</field>
+        </record>
+        <record id="hr_afip_obra_social_3405" model="hr.afip.obra_social">
+            <field name="afip_id">3405</field>
+            <field name="name">OS DE LA ASOCIACION MUTUAL DE LOS OBREROS CATOLICOS PADRE FEDERICO GROTE</field>
+        </record>
+        <record id="hr_afip_obra_social_127901" model="hr.afip.obra_social">
+            <field name="afip_id">127901</field>
+            <field name="name">OS DE PETROLEROS PRIVADOS</field>
+        </record>
+        <!-- AFIP: Obras Sociales -->
+
+        <!-- AFIP: Data -->
     </data>
 </odoo>
