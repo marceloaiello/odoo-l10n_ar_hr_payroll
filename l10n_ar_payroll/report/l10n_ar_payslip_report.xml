@@ -1,10 +1,45 @@
-<template id="report_invoice">
-    <t t-call="web.html_container">
-        <t t-foreach="docs" t-as="o">
-            <div class="page">
-                <h2>Report title</h2>
-                <p>This object's name is <span t-field="o.name"/></p>
-            </div>
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Payslip Custom Paper Format -->
+    <record id="paperformat_payslip" model="report.paperformat">
+        <field name="name">A4 Landscape - Payslip</field>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">3</field>
+        <field name="margin_bottom">3</field>
+        <field name="margin_left">3</field>
+        <field name="margin_right">3</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- Final Report Wrapping -->
+    <template id="l10n_ar_report_payslip">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="l10n_ar_payroll.l10n_ar_report_payslip_original" />
+                <!-- TODO: Agregar BACK a cada recibo con mas infromacion (payslip_detail)-->
+            </t>
         </t>
-    </t>
-</template>
+    </template>
+
+
+    <!-- Report Declaration -->
+    <record id="action_report_payslip" model="ir.actions.report">
+        <field name="name">Recibo de Haberes</field>
+        <field name="model">hr.payslip</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">l10n_ar_payroll.l10n_ar_report_payslip</field>
+        <field name="report_file">l10n_ar_payroll.l10n_ar_report_payslip</field>
+        <field name="paperformat_id" ref="l10n_ar_payroll.paperformat_payslip" />
+        <field name="print_report_name">
+            'Recibo de Haberes - %s' % (object.employee_id.name)
+        </field>
+        <field name="binding_model_id" ref="model_hr_payslip" />
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

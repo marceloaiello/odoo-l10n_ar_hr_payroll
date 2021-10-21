@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- RECIBO DE HABERES: HEADER -->
+    <template id="report_payslip_header">
+        <t t-foreach="docs" t-as="o">
+            <article style="font-size:10px;">
+                <div class="row align-items-center" style="border-bottom: 1px solid black; border-radius: 15px; padding: 10px; margin: 0.5px;">
+                    <!-- HEADER -->
+                    <div class="col-4">
+                        <h6 style="display:inline; white-space: nowrap;">
+                            <strong>RECIBO DE HABERES</strong>
+                        </h6>
+                        <p>
+                            <small>
+                                <em>(Ley 20.774)</em>
+                            </small>
+                        </p>
+                        <p>
+                            <small>
+                                Nº Liquidacion:
+                                <span t-field="o.number"></span>
+                                <br />
+                                Pagina: 1/1
+                                <!-- TODO: Ver tema de paginacion-->
+                            </small>
+                        </p>
+                    </div>
+                    <div class="col-4">
+                        <h6>
+                            <strong>
+                                <span t-field="o.company_id.name"></span>
+                            </strong>
+                        </h6>
+                        <p>
+                            <small>
+                                <span t-field="o.company_id.street"></span>
+                                <br />
+                                <span t-field="o.company_id.state_id.name"></span>
+                                ,
+                                <span t-field="o.company_id.country_id.name"></span>
+                                <br />
+                                CUIT:
+                                <span t-field="o.company_id.company_registry"></span>
+                            </small>
+                        </p>
+                    </div>
+                    <div class="col-4" style="text-align:center;">
+                        <img class="img-responsive" t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="max-width: 100%; max-height: 80px;" alt="Logo" />
+                    </div>
+                </div>
+                <br />
+            </article>
+        </t>
+    </template>
+
+    <!-- RECIBO DE HABERES: TABLA DATOS -->
+    <template id="report_payslip_datos">
+        <t t-foreach="docs" t-as="o">
+            <article style="font-size:8px;">
+                <table class="table table-striped table-bordered table-sm center text-center">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col" colspan="6">(# LEG) APELLIDOS Y NOMBRES</th>
+                            <th scope="col" colspan="2">CUIL</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td colspan="6">
+                            (
+                            <span t-field="o.employee_id.id"></span>
+                            )
+                            <span t-field="o.employee_id.name"></span>
+                        </td>
+                        <td colspan="2">
+                            <span t-field="o.employee_id.identification_id"></span>
+                        </td>
+                    </tr>
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">INGRESO</th>
+                            <th scope="col">ANTIGUEDAD</th>
+                            <th scope="col" colspan="4">MODALIDAD</th>
+                            <th scope="col" colspan="2">BASICO</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>
+                            <span t-field="o.employee_id.service_hire_date"></span>
+                        </td>
+                        <td>
+                            <span t-field="o.employee_id.service_start_date"></span>
+                        </td>
+                        <td colspan="4">
+                            <span t-field="o.contract_id.afip_modalidad_contratacion_id"></span>
+                        </td>
+                        <td colspan="2">
+                            <span t-field="o.contract_id.amount"></span>
+                            /
+                            <span t-field="o.contract_id.amount_period"></span>
+                        </td>
+                    </tr>
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col" colspan="2">SINDICATO / C.C.T</th>
+                            <th scope="col" colspan="4">CATEGORIA C.C.T</th>
+                            <th scope="col" colspan="2">TAREA / DIVISION</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td colspan="2">
+                            <span t-field="o.contract_id.cct_id.sindicato"></span>
+                            /
+                            <span t-field="o.contract_id.cct_id.convenio"></span>
+                        </td>
+                        <td colspan="4">
+                            <span t-field="o.contract_id.cct_category_id.name"></span>
+                        </td>
+                        <td colspan="2">
+                            <span t-field="o.contract_id.job_id.name"></span>
+                        </td>
+                    </tr>
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col" colspan="2 ">ULT. DEP. APORTES</th>
+                            <th scope="col" colspan="2 ">PERIODO LIQUIDADO</th>
+                            <th scope="col" colspan="2">FECHA PAGO</th>
+                            <th scope="col" colspan="2">BANCO DEPOSITO</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td colspan="2">-</td> <!-- TODO: Ver como implementar esto, por defecto mes anterior-->
+                        <td colspan="2">
+                            <span t-field="o.name"></span>
+                        </td>
+                        <td colspan="2">-</td> <!-- TODO: Implementar fecha de pago -->
+                        <td colspan="2">BANCO GALICIA</td> <!-- TODO: Setear esto en settings -->
+                    </tr>
+                </table>
+            </article>
+        </t>
+    </template>
+
+    <!-- RECIBO DE HABERES: TABLA LIQUIDACION -->
+    <template id="report_payslip_liq">
+        <t t-foreach="docs" t-as="o">
+            <t t-set="total_gross" t-value="request.env['hr.payslip.line'].sudo().search([('slip_id', '=', o.id), ('code', '=', 'TOT-GROSS-REM')], limit=1)" />
+            <t t-set="total_norem" t-value="request.env['hr.payslip.line'].sudo().search([('slip_id', '=', o.id), ('code', '=', 'TOT-NOREM')], limit=1)" />
+            <t t-set="total_desc" t-value="request.env['hr.payslip.line'].sudo().search([('slip_id', '=', o.id), ('code', '=', 'TOT-DESC')], limit=1)" />
+            <t t-set="total_net" t-value="request.env['hr.payslip.line'].sudo().search([('slip_id', '=', o.id), ('code', '=', 'TOT-NET')], limit=1)" />
+            <article style="font-size:8px;">
+                <div class="row">
+                    <div class="col">
+                        <table class="table table-striped table-bordered table-sm center text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="table-primary table-dark" colspan="7">LIQUIDACION DE HABERES</th>
+                                </tr>
+                            </thead>
+                            <thead>
+                                <tr class="table-primary">
+                                    <th scope="col"># COD.</th>
+                                    <th scope="col">CONCEPTO</th>
+                                    <th scope="col">UNID.</th>
+                                    <th scope="col">TASA</th>
+                                    <th scope="col">REMUNERATIVO</th>
+                                    <th scope="col">NO REMUNERATIVO</th>
+                                    <th scope="col">DESCUENTOS</th>
+                                </tr>
+                            </thead>
+                            <t t-foreach="o.line_ids" t-as="line">
+                                <t t-if="line.code != 'TOT-GROSS-REM' and line.code != 'TOT-NOREM' and line.code != 'TOT-NET' and line.code != 'TOT-DESC'">
+                                    <tr>
+                                        <td>
+                                            <span t-field="line.code"></span>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.name"></span>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.quantity"></span>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.rate" t-options="{'widget': 'percentage'}"></span>
+                                            %
+                                        </td>
+                                        <td>
+                                            <!-- COLUMNA BRUTO (REMUNERATIVO) -->
+                                            <!-- Solo mostrar si la parent category es una categoria de "GROSS" - REMUNERATIVO-->
+                                            <t t-if="line.category_id.parent_id.code == 'GROSS'">
+                                                <span t-field="line.total"></span>
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <!-- COLUMNA NO REMUNERATIVO -->
+                                            <!-- Solo mostrar si la categoria es "NO REMUNERATIVA" -->
+                                            <t t-if="line.category_id.parent_id.code == 'NOREM'">
+                                                <span t-field="line.total"></span>
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <!-- COLUMNA DESCUENTOS -->
+                                            <!-- Solo mostrar si la categoria es "RET" (RETENCIONES), "DED" (DEDUCCIONES), "DESC" (DESCUENTOS) -->
+                                            <t t-if="line.category_id.code == 'RET' or
+                                                            line.category_id.code == 'DED' or
+                                                                line.category_id.code == 'DESC'">
+                                                <span t-field="line.total"></span>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </t>
+                            <thead>
+                                <tr class="table-info">
+                                    <th scope="col" rowspan="2" colspan="4">TOTALES</th>
+                                    <th scope="col">TOTAL HABERES</th>
+                                    <th scope="col">TOTAL NOREM</th>
+                                    <th scope="col">TOTAL DESCUENTOS</th>
+                                </tr>
+                            </thead>
+                            <tr class="table-warning">
+                                <td colspan="4"></td>
+                                <td>
+                                    <strong>
+                                        <t t-esc="total_gross.total" />
+                                    </strong>
+                                </td>
+                                <td>
+                                    <strong>
+                                        <t t-esc="total_norem.total" />
+                                    </strong>
+                                </td>
+                                <td>
+                                    <strong>
+                                        <t t-esc="total_desc.total" />
+                                    </strong>
+                                </td>
+                            </tr>
+                            <thead>
+                                <tr>
+                                    <th scope="col" colspan="6" class="table-info">NETO A COBRAR</th>
+                                    <th scope="col" colspan="2" class="table-warning">
+                                        <t t-foreach="o.line_ids" t-as="line">
+                                            <t t-if="line.code == 'TOT-NET'">
+                                                <strong>
+                                                    <t t-esc="total_net.total" />
+                                                </strong>
+                                            </t>
+                                        </t>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <caption>
+                                <!-- TODO: Ver como convertir el texto a palabras -->
+                            </caption>
+                        </table>
+                    </div>
+                </div>
+            </article>
+        </t>
+    </template>
+
+    <!-- RECIBO DE HABERES: FIRMAS ORIGINAL -->
+    <template id="report_payslip_firmas_o">
+        <t t-foreach="docs" t-as="o">
+            <article style="font-size:8px;">
+                <div class="row" style="margin: 0.5px;">
+                    <div class="col-8">
+                        <p>
+                            <em>El presente recibo de haberes es duplicado de recibo original que obra en nuestro
+                            poder y el cual se encuentra firmado por el empleado.</em>
+                        </p>
+                        <br />
+                    </div>
+                    <div class="col-4" style="border-bottom: 1px solid black; border-radius: 15px; padding: 2px;">
+                        <p align="center">
+                            <em>FIRMA AUTORIZADA - EMPLEADOR</em>
+                            <br />
+                            <span t-field="o.company_id.name"></span>
+                        </p>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+            </article>
+        </t>
+    </template>
+
+    <!-- RECIBO DE HABERES: FIRMAS DUPLICADO -->
+    <template id="report_payslip_firmas_d">
+        <t t-foreach="docs" t-as="o">
+            <article style="font-size:8px;">
+                <div class="row" style="margin: 0.5px;">
+                    <div class="col-8">
+                        <p>
+                            <em>
+                                Recibi conforme la suma de ( MONTO EN LETRAS ) en concepto de mis
+                                haberes correspondientes al periodo "<span t-field="o.name"></span>"
+                                y segun la presente liquidacion, dejando constancia de haber recibido
+                                un duplicado de este de este recibo.
+                            </em>
+                        </p>
+                        <br />
+                    </div>
+                    <div class="col-4" style="border-bottom: 1px solid black; border-radius: 15px; padding: 2px;">
+                        <p align="center">
+                            <em>FIRMA AUTORIZADA - EMPLEADO</em>
+                            <br />
+                            <span t-field="o.employee_id.name"></span>
+                        </p>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+            </article>
+        </t>
+    </template>
+
+    <!-- RECIBO DE HABERES: FOOTER ORIGINAL -->
+    <template id="report_payslip_footer_o">
+        <t t-foreach="docs" t-as="o">
+            <article style="font-size:10px;">
+                <div class="row" style="border-bottom: 1px solid black; border-radius: 10px; padding: 2px; margin: 0.5px;">
+                    <div class="col-6">
+                        <p>
+                            <small>
+                                <em>
+                                    RECIBO OFICIAL DE HABERES - LEY 20.774
+                                    <br />
+                                    SALVO ERROR U OMISION (S.E.U.O)
+                                </em>
+                            </small>
+                        </p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <strong>
+                            <em>
+                                - ORIGINAL -
+                            </em>
+                        </strong>
+                    </div>
+                </div>
+            </article>
+        </t>
+    </template>
+
+    <!-- RECIBO DE HABERES: FOOTER DUPLICADO -->
+    <template id="report_payslip_footer_d">
+        <t t-foreach="docs" t-as="o">
+            <article style="font-size:10px;">
+                <div class="row" style="border-bottom: 1px solid black; border-radius: 10px; padding: 2px; margin: 0.5px;">
+                    <div class="col-6">
+                        <p>
+                            <small>
+                                <em>
+                                    RECIBO OFICIAL DE HABERES - LEY 20.774
+                                    <br />
+                                    SALVO ERROR U OMISION (S.E.U.O)
+                                </em>
+                            </small>
+                        </p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <strong>
+                            <em>
+                                    - DUPLICADO -
+                                </em>
+                        </strong>
+                    </div>
+                </div>
+            </article>
+        </t>
+    </template>
+
+    <template id="l10n_ar_report_payslip_original">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="o">
+                <div class="page">
+                    <div class="row">
+                        <div class="col-6" style="border: 2px solid black; border-radius: 5px; padding: 5px; margin-right: 1px;">
+                            <!-- HEADER -->
+                            <t t-call="l10n_ar_payroll.report_payslip_header"></t>
+                            <!-- DATOS -->
+                            <t t-call="l10n_ar_payroll.report_payslip_datos"></t>
+                            <!-- LIQUIDACION -->
+                            <t t-call="l10n_ar_payroll.report_payslip_liq"></t>
+                            <!-- FIRMAS ORIGINAL -->
+                            <t t-call="l10n_ar_payroll.report_payslip_firmas_d"></t>
+                            <!-- FOOTER -->
+                            <br />
+                            <t t-call="l10n_ar_payroll.report_payslip_footer_o"></t>
+                        </div>
+                        <div class="col-6" style="border: 2px solid black; border-radius: 5px; padding: 5px; margin-left: 1px;">
+                            <!-- HEADER -->
+                            <t t-call="l10n_ar_payroll.report_payslip_header"></t>
+                            <!-- DATOS -->
+                            <t t-call="l10n_ar_payroll.report_payslip_datos"></t>
+                            <!-- LIQUIDACION -->
+                            <t t-call="l10n_ar_payroll.report_payslip_liq"></t>
+                            <!-- FIRMAS ORIGINAL -->
+                            <t t-call="l10n_ar_payroll.report_payslip_firmas_o"></t>
+                            <!-- FOOTER -->
+                            <br />
+                            <t t-call="l10n_ar_payroll.report_payslip_footer_d"></t>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

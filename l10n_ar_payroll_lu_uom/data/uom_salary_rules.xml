@@ -30,8 +30,8 @@
         <!-- Amount Select -->
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
-            result_rate = -3.00
-            result = categories.GROSS
+result_rate = -3.00
+result = categories.GROSS
         </field>
     </record>
     <record id="rules_UOMSVCO" model="hr.salary.rule">
@@ -47,7 +47,8 @@
         <!-- Amount Select -->
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
-            result = contract.cct_id.svco_current_value
+result_rate = -100.00
+result = contract.cct_id.svco_current_value
         </field>
     </record>
     <record id="AR-DEFAULT-H" model="hr.payroll.structure">
@@ -55,8 +56,14 @@
         <field name="code">AR-UOM-JOR</field>
         <field name="company_id" ref="base.main_company" />
         <field name="parent_id" ref='l10n_ar_payroll.AR-DEFAULT-H' />
-        <field name="note">Agrega conceptos del sindicato UOM - Metalurgicos, a la liqiudacion BASE. Liquidacion UOM Jornalizados.
-        </field>
+        <field eval="[(6, 0, [  ref('l10n_ar_payroll_lu_uom.rules_UOM1'),
+                                ref('l10n_ar_payroll_lu_uom.rules_UOMSVCO')])]" name="rule_ids" />
+    </record>
+    <record id="AR-DEFAULT-M" model="hr.payroll.structure">
+        <field name="name"> ( AR-UOM-JOR ) SINDICATO UOM MERTALURGICOS - MENSUALIZADOS</field>
+        <field name="code">AR-UOM-MEN</field>
+        <field name="company_id" ref="base.main_company" />
+        <field name="parent_id" ref='l10n_ar_payroll.AR-DEFAULT-M' />
         <field eval="[(6, 0, [  ref('l10n_ar_payroll_lu_uom.rules_UOM1'),
                                 ref('l10n_ar_payroll_lu_uom.rules_UOMSVCO')])]" name="rule_ids" />
     </record>

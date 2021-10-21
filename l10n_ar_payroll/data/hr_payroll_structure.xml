@@ -2,12 +2,9 @@
 <odoo>
     <data>
         <record id="AR-DEFAULT-H" model="hr.payroll.structure">
-            <field name="name">( BASE ) LIQUIDACION BASICA LCT (Jornalizados)</field>
-            <field name="code">AR-DEFAULT</field>
+            <field name="name">( AR-BASE ) LIQUIDACION BASICA LCT (Jornalizados) - ! Uso como base para otras estructuras</field>
+            <field name="code">AR-BASE-JOR</field>
             <field name="company_id" ref="base.main_company" />
-            <field name="note">Base de liquidacion de sueldos en Argentina. Requerido por ley LCT.
-                Utilice esta estructura como base para otras. - EMPLEADOS JORNALIZADOS POR HORA
-            </field>
             <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_BASIC_HOURS'),
                                     ref('l10n_ar_payroll.rules_ANTG'),
                                     ref('l10n_ar_payroll.rules_HFRD'),
@@ -22,12 +19,9 @@
                                     ref('l10n_ar_payroll.rules_EMBG-JUD')])]" name="rule_ids" />
         </record>
         <record id="AR-DEFAULT-M" model="hr.payroll.structure">
-            <field name="name">( BASE ) LIQUIDACION BASICA LCT (Mensualizados)</field>
-            <field name="code">AR-DEFAULT</field>
+            <field name="name">( AR-BASE ) LIQUIDACION BASICA LCT (Mensualizados) - ! Uso como base para otras estructuras</field>
+            <field name="code">AR-BASE-MEN</field>
             <field name="company_id" ref="base.main_company" />
-            <field name="note">Base de liquidacion de sueldos en Argentina. Requerido por ley LCT.
-                Utilice esta estructura como base para otras. - EMPLEADOS JORNALIZADOS POR HORA
-            </field>
             <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_BASIC'),
                                     ref('l10n_ar_payroll.rules_ANTG'),
                                     ref('l10n_ar_payroll.rules_HFRD'),

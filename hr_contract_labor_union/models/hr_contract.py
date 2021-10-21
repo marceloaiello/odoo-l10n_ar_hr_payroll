@@ -9,8 +9,7 @@ class HrContract(models.Model):
 
     aplica_cct = fields.Boolean(string='Aplica C.C.T / Convenio?')
     cct_id = fields.Many2one(comodel_name='hr.labor_union', string='C.C.T / Sindicato')
-    cct_category_id = fields.Many2one(
-        comodel_name='hr.labor_union.category', string='Categoria C.C.T')
+    cct_category_id = fields.Many2one(comodel_name='hr.labor_union.category', string='Categoria C.C.T')
 
     @api.onchange("cct_category_id")
     def _onchange_cct_category_id(self):

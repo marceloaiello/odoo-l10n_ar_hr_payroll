@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+    <data>
         <!-- Centros de Contribucion por default en Sueldos Argentina -->
         <record id="contribution_register_AFIP-JUB" model="hr.contribution.register">
             <field name="name">( AFIP-301 ) APORTES JUBILATORIOS (retenidos) </field>

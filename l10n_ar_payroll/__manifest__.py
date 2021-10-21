@@ -28,6 +28,10 @@
         'data/hr_salary_rule_category.xml',
         'data/hr_salary_rule.xml',
         'data/hr_payroll_structure.xml',
+        'report/l10n_ar_payslip_report_template.xml',
+        'report/l10n_ar_payslip_report.xml',
+    ],
+    'qweb': [
     ],
     'installable': True,
     'auto_install': False,
