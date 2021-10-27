@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="l10n_ar_payroll.hr_employee_form_view" model="ir.ui.view">
+        <field name="name">l10n_ar_payroll.hr.employee.view.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form" />
+        <field name="arch" type="xml">
+            <!-- Separate the Company ID from the data -->
+            <field name="company_id" position="replace">
+                <separator/>
+                <field name="company_id" on_change="1" can_create="true" can_write="true" modifiers="{'required':true}" id="company_id"/>
+            </field>
+            <!-- Personal Information Page (Tab) -->
+            <xpath expr="//page[@name='personal_information']" position="replace">
+                <page name='personal_information' string="Información privada" modifiers="{}">
+                    <group>
+                        <group string="Datos Personales" modifiers="{}">
+                            <field name="country_of_birth" can_create="true" can_write="true" modifiers="{}" id="country_of_birth" />
+                            <field name="place_of_birth" modifiers="{}" id="place_of_birth" />
+                            <field name="country_id" options="{'no_open': True, 'no_create': True}" can_create="true" can_write="true" modifiers="{}" id="country_id" />
+                            <field name="gender" />
+                            <field name="marital" />
+                            <field name="birthday" on_change="1" modifiers="{}" id="birthday" />
+                            <label for="age" modifiers="{}" />
+                            <div class="o_row">
+                                <field name="age" modifiers="{'readonly':true}" id="age" />
+                                <span modifiers="{}">
+                                    años
+                                </span>
+                            </div>
+                            <separator />
+                            <field name="identification_type_id" string="Tipo de ID" modifiers="{}" id="ssnid" />
+                            <field name="identification_id" string="D.N.I" modifiers="{}" id="identification_id" />
+                            <field name="identification_tram_number" string="ID Numero de Tramite" modifiers="{}" id="ssnid" />
+                            <field name="identification_expiry_date" string="Vencimiento ID" modifiers="{}" id="ssnid" />
+                            <field name="ssnid" string="C.U.I.L" modifiers="{}" id="ssnid" />
+                        </group>
+                        <group string="Datos de Contacto" modifiers="{}">
+                            <field name="address_home_id" context="{'show_address': 1, 'default_type': 'private', 'form_view_ref': 'base.res_partner_view_form_private'}" options="{'always_reload': True, 'highlight_first_line': True}" on_change="1" can_create="true" can_write="true" modifiers="{}" id="address_home_id" />
+                            <field name="private_email" string="Correo electrónico" modifiers="{'readonly':true}" id="private_email" />
+                            <field name="phone" class="o_force_ltr" string="Teléfono" readonly="True" modifiers="{'readonly':true}" id="phone" />
+                            <field name="bank_account_id" context="{'display_partner':True}" attrs="{'invisible': [('address_home_id', '=', False)]}" can_create="true" can_write="true" modifiers="{'invisible':[['address_home_id','=',false]]}" id="bank_account_id" />
+                            <separator string="Emergencias" />
+                            <field name="emergency_contact" modifiers="{}" id="emergency_contact" />
+                            <field name="emergency_phone" class="o_force_ltr" on_change="1" modifiers="{}" id="emergency_phone" />
+                        </group>
+                    </group>
+                    <group name="biometric" string="Biometria y Firmas">
+                        <group>
+                            <field name="image_1920" widget="image" string="Foto Legajo" options="{'zoom': true, 'preview_image':'image_128'}" modifiers="{}" id="image_1920"/>
+                        </group>
+                        <group>
+                            <field name="signature" string="Firma Registrada" widget="signature" modifiers="{}" id="signature" />
+                            <field name="identification_scan_image" string="Digitalizacion ID" widget="file" />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <!-- RRHH (Tab) -->
+            <xpath expr="//page[@name='hr_settings']" position="replace">
+                <page name='hr_settings' string="RRHH" modifiers="{}">
+                    <group>
+                        <group string="Estado" name="active_group" modifiers="{}">
+                            <field name="first_contract_date" string="Primera Fecha Contrato" attrs="{'invisible' : [('first_contract_date', '=', False)]}" readonly="1" modifiers="{'invisible':[['first_contract_date','=',false]],'readonly':true}" id="first_contract_date__1__"/>
+                            <field name="user_id" string="Usuario Sistema" domain="[('share', '=', False)]" on_change="1" can_create="true" can_write="true" modifiers="{}" id="user_id"/>
+                            <field name="job_id" on_change="1" can_create="true" can_write="true" modifiers="{}" id="job_id"/>
+                        </group>
+                        <group string="Transporte y Movilidad" modifiers="{}">
+                            <field name="mobility_card" string="Nº Tarjeta de Transporte" modifiers="{}" id="mobility_card"/>
+                            <!-- TODO: Add asignacion de vehiculo de flota -->
+                            <!-- TODO: Add credenciales y datos shell flota - Codigo Coductor Shell -->
+                        </group>
+                    </group>
+                    <group>
+                        <group name="service_information" string="Información de Servicio" modifiers="{}">
+                            <field name="service_hire_date" string="Fecha Ingreso" on_change="1" modifiers="{}" id="service_hire_date"/>
+                            <field name="service_start_date" string="Fecha Antigüedad" on_change="1" modifiers="{}" id="service_start_date"/>
+                            <field name="service_termination_date" string="Fecha Baja" on_change="1" modifiers="{}" id="service_termination_date"/>
+                            <field name="service_duration" invisible="1" modifiers="{'invisible':true,'readonly':true}" id="service_duration"/>
+                            <label for="service_duration" string="Antigüedad" modifiers="{}"/>
+                            <div modifiers="{}">
+                                <field name="service_duration_years" nolabel="1" modifiers="{'readonly':true}" id="service_duration_years"/>
+                                <span class="ml8 mr8" modifiers="{}">
+                                    año(s)
+                                </span>
+                                <field name="service_duration_months" nolabel="1" modifiers="{'readonly':true}" id="service_duration_months"/>
+                                <span class="ml8 mr8" modifiers="{}">
+                                    mes(es)
+                                </span>
+                                <field name="service_duration_days" nolabel="1" modifiers="{'readonly':true}" id="service_duration_days"/>
+                                <span class="ml8" modifiers="{}">
+                                    día(s)
+                                </span>
+                            </div>
+                        </group>
+                        <group string="Asistencia y Credencial" name="identification_group" modifiers="{}">
+                            <field name="theoretical_hours_start_date" modifiers="{}" id="theoretical_hours_start_date"/>
+                            <field name="no_autoclose" string="No autocerrar asistencias" modifiers="{}" id="no_autoclose"/>
+                            <field name="pin" string="Código NIP" modifiers="{}" id="pin"/>
+                            <label for="barcode" modifiers="{}"/>
+                            <div class="o_row" modifiers="{}">
+                                <field name="barcode" modifiers="{}" id="barcode"/>
+                                <button string="Generar" class="btn btn-link" type="object" name="generate_random_barcode" attrs="{'invisible': [('barcode', '!=', False)]}" modifiers="{'invisible':[['barcode','!=',false]]}" options="{}"/>
+                                <button name="152" string="Imprimir" class="btn btn-link" type="action" attrs="{'invisible': [('barcode', '=', False)]}" modifiers="{'invisible':[['barcode','=',false]]}" options="{}"/>
+                            </div>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

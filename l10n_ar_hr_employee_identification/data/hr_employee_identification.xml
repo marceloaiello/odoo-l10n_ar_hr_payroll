@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="id_type_dni" model="hr.employee.identification.type">
+            <field name="name">D.N.I</field>
+        </record>
+        <record id="id_type_dni_ext" model="hr.employee.identification.type">
+            <field name="name">D.N.I Extranjero</field>
+        </record>
+        <record id="id_type_pasaporte" model="hr.employee.identification.type">
+            <field name="name">Pasaporte Extranjero</field>
+        </record>
+        <record id="id_type_otros" model="hr.employee.identification.type">
+            <field name="name">Otros</field>
+        </record>
+    </data>
+</odoo>

@@ -11,10 +11,16 @@
     'license': 'LGPL-3',
     'category': 'Human Resources',
     'depends': [
-        'hr_contract'
+        'base',
+        'hr_contract',
+        'payroll',
+        'hr_contract_labor_union',
+        'l10n_ar_hr_employee_identification',
+        'l10n_ar_hr_employee_mobility',
+        'l10n_ar_payroll',
     ],
     'data': [
-        'views/hr_employee.xml', 'views/hr_contract.xml'
+        'views/hr_employee.xml',
     ],
     'installable': True,
     'auto_install': False,
