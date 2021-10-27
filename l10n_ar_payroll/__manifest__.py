@@ -15,6 +15,7 @@
         'hr_contract',
         'hr_attendance',
         'hr_attendance_report_theoretical_time',
+        'l10n_ar_hr_contract_labor_union'
         'payroll',
         'l10n_ar'
     ],
