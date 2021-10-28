@@ -5,11 +5,6 @@
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form" />
         <field name="arch" type="xml">
-            <!-- Separate the Company ID from the data -->
-            <field name="company_id" position="replace">
-                <separator/>
-                <field name="company_id" on_change="1" can_create="true" can_write="true" modifiers="{'required':true}" id="company_id"/>
-            </field>
             <!-- Personal Information Page (Tab) -->
             <xpath expr="//page[@name='personal_information']" position="replace">
                 <page name='personal_information' string="Información privada" modifiers="{}">

@@ -14,7 +14,7 @@
         'base',
         'hr_contract',
         'payroll',
-        'hr_contract_labor_union',
+        'l10n_ar_hr_contract_labor_union',
         'l10n_ar_hr_employee_identification',
         'l10n_ar_hr_employee_mobility',
         'l10n_ar_payroll',

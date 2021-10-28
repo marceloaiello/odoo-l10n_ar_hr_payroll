@@ -11,7 +11,8 @@
     'license': 'LGPL-3',
     'category': 'Payroll',
     'depends': [
-        'l10n_ar_payroll'
+        'l10n_ar_payroll',
+        'l10n_ar_hr_contract_labor_union'
     ],
     'data': [
         'data/uom_salary_rules.xml',

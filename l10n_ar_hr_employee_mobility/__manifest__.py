@@ -16,7 +16,6 @@
         'l10n_ar'
     ],
     'data': [
-        'security/ir.model.access.csv',
         'views/hr_employee.xml',
     ],
     'installable': True,
