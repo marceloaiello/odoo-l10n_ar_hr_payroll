@@ -51,6 +51,27 @@ result_rate = -100.00
 result = contract.cct_id.svco_current_value
         </field>
     </record>
+    <record id="rules_IMGR" model="hr.salary.rule">
+        <field name="name">IMGR UOM</field>
+        <field name="code">IMGR</field>
+        <field name="sequence">10590</field>
+        <field name="category_id" ref="l10n_ar_payroll.categories_ADIC" />
+        <field name="active">true</field>
+        <field name="appears_on_payslip">true</field>
+        <!-- Condition Select -->
+        <field name="condition_select">none</field>
+        <!-- Amount Select -->
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+imgr = 60720.00
+base_calculo = categories.GROSS - categories.EXT
+if imgr > base_calculo:
+    diference = imgr - categories.GROSS
+    result = diference
+else:
+    result = 0.00
+        </field>
+    </record>
     <record id="AR-DEFAULT-H" model="hr.payroll.structure">
         <field name="name"> ( AR-UOM-JOR ) SINDICATO UOM MERTALURGICOS - JORNALIZADOS</field>
         <field name="code">AR-UOM-JOR</field>
@@ -65,6 +86,7 @@ result = contract.cct_id.svco_current_value
         <field name="company_id" ref="base.main_company" />
         <field name="parent_id" ref='l10n_ar_payroll.AR-DEFAULT-M' />
         <field eval="[(6, 0, [  ref('l10n_ar_payroll_lu_uom.rules_UOM1'),
+                                ref('l10n_ar_payroll_lu_uom.rules_IMGR'),
                                 ref('l10n_ar_payroll_lu_uom.rules_UOMSVCO')])]" name="rule_ids" />
     </record>
 </odoo>
