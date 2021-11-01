@@ -16,6 +16,11 @@
                                     ref('l10n_ar_payroll.rules_AFIP-OS3'),
                                     ref('l10n_ar_payroll.rules_ADV'),
                                     ref('l10n_ar_payroll.rules_LOAN'),
+                                    ref('l10n_ar_payroll.rules_NETO'),
+                                    ref('l10n_ar_payroll.rules_GROSS'),
+                                    ref('l10n_ar_payroll.rules_NOREM'),
+                                    ref('l10n_ar_payroll.rules_DESC'),
+                                    ref('l10n_ar_payroll.rules_PRES'),
                                     ref('l10n_ar_payroll.rules_EMBG-JUD')])]" name="rule_ids" />
         </record>
         <record id="AR-DEFAULT-M" model="hr.payroll.structure">
@@ -28,11 +33,16 @@
                                     ref('l10n_ar_payroll.rules_AUS'),
                                     ref('l10n_ar_payroll.rules_OVT50'),
                                     ref('l10n_ar_payroll.rules_OVT100'),
+                                    ref('l10n_ar_payroll.rules_GROSS'),
+                                    ref('l10n_ar_payroll.rules_NOREM'),
                                     ref('l10n_ar_payroll.rules_AFIP-JUB11'),
                                     ref('l10n_ar_payroll.rules_AFIP-INSSJP3'),
                                     ref('l10n_ar_payroll.rules_AFIP-OS3'),
+                                    ref('l10n_ar_payroll.rules_DESC'),
                                     ref('l10n_ar_payroll.rules_ADV'),
                                     ref('l10n_ar_payroll.rules_LOAN'),
+                                    ref('l10n_ar_payroll.rules_NETO'),
+                                    ref('l10n_ar_payroll.rules_PRES'),
                                     ref('l10n_ar_payroll.rules_EMBG-JUD')])]" name="rule_ids" />
         </record>
     </data>

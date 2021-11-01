@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="l10n_ar_payroll_inherit_hr_contract" model="ir.ui.view">
+        <field name="name">hr_contact_view_form_inherit_hr_payroll_ux</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="priority" eval="21"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='wage']" position="replace">
+                <div class="o_row" name="wage" modifiers="{}">
+                    <field name="amount" nolabel="1" required="1" attrs="{'readonly':[('aplica_cct','=', True)]}" force_save="True" on_change="1" modifiers="{'readonly':[['aplica_cct','=',true]],'required':true}" id="amount"/>
+                    <field name="wage" nolabel="1" invisible="1" readonly="1" modifiers="{'invisible':true,'readonly':true}" id="wage"/>
+                    <span modifiers="{}">
+                         /
+                    </span>
+                    <field name="amount_period" nolabel="1" required="1" attrs="{'readonly':[('aplica_cct','=', True)]}" force_save="True" on_change="1" modifiers="{'readonly':[['aplica_cct','=',true]],'required':true}" id="amount_period"/>
+                </div>
+                <field name="schedule_pay" string="Frecuencia Pago" modifiers="{}" id="schedule_pay"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

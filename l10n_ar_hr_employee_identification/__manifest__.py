@@ -13,7 +13,6 @@
     'depends': [
         'base',
         'hr_contract',
-        'l10n_ar'
     ],
     'data': [
         'data/hr_employee_identification.xml',

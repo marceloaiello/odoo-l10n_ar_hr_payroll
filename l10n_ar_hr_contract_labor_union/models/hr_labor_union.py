@@ -57,6 +57,6 @@ class HrLaborUnion(models.Model):
                 'name': _('Actualizar Importes'),
                 'res_model': 'hr.labor_union.update_prices.wizard',
                 'target': 'new',
-                'view_id': self.env.ref('hr_contract_labor_union.hr_labor_union_category_wizard').id,
+                'view_id': self.env.ref('l10n_ar_hr_contract_labor_union.hr_labor_union_category_wizard').id,
                 'view_mode': 'form',
                 'context': {'default_update_prices_line_ids': lines}}

@@ -4,10 +4,11 @@
         <field name="name">hr.contract.view.form</field>
         <field name="model">hr.contract</field>
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+        <field name="priority" eval="20"/>
         <field name="arch" type="xml">
             <xpath expr="//group[@name='salary_and_advantages']" position="before">
                 <group name='sindicato_cct' string="Sindicatos y C.C.T">
-                    <field name="aplica_cct" />
+                    <field name="aplica_cct" widget="boolean_toggle" />
                     <field name="cct_id" attrs="{'invisible':[('aplica_cct', '=', False)]}" />
                     <field name="cct_category_id" attrs="{'invisible':[('aplica_cct', '=', False)]}" domain="[('labor_union_id', '=', cct_id)]" />
                 </group>

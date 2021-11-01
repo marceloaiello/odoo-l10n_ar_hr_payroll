@@ -13,3 +13,20 @@ para ser usados en la liquidacion de sueldos.
 * "l10n_ar_payroll" - Agrega funciones y tablas al modulo de Payroll para la liquidacion de sueldos en Argentina.
 * "l10n_ar_payroll_lu_*****" - Implementaciones de tablas y funcionalidades de distintos sindicatos de Argentina. Actualmente soportados: UOM, ASIMRA.
 
+## Roadmap and TODOs
+
+A continuacion, listamos los siguientes cambios y nuevas funciones que se encuentran en desarrollo o que estan pendientes para desarrollar en el modulo. Si ud. desea colaborar
+con el proyecto, aceptamos pull requests y le sugerimos comenzar con las tareas pendientes de la siguiente lista. Si
+
+* (Prioridad: MEDIA) - Realizar vinculacion entre el modulo hr_fleet para poder seleccionar en empleados, los vehiculos vinculados a ese empleado. Ademas de la relacion con el
+vehiculo, se debera proveer una forma rapida de ver datos como patente, etc.
+* (Prioridad: BAJA) - Soporte para distintas tarjetas de mobilidad (SUBE, etc). Actualmente el sistema permite ingresar una sola tarjeta de mobilidad.
+* (Prioridad: MEDIA) - Implementacion y soporte para el calculo automatico de dias de vacaciones y asignacion automatica de los dias en el modulo hr_leave.
+* (Prioridad: MEDIA) - Automatizacion de payslip batches para que los mismos sean "pre-liquidados" en las fechas configuradas.
+* (Prioridad: MEDIA) - Soporte de estadisticas de payroll.
+* (Prioridad: BAJA) - Report separado para registros de contribucion. Puede ser util para contadores y prestancion de DDJJ.
+* (Prioridad: ALTA) - Implementacion de creacion de txt de SICOSS. Importacion automatica a 931.
+* (Prioridad: ALTA) - Implementacion (en las distintas sub-localizaciones de sindicatos) de los disños de registro de importacion de informacion a sistemas sindicales. Se debe crear primero un modulo generico, que permita la facil implementacion de distintos diseños en cada sub-localizacion sindical. Se
+* (Prioridad: ALTA) - Calculo automatico de estados de AFIP (en hr_contract) basado en acciones con botones que permitan agilizar la carga de empleados en ILT, cambio automatico de estado de periodos de prueba y estados de revista. (mas info en el archivo hr_contract.py),
+* (Prioridad: ALTA) - Posibilidad de añadir periodos predefinidos en la creacion del recibo de sueldo.
+* (Prioridad: ALTA) - Implementar modelo de adelantos y prestamos a los empleados, el cual luego debe popular los inputs de ADV-AMOUNT y LOAN-AMOUNT.

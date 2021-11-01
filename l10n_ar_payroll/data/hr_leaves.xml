@@ -2,9 +2,9 @@
 <odoo>
     <data>
         <record id="leaves_WORK0" model="hr.leave.type">
-            <field name="name">Ausencias (no pagas)</field>
+            <field name="name">Ausencias No Remuneradas</field>
             <field name="code">WORK0</field>
-            <field name="request_unit">hour</field>
+            <field name="request_unit">day</field>
             <field name="include_in_theoretical">true</field>
             <field name="allocation_type">no</field>
             <field name="leave_validation_type">hr</field>
@@ -14,26 +14,86 @@
             <field name="company_id" ref="base.main_company" />
         </record>
         <record id="leaves_WORK0J" model="hr.leave.type">
-            <field name="name">Ausencias (pagadas / justificadas)</field>
-            <field name="code">WORK0J</field>
-            <field name="request_unit">hour</field>
+            <field name="name">Ausencias Remunerada</field>
+            <field name="code">WORK0-J</field>
+            <field name="request_unit">day</field>
             <field name="include_in_theoretical">true</field>
             <field name="allocation_type">fixed_allocation</field>
-            <field name="leave_validation_type">hr</field>
+            <field name="leave_validation_type">both</field>
             <field name="create_calendar_meeting">true</field>
             <field name="color_name">lightpink</field>
             <field name="exclude_public_holidays">true</field>
             <field name="company_id" ref="base.main_company" />
         </record>
-        <record id="leaves_LEGALHOL" model="hr.leave.type">
-            <field name="name">Vacaciones Legales (pagadas)</field>
-            <field name="code">LHOL</field>
+        <record id="leaves_WORK0C" model="hr.leave.type">
+            <field name="name">Dias Compensatorios</field>
+            <field name="code">WORK0-C</field>
+            <field name="request_unit">day</field>
+            <field name="include_in_theoretical">true</field>
+            <field name="allocation_type">fixed_allocation</field>
+            <field name="leave_validation_type">both</field>
+            <field name="create_calendar_meeting">true</field>
+            <field name="color_name">wheat</field>
+            <field name="exclude_public_holidays">true</field>
+            <field name="company_id" ref="base.main_company" />
+        </record>
+        <record id="leaves_WORK0-HOL" model="hr.leave.type">
+            <field name="name">Licencia Vacacional</field>
+            <field name="code">WORK0-HOL</field>
             <field name="request_unit">day</field>
             <field name="include_in_theoretical">false</field>
             <field name="allocation_type">fixed</field>
             <field name="leave_validation_type">both</field>
             <field name="create_calendar_meeting">true</field>
-            <field name="color_name">lightcyan</field>
+            <field name="color_name">wheat</field>
+            <field name="exclude_public_holidays">false</field>
+            <field name="company_id" ref="base.main_company" />
+        </record>
+        <record id="leaves_WORK0-MATR" model="hr.leave.type">
+            <field name="name">Licencia por Matrimonio</field>
+            <field name="code">WORK0-MTR</field>
+            <field name="request_unit">day</field>
+            <field name="include_in_theoretical">false</field>
+            <field name="allocation_type">fixed</field>
+            <field name="leave_validation_type">both</field>
+            <field name="create_calendar_meeting">true</field>
+            <field name="color_name">wheat</field>
+            <field name="exclude_public_holidays">false</field>
+            <field name="company_id" ref="base.main_company" />
+        </record>
+        <record id="leaves_WORK0-NAC" model="hr.leave.type">
+            <field name="name">Licencia por Nacimiento</field>
+            <field name="code">WORK0-NAC</field>
+            <field name="request_unit">day</field>
+            <field name="include_in_theoretical">false</field>
+            <field name="allocation_type">fixed</field>
+            <field name="leave_validation_type">both</field>
+            <field name="create_calendar_meeting">true</field>
+            <field name="color_name">wheat</field>
+            <field name="exclude_public_holidays">false</field>
+            <field name="company_id" ref="base.main_company" />
+        </record>
+        <record id="leaves_WORK0-FALL" model="hr.leave.type">
+            <field name="name">Licencia por Fallecimiento</field>
+            <field name="code">WORK0-FALL</field>
+            <field name="request_unit">day</field>
+            <field name="include_in_theoretical">false</field>
+            <field name="allocation_type">fixed</field>
+            <field name="leave_validation_type">both</field>
+            <field name="create_calendar_meeting">true</field>
+            <field name="color_name">wheat</field>
+            <field name="exclude_public_holidays">false</field>
+            <field name="company_id" ref="base.main_company" />
+        </record>
+        <record id="leaves_WORK0-EST" model="hr.leave.type">
+            <field name="name">Dias de Estudio</field>
+            <field name="code">WORK0-EST</field>
+            <field name="request_unit">day</field>
+            <field name="include_in_theoretical">false</field>
+            <field name="allocation_type">fixed</field>
+            <field name="leave_validation_type">both</field>
+            <field name="create_calendar_meeting">true</field>
+            <field name="color_name">wheat</field>
             <field name="exclude_public_holidays">false</field>
             <field name="company_id" ref="base.main_company" />
         </record>

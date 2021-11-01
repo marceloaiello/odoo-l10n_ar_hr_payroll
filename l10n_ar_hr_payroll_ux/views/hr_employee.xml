@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="l10n_ar_payroll.hr_employee_form_view" model="ir.ui.view">
-        <field name="name">l10n_ar_payroll.hr.employee.view.form</field>
+    <record id="l10n_ar_hr_payroll_ux.hr_employee_form_view" model="ir.ui.view">
+        <field name="name">l10n_ar_payroll_ux.hr.employee.view.form</field>
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form" />
         <field name="arch" type="xml">
@@ -10,6 +10,12 @@
                 <page name='personal_information' string="Información privada" modifiers="{}">
                     <group>
                         <group string="Datos Personales" modifiers="{}">
+                            <field name="identification_type_id" string="Tipo de Documento" modifiers="{}" id="ssnid" />
+                            <field name="identification_id" string="Nº Documento" modifiers="{}" id="identification_id" />
+                            <field name="identification_tram_number" string="Nº Tramite Documento" modifiers="{}" id="ssnid" />
+                            <field name="identification_expiry_date" string="Vencimiento Documento" modifiers="{}" id="ssnid" />
+                            <field name="ssnid" string="C.U.I.L" modifiers="{}" id="ssnid" />
+                            <separator/>
                             <field name="country_of_birth" can_create="true" can_write="true" modifiers="{}" id="country_of_birth" />
                             <field name="place_of_birth" modifiers="{}" id="place_of_birth" />
                             <field name="country_id" options="{'no_open': True, 'no_create': True}" can_create="true" can_write="true" modifiers="{}" id="country_id" />
@@ -23,12 +29,6 @@
                                     años
                                 </span>
                             </div>
-                            <separator />
-                            <field name="identification_type_id" string="Tipo de ID" modifiers="{}" id="ssnid" />
-                            <field name="identification_id" string="D.N.I" modifiers="{}" id="identification_id" />
-                            <field name="identification_tram_number" string="ID Numero de Tramite" modifiers="{}" id="ssnid" />
-                            <field name="identification_expiry_date" string="Vencimiento ID" modifiers="{}" id="ssnid" />
-                            <field name="ssnid" string="C.U.I.L" modifiers="{}" id="ssnid" />
                         </group>
                         <group string="Datos de Contacto" modifiers="{}">
                             <field name="address_home_id" context="{'show_address': 1, 'default_type': 'private', 'form_view_ref': 'base.res_partner_view_form_private'}" options="{'always_reload': True, 'highlight_first_line': True}" on_change="1" can_create="true" can_write="true" modifiers="{}" id="address_home_id" />
@@ -46,6 +46,7 @@
                         </group>
                         <group>
                             <field name="signature" string="Firma Registrada" widget="signature" modifiers="{}" id="signature" />
+                            <separator/>
                             <field name="identification_scan_image" string="Digitalizacion ID" widget="file" />
                         </group>
                     </group>
@@ -54,18 +55,6 @@
             <!-- RRHH (Tab) -->
             <xpath expr="//page[@name='hr_settings']" position="replace">
                 <page name='hr_settings' string="RRHH" modifiers="{}">
-                    <group>
-                        <group string="Estado" name="active_group" modifiers="{}">
-                            <field name="first_contract_date" string="Primera Fecha Contrato" attrs="{'invisible' : [('first_contract_date', '=', False)]}" readonly="1" modifiers="{'invisible':[['first_contract_date','=',false]],'readonly':true}" id="first_contract_date__1__"/>
-                            <field name="user_id" string="Usuario Sistema" domain="[('share', '=', False)]" on_change="1" can_create="true" can_write="true" modifiers="{}" id="user_id"/>
-                            <field name="job_id" on_change="1" can_create="true" can_write="true" modifiers="{}" id="job_id"/>
-                        </group>
-                        <group string="Transporte y Movilidad" modifiers="{}">
-                            <field name="mobility_card" string="Nº Tarjeta de Transporte" modifiers="{}" id="mobility_card"/>
-                            <!-- TODO: Add asignacion de vehiculo de flota -->
-                            <!-- TODO: Add credenciales y datos shell flota - Codigo Coductor Shell -->
-                        </group>
-                    </group>
                     <group>
                         <group name="service_information" string="Información de Servicio" modifiers="{}">
                             <field name="service_hire_date" string="Fecha Ingreso" on_change="1" modifiers="{}" id="service_hire_date"/>
@@ -87,10 +76,20 @@
                                     día(s)
                                 </span>
                             </div>
-                        </group>
-                        <group string="Asistencia y Credencial" name="identification_group" modifiers="{}">
                             <field name="theoretical_hours_start_date" modifiers="{}" id="theoretical_hours_start_date"/>
-                            <field name="no_autoclose" string="No autocerrar asistencias" modifiers="{}" id="no_autoclose"/>
+                        </group>
+                        <group string="Estado" name="active_group" modifiers="{}">
+                            <field name="first_contract_date" string="Primera Fecha Contrato" attrs="{'invisible' : [('first_contract_date', '=', False)]}" readonly="1" modifiers="{'invisible':[['first_contract_date','=',false]],'readonly':true}" id="first_contract_date__1__"/>
+                            <field name="user_id" string="Usuario Sistema" domain="[('share', '=', False)]" on_change="1" can_create="true" can_write="true" modifiers="{}" id="user_id"/>
+                            <field name="job_id" on_change="1" can_create="true" can_write="true" modifiers="{}" id="job_id"/>
+                            <separator string="Transporte" modifiers="{}" />
+                            <field name="mobility_card" string="Nº Tarjeta de Transporte" modifiers="{}" id="mobility_card"/>
+                            <field name="shell_flota_cod_conductor" string="Shell - Cod. Conductor" modifiers="{}" id="mobility_card"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Asistencia y Credencial" name="identification_group" modifiers="{}">
+                            <field name="no_autoclose" string="NAC Asistencia" modifiers="{}" id="no_autoclose"/>
                             <field name="pin" string="Código NIP" modifiers="{}" id="pin"/>
                             <label for="barcode" modifiers="{}"/>
                             <div class="o_row" modifiers="{}">

@@ -21,7 +21,7 @@
         'views/menus.xml',
         'data/hr_overtime_scheduler.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }

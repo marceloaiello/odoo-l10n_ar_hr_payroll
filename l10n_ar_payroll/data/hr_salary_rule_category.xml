@@ -104,19 +104,19 @@
         <!-- Categorias de Totales y Subtotales -->
         <record id="categories_TOTAL_GROSS" model="hr.salary.rule.category">
             <field name="name">TOTAL BRUTO</field>
-            <field name="code">TOT-GROSS</field>
+            <field name="code">TGROSS</field>
         </record>
         <record id="categories_TOTAL_NOREM" model="hr.salary.rule.category">
             <field name="name">TOTAL NO REMUNERATIVO</field>
-            <field name="code">TOT-NOREM</field>
+            <field name="code">TNOREM</field>
         </record>
         <record id="categories_TOTAL_DESC" model="hr.salary.rule.category">
             <field name="name">TOTAL DESCUENTOS</field>
-            <field name="code">TOT-GROSS</field>
+            <field name="code">TGROSS</field>
         </record>
         <record id="categories_TOTAL_NET" model="hr.salary.rule.category">
-            <field name="name">TOTAL NETO</field>
-            <field name="code">TOT-NET</field>
+            <field name="name">IMPORTE TOTAL NETO</field>
+            <field name="code">TNET</field>
         </record>
 
     </data>

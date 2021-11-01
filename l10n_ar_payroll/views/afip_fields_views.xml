@@ -4,7 +4,7 @@
     <record id="l10n_ar_payroll.res_company_form" model="ir.ui.view">
         <field name="name">res.company.inherit.view.form</field>
         <field name="model">res.company</field>
-        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="inherit_id" ref="base.view_company_form" />
         <field name="arch" type="xml">
             <xpath expr="//group[@name='social_media']" position="after">
                 <group name="afip_sicoss" string="AFIP SICOSS - Empleadores">
@@ -18,35 +18,29 @@
         <field name="name">hr.contract.inherit.view.form</field>
         <field name="model">hr.contract</field>
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
-        <field name="priority" eval="200"/>
+        <field name="priority" eval="200" />
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='information']" position="before">
-                <page name="afip_fields" string="AFIP">
-                    <group>
-                        <group name="perfil_afip" string="AFIP: Contratacion">
-                            <field name="afip_condicion_id" />
-                            <field name="afip_modalidad_contratacion_id" string="Modalidad" />
-                            <field name="afip_actividad_id" />
-                            <field name="afip_localidad_id" />
-                        </group>
-                        <group name="situacion_revista" string="AFIP: Situacion de Revista">
-                            <field name="afip_situacion_revista_id" />
-                            <field name="afip_codigo_siniestrado_id" />
-                        </group>
-                        <group name="obra_social" string="AFIP: Obra Social">
-                            <field name="afip_obra_social_id" />
-                            <field name="os_adherentes" />
-                            <field name="os_aporte_adicional" />
-                            <field name="os_contribucion_adicional" />
-                        </group>
-                        <group name="seguridad_social" string="AFIP: Seguridad Social">
-                            <field name="ss_aporte_adicional" help="Porcentaje de aporte adicional que realiza el empleado." />
-                        </group>
+            <xpath expr="//group[@name='notes_group']" position="before">
+                <group>
+                    <group string="AFIP - Parametros">
+                        <field name="cobertura_svco" string="¿Cobertura S.V.C.O?" widget="boolean_toggle" />
+                        <field name="afip_situacion_revista_id" string="Sit. Revista" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}" />
+                        <field name="afip_codigo_siniestrado_id" string="Cod. Siniestrado" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}" />
+                        <field name="afip_condicion_id" string="Cond. Contratacion" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}" />
+                        <field name="afip_modalidad_contratacion_id" string="Mod. Contratacion" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}" />
+                        <field name="afip_actividad_id" string="Actividad" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}" />
+                        <field name="afip_localidad_id" string="Localidad" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}" />
+                        <field name="afip_obra_social_id" string="Obra Social" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}" />
                     </group>
-                </page>
-            </xpath>
-            <xpath expr="//field[@name='cct_category_id']" position="after">
-                <field name="cobertura_svco" />
+                    <group string="AFIP - Adicionales">
+                        <field name="ss_aporte_adicional" string="SS - $ Aporte Adicional" />
+                        <field name="ss_contrib_detraccion" string="SS - $ Detraccion Contribuciones" />
+                        <separator />
+                        <field name="os_adherentes" string="OS - # Adherentes" />
+                        <field name="os_aporte_adicional" string="OS - $ Aporte Adicional" />
+                        <field name="os_contribucion_adicional" string="OS - $ Contribucion Adicional"  />
+                    </group>
+                </group>
             </xpath>
         </field>
     </record>
