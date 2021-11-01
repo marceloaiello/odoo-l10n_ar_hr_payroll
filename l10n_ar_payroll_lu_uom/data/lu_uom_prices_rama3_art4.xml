@@ -176,25 +176,25 @@
             <field name="value">364.56</field>
         </record>
         <record id="category_price_administrativo_1ra_202110" model="hr.labor_union.category.price">
-            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_multiple_superior"/>
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_1ra"/>
             <field name="from_date">2021-10-01</field>
             <field name="to_date">2021-12-31</field>
             <field name="value">44228.30</field>
         </record>
         <record id="category_price_adminsitrativo_2da_202110" model="hr.labor_union.category.price">
-            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_multiple_superior"/>
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_2ra"/>
             <field name="from_date">2021-10-01</field>
             <field name="to_date">2021-12-31</field>
             <field name="value">49085.03</field>
         </record>
         <record id="category_price_adminsitrativo_3ra_202110" model="hr.labor_union.category.price">
-            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_multiple_superior"/>
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_1ra"/>
             <field name="from_date">2021-10-01</field>
             <field name="to_date">2021-12-31</field>
             <field name="value">56675.94</field>
         </record>
         <record id="category_price_adminsitrativo_4ra_202110" model="hr.labor_union.category.price">
-            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_multiple_superior"/>
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_4ta"/>
             <field name="from_date">2021-10-01</field>
             <field name="to_date">2021-12-31</field>
             <field name="value">61898.94</field>
