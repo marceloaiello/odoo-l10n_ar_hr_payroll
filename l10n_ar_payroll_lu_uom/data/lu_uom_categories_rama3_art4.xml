@@ -83,5 +83,25 @@
             <field name="name">Oficial Multiple Superior</field>
             <field name="category_period_type">hour</field>
         </record>
+        <record id="category_administrativo_1ra" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Administrativo 1º</field>
+            <field name="category_period_type">month</field>
+        </record>
+        <record id="category_administrativo_2ra" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Administrativo 2º</field>
+            <field name="category_period_type">month</field>
+        </record>
+        <record id="category_administrativo_3ra" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Administrativo 3º</field>
+            <field name="category_period_type">month</field>
+        </record>
+        <record id="category_administrativo_4ta" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_rama3_art4" />
+            <field name="name">Administrativo 4º</field>
+            <field name="category_period_type">month</field>
+        </record>
     </data>
 </odoo>
