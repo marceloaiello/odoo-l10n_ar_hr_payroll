@@ -143,10 +143,10 @@
     <!-- RECIBO DE HABERES: TABLA LIQUIDACION -->
     <template id="report_payslip_liq">
         <t t-foreach="docs" t-as="o">
-            <t t-set="total_gross" t-value="request.env['hr.payslip.line'].sudo().search([('slip_id', '=', o.id), ('code', '=', 'TOT-GROSS-REM')], limit=1)" />
-            <t t-set="total_norem" t-value="request.env['hr.payslip.line'].sudo().search([('slip_id', '=', o.id), ('code', '=', 'TOT-NOREM')], limit=1)" />
-            <t t-set="total_desc" t-value="request.env['hr.payslip.line'].sudo().search([('slip_id', '=', o.id), ('code', '=', 'TOT-DESC')], limit=1)" />
-            <t t-set="total_net" t-value="request.env['hr.payslip.line'].sudo().search([('slip_id', '=', o.id), ('code', '=', 'TOT-NET')], limit=1)" />
+            <t t-set="total_gross" t-value="request.env['hr.payslip.line'].sudo().search([('slip_id', '=', o.id), ('code', '=', 'RGROSS')], limit=1)" />
+            <t t-set="total_norem" t-value="request.env['hr.payslip.line'].sudo().search([('slip_id', '=', o.id), ('code', '=', 'RNOREM')], limit=1)" />
+            <t t-set="total_desc" t-value="request.env['hr.payslip.line'].sudo().search([('slip_id', '=', o.id), ('code', '=', 'RDESC')], limit=1)" />
+            <t t-set="total_net" t-value="request.env['hr.payslip.line'].sudo().search([('slip_id', '=', o.id), ('code', '=', 'RNET')], limit=1)" />
             <article style="font-size:8px;">
                 <div class="row">
                     <div class="col">
@@ -168,7 +168,7 @@
                                 </tr>
                             </thead>
                             <t t-foreach="o.line_ids" t-as="line">
-                                <t t-if="line.code != 'TOT-GROSS-REM' and line.code != 'TOT-NOREM' and line.code != 'TOT-NET' and line.code != 'TOT-DESC'">
+                                <t t-if="line.appears_on_payslip">
                                     <tr>
                                         <td>
                                             <span t-field="line.code"></span>
@@ -239,13 +239,9 @@
                                 <tr>
                                     <th scope="col" colspan="6" class="table-info">NETO A COBRAR</th>
                                     <th scope="col" colspan="2" class="table-warning">
-                                        <t t-foreach="o.line_ids" t-as="line">
-                                            <t t-if="line.code == 'TOT-NET'">
-                                                <strong>
-                                                    <t t-esc="total_net.total" />
-                                                </strong>
-                                            </t>
-                                        </t>
+                                        <strong>
+                                            <t t-esc="total_net.total" />
+                                        </strong>
                                     </th>
                                 </tr>
                             </thead>
@@ -294,7 +290,9 @@
                         <p>
                             <em>
                                 Recibi conforme la suma de ( MONTO EN LETRAS ) en concepto de mis
-                                haberes correspondientes al periodo "<span t-field="o.name"></span>"
+                                haberes correspondientes al periodo "
+                                <span t-field="o.name"></span>
+                                "
                                 y segun la presente liquidacion, dejando constancia de haber recibido
                                 un duplicado de este de este recibo.
                             </em>
