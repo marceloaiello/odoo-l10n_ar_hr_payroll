@@ -2,7 +2,7 @@
 <odoo>
     <record id="rules_UOM1" model="hr.salary.rule">
         <field name="name">UOM SINDICAL (SOLIDARIO)</field>
-        <field name="code">UOM1</field>
+        <field name="code">20900</field>
         <field name="sequence">20900</field>
         <field name="category_id" ref="l10n_ar_payroll.categories_RET" />
         <field name="active">true</field>
@@ -19,7 +19,7 @@ result = categories.TGROSS
     </record>
     <record id="rules_UOM2" model="hr.salary.rule">
         <field name="name">UOM SINDICAL (AFILIADO)</field>
-        <field name="code">UOM2</field>
+        <field name="code">20900</field>
         <field name="sequence">20900</field>
         <field name="category_id" ref="l10n_ar_payroll.categories_RET" />
         <field name="active">true</field>
@@ -36,7 +36,7 @@ result = categories.TGROSS
     </record>
     <record id="rules_UOMSVCO" model="hr.salary.rule">
         <field name="name">UOM SVCO</field>
-        <field name="code">UOMSVCO</field>
+        <field name="code">20901</field>
         <field name="sequence">20901</field>
         <field name="category_id" ref="l10n_ar_payroll.categories_RET" />
         <field name="active">true</field>
@@ -53,7 +53,7 @@ result = contract.cct_id.svco_current_value
     </record>
     <record id="rules_IMGR" model="hr.salary.rule">
         <field name="name">IMGR UOM</field>
-        <field name="code">IMGR</field>
+        <field name="code">10590</field>
         <field name="sequence">10590</field>
         <field name="category_id" ref="l10n_ar_payroll.categories_ADIC" />
         <field name="active">true</field>
@@ -72,12 +72,30 @@ else:
     result = 0.00
         </field>
     </record>
+    <record id="rules_extra_norem_042021_9" model="hr.salary.rule">
+        <field name="name">ACUERDO UOM ABRIL/21</field>
+        <field name="code">10550</field>
+        <field name="sequence">10550</field>
+        <field name="category_id" ref="l10n_ar_payroll.categories_NOREM" />
+        <field name="active">true</field>
+        <field name="appears_on_payslip">true</field>
+        <!-- Condition Select -->
+        <field name="condition_select">none</field>
+        <!-- Amount Select -->
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result_rate = 9.00
+result = categories.GROSS
+        </field>
+    </record>
     <record id="AR-DEFAULT-H" model="hr.payroll.structure">
         <field name="name"> ( AR-UOM-JOR ) SINDICATO UOM MERTALURGICOS - JORNALIZADOS</field>
         <field name="code">AR-UOM-JOR</field>
         <field name="company_id" ref="base.main_company" />
         <field name="parent_id" ref='l10n_ar_payroll.AR-DEFAULT-H' />
         <field eval="[(6, 0, [  ref('l10n_ar_payroll_lu_uom.rules_UOM1'),
+                                ref('l10n_ar_payroll_lu_uom.rules_norem_042021_9'),
+                                ref('l10n_ar_payroll_lu_uom.rules_IMGR'),
                                 ref('l10n_ar_payroll_lu_uom.rules_UOMSVCO')])]" name="rule_ids" />
     </record>
     <record id="AR-DEFAULT-M" model="hr.payroll.structure">

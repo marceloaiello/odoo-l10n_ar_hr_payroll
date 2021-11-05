@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="leaves_HFRD" model="hr.leave.type">
+            <field name="name">Feriados y No Laborables</field>
+            <field name="code">HFRD</field>
+            <field name="request_unit">day</field>
+            <field name="include_in_theoretical">false</field>
+            <field name="allocation_type">no</field>
+            <field name="leave_validation_type">no_validation</field>
+            <field name="create_calendar_meeting">true</field>
+            <field name="color_name">lightblue</field>
+            <field name="exclude_public_holidays">false</field>
+            <field name="company_id" ref="base.main_company" />
+        </record>
+    </data>
+</odoo>

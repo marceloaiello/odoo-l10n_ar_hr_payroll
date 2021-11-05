@@ -33,10 +33,6 @@ class HrContract(models.Model):
     hr_contract_advantage_ids = fields.One2many(
         'hr.contract.advantage', 'contract_id', string='Parametros Adicionales')
 
-    @api.onchange("contract_id")
-    def onchange_contract(self):
-        return
-
     # TODO: Action para computar ILT temporaria, se debe cambiar el campo de Situacion de Revista y el de Codigo de siniestrado.
 
     # TODO: Action para computar la baja del empleado, se debe hacer un wizard donde se indique, motivo de baja, fe cha de telegrama (si correspondiera) y se
