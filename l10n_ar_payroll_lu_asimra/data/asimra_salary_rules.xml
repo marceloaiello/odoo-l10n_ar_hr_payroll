@@ -66,4 +66,13 @@ result_rate = 9.00
 result = categories.GROSS
         </field>
     </record>
+    <!-- ASIMRA: Salary Structure -->
+    <record id="structures.ASIMRA-MEN" model="hr.payroll.structure">
+        <field name="name">ASIMRA METALURGICOS - MENSUALIZADOS</field>
+        <field name="parent_id" ref='l10n_ar_payroll.AR-DEFAULT-M' />
+        <field name="code">AR-ASIMRA-MEN</field>
+        <field eval="[(6, 0, [  ref('l10n_ar_payroll_lu_uom.rules_ASIMRA1'),
+                                ref('l10n_ar_payroll_lu_uom.rules_extra_norem_042021_9'),
+                                ref('l10n_ar_payroll_lu_uom.rules_ASIMRASVCO')])]" name="rule_ids" />
+    </record>
 </odoo>
