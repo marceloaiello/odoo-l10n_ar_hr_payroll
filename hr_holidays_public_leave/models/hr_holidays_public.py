@@ -22,7 +22,6 @@ class HrHolidaysPublic(models.Model):
                 'payslip_status': False,
                 'state': 'validate'
             }
-
         return hr_leave_struct
 
     @api.constrains("date", "name", "year_id", "state_ids")
