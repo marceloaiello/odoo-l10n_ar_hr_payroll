@@ -39,8 +39,7 @@ class HrHolidaysPublic(models.Model):
         res.meeting_id = self.env["calendar.event"].create(
             res._prepare_holidays_meeting_values()
         )
-        res.env["hr.leave"].create(
+        res.leave_id = self.env["hr.leave"].create(
             res.__public_holidays_leaves_struct()
         )
-
         return res
