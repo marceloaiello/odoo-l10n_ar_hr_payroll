@@ -11,8 +11,7 @@
     'license': 'LGPL-3',
     'category': 'Human Resources',
     'depends': [
-        'hr_holidays_public',
-        'he_leave',
+        'hr_holidays_public'
     ],
     'data': [
         'data/hr_leave_type.xml'
