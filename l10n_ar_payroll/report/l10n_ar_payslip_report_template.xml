@@ -4,7 +4,7 @@
     <template id="report_payslip_header">
         <t t-foreach="docs" t-as="o">
             <article style="font-size:10px;">
-                <div class="row align-items-center" style="border-bottom: 1px solid black; border-radius: 15px; padding: 10px; margin: 0.5px;">
+                <div class="row align-items-center" style="border-bottom: 1px solid black; border-radius: 0px; padding: 10px; margin: 0.5px;">
                     <!-- HEADER -->
                     <div class="col-4">
                         <h6 style="display:inline; white-space: nowrap;">
@@ -246,7 +246,7 @@
                                 </tr>
                             </thead>
                             <caption>
-                                <!-- TODO: Ver como convertir el texto a palabras -->
+                                <t t-esc="o.net_to_words_es(total_net.total)" />
                             </caption>
                         </table>
                     </div>
@@ -317,7 +317,7 @@
     <template id="report_payslip_footer_o">
         <t t-foreach="docs" t-as="o">
             <article style="font-size:10px;">
-                <div class="row" style="border-bottom: 1px solid black; border-radius: 10px; padding: 2px; margin: 0.5px;">
+                <div class="row" style="border-top: 1px solid black; border-radius: 0px; padding: 2px; margin: 0.5px;">
                     <div class="col-6">
                         <p>
                             <small>
@@ -345,7 +345,7 @@
     <template id="report_payslip_footer_d">
         <t t-foreach="docs" t-as="o">
             <article style="font-size:10px;">
-                <div class="row" style="border-bottom: 1px solid black; border-radius: 10px; padding: 2px; margin: 0.5px;">
+                <div class="row justify-content-end" style="border-top: 1px solid black; border-radius: 0px; padding: 2px; margin: 0.5px;">
                     <div class="col-6">
                         <p>
                             <small>
@@ -369,12 +369,21 @@
         </t>
     </template>
 
+    <!-- RECIBO DE HABERES: BACK - DETALLE  -->
+    <template id="report_payslip_header">
+        <t t-foreach="docs" t-as="o">
+            <article style="font-size:10px;">
+
+            </article>
+        </t>
+    </template>
+
     <template id="l10n_ar_report_payslip_original">
         <t t-call="web.basic_layout">
             <t t-foreach="docs" t-as="o">
-                <div class="page">
+                <div class="page container-fluid">
                     <div class="row">
-                        <div class="col-6" style="border: 2px solid black; border-radius: 5px; padding: 5px; margin-right: 1px;">
+                        <div class="col-6" style="border: 2px solid black; border-radius: 5px; padding: 5px; margin-right: 3px;">
                             <!-- HEADER -->
                             <t t-call="l10n_ar_payroll.report_payslip_header"></t>
                             <!-- DATOS -->
@@ -387,7 +396,7 @@
                             <br />
                             <t t-call="l10n_ar_payroll.report_payslip_footer_o"></t>
                         </div>
-                        <div class="col-6" style="border: 2px solid black; border-radius: 5px; padding: 5px; margin-left: 1px;">
+                        <div class="col-6" style="border: 2px solid black; border-radius: 5px; padding: 5px; margin-left: 3px;">
                             <!-- HEADER -->
                             <t t-call="l10n_ar_payroll.report_payslip_header"></t>
                             <!-- DATOS -->

@@ -2,19 +2,19 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'HR Holidays Override',
+    'name': 'Payroll Fiscal Period',
     'version': '14.0.1.1.0',
-    'description': 'Automatically creates leaves for the public_holidays defined.',
-    'summary': 'Automatically creates leaves for the public_holidays defined.',
+    'description': 'Adds fiscal periods to payroll',
+    'summary': 'Adds fiscal periods to payroll',
     'author': 'Nimarosa',
     'website': 'nimarosa.dev',
     'license': 'LGPL-3',
-    'category': 'Human Resources',
+    'category': 'Payroll',
     'depends': [
-        'hr_holidays_public'
+        'payroll'
     ],
     'data': [
-        'data/hr_leave_type.xml'
+        ''
     ],
     'installable': True,
     'auto_install': False,

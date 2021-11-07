@@ -14,10 +14,11 @@
         'base',
         'hr_contract',
         'hr_attendance',
-        'hr_attendance_report_theoretical_time',
-        'l10n_ar_hr_contract_labor_union',
+        'hr_holidays',
+        'hr_holidays_public',
         'payroll',
-        'l10n_ar'
+        'l10n_ar',
+        'l10n_ar_hr_contract_labor_union',
     ],
     'data': [
         'security/ir.model.access.csv',
@@ -31,7 +32,6 @@
         'data/hr_salary_rule.xml',
         'data/hr_payroll_structure.xml',
         'data/hr_contract_advantage_template.xml',
-        'data/payroll_account.xml',
         'report/l10n_ar_payslip_report_template.xml',
         'report/l10n_ar_payslip_report.xml',
     ],
