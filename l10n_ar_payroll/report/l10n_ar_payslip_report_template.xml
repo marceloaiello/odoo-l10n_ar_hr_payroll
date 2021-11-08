@@ -159,8 +159,8 @@
                 <div class="row">
                     <div class="col">
                         <table class="table table-striped table-bordered table-sm center text-center">
-                            <thead>
-                                <tr class="table-primary">
+                            <thead class="table-dark">
+                                <tr>
                                     <th scope="col"># COD.</th>
                                     <th scope="col">CONCEPTO</th>
                                     <th scope="col">UNID.</th>
@@ -192,14 +192,14 @@
                                             <!-- COLUMNA BRUTO (REMUNERATIVO) -->
                                             <!-- Solo mostrar si la parent category es una categoria de "GROSS" - REMUNERATIVO-->
                                             <t t-if="line.category_id.parent_id.code == 'GROSS'">
-                                                <span t-field="line.total"></span>
+                                                <span t-field="line.total" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'></span>
                                             </t>
                                         </td>
                                         <td>
                                             <!-- COLUMNA NO REMUNERATIVO -->
                                             <!-- Solo mostrar si la categoria es "NO REMUNERATIVA" -->
                                             <t t-if="line.category_id.parent_id.code == 'NOREM'">
-                                                <span t-field="line.total"></span>
+                                                <span t-field="line.total" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'></span>
                                             </t>
                                         </td>
                                         <td>
@@ -208,44 +208,46 @@
                                             <t t-if="line.category_id.code == 'RET' or
                                                             line.category_id.code == 'DED' or
                                                                 line.category_id.code == 'DESC'">
-                                                <span t-field="line.total"></span>
+                                                <span t-field="line.total" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'></span>
                                             </t>
                                         </td>
                                     </tr>
                                 </t>
                             </t>
-                            <thead>
-                                <tr class="table-info">
-                                    <th scope="col" colspan="4">TOTALES</th>
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col" colspan="4"></th>
                                     <th scope="col">TOTAL HABERES</th>
                                     <th scope="col">TOTAL NOREM</th>
                                     <th scope="col">TOTAL DESCUENTOS</th>
                                 </tr>
                             </thead>
-                            <tr class="table-warning">
-                                <td colspan="4"></td>
-                                <td>
+                            <tr>
+                                <td colspan="4" class="table-dark">
+                                    <span>SUBTOTALES</span>
+                                </td>
+                                <td class="table-warning">
                                     <strong>
-                                        <t t-esc="total_gross.total" />
+                                        <t t-esc="total_gross.total" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}' />
                                     </strong>
                                 </td>
-                                <td>
+                                <td class="table-warning">
                                     <strong>
-                                        <t t-esc="total_norem.total" />
+                                        <t t-esc="total_norem.total" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}' />
                                     </strong>
                                 </td>
-                                <td>
+                                <td class="table-warning">
                                     <strong>
-                                        <t t-esc="total_desc.total" />
+                                        <t t-esc="total_desc.total" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}' />
                                     </strong>
                                 </td>
                             </tr>
                             <thead>
                                 <tr>
-                                    <th scope="col" colspan="6" class="table-info">NETO A COBRAR</th>
+                                    <th scope="col" colspan="6" class="table-dark">NETO A COBRAR</th>
                                     <th scope="col" colspan="2" class="table-warning">
                                         <strong>
-                                            <t t-esc="total_net.total" />
+                                            <t t-esc="total_net.total"  t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}' />
                                         </strong>
                                     </th>
                                 </tr>

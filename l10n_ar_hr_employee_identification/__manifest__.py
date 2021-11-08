@@ -3,7 +3,7 @@
 
 {
     'name': 'HR Employee Identification - Argentina',
-    'version': '14.0.1.0.0',
+    'version': '14.0.2.0.0',
     'description': 'Agrega campos de identificacion de empleados, DNI, CUIT, sus vencimientos y archivos para el legajo',
     'summary': 'Agrega campos de identificacion de empleados, DNI, CUIT, sus vencimientos y archivos para el legajo',
     'author': 'Nimarosa',

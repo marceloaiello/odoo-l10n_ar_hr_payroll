@@ -14,9 +14,10 @@
             <!-- Amount Select -->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
-result_qty = worked_days.WORK100.number_of_hours
+result_qty = worked_days.WORK100.number_of_hours - worked_days.HFRD.number_of_hours
 result = contract.amount
             </field>
+            <!-- TODO: Eventually we need to net public holidays from the worked days function -->
         </record>
         <record id="rules_BASIC" model="hr.salary.rule">
             <field name="name">SUELDO BASICO</field>
@@ -30,9 +31,10 @@ result = contract.amount
             <!-- Amount Select -->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
-result_qty = worked_days.WORK100.number_of_days
+result_qty = worked_days.WORK100.number_of_days - worked_days.HFRD.number_of_days
 result = contract.amount / worked_days.WORK100.number_of_days
             </field>
+            <!-- TODO: Eventually we need to net public holidays from the worked days function -->
         </record>
 
         <!-- SAC IS TODO: -->
@@ -63,10 +65,33 @@ result = ((inputs.SACBASE / 2) / 180) * inputs.SACDAYS
         </record>
         <!-- SAC IS TODO: -->
 
-        <record id="rules_AUS" model="hr.salary.rule">
-            <field name="name">AUSENTISMO</field>
+        <record id="rules_HFRD" model="hr.salary.rule">
+            <field name="name">FERIADOS</field>
             <field name="code">10110</field>
             <field name="sequence">10110</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_BASIC" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = (worked_days and worked_days.HFRD and worked_days.HFRD.number_of_days) or False
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.is_wage_accurate:
+    result_qty = worked_days.HFRD.number_of_days
+    result = contract.wage / worked_days.WORK100.number_of_days
+else:
+    result_qty = worked_days.HFRD.number_of_hours
+    result = contract.amount
+            </field>
+        </record>
+        <record id="rules_AUS" model="hr.salary.rule">
+            <field name="name">AUSENTISMO</field>
+            <field name="code">10111</field>
+            <field name="sequence">10111</field>
             <field name="category_id" ref="l10n_ar_payroll.categories_DESC" />
             <field name="active">true</field>
             <field name="appears_on_payslip">true</field>
@@ -104,29 +129,6 @@ else:
 result_rate = 1.00
 result_qty = employee.service_duration_years
 result = categories.BASIC
-            </field>
-        </record>
-        <record id="rules_HFRD" model="hr.salary.rule">
-            <field name="name">FERIADOS</field>
-            <field name="code">10125</field>
-            <field name="sequence">10125</field>
-            <field name="category_id" ref="l10n_ar_payroll.categories_BASIC" />
-            <field name="active">true</field>
-            <field name="appears_on_payslip">true</field>
-            <!-- Condition Select -->
-            <field name="condition_select">python</field>
-            <field name="condition_python">
-result = (worked_days and worked_days.HFRD and worked_days.HFRD.number_of_days) or False
-            </field>
-            <!-- Amount Select -->
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">
-if contract.is_wage_accurate:
-    result_qty = worked_days.HFRD.number_of_days
-    result = contract.wage / worked_days.WORK100.number_of_days
-else:
-    result_qty = worked_days.HFRD.number_of_hours
-    result = contract.amount
             </field>
         </record>
         <record id="rules_OVT50" model="hr.salary.rule">
@@ -187,12 +189,12 @@ else:
             <!-- Condition Select -->
             <field name="condition_select">python</field>
             <field name="condition_python">
-result = (contract.schedule_pay == 'monthly' and worked_days.WORK0 and worked_days.WORK0 >= 1 and inputs.PRES-OVR and inputs.PRES-OVR != 0.00) or False
+result = (not contract.schedule_pay == 'monthly' and not worked_days.WORK0 and not worked_days.WORK0 >= 1 and not inputs.PRES-OVR != 0.00) or False
             </field>
             <!-- Amount Select -->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
-result = contract.env['hr.contract.advantage'].search([('contract_id', '=', contract.id), ('code', '=', 'PREM-PRES-M')])
+result = contract.env['hr.contract.advantage'].search([('contract_id', '=', contract.id), ('code', '=', 'PREM-PRES-M')]).amount
             </field>
         </record>
         <record id="rules_PRES_Q" model="hr.salary.rule">
@@ -205,12 +207,12 @@ result = contract.env['hr.contract.advantage'].search([('contract_id', '=', cont
             <!-- Condition Select -->
             <field name="condition_select">python</field>
             <field name="condition_python">
-result = (contract.schedule_pay == 'bi-weekly' and worked_days.WORK0 and worked_days.WORK0 >= 1 and inputs.PRES-OVR and inputs.PRES-OVR != 0.00) or False
+result = (not contract.schedule_pay == 'bi-weekly' and not worked_days.WORK0 and not worked_days.WORK0 >= 1 and not inputs.PRES-OVR != 0.00) or False
             </field>
             <!-- Amount Select -->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
-result = contract.env['hr.contract.advantage'].search([('contract_id', '=', contract.id), ('code', '=', 'PREM-PRES-Q')])
+result = contract.env['hr.contract.advantage'].search([('contract_id', '=', contract.id), ('code', '=', 'PREM-PRES-Q')]).amount
             </field>
         </record>
         <record id="payslip_inputs_PRES-OVR" model="hr.rule.input">

@@ -3,7 +3,7 @@
 
 {
     'name': 'Payroll Export Sicoss - Argentina',
-    'version': '14.0.1.1.0',
+    'version': '14.0.1.2.0',
     'description': 'Agrega la funcionalidad de exportar el .txt para importacion en 931 SICOSS',
     'summary': 'Agrega la funcionalidad de exportar el .txt para importacion en 931 SICOSS',
     'author': 'Nimarosa',

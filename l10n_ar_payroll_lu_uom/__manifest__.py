@@ -3,7 +3,7 @@
 
 {
     'name': 'Soporte Sindicato UOM (Argentina)',
-    'version': '14.0.2.0.0',
+    'version': '14.0.3.0.0',
     'description': 'Datos y adecuaciones para soportar el sindicato UOM en la localizacion Argentina de Payroll.',
     'summary': 'Agrega conceptos, categorias y precios para el sindicato UOM.',
     'author': 'Nimarosa',

@@ -25,8 +25,7 @@ class HrContractAdvantage(models.Model):
     code = fields.Char(
         string='Codigo', related='contract_advantage_template_id.code', readonly=True)
     use_default = fields.Boolean(string='¿Usar valor por defecto?', default=True)
-    override_amount = fields.Float(
-        string='Importe', related='contract_advantage_template_id.default_value', readonly=False)
+    override_amount = fields.Float(string='Importe', related='contract_advantage_template_id.default_value', store=True)
     amount = fields.Float(compute='_compute_amount', string='Importe')
     advantage_lower_bound = fields.Float(
         string='Limite Inferior', related='contract_advantage_template_id.lower_bound')
