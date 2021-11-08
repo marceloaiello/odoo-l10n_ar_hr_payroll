@@ -33,14 +33,11 @@
                         </h6>
                         <p>
                             <small>
-                                <span t-field="o.company_id.street"></span>
+                                <span t-field="o.company_id.street"></span>, <span t-field="o.company_id.city"></span>
                                 <br />
-                                <span t-field="o.company_id.state_id.name"></span>
-                                ,
-                                <span t-field="o.company_id.country_id.name"></span>
+                                <span t-field="o.company_id.state_id.name"></span>, <span t-field="o.company_id.country_id.name"></span>
                                 <br />
-                                CUIT:
-                                <span t-field="o.company_id.company_registry"></span>
+                                CUIT: <span t-field="o.company_id.vat"></span>
                             </small>
                         </p>
                     </div>
@@ -128,11 +125,22 @@
                         </tr>
                     </thead>
                     <tr>
-                        <td colspan="2">-</td> <!-- TODO: Ver como implementar esto, por defecto mes anterior-->
+                        <td colspan="2">
+                            <span>
+                                ULT. PERIODO:
+                            </span>
+                            <t t-esc="o.ultimo_deposito_aportes()" t-widget="date" t-options='{"widget": "date", "format": "yyyy-MM"}'></t>
+                                <!-- Note: This can be done dynamically but in general businesses prefer hardcode this and not
+                                check for the real deposit status. -->
+                        </td>
                         <td colspan="2">
                             <span t-field="o.name"></span>
                         </td>
-                        <td colspan="2">-</td> <!-- TODO: Implementar fecha de pago -->
+                        <td colspan="2">
+                            <span>
+
+                            </span>
+                        </td> <!-- TODO: Implementar fecha de pago -->
                         <td colspan="2">BANCO GALICIA</td> <!-- TODO: Setear esto en settings -->
                     </tr>
                 </table>
@@ -152,11 +160,6 @@
                     <div class="col">
                         <table class="table table-striped table-bordered table-sm center text-center">
                             <thead>
-                                <tr>
-                                    <th scope="col" class="table-primary table-dark" colspan="7">LIQUIDACION DE HABERES</th>
-                                </tr>
-                            </thead>
-                            <thead>
                                 <tr class="table-primary">
                                     <th scope="col"># COD.</th>
                                     <th scope="col">CONCEPTO</th>
@@ -168,7 +171,7 @@
                                 </tr>
                             </thead>
                             <t t-foreach="o.line_ids" t-as="line">
-                                <t t-if="line.appears_on_payslip">
+                                <t t-if="line.appears_on_payslip and line.total != 0.00">
                                     <tr>
                                         <td>
                                             <span t-field="line.code"></span>
@@ -180,8 +183,10 @@
                                             <span t-field="line.quantity"></span>
                                         </td>
                                         <td>
-                                            <span t-field="line.rate" t-options="{'widget': 'percentage'}"></span>
-                                            %
+                                            <t t-if="line.rate != 100.0">
+                                                <span t-field="line.rate" t-options="{'widget': 'percentage'}"></span>
+                                                %
+                                            </t>
                                         </td>
                                         <td>
                                             <!-- COLUMNA BRUTO (REMUNERATIVO) -->
@@ -211,7 +216,7 @@
                             </t>
                             <thead>
                                 <tr class="table-info">
-                                    <th scope="col" rowspan="2" colspan="4">TOTALES</th>
+                                    <th scope="col" colspan="4">TOTALES</th>
                                     <th scope="col">TOTAL HABERES</th>
                                     <th scope="col">TOTAL NOREM</th>
                                     <th scope="col">TOTAL DESCUENTOS</th>
@@ -245,7 +250,7 @@
                                     </th>
                                 </tr>
                             </thead>
-                            <caption>
+                            <caption class="text-uppercase text-right">
                                 <t t-esc="o.net_to_words_es(total_net.total)" />
                             </caption>
                         </table>
@@ -267,7 +272,7 @@
                         </p>
                         <br />
                     </div>
-                    <div class="col-4" style="border-bottom: 1px solid black; border-radius: 15px; padding: 2px;">
+                    <div class="col-4" style="border-bottom: 2px solid black; border-radius: 0px; padding: 2px;">
                         <p align="center">
                             <em>FIRMA AUTORIZADA - EMPLEADOR</em>
                             <br />
@@ -284,22 +289,21 @@
     <!-- RECIBO DE HABERES: FIRMAS DUPLICADO -->
     <template id="report_payslip_firmas_d">
         <t t-foreach="docs" t-as="o">
+            <t t-set="total_net" t-value="request.env['hr.payslip.line'].sudo().search([('slip_id', '=', o.id), ('code', '=', 'RNET')], limit=1)" />
             <article style="font-size:8px;">
                 <div class="row" style="margin: 0.5px;">
                     <div class="col-8">
                         <p>
                             <em>
-                                Recibi conforme la suma de ( MONTO EN LETRAS ) en concepto de mis
-                                haberes correspondientes al periodo "
-                                <span t-field="o.name"></span>
-                                "
+                                Recibi conforme la suma de "<span class="text-uppercase text-right"><t t-esc="o.net_to_words_es(total_net.total)" /></span>"
+                                en concepto de mi haberes correspondientes al periodo "<span t-field="o.name"></span>"
                                 y segun la presente liquidacion, dejando constancia de haber recibido
                                 un duplicado de este de este recibo.
                             </em>
                         </p>
                         <br />
                     </div>
-                    <div class="col-4" style="border-bottom: 1px solid black; border-radius: 15px; padding: 2px;">
+                    <div class="col-4" style="border-bottom: 2px solid black; border-radius: 0px; padding: 2px;">
                         <p align="center">
                             <em>FIRMA AUTORIZADA - EMPLEADO</em>
                             <br />
@@ -360,8 +364,8 @@
                     <div class="col-6 text-right">
                         <strong>
                             <em>
-                                    - DUPLICADO -
-                                </em>
+                                - DUPLICADO -
+                            </em>
                         </strong>
                     </div>
                 </div>
@@ -369,21 +373,77 @@
         </t>
     </template>
 
-    <!-- RECIBO DE HABERES: BACK - DETALLE  -->
-    <template id="report_payslip_header">
+    <!-- RECIBO DE HABERES: BACK - DETALLE WORK DAYS  -->
+    <template id="report_payslip_back_worked_days">
         <t t-foreach="docs" t-as="o">
             <article style="font-size:10px;">
-
+                <h5>-- Detalle: Dias Trabajados --</h5>
+                <table class="table table-striped table-bordered table-sm center text-center">
+                    <thead>
+                        <tr class="table-primary">
+                            <th scope="col">CODIGO</th>
+                            <th scope="col">DESCRIPCION</th>
+                            <th scope="col">DIAS</th>
+                            <th scope="col">HORAS</th>
+                        </tr>
+                    </thead>
+                    <t t-foreach="o.worked_days_line_ids" t-as="wkd_entry">
+                        <tr>
+                            <td>
+                                <span t-field="wkd_entry.code"></span>
+                            </td>
+                            <td>
+                                <span t-field="wkd_entry.name"></span>
+                            </td>
+                            <td>
+                                <span t-field="wkd_entry.number_of_days"></span>
+                            </td>
+                            <td>
+                                <span t-field="wkd_entry.number_of_hours"></span>
+                            </td>
+                        </tr>
+                    </t>
+                </table>
             </article>
         </t>
     </template>
 
+        <!-- RECIBO DE HABERES: BACK - DETALLE CONTRIBUTION REGISTER -->
+        <template id="report_payslip_back_contribution_register">
+            <t t-foreach="docs" t-as="o">
+                <article style="font-size:10px;">
+                    <h5>-- Detalle: Aportes y Contribuciones --</h5>
+                    <table class="table table-striped table-bordered table-sm center text-center">
+                        <thead>
+                            <tr class="table-primary">
+                                <th scope="col">CODIGO</th>
+                                <th scope="col">DESCRIPCION</th>
+                                <th scope="col">BASE IMPONIBLE</th>
+                                <th scope="col">TOTAL RETENIDO</th>
+                            </tr>
+                        </thead>
+                        <t t-foreach="get_lines_by_contribution_register" t-as="cbreg_entry">
+                            <tr>
+                                <td>
+                                    <span t-field="cbreg_entry.code"></span>
+                                </td>
+                                <td>
+                                    <span t-field="cbreg_entry.code"></span>
+                                </td>
+                            </tr>
+                        </t>
+                    </table>
+                </article>
+            </t>
+        </template>
+
     <template id="l10n_ar_report_payslip_original">
         <t t-call="web.basic_layout">
             <t t-foreach="docs" t-as="o">
+                <!-- PAGE FRONT -->
                 <div class="page container-fluid">
                     <div class="row">
-                        <div class="col-6" style="border: 2px solid black; border-radius: 5px; padding: 5px; margin-right: 3px;">
+                        <div class="col-6" style="border: 2px solid black; border-radius: 5px; padding: 5px; margin-right: 5px;">
                             <!-- HEADER -->
                             <t t-call="l10n_ar_payroll.report_payslip_header"></t>
                             <!-- DATOS -->
@@ -396,7 +456,7 @@
                             <br />
                             <t t-call="l10n_ar_payroll.report_payslip_footer_o"></t>
                         </div>
-                        <div class="col-6" style="border: 2px solid black; border-radius: 5px; padding: 5px; margin-left: 3px;">
+                        <div class="col-6" style="border: 2px solid black; border-radius: 5px; padding: 5px; margin-left: 5px;">
                             <!-- HEADER -->
                             <t t-call="l10n_ar_payroll.report_payslip_header"></t>
                             <!-- DATOS -->
@@ -411,8 +471,22 @@
                         </div>
                     </div>
                 </div>
+                <!-- PAGE PACK TODO: Design the back of the report
+                    <div class="page container-fluid">
+                        <p style="page-break-after:always;"></p>
+                        <div class="row">
+                            <div class="col-6" style="border: 2px solid black; border-radius: 5px; padding: 5px; margin-left: 5px;">
+                                <t t-call="l10n_ar_payroll.report_payslip_back_worked_days"></t>
+                                <t t-call="l10n_ar_payroll.report_payslip_back_contribution_register"></t>
+                            </div>
+                            <div class="col-6" style="border: 2px solid black; border-radius: 5px; padding: 5px; margin-left: 5px;">
+                                <t t-call="l10n_ar_payroll.report_payslip_back_worked_days"></t>
+                                <t t-call="l10n_ar_payroll.report_payslip_back_contribution_register"></t>
+                            </div>
+                        </div>
+                    </div>
+                -->
             </t>
         </t>
     </template>
-
 </odoo>

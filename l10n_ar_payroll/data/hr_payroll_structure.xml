@@ -20,7 +20,7 @@
                                     ref('l10n_ar_payroll.rules_GROSS'),
                                     ref('l10n_ar_payroll.rules_NOREM'),
                                     ref('l10n_ar_payroll.rules_DESC'),
-                                    ref('l10n_ar_payroll.rules_PRES'),
+                                    ref('l10n_ar_payroll.rules_PRES_Q'),
                                     ref('l10n_ar_payroll.rules_EMBG-JUD')])]" name="rule_ids" />
         </record>
         <record id="AR-DEFAULT-M" model="hr.payroll.structure">

@@ -72,7 +72,7 @@ result = ((inputs.SACBASE / 2) / 180) * inputs.SACDAYS
             <field name="appears_on_payslip">true</field>
             <!-- Condition Select -->
             <field name="condition_select">python</field>
-            <field name="condition_range">
+            <field name="condition_python">
 result = (worked_days and worked_days.WORK0 and worked_days.WORK0.number_of_hours) or False
             </field>
             <!-- Amount Select -->
@@ -139,7 +139,7 @@ else:
             <!-- Condition Select -->
             <field name="condition_select">python</field>
             <field name="condition_python">
-result = (worked_days and worked_days.OVT50 and worked_days.OVT50.number_of_days) or False
+result = (worked_days and worked_days.OVT50 and worked_days.OVT50.number_of_hours) or False
             </field>
             <!-- Amount Select -->
             <field name="amount_select">code</field>
@@ -163,7 +163,7 @@ else:
             <!-- Condition Select -->
             <field name="condition_select">python</field>
             <field name="condition_python">
-result = (worked_days and worked_days.OVT100 and worked_days.OVT100.number_of_days) or False
+result = (worked_days and worked_days.OVT100 and worked_days.OVT100.number_of_hours) or False
             </field>
             <!-- Amount Select -->
             <field name="amount_select">code</field>
@@ -195,7 +195,7 @@ result = (contract.schedule_pay == 'monthly' and worked_days.WORK0 and worked_da
 result = contract.env['hr.contract.advantage'].search([('contract_id', '=', contract.id), ('code', '=', 'PREM-PRES-M')])
             </field>
         </record>
-        <record id="rules_PRES" model="hr.salary.rule">
+        <record id="rules_PRES_Q" model="hr.salary.rule">
             <field name="name">PREMIO PRESENTISMO (Q)</field>
             <field name="code">10150</field>
             <field name="sequence">10150</field>
@@ -279,7 +279,7 @@ result = categories.GROSS + categories.DESC
             <!-- Condition Select -->
             <field name="condition_select">python</field>
             <field name="condition_python">
-                result = ( inputs.ADV and inputs.ADV.amount != 0.00 ) or False
+result = ( inputs.ADV and inputs.ADV.amount != 0.00 ) or False
             </field>
             <!-- Amount Select -->
             <field name="amount_select">code</field>
@@ -302,7 +302,7 @@ result = -(inputs.ADV.amount)
             <!-- Condition Select -->
             <field name="condition_select">python</field>
             <field name="condition_python">
-                result = ( inputs.LOAN and inputs.LOAN.amount != 0.00 ) or False
+result = ( inputs.LOAN and inputs.LOAN.amount != 0.00 ) or False
             </field>
             <!-- Amount Select -->
             <field name="amount_select">code</field>

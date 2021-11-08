@@ -1,10 +1,9 @@
 # Copyright (C) 2021 Nimarosa (Nicolas Rodriguez) (<nicolasrsande@gmail.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from datetime import datetime, time
-
-from odoo import models, api, _
+from datetime import datetime, time, timedelta
 from num2words import num2words
+from odoo import models, api, _
 
 
 class HrPayslip(models.Model):
@@ -12,20 +11,26 @@ class HrPayslip(models.Model):
 
     @api.model
     def net_to_words_es(self, amount):
-        return num2words(amount, lang='es')
+        return num2words(amount, to='currency', lang='es_CO')
+
+    @api.model
+    def ultimo_deposito_aportes(self):
+        for record in self:
+            slip_date = record.date_to
+            last_month = slip_date.replace(day=1) - timedelta(days=1)
+        return last_month
 
     @api.model
     def get_worked_day_lines(self, contracts, date_from, date_to):
         for contract in contracts.filtered(lambda contract: contract.resource_calendar_id):
             day_from = datetime.combine(date_from, time.min)
             day_to = datetime.combine(date_to, time.max)
-            wkr_hours = contract.employee_id._get_work_days_data(day_from, day_to, calendar=contract.resource_calendar_id).number_of_hours
+            work_hours_per_day = contract.resource_calendar_id.hours_per_day
 
             # -- compute public holidays leaves -- #
-            #
             # TODO: We take the public holidays from the model, so at some point we need to make sure to not pay the same days twice.
             ph_days = len(self.env["hr.holidays.public.line"].search([('date', '>=', day_from), ('date', '<=', day_to)]))
-            ph_hours = ph_days * wkr_hours
+            ph_hours = ph_days * work_hours_per_day
             public_holidays_leaves = {
                 "name": _("Feriados y No Laborables"),
                 "sequence": 10,
