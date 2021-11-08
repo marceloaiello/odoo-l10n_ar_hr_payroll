@@ -3,7 +3,7 @@
 
 {
     'name': 'HR Employee Mobility - Argentina',
-    'version': '14.0.1.0.0',
+    'version': '14.0.2.0.0',
     'description': 'Integra varios campos de datos de mobilidad para argentina. ',
     'summary': 'Integra varios campos de datos de mobilidad para argentina. Shell Flota.',
     'author': 'Nimarosa',

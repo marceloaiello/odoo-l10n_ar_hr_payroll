@@ -3,7 +3,7 @@
 
 {
     'name': 'HR & Payroll UX - Argentina',
-    'version': '14.0.3.0.0',
+    'version': '14.0.4.0.0',
     'description': 'Modificaciones de UI para adaptar el sistema al uso en Argentina',
     'summary': 'Mejoras de UI para el sistema Payroll en Argentina.',
     'author': 'Nimarosa',
