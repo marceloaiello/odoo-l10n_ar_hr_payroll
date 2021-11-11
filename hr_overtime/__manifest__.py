@@ -16,7 +16,6 @@
     'data': [
         'security/ir.model.access.csv',
         'views/hr_overtime.xml',
-        'views/hr_attendance',
         'views/hr_overtime_types.xml',
         'views/menus.xml',
         'data/hr_overtime_scheduler.xml',

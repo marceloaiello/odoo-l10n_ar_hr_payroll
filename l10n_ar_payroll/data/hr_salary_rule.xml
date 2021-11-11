@@ -6,7 +6,7 @@
             <field name="name">HORAS NORMALES</field>
             <field name="code">10100</field>
             <field name="sequence">10100</field>
-            <field name="category_id" ref="l10n_ar_payroll.categories_BASIC" />
+            <field name="category_id" ref="l10n_ar_payroll.categories_931BASIC" />
             <field name="active">true</field>
             <field name="appears_on_payslip">true</field>
             <!-- Condition Select -->
@@ -23,7 +23,7 @@ result = contract.amount
             <field name="name">SUELDO BASICO</field>
             <field name="code">10100</field>
             <field name="sequence">10100</field>
-            <field name="category_id" ref="l10n_ar_payroll.categories_BASIC" />
+            <field name="category_id" ref="l10n_ar_payroll.categories_931BASIC" />
             <field name="active">true</field>
             <field name="appears_on_payslip">true</field>
             <!-- Condition Select -->
@@ -36,13 +36,59 @@ result = contract.amount / worked_days.WORK100.number_of_days
             </field>
             <!-- TODO: Eventually we need to net public holidays from the worked days function -->
         </record>
+        <record id="rules_HFRD" model="hr.salary.rule">
+            <field name="name">FERIADOS</field>
+            <field name="code">10105</field>
+            <field name="sequence">10105</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931BASIC" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = (worked_days and worked_days.HFRD and worked_days.HFRD.number_of_days) or False
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.is_wage_accurate:
+    result_qty = worked_days.HFRD.number_of_days
+    result = contract.wage / worked_days.WORK100.number_of_days
+else:
+    result_qty = worked_days.HFRD.number_of_hours
+    result = contract.amount
+            </field>
+        </record>
+        <record id="rules_AUS" model="hr.salary.rule">
+            <field name="name">AUSENTISMO</field>
+            <field name="code">10109</field>
+            <field name="sequence">10109</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_DESC" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = (worked_days and worked_days.WORK0 and worked_days.WORK0.number_of_hours) or False
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if not contract.is_wage_accurate:
+    result_qty = -(worked_days.WORK0.number_of_hours)
+    result = contract.amount
+else:
+    result_qty = -(worked_days.WORK0.number_of_days)
+    result = contract.wage / worked_days.WORK100.number_of_days
+            </field>
+        </record>
 
         <!-- SAC IS TODO: -->
         <record id="rules_SAC" model="hr.salary.rule">
             <field name="name">S.A.C</field>
-            <field name="code">10105</field>
-            <field name="sequence">10105</field>
-            <field name="category_id" ref="l10n_ar_payroll.categories_SAC" />
+            <field name="code">10110</field>
+            <field name="sequence">10110</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931SAC" />
             <field name="active">true</field>
             <field name="appears_on_payslip">true</field>
             <!-- Condition Select -->
@@ -65,77 +111,11 @@ result = ((inputs.SACBASE / 2) / 180) * inputs.SACDAYS
         </record>
         <!-- SAC IS TODO: -->
 
-        <record id="rules_HFRD" model="hr.salary.rule">
-            <field name="name">FERIADOS</field>
-            <field name="code">10110</field>
-            <field name="sequence">10110</field>
-            <field name="category_id" ref="l10n_ar_payroll.categories_BASIC" />
-            <field name="active">true</field>
-            <field name="appears_on_payslip">true</field>
-            <!-- Condition Select -->
-            <field name="condition_select">python</field>
-            <field name="condition_python">
-result = (worked_days and worked_days.HFRD and worked_days.HFRD.number_of_days) or False
-            </field>
-            <!-- Amount Select -->
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">
-if contract.is_wage_accurate:
-    result_qty = worked_days.HFRD.number_of_days
-    result = contract.wage / worked_days.WORK100.number_of_days
-else:
-    result_qty = worked_days.HFRD.number_of_hours
-    result = contract.amount
-            </field>
-        </record>
-        <record id="rules_AUS" model="hr.salary.rule">
-            <field name="name">AUSENTISMO</field>
-            <field name="code">10111</field>
-            <field name="sequence">10111</field>
-            <field name="category_id" ref="l10n_ar_payroll.categories_DESC" />
-            <field name="active">true</field>
-            <field name="appears_on_payslip">true</field>
-            <!-- Condition Select -->
-            <field name="condition_select">python</field>
-            <field name="condition_python">
-result = (worked_days and worked_days.WORK0 and worked_days.WORK0.number_of_hours) or False
-            </field>
-            <!-- Amount Select -->
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">
-if not contract.is_wage_accurate:
-    result_qty = -(worked_days.WORK0.number_of_hours)
-    result = contract.amount
-else:
-    result_qty = -(worked_days.WORK0.number_of_days)
-    result = contract.wage / worked_days.WORK100.number_of_days
-            </field>
-        </record>
-        <record id="rules_ANTG" model="hr.salary.rule">
-            <field name="name">ANTIGUEDAD</field>
-            <field name="code">10120</field>
-            <field name="sequence">10120</field>
-            <field name="category_id" ref="l10n_ar_payroll.categories_ADIC" />
-            <field name="active">true</field>
-            <field name="appears_on_payslip">true</field>
-            <!-- Condition Select -->
-            <field name="condition_select">range</field>
-            <field name="condition_range">employee.service_duration_years</field>
-            <field name="condition_range_min">1</field>
-            <field name="condition_range_max">999</field>
-            <!-- Amount Select -->
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">
-result_rate = 1.00
-result_qty = employee.service_duration_years
-result = categories.BASIC
-            </field>
-        </record>
         <record id="rules_OVT50" model="hr.salary.rule">
             <field name="name">HORAS EXTRA AL 50%</field>
-            <field name="code">10130</field>
-            <field name="sequence">10130</field>
-            <field name="category_id" ref="l10n_ar_payroll.categories_EXT" />
+            <field name="code">10120</field>
+            <field name="sequence">10120</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931EXT" />
             <field name="active">true</field>
             <field name="appears_on_payslip">true</field>
             <!-- Condition Select -->
@@ -157,9 +137,9 @@ else:
         </record>
         <record id="rules_OVT100" model="hr.salary.rule">
             <field name="name">HORAS EXTRA AL 100%</field>
-            <field name="code">10131</field>
-            <field name="sequence">10131</field>
-            <field name="category_id" ref="l10n_ar_payroll.categories_EXT" />
+            <field name="code">10121</field>
+            <field name="sequence">10121</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931EXT" />
             <field name="active">true</field>
             <field name="appears_on_payslip">true</field>
             <!-- Condition Select -->
@@ -179,11 +159,31 @@ else:
     result = (contract.wage / worked_days.WORK100.number_of_hours)
             </field>
         </record>
+        <record id="rules_ANTG" model="hr.salary.rule">
+            <field name="name">ANTIGUEDAD</field>
+            <field name="code">10201</field>
+            <field name="sequence">10201</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931ADIC" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <!-- Condition Select -->
+            <field name="condition_select">range</field>
+            <field name="condition_range">employee.service_duration_years</field>
+            <field name="condition_range_min">1</field>
+            <field name="condition_range_max">999</field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result_rate = 1.00
+result_qty = employee.service_duration_years
+result = categories.BASIC931
+            </field>
+        </record>
         <record id="rules_PRES" model="hr.salary.rule">
             <field name="name">PREMIO PRESENTISMO (M)</field>
-            <field name="code">10150</field>
-            <field name="sequence">10150</field>
-            <field name="category_id" ref="l10n_ar_payroll.categories_PREM" />
+            <field name="code">10251</field>
+            <field name="sequence">10251</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931PREM" />
             <field name="active">true</field>
             <field name="appears_on_payslip">true</field>
             <!-- Condition Select -->
@@ -199,9 +199,9 @@ result = contract.env['hr.contract.advantage'].search([('contract_id', '=', cont
         </record>
         <record id="rules_PRES_Q" model="hr.salary.rule">
             <field name="name">PREMIO PRESENTISMO (Q)</field>
-            <field name="code">10150</field>
-            <field name="sequence">10150</field>
-            <field name="category_id" ref="l10n_ar_payroll.categories_PREM" />
+            <field name="code">10251</field>
+            <field name="sequence">10251</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931PREM" />
             <field name="active">true</field>
             <field name="appears_on_payslip">true</field>
             <!-- Condition Select -->
@@ -219,6 +219,11 @@ result = contract.env['hr.contract.advantage'].search([('contract_id', '=', cont
             <field name="name">Presentismo (Override)</field>
             <field name="code">PRES-OVR</field>
             <field name="input_id" ref="l10n_ar_payroll.rules_PRES" />
+        </record>
+        <record id="payslip_inputs_PRES-OVR2" model="hr.rule.input">
+            <field name="name">Presentismo (Override)</field>
+            <field name="code">PRES-OVR</field>
+            <field name="input_id" ref="l10n_ar_payroll.rules_PRES_Q" />
         </record>
         <record id="rules_AFIP-JUB11" model="hr.salary.rule">
             <field name="name">APORTES JUBILATORIOS</field>
@@ -271,10 +276,30 @@ result_rate = -3.00
 result = categories.GROSS + categories.DESC
             </field>
         </record>
+        <record id="rules_EMBG-JUD" model="hr.salary.rule">
+            <field name="name">EMBARGOS JUDICIALES</field>
+            <field name="code">30100</field>
+            <field name="sequence">30100</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_DED" />
+            <field name="register_id" ref="l10n_ar_payroll.contribution_register_JUD-EMBG" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = payslip.env['hr.contract.advantage'].search([('contract_id', '=', contract.id), ('code', '=', 'EMBR-RATE')])
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result_rate = -(payslip.env['hr.contract.advantage'].search([('contract_id', '=', contract.id), ('code', '=', 'EMBR-RATE')]).amount)
+result = categories.GROSS + categories.DESC + categories.NOREM + categories.RET
+            </field>
+        </record>
         <record id="rules_ADV" model="hr.salary.rule">
             <field name="name">ADELANTOS OTORGADOS</field>
-            <field name="code">30110</field>
-            <field name="sequence">30110</field>
+            <field name="code">30201</field>
+            <field name="sequence">30201</field>
             <field name="category_id" ref="l10n_ar_payroll.categories_DED" />
             <field name="active">true</field>
             <field name="appears_on_payslip">true</field>
@@ -296,8 +321,8 @@ result = -(inputs.ADV.amount)
         </record>
         <record id="rules_LOAN" model="hr.salary.rule">
             <field name="name">PLANES PRESTAMOS OTORGADOS</field>
-            <field name="code">30115</field>
-            <field name="sequence">30115</field>
+            <field name="code">30202</field>
+            <field name="sequence">30202</field>
             <field name="category_id" ref="l10n_ar_payroll.categories_DED" />
             <field name="active">true</field>
             <field name="appears_on_payslip">true</field>
@@ -317,31 +342,11 @@ result = -(inputs.LOAN.amount)
             <field name="code">LOAN</field>
             <field name="input_id" ref="l10n_ar_payroll.rules_LOAN" />
         </record>
-        <record id="rules_EMBG-JUD" model="hr.salary.rule">
-            <field name="name">EMBARGOS JUDICIALES</field>
-            <field name="code">30900</field>
-            <field name="sequence">30900</field>
-            <field name="category_id" ref="l10n_ar_payroll.categories_DED" />
-            <field name="register_id" ref="l10n_ar_payroll.contribution_register_JUD-EMBG" />
-            <field name="active">true</field>
-            <field name="appears_on_payslip">true</field>
-            <!-- Condition Select -->
-            <field name="condition_select">python</field>
-            <field name="condition_python">
-result = payslip.env['hr.contract.advantage'].search([('contract_id', '=', contract.id), ('code', '=', 'EMBR-RATE')])
-            </field>
-            <!-- Amount Select -->
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">
-result_rate = -(payslip.env['hr.contract.advantage'].search([('contract_id', '=', contract.id), ('code', '=', 'EMBR-RATE')]).amount)
-result = categories.GROSS + categories.DESC
-            </field>
-        </record>
         <!-- Reglas Totalizadoras Generales -->
         <record id="rules_GROSS" model="hr.salary.rule">
             <field name="name">IMPORTE TOTAL BRUTO</field>
             <field name="code">RGROSS</field>
-            <field name="sequence">99999</field>
+            <field name="sequence">99001</field>
             <field name="category_id" ref="l10n_ar_payroll.categories_TOTAL_GROSS" />
             <field name="active">true</field>
             <field name="appears_on_payslip">false</field>
@@ -356,7 +361,7 @@ result = categories.GROSS
         <record id="rules_NOREM" model="hr.salary.rule">
             <field name="name">IMPORTE TOTAL NO REMUENRATIVO</field>
             <field name="code">RNOREM</field>
-            <field name="sequence">99999</field>
+            <field name="sequence">99002</field>
             <field name="category_id" ref="l10n_ar_payroll.categories_TOTAL_NOREM" />
             <field name="active">true</field>
             <field name="appears_on_payslip">false</field>
@@ -371,7 +376,7 @@ result = categories.NOREM
         <record id="rules_DESC" model="hr.salary.rule">
             <field name="name">IMPORTE TOTAL RETENCIONES Y DESCUENTOS</field>
             <field name="code">RDESC</field>
-            <field name="sequence">99999</field>
+            <field name="sequence">99003</field>
             <field name="category_id" ref="l10n_ar_payroll.categories_TOTAL_DESC" />
             <field name="active">true</field>
             <field name="appears_on_payslip">false</field>
@@ -386,7 +391,7 @@ result = categories.DESC + categories.RET + categories.DED
         <record id="rules_NETO" model="hr.salary.rule">
             <field name="name">IMPORTE TOTAL NETO</field>
             <field name="code">RNET</field>
-            <field name="sequence">99999</field>
+            <field name="sequence">99004</field>
             <field name="category_id" ref="l10n_ar_payroll.categories_TOTAL_NET" />
             <field name="active">true</field>
             <field name="appears_on_payslip">false</field>

@@ -1,47 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="rules_UOM1" model="hr.salary.rule">
+    <record id="rules_UOM_SOL" model="hr.salary.rule">
         <field name="name">UOM SINDICAL (SOLIDARIO)</field>
-        <field name="code">20900</field>
-        <field name="sequence">20900</field>
+        <field name="code">20201</field>
+        <field name="sequence">20201</field>
         <field name="category_id" ref="l10n_ar_payroll.categories_RET" />
+        <field name="register_id" ref="l10n_ar_payroll.contribution_register_SIND" />
         <field name="active">true</field>
         <field name="appears_on_payslip">true</field>
-        <field name="note">Aporte sindical UOM - Solidario (2.5%)</field>
         <!-- Condition Select -->
         <field name="condition_select">none</field>
         <!-- Amount Select -->
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
 result_rate = -2.5
-result = categories.GROSS
+result = categories.GROSS + categories.DESC
         </field>
     </record>
-    <record id="rules_UOM2" model="hr.salary.rule">
+
+    <record id="rules_UOM_AFI" model="hr.salary.rule">
         <field name="name">UOM SINDICAL (AFILIADO)</field>
-        <field name="code">20900</field>
-        <field name="sequence">20900</field>
+        <field name="code">20201</field>
+        <field name="sequence">20201</field>
         <field name="category_id" ref="l10n_ar_payroll.categories_RET" />
+        <field name="register_id" ref="l10n_ar_payroll.contribution_register_SIND" />
         <field name="active">true</field>
         <field name="appears_on_payslip">true</field>
-        <field name="note">Aporte sindical UOM - Sindical (3%)</field>
         <!-- Condition Select -->
         <field name="condition_select">none</field>
         <!-- Amount Select -->
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
 result_rate = -3.00
-result = categories.GROSS
+result = categories.GROSS + categories.DESC
         </field>
     </record>
-    <record id="rules_UOMSVCO" model="hr.salary.rule">
-        <field name="name">UOM SVCO</field>
-        <field name="code">20901</field>
-        <field name="sequence">20901</field>
+
+    <record id="rules_UOMSVO" model="hr.salary.rule">
+        <field name="name">SEGURO DE VIDA - UOM</field>
+        <field name="code">20902</field>
+        <field name="sequence">20902</field>
         <field name="category_id" ref="l10n_ar_payroll.categories_RET" />
+        <field name="register_id" ref="l10n_ar_payroll.contribution_register_SIND" />
         <field name="active">true</field>
         <field name="appears_on_payslip">true</field>
-        <field name="note">Seguro de vida colectivo, sindicato UOM. Importe Fijo (Mensual).</field>
         <!-- Condition Select -->
         <field name="condition_select">none</field>
         <!-- Amount Select -->
@@ -51,11 +53,12 @@ result_rate = -100.00
 result = contract.cct_id.svco_current_value
         </field>
     </record>
-    <record id="rules_IMGR" model="hr.salary.rule">
-        <field name="name">IMGR UOM</field>
+
+    <record id="rules_IMGR_M" model="hr.salary.rule">
+        <field name="name">IMGR UOM - MENSUAL</field>
         <field name="code">10590</field>
         <field name="sequence">10590</field>
-        <field name="category_id" ref="l10n_ar_payroll.categories_ADIC" />
+        <field name="category_id" ref="l10n_ar_payroll.categories_931ADIC" />
         <field name="active">true</field>
         <field name="appears_on_payslip">true</field>
         <!-- Condition Select -->
@@ -64,19 +67,66 @@ result = contract.cct_id.svco_current_value
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
 imgr = 60720.00
-base_calculo = categories.GROSS - categories.EXT
-if imgr > base_calculo:
-    diference = imgr - categories.GROSS
+if (worked_days.WORK0 and worked_days.WORK0.number_of_days):
+    imgr_final = (imgr / worked_days.WORK100.number_of_days) * (worked_days.WORK100.number_of_days - worked_days.WORK0.number_of_days)
+else:
+    imgr_final = imgr
+if imgr_final > categories.GROSS:
+    diference = imgr_final - categories.GROSS
     result = diference
 else:
     result = 0.00
         </field>
     </record>
+
+    <record id="rules_IMGR_Q" model="hr.salary.rule">
+        <field name="name">IMGR UOM - QUINCENAL</field>
+        <field name="code">10590</field>
+        <field name="sequence">10590</field>
+        <field name="category_id" ref="l10n_ar_payroll.categories_931ADIC" />
+        <field name="active">true</field>
+        <field name="appears_on_payslip">true</field>
+        <!-- Condition Select -->
+        <field name="condition_select">none</field>
+        <!-- Amount Select -->
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+imgr = 60720.00
+        </field>
+<!-- CALCULO DEL IMGR EN QUINCENAS
+    1. Se debe tomar el valor bruto + no remunerativo de ambas quincenas, luego, restarle horas extra y ausentismos y proporcionarlo.
+    2. Se obtiene el valor correspondiente para el IMGR.
+    3. Se calcula la diferencia y se agrega al bruto la misma.
+    4. Se sigue con el recibo y las retenciones normalmente.
+-->
+    </record>
+
+    <record id="rules_IMGR_RETROACT" model="hr.salary.rule">
+        <field name="name">UOM IMGR - RETROACTIVO</field>
+        <field name="code">10590</field>
+        <field name="sequence">10590</field>
+        <field name="category_id" ref="l10n_ar_payroll.categories_931ADIC" />
+        <field name="active">true</field>
+        <field name="appears_on_payslip">true</field>
+        <!-- Condition Select -->
+        <field name="condition_select">none</field>
+        <!-- Amount Select -->
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result = inputs.IMGR-RETROACT
+        </field>
+    </record>
+    <record id="payslip_inputs_IMGR-RETROACT" model="hr.rule.input">
+        <field name="name">Importe Retroactivo de UOM IMGR</field>
+        <field name="code">IMGR-RETROACT</field>
+        <field name="input_id" ref="l10n_ar_payroll.rules_IMGR_RETROACT" />
+    </record>
+
     <record id="rules_extra_norem_042021_9" model="hr.salary.rule">
         <field name="name">ACUERDO UOM ABRIL/21</field>
         <field name="code">10550</field>
         <field name="sequence">10550</field>
-        <field name="category_id" ref="l10n_ar_payroll.categories_NOREM" />
+        <field name="category_id" ref="l10n_ar_payroll.categories_931NOREM" />
         <field name="active">true</field>
         <field name="appears_on_payslip">true</field>
         <!-- Condition Select -->
@@ -85,26 +135,7 @@ else:
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
 result_rate = 9.00
-result = categories.GROSS
+result = categories.GROSS + categories.DESC
         </field>
-    </record>
-    <record id="AR-DEFAULT-H" model="hr.payroll.structure">
-        <field name="name"> ( AR-UOM-JOR ) SINDICATO UOM MERTALURGICOS - JORNALIZADOS</field>
-        <field name="code">AR-UOM-JOR</field>
-        <field name="company_id" ref="base.main_company" />
-        <field name="parent_id" ref='l10n_ar_payroll.AR-DEFAULT-H' />
-        <field eval="[(6, 0, [  ref('l10n_ar_payroll_lu_uom.rules_UOM1'),
-                                ref('l10n_ar_payroll_lu_uom.rules_extra_norem_042021_9'),
-                                ref('l10n_ar_payroll_lu_uom.rules_UOMSVCO')])]" name="rule_ids" />
-    </record>
-    <record id="AR-DEFAULT-M" model="hr.payroll.structure">
-        <field name="name"> ( AR-UOM-JOR ) SINDICATO UOM MERTALURGICOS - MENSUALIZADOS</field>
-        <field name="code">AR-UOM-MEN</field>
-        <field name="company_id" ref="base.main_company" />
-        <field name="parent_id" ref='l10n_ar_payroll.AR-DEFAULT-M' />
-        <field eval="[(6, 0, [  ref('l10n_ar_payroll_lu_uom.rules_UOM1'),
-                                ref('l10n_ar_payroll_lu_uom.rules_IMGR'),
-                                ref('l10n_ar_payroll_lu_uom.rules_extra_norem_042021_9'),
-                                ref('l10n_ar_payroll_lu_uom.rules_UOMSVCO')])]" name="rule_ids" />
     </record>
 </odoo>

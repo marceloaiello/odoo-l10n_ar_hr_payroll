@@ -15,6 +15,7 @@
     ],
     'data': [
         'data/asimra_salary_rules.xml',
+        'data/asimra_salary_structures.xml',
         'data/lu_asimra_categories.xml',
     ],
     'installable': True,

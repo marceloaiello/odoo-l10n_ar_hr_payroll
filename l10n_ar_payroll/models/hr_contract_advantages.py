@@ -20,10 +20,8 @@ class HrContractAdvantage(models.Model):
     _description = 'Link contract advantages templates to payroll'
 
     contract_id = fields.Many2one('hr.contract', string='Contrato')
-    contract_advantage_template_id = fields.Many2one(
-        'hr.contract.advantage.template', string='Concepto')
-    code = fields.Char(
-        string='Codigo', related='contract_advantage_template_id.code', readonly=True)
+    contract_advantage_template_id = fields.Many2one('hr.contract.advantage.template', string='Concepto')
+    code = fields.Char(string='Codigo', related='contract_advantage_template_id.code', readonly=True)
     use_default = fields.Boolean(string='¿Usar valor por defecto?', default=True)
     override_amount = fields.Float(string='Importe', related='contract_advantage_template_id.default_value', store=True)
     amount = fields.Float(compute='_compute_amount', string='Importe')

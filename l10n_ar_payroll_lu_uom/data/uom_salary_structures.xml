@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="AR-DEFAULT-H" model="hr.payroll.structure">
+            <field name="name"> ( AR-UOM-JOR ) SINDICATO UOM MERTALURGICOS - JORNALIZADOS</field>
+            <field name="code">AR-UOM-JOR</field>
+            <field name="company_id" ref="base.main_company" />
+            <field name="parent_id" ref='l10n_ar_payroll.AR-DEFAULT-H' />
+            <field eval="[(6, 0, [  ref('l10n_ar_payroll_lu_uom.rules_UOM1'),
+                                    ref('l10n_ar_payroll_lu_uom.rules_extra_norem_042021_9'),
+                                    ref('l10n_ar_payroll_lu_uom.rules_IMGR_Q'),
+                                    ref('l10n_ar_payroll_lu_uom.rules_IMGR_RETROACT'),
+                                    ref('l10n_ar_payroll_lu_uom.rules_UOMSVCO')])]" name="rule_ids" />
+        </record>
+        <record id="AR-DEFAULT-M" model="hr.payroll.structure">
+            <field name="name"> ( AR-UOM-MEN ) SINDICATO UOM MERTALURGICOS - MENSUALIZADOS</field>
+            <field name="code">AR-UOM-MEN</field>
+            <field name="company_id" ref="base.main_company" />
+            <field name="parent_id" ref='l10n_ar_payroll.AR-DEFAULT-M' />
+            <field eval="[(6, 0, [  ref('l10n_ar_payroll_lu_uom.rules_UOM1'),
+                                    ref('l10n_ar_payroll_lu_uom.rules_IMGR_M'),
+                                    ref('l10n_ar_payroll_lu_uom.rules_extra_norem_042021_9'),
+                                    ref('l10n_ar_payroll_lu_uom.rules_IMGR_RETROACT'),
+                                    ref('l10n_ar_payroll_lu_uom.rules_UOMSVCO')])]" name="rule_ids" />
+        </record>
+    </data>
+</odoo>

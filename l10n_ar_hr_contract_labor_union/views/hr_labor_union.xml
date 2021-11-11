@@ -36,9 +36,9 @@
         <field name="model">hr.labor_union</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    <button name="action_update_wizard" string="Actualizar Precios" type="object" class="oe_highlight"/>
-                </header>
+            <header>
+                <button name="action_update_wizard" string="Actualizar Precios" type="object" class="oe_highlight"/>
+            </header>
                 <div class="oe_title pr-0" name="title">
                     <h1 class="d-flex flex-row justify-content-between">
                         <field name="name" placeholder="C.C.T / Sindicato" />
@@ -53,27 +53,36 @@
                         <field name="company_id" groups="base.group_multi_company" />
                     </group>
                 </group>
-                <group string="Categorias - CCT">
-                    <field name="cct_categories" nolabel="1" widget="one2many">
-                        <tree editable="bottom">
-                            <field name="name" />
-                            <field name="category_period_type" string="Periodo de Importe" />
-                            <field name="current_value" widget='monetary' />
-                            <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
-                        </tree>
-                    </field>
-                </group>
-                <group string="Seguro de Vida Colectivo (S.V.C.O)">
-                    <field name="cct_svco_values" nolabel="1">
-                        <tree editable="bottom" default_order="from_date,to_date asc">
-                            <field name="from_date" />
-                            <field name="to_date" />
-                            <field name="value" widget='monetary' />
-                            <field name="name" string="Referencia" />
-                            <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
-                        </tree>
-                    </field>
-                </group>
+                <notebook>
+                    <page name="cct_categories" string="Categorias e Importes">
+                        <group string="Categorias - CCT">
+                            <field name="cct_categories" nolabel="1" widget="one2many">
+                                <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="category_period_type" string="Periodo de Importe" />
+                                    <field name="current_value" widget='monetary' />
+                                    <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page name="svo" string="Seguro de Vida">
+                        <group string="Seguro de Vida Colectivo (S.V.C.O)">
+                            <field name="cct_svco_values" nolabel="1">
+                                <tree editable="bottom" default_order="from_date,to_date asc">
+                                    <field name="from_date" />
+                                    <field name="to_date" />
+                                    <field name="value" widget='monetary' />
+                                    <field name="name" string="Referencia" />
+                                    <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page name="other_params" string="Otros Parametros">
+
+                    </page>
+                </notebook>
             </form>
         </field>
     </record>
