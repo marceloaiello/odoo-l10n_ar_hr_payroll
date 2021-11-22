@@ -101,7 +101,7 @@
             <field name="note">Uso para 931-AFIP - Conceptos "Incremento Salarial" - Deprecado. </field>
         </record>
 
-        <!-- Categorias de Totales y Subtotales -->
+        <!-- Categorias de Totales, Subtotales y Auxiliares -->
         <record id="categories_TOTAL_GROSS" model="hr.salary.rule.category">
             <field name="name">(SUBTOTAL) TOTAL BRUTO</field>
             <field name="code">TGROSS</field>

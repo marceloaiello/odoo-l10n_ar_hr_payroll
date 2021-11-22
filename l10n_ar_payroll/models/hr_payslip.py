@@ -5,7 +5,6 @@ from datetime import datetime, time, timedelta
 from num2words import num2words
 from odoo import models, api, _
 
-
 class HrPayslip(models.Model):
     _inherit = 'hr.payslip'
 

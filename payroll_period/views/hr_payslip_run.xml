@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_payslip_run_form" model="ir.ui.view">
+            <field name="name">hr.payslip.run.period.form</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="payroll_account.hr_payslip_run_view_form"/>
+            <field name="arch" type="xml">
+                <field name="journal_id" position="after">
+                    <h3>
+                        <label for="hr_period_id"/>
+                        <field name="hr_period_id"
+                        domain="[('state', '=', 'open'),]"/>
+                    </h3>
+                </field>
+                <field name="date_start" position="before">
+                    <field name="schedule_pay"/>
+                    <newline/>
+                </field>
+            </field>
+        </record>
+        <record id="hr_payslip_run_filter" model="ir.ui.view">
+            <field name="name">hr.payslip.run.period.search</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="payroll.hr_payslip_run_view_search"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <!-- <field name="date_payment"/> -->
+                    <field name="schedule_pay"/>
+                </field>
+                <search position="inside">
+                    <group string="Group By...">
+                        <filter
+                            string="Scheduled Pay"
+                            name="schedule_pay"
+                            context="{'group_by':'schedule_pay'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="hr_payslip_run_tree" model="ir.ui.view">
+            <field name="name">hr.payslip.run.period.tree</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="payroll.hr_payslip_run_view_tree"/>
+            <field name="arch" type="xml">
+                    <field name="date_end" position="after">
+                        <!--<field name="date_payment"/>-->
+                        <field name="schedule_pay"/>
+                    </field>
+            </field>
+        </record>
+    </data>
+</odoo>

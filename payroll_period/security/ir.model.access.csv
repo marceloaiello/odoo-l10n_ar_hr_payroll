@@ -1,0 +1,7 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_hr_period","hr.period","model_hr_period",payroll.group_payroll_manager,1,1,1,1
+"access_hr_fiscalyear","hr.fiscalyear","model_hr_fiscalyear",payroll.group_payroll_manager,1,1,1,1
+"access_hr_fiscalyear_group","hr.fiscalyear.group","model_hr_fiscalyear_group",payroll.group_payroll_manager,1,1,1,1
+"access_hr_period_base","hr.period","model_hr_period",base.group_user,1,0,0,0
+"access_hr_fiscalyear_base","hr.fiscalyear","model_hr_fiscalyear",base.group_user,1,0,0,0
+"access_hr_suss_item_user","hr.suss.item","model_hr_suss_item",payroll.group_payroll_manager,1,1,1,1

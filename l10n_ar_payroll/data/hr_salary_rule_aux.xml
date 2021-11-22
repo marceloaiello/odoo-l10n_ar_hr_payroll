@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="rules_GROSS" model="hr.salary.rule">
+            <field name="name">IMPORTE TOTAL BRUTO</field>
+            <field name="code">RGROSS</field>
+            <field name="sequence">99001</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_TOTAL_GROSS" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">false</field>
+            <!-- Condition Select -->
+            <field name="condition_select">none</field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.GROSS
+            </field>
+        </record>
+        <record id="rules_NOREM" model="hr.salary.rule">
+            <field name="name">IMPORTE TOTAL NO REMUENRATIVO</field>
+            <field name="code">RNOREM</field>
+            <field name="sequence">99002</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_TOTAL_NOREM" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">false</field>
+            <!-- Condition Select -->
+            <field name="condition_select">none</field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.NOREM
+            </field>
+        </record>
+        <record id="rules_DESC" model="hr.salary.rule">
+            <field name="name">IMPORTE TOTAL RETENCIONES Y DESCUENTOS</field>
+            <field name="code">RDESC</field>
+            <field name="sequence">99003</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_TOTAL_DESC" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">false</field>
+            <!-- Condition Select -->
+            <field name="condition_select">none</field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.DESC + categories.RET + categories.DED
+            </field>
+        </record>
+        <record id="rules_NETO" model="hr.salary.rule">
+            <field name="name">IMPORTE TOTAL NETO</field>
+            <field name="code">RNET</field>
+            <field name="sequence">99004</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_TOTAL_NET" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">false</field>
+            <!-- Condition Select -->
+            <field name="condition_select">none</field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.GROSS + categories.NOREM + categories.RET + categories.DESC + categories.DED
+            </field>
+        </record>
+    </data>
+</odoo>

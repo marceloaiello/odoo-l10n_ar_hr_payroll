@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- SAC IS TODO: -->
+        <record id="rules_SAC" model="hr.salary.rule">
+            <field name="name">S.A.C</field>
+            <field name="code">10110</field>
+            <field name="sequence">10110</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931SAC" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <!-- Condition Select -->
+            <field name="condition_select">none</field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = ((inputs.SACBASE / 2) / 180) * inputs.SACDAYS
+            </field>
+        </record>
+        <record id="payslip_inputs_SACBASE" model="hr.rule.input">
+            <field name="name">Mejor Sueldo Semestral - S.A.C</field>
+            <field name="code">SACBASE</field>
+            <field name="input_id" ref="l10n_ar_payroll.rules_SAC" /> <!-- TODO: Calcular mejor sueldo -->
+        </record>
+        <record id="payslip_inputs_SACWORKDAYS" model="hr.rule.input">
+            <field name="name">Dias Trabajados - S.A.C</field>
+            <field name="code">SACDAYS</field>
+            <field name="input_id" ref="l10n_ar_payroll.rules_SAC" /> <!-- TODO: Calcular Dias -->
+        </record>
+        <!-- SAC IS TODO: -->
+    </data>
+</odoo>
