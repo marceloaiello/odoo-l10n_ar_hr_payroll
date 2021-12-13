@@ -6,10 +6,39 @@
         <field name="model">hr.overtime.type</field>
         <field name="arch" type="xml">
             <tree string="Tipos de Horas Extra">
-                <field name="payroll_code" />
-                <field name="description" />
-                <field name="name" string="Referencia" />
+                <field name="name" />
+                <field name="payroll_code" widget="badge" />
+                <field name="type" widget="badge" />
+                <field name="duration_type" widget="badge" />
+                <field name="fixed_amount" />
+                <field name="add_percentage_amount" />
             </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="hr_overtime_management_types_form" model="ir.ui.view">
+        <field name="name">hr.overtime.type.form</field>
+        <field name="model">hr.overtime.type</field>
+        <field name="arch" type="xml">
+            <form string="Horas Extras">
+                <sheet>
+                    <group>
+                        <h1 colspan="2">
+                            <field name="name" />
+                        </h1>
+                        <group>
+                            <field name="payroll_code" />
+                        </group>
+                        <group>
+                            <field name="type" widget="selection" />
+                            <field name="duration_type"  widget="selection" />
+                            <field name="fixed_amount" attrs="{'invisible':[('type', '!=', 'fixed')]}" />
+                            <field name="add_percentage_amount" attrs="{'invisible':[('type', '!=', 'add_percentage')]}" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
         </field>
     </record>
 
@@ -18,7 +47,7 @@
         <field name="name">Horas Extras</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.overtime.type</field>
-        <field name="view_mode">tree</field>
+        <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
                 Aun no se han creado tipos de horas extra. Cree uno.

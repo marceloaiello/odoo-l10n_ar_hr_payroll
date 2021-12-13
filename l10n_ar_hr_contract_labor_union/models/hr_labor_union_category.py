@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models, exceptions, _
-from odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError, MissingError
 
 
 class HrLaborUnionCategory(models.Model):
@@ -37,13 +37,23 @@ class HrLaborUnionCategory(models.Model):
     def _compute_current_value(self):
         for record in self:
             today = fields.Date.context_today(self).strftime('%Y-%m-%d')
-            domain = [('labor_union_category_id', '=', record.id),
-                      ('from_date', '<=', today), ('to_date', '>=', today)]
-            if record.categories_prices.search_count(domain) == 1:
-                for cprice in record.categories_prices.search(domain):
-                    record.current_value = cprice.value
-            else:
-                record.current_value = 0
+            record.current_value = record.get_category_value(today, today)
+
+    def get_category_value(self, from_date, to_date):
+        self.ensure_one()
+        domain = [
+            ('labor_union_category_id', '=', self.id),
+            ('company_id', '=', self.company_id.id),
+            '|', '|',
+            '&', ('from_date', '<=', from_date), ('to_date', '>=', from_date),
+            '&', ('from_date', '<=', to_date), ('to_date', '>=', to_date),
+            '&', ('from_date', '<=', from_date), ('to_date', '>=', to_date),
+        ]
+        res = self.categories_prices.search(domain).value
+        if res:
+            return res
+        else:
+            raise MissingError('No se encontro un precio de categoria para el periodo seleccionado.')
 
 
 class HrLaborUnionCategoryPrice(models.Model):
@@ -87,12 +97,9 @@ class HrLaborUnionCategoryPrice(models.Model):
                 ('labor_union_category_id', '=', record.labor_union_category_id.id),
                 ('company_id', '=', record.company_id.id),
                 '|', '|',
-                '&', ('from_date', '<=', record.from_date), ('to_date',
-                                                             '>=', record.from_date),
-                '&', ('from_date', '<=', record.to_date), ('to_date',
-                                                           '>=', record.to_date),
-                '&', ('from_date', '<=', record.from_date), ('to_date',
-                                                             '>=', record.to_date),
+                '&', ('from_date', '<=', record.from_date), ('to_date', '>=', record.from_date),
+                '&', ('from_date', '<=', record.to_date), ('to_date', '>=', record.to_date),
+                '&', ('from_date', '<=', record.from_date), ('to_date', '>=', record.to_date),
             ]
             if self.search_count(domain) > 0:
                 raise ValidationError(

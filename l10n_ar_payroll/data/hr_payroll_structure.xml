@@ -15,7 +15,7 @@
                                     ref('l10n_ar_payroll.rules_AFIP-JUB11'),
                                     ref('l10n_ar_payroll.rules_AFIP-INSSJP3'),
                                     ref('l10n_ar_payroll.rules_AFIP-OS3'),
-                                    ref('l10n_ar_payroll.rules_EMBG-JUD')
+                                    ref('l10n_ar_payroll.rules_EMBG-JUD'),
                                     ref('l10n_ar_payroll.rules_ADV'),
                                     ref('l10n_ar_payroll.rules_LOAN'),
                                     ref('l10n_ar_payroll.rules_GROSS'),
@@ -38,7 +38,7 @@
                                     ref('l10n_ar_payroll.rules_AFIP-JUB11'),
                                     ref('l10n_ar_payroll.rules_AFIP-INSSJP3'),
                                     ref('l10n_ar_payroll.rules_AFIP-OS3'),
-                                    ref('l10n_ar_payroll.rules_EMBG-JUD')
+                                    ref('l10n_ar_payroll.rules_EMBG-JUD'),
                                     ref('l10n_ar_payroll.rules_ADV'),
                                     ref('l10n_ar_payroll.rules_LOAN'),
                                     ref('l10n_ar_payroll.rules_GROSS'),

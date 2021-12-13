@@ -7,22 +7,45 @@ from odoo.exceptions import ValidationError
 
 class HrOvertime(models.Model):
     _name = 'hr.overtime'
+    _inherit = 'mail.thread'
     _description = 'HR Overtime Management'
     _rec_name = 'employee_id'
     _order = 'id desc'
 
+    name = fields.Char(compute='_compute_name')
     employee_id = fields.Many2one('hr.employee', string=(_("Empleado")))
-    manager_id = fields.Many2one('hr.employee', string=(_('Oficial HR')))
-    start_date = fields.Datetime(_('Fecha'))
-    overtime_hours = fields.Float(_('Horas Extra'))
+    manager_id = fields.Many2one('hr.employee', string='Responsable', related="employee_id.parent_id")
+    start_date = fields.Datetime(_('Fecha Desde'))
+    stop_date = fields.Datetime(_('Fecha Hasta'))
+    overtime_hours = fields.Float(_('Horas Extra'), compute="_compute_hours")
+    units = fields.Float(_('Cantidad'))
     notes = fields.Text(string=(_('Notas')))
-    state = fields.Selection([('draft', (_('Borrador'))), ('confirm', (_('Esperando Aprobacion'))), ('refuse', (_('Rechazado'))),
-                              ('validate', (_('Aprovado'))), ('cancel', (_('Cancelado')))], default='draft', copy=False)
+    state = fields.Selection([('draft', (_('Borrador'))), ('confirm', (_('Pendiente'))), ('refuse', (_('Rechazado'))),
+                              ('validate', (_('Aprobado'))), ('cancel', (_('Cancelado')))], default='draft', copy=False)
     attendance_id = fields.Many2one('hr.attendance', string=(_('Registro de Asistencia')))
     overtime_type_id = fields.Many2one('hr.overtime.type', string='Tipo de Hora Extras')
+    overtime_type_duration_type = fields.Selection(string='Tipo de Duracion', related='overtime_type_id.duration_type')
+    contract_id = fields.Many2one(string="Contrato", related='employee_id.contract_id')
+
+    @api.depends('start_date', 'stop_date')
+    def _compute_hours(self):
+        for record in self:
+            if record.start_date and record.stop_date:
+                delta = record.stop_date - record.start_date
+                record.overtime_hours = delta.total_seconds() / 3600
+            else:
+                record.overtime_hours = 0.00
+
+    @api.depends('employee_id', 'overtime_type_id')
+    def _compute_name(self):
+        for record in self:
+            if record.employee_id and record.overtime_type_id and record.overtime_type_id:
+                record.name = 'Horas extra para ' + record.employee_id.name + ' - Codigo: ' + record.overtime_type_id.payroll_code + ' (' + str(record.overtime_hours) + ')'
+            else:
+                record.name = 'Nuevo registro de horas extra...'
 
     @api.model
-    def run_overtime(self):
+    def run_overtime_scheduler(self):
         """ Main Overtime Calculation Function """
         attend_signin_ids = self.env['hr.attendance'].search(
             [('overtime_created', '=', False)])
@@ -46,11 +69,6 @@ class HrOvertime(models.Model):
                         }
                         self.env['hr.overtime'].create(vals)
                         attendance.overtime_created = True
-
-    @api.model
-    def run_overtime_scheduler(self):
-        """ Scheduler Function """
-        self.run_overtime()
 
     def action_submit(self):
         return self.write({'state': 'confirm'})
@@ -84,14 +102,20 @@ class HrOvertime(models.Model):
 
 
 class HrOvertimeType(models.Model):
-    _name = 'hr.attendance.overtime.type'
+    _name = 'hr.overtime.type'
     _description = 'HR Overtime Types'
 
-    description = fields.Char(string='Descripcion')
-    payroll_code = fields.Char(string='Codigo de Payroll')
-    name = fields.Char(compute='_compute_name', string='')
+    name = fields.Char(string='Nombre', required=True)
+    payroll_code = fields.Char(string='Codigo de Payroll', required=True)
+    duration_type = fields.Selection([
+        ('hour', 'Horas'),
+        ('unit', 'Unidades Fijas')
+    ], string='Tipo de Unidad', default="hour", required=True)
+    type = fields.Selection([
+        ('fixed', 'Valor Fijo'),
+        ('add_percentage', 'Porcentaje Adicional'),
+    ], string='Tipo', default="add_percentage", required=True)
+    fixed_amount = fields.Float(string='Valor Fijo')
+    add_percentage_amount = fields.Float(string='Porcentaje')
+    notes = fields.Text(string=(_('Notas')))
 
-    @api.depends('payroll_code', 'description')
-    def _compute_name(self):
-        for record in self:
-            record.name = '( ' + record.payroll_code + ' ) ' + record.description

@@ -6,11 +6,18 @@
         <field name="model">hr.overtime</field>
         <field name="arch" type="xml">
             <tree string="Horas Extras">
-                <field name="employee_id" />
-                <field name="manager_id" />
+                <field name="employee_id" widget="many2one_avatar_employee" />
+                <field name="overtime_type_id" decoration-bf="True" />
                 <field name="start_date" />
-                <field name="overtime_type_id" />
+                <field name="stop_date" />
                 <field name="overtime_hours" />
+                <field name="units" />
+                <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-warning="state == 'confirm'" decoration-success="state == 'validate'" decoration-danger="state == 'cancel'" />
+                <button_group name="button_group_0" modifiers="{}" editOnly="false" readOnly="false">
+                    <button string="Aprobar" name="action_approve" type="object" icon="fa-thumbs-up" states="confirm" modifiers="{'invisible':[['state','not in',['confirm']]]}" options="{}"/>
+                    <button string="Validar" name="action_submit" type="object" icon="fa-check" states="draft" modifiers="{'invisible':[['state','not in',['draft']]]}" options="{}"/>
+                    <button string="Rechazar" name="action_cancel" type="object" icon="fa-times" states="confirm,draft" modifiers="{'invisible':[['state','not in',['confirm','draft']]]}" options="{}"/>
+                </button_group>
             </tree>
         </field>
     </record>
@@ -24,6 +31,7 @@
                 <field name="employee_id" />
                 <field name="manager_id" />
                 <field name="start_date" />
+                <field name="stop_date" />
                 <separator />
                 <group expand="1" string="Agrupar por">
                     <filter string="Empleado" name="employee_id" context="{'group_by':'employee_id'}" />
@@ -43,38 +51,51 @@
         <field name="arch" type="xml">
             <form string="Horas Extras">
                 <header>
-                    <button name="action_submit" type="object" string="Submit" groups="base.group_user" attrs="{'invisible':[('state', '!=', 'draft')]}" />
-                    <button name="action_cancel" type="object" string="Cancel" groups="base.group_user,hr.group_hr_manager" attrs="{'invisible':[('state', '!=', 'confirm')]}" />
-                    <button name="action_approve" type="object" string="Approve" groups="hr.group_hr_manager" attrs="{'invisible':[('state', '!=', 'confirm')]}" />
-                    <button name="action_refuse" type="object" string="Refuse" groups="hr.group_hr_manager" attrs="{'invisible':[('state', '!=', 'confirm')]}" />
+                    <button name="action_submit" type="object" string="Confirmar" groups="base.group_user" attrs="{'invisible':[('state', '!=', 'draft')]}" />
+                    <button name="action_cancel" type="object" string="Cancelar" groups="base.group_user,hr.group_hr_manager" attrs="{'invisible':[('state', '!=', 'confirm')]}" />
+                    <button name="action_approve" type="object" string="Aprobar" groups="hr.group_hr_manager" attrs="{'invisible':[('state', '!=', 'confirm')]}" />
+                    <button name="action_refuse" type="object" string="Cancelar" groups="hr.group_hr_manager" attrs="{'invisible':[('state', '!=', 'confirm')]}" />
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirm,refuse,validate,cancel" />
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button name="action_view_attendance" type="object" class="oe_stat_button" icon="fa-user" string="Asistencias"></button>
                     </div>
+                    <h2>
+                        <field name="name" nolabel="1" />
+                    </h2>
+                    <group col="4">
+                        <label for="start_date" string="Periodo" />
+                        <div colspan="3">
+                            <field name="start_date" class="oe_inline" />
+                            -
+                            <field name="stop_date" class="oe_inline" />
+                        </div>
+                    </group>
                     <group>
                         <group>
-                            <field name="employee_id" required="True" readonly="1" />
-                            <field name="manager_id" readonly="1" />
+                            <field name="employee_id" required="True" />
+                            <field name="contract_id" />
+                            <field name="manager_id" string="Responsable" />
                         </group>
                         <group>
-                            <field name="start_date" readonly="1" />
                             <field name="overtime_type_id" />
-                            <field name="overtime_hours" readonly="1" />
+                            <field name="overtime_type_duration_type" readonly="1" />
                             <field name="attendance_id" invisible="1" />
+                            <field name="overtime_hours" readonly="1" attrs="{'invisible':[('overtime_type_duration_type', '!=', 'hour')]}" />
+                            <field name="units" attrs="{'invisible':[('overtime_type_duration_type', '!=', 'unit')]}" />
                         </group>
                     </group>
-                    <notebook>
-                        <page string="Notas">
-                            <field name="notes" />
-                        </page>
-                    </notebook>
+                    <separator string="Notas" />
+                    <field name="notes" nolabel="1" colspan="2" />
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
             </form>
         </field>
     </record>
-
 
     <!-- Action View -->
     <record id="action_hr_overtime_management" model="ir.actions.act_window">

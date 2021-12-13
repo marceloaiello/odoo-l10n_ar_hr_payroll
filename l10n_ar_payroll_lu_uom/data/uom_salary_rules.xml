@@ -96,9 +96,9 @@ result = inputs.IMGR-RETROACT
         </field>
     </record>
     <record id="payslip_inputs_IMGR-RETROACT" model="hr.rule.input">
-        <field name="name">Importe Retroactivo de UOM IMGR</field>
+        <field name="name">UOM IMGR - Retroactivo</field>
         <field name="code">IMGR-RETROACT</field>
-        <field name="input_id" ref="l10n_ar_payroll.rules_IMGR_RETROACT" />
+        <field name="input_id" ref="l10n_ar_payroll_lu_uom.rules_IMGR_RETROACT" />
     </record>
     <record id="rules_extra_norem_042021_9" model="hr.salary.rule">
         <field name="name">ACUERDO UOM ABRIL/21</field>
