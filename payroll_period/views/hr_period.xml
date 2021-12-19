@@ -30,16 +30,29 @@
                             <field name="company_id" widget="selection" groups="base.group_multi_company" />
                         </group>
                     </group>
-                    <separator string="Liquidaciones de Haberes" />
-                    <newline />
-                    <field name="payslip_ids" nolabel="1">
-                        <tree>
-                            <field name="number" />
-                            <field name="employee_id" />
-                            <field name="name" />
-                            <field name="state" />
-                        </tree>
-                    </field>
+                    <notebook>
+                        <page string="Liquidaciones">
+                            <separator string="Liquidaciones de Haberes" />
+                            <newline />
+                            <field name="payslip_ids" nolabel="1">
+                                <tree>
+                                    <field name="number" />
+                                    <field name="employee_id" />
+                                    <field name="name" />
+                                    <field name="state" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="AFIP SICOSS (F931)">
+                            <separator string="Liquidacion AFIP-SICOSS del Periodo" />
+                            <newline />
+                            <field name="afip_suss_item_ids" nolabel="1">
+                                <tree>
+                                    <field name="employee_id" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

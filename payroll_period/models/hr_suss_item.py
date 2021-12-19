@@ -9,7 +9,7 @@ class HrSussItem(models.Model):
     _description = 'Hr Suss Item'
 
     name = fields.Char(string='Referencia')
-    period_group_id = fields.Many2one('hr.fiscalyear.group', string='Grupo de Periodo Fiscal')
+    period_id = fields.Many2one('hr.period', string='Periodo Fiscal')
     employee_id = fields.Many2one('hr.employee', string='Empleado')
     sueldo = fields.Float(string='Sueldo')
     adicionales = fields.Float(string='Adicionales')

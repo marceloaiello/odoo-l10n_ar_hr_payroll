@@ -162,9 +162,7 @@ class HrFiscalyear(models.Model):
                 period.unlink()
 
             fy.refresh()
-
             period_start = fy.date_start
-
             next_year_start = fy.date_stop + relativedelta(days=1)
 
             if fy.schedule_pay == 'semi-monthly':
@@ -182,7 +180,6 @@ class HrFiscalyear(models.Model):
                     i += 2
             else:  # All other cases
                 delta, nb_periods = INTERVALS[fy.schedule_pay]
-
                 i = 1
                 while not (period_start + delta > next_year_start):
                     fy._create_single_period(period_start, period_start + delta, i)
@@ -204,7 +201,7 @@ class HrFiscalyear(models.Model):
                 'date_stop': date_stop,
                 'date_payment': fy._get_day_of_payment(date_stop),
                 'company_id': fy.company_id.id,
-                'name': _('%s Periodo #%s') % (fy.name, number),
+                'name': _('%s / %s-%s Periodo #%s') % (fy.name, date_start.year, date_start.month, number),
                 'number': number,
                 'state': 'draft',
                 'schedule_pay': fy.schedule_pay,

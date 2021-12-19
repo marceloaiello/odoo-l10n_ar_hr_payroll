@@ -21,7 +21,6 @@
         'views/hr_payslip.xml',
         'views/hr_payslip_line.xml',
         'views/hr_payslip_run.xml',
-        'views/hr_fiscal_year_group_views.xml',
     ],
     'installable': True,
     'auto_install': False,

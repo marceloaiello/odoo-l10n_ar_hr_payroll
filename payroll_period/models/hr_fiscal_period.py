@@ -27,6 +27,7 @@ class HrPeriod(models.Model):
     company_id = fields.Many2one('res.company', string='Empresa', store=True, related="fiscalyear_id.company_id", readonly=True, states={'draft': [('readonly', False)]})
     schedule_pay = fields.Selection(get_schedules, 'Pago Planificado', required=True, readonly=True, states={'draft': [('readonly', False)]})
     payslip_ids = fields.One2many('hr.payslip', 'hr_period_id', 'Liquidaciones', readonly=True)
+    afip_suss_item_ids = fields.One2many('hr.suss.item', 'period_id', string='AFIP - SUSS')
 
     @api.model
     def get_next_period(self, company_id, schedule_pay):

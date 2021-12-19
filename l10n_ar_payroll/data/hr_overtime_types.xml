@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="overtime_type_horas_extra_normales" model="hr.overtime.type">
+        <field name="name">Horas Extra - normales</field>
+        <field name="payroll_code">OVTNOR</field>
+        <field name="duration_type">hour</field>
+        <field name="type">add_percentage</field>
+        <field name="add_percentage_amount">0</field>
+    </record>
+    <record id="overtime_type_horas_extra_50" model="hr.overtime.type">
+        <field name="name">Horas Extra - al 50%</field>
+        <field name="payroll_code">OVT50</field>
+        <field name="duration_type">hour</field>
+        <field name="type">add_percentage</field>
+        <field name="add_percentage_amount">50</field>
+    </record>
+    <record id="overtime_type_horas_extra_100" model="hr.overtime.type">
+        <field name="name">Horas Extra - al 100%</field>
+        <field name="payroll_code">OVT100</field>
+        <field name="duration_type">hour</field>
+        <field name="type">add_percentage</field>
+        <field name="add_percentage_amount">100</field>
+    </record>
+</odoo>
