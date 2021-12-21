@@ -56,14 +56,14 @@ class HrPayslipRun(models.Model):
                 if len(fys) else 'monthly'
             )
 
-    @api.onchange('company_id', 'schedule_pay')
-    def onchange_company_id(self):
-        self.ensure_one()
-        super(HrPayslipRun, self).onchange_company_id()
-        schedule_pay = (self.schedule_pay or self.get_default_schedule(self.company_id.id))
-        if len(self.company_id) and schedule_pay:
-            period = self.env['hr.period'].get_next_period(self.company_id.id, schedule_pay)
-            self.hr_period_id = period.id if period else False
+    #@api.onchange('company_id', 'schedule_pay')
+    #def onchange_company_id(self):
+    #    self.ensure_one()
+    #    super(HrPayslipRun, self).onchange_company_id()
+    #    schedule_pay = (self.schedule_pay or self.get_default_schedule(self.company_id.id))
+    #    if len(self.company_id) and schedule_pay:
+    #        period = self.env['hr.period'].get_next_period(self.company_id.id, schedule_pay)
+    #        self.hr_period_id = period.id if period else False
 
     @api.onchange('hr_period_id')
     def onchange_period_id(self):

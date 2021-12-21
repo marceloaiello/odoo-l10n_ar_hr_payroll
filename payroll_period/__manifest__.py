@@ -11,7 +11,8 @@
     'license': 'LGPL-3',
     'category': 'Payroll',
     'depends': [
-        'payroll'
+        'payroll',
+        'payroll_account'
     ],
     'data': [
         'security/ir.model.access.csv',
@@ -21,6 +22,7 @@
         'views/hr_payslip.xml',
         'views/hr_payslip_line.xml',
         'views/hr_payslip_run.xml',
+        'views/afip_suss_items_views.xml',
     ],
     'installable': True,
     'auto_install': False,

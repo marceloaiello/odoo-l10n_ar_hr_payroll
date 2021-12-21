@@ -112,7 +112,7 @@
         </record>
         <record id="categories_TOTAL_DESC" model="hr.salary.rule.category">
             <field name="name">(SUBTOTAL) TOTAL DESCUENTOS</field>
-            <field name="code">TGROSS</field>
+            <field name="code">TDESC</field>
         </record>
         <record id="categories_TOTAL_NET" model="hr.salary.rule.category">
             <field name="name">(SUBTOTAL) TOTAL NETO</field>

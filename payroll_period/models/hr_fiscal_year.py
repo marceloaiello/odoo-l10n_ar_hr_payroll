@@ -241,5 +241,20 @@ class HrFiscalyear(models.Model):
         self.state = 'draft'
 
     def search_period(self, number):
-        return next((p for p in self.period_ids if p.number == number),
-                    self.env['hr.period'])
+        return next((p for p in self.period_ids if p.number == number), self.env['hr.period'])
+
+    def get_employee_sac_periods(self, employee_id, date):
+        sac_periods = []
+        valid_periods = self.period_ids.search([('date_start', '<=', date),('state', '=', 'done')])
+        suss_items = self.env['hr.suss.item'].search([('employee_id', '=', employee_id), ('period_id', 'in', valid_periods)])
+        for item in suss_items:
+            sac_periods.append({
+                'name': item.period_id.name,
+                'amount': item.subtotal_bruto
+            })
+        return sac_periods
+
+    def get_employee_best_sac_period_amount(self, employee_id):
+        sac_periods = self.get_employee_sac_periods(employee_id)
+        return max(sac_period['amount'] for sac_period in sac_periods)
+
