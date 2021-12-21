@@ -52,32 +52,6 @@ class HrPayslip(models.Model):
                         })
             res.extend(overtimes.values())
 
-            # -- compute contract sac inputs if sac month  -- #
-            if date_from.month == 6:
-                # get the best gross payslip in the first 6 months of the year (1 semester)
-                payslisp = contract.employee_id.payslip_ids.search(
-                    [
-                        ('date_from', '>=', 'TODO:')
-                        ('date_to', '<=', 'TODO:')
-
-                    ]
-                )
-
-                sac_base = {
-                    "name": 'Base de calculo S.A.C',
-                    "code": 'SACBASE',
-                    "contract_id": contract.id,
-                    "amount": "TODO:"
-                }
-                sac_days = {
-                    "name": 'Base de calculo S.A.C',
-                    "code": 'SACBASE',
-                    "contract_id": contract.id,
-                    "amount": "TODO:"
-                }
-
-            elif date_from.month == 12:
-
         return res
 
     @api.model
