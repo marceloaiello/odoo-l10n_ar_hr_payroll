@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="base_account_journal" model="account.journal">
+            <field name="name">Sueldos y Jornales</field>
+            <field name="code">SUEJ</field>
+            <field name="active" eval="True" />
+            <field name='type'>general</field>
+            <field name="currency_id" ref="base.ARS" />
+        </record>
+    </data>
+</odoo>

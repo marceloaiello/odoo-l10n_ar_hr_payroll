@@ -38,7 +38,6 @@ class HrPayslip(models.Model):
             self.date_to = period.date_stop
             self.date_payment = period.date_payment
         self.with_context(contract=True).onchange_employee()
-        return
 
     @api.onchange('payslip_run_id')
     def onchange_payslip_run_id(self):

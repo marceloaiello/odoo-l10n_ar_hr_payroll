@@ -19,17 +19,7 @@ class HrPayslipRun(models.Model):
         'Pago Planificado',
         states={'close': [('readonly', True)]}
     )
-
-    @api.model
-    @api.constrains('hr_period_id', 'company_id')
-    def _check_period_company(self):
-        for run in self:
-            if run.hr_period_id:
-                if run.hr_period_id.company_id != run.company_id:
-                    raise UserError("The company on the selected period must "
-                                    "be the same as the company on the  "
-                                    "payslip batch.")
-        return True
+    date_payment = fields.Date('Fecha de Pago')
 
     @api.model
     @api.constrains('hr_period_id', 'schedule_pay')
@@ -45,8 +35,8 @@ class HrPayslipRun(models.Model):
     @api.model
     def get_default_schedule(self, company_id):
         for record in self:
-            company = self.env['res.company'].browse(company_id)
-            fy_obj = self.env['hr.fiscalyear']
+            company = record.env['res.company'].browse(company_id)
+            fy_obj = record.env['hr.fiscalyear']
             fys = fy_obj.search([
                 ('state', '=', 'open'),
                 ('company_id', '=', company.id),
@@ -83,9 +73,9 @@ class HrPayslipRun(models.Model):
     def get_payslip_employees_wizard(self):
         res = super(HrPayslipRun, self).get_payslip_employees_wizard()
         res['context']['default_schedule_pay'] = self.schedule_pay
+        res['context']['default_hr_period_id'] = self.hr_period_id
         return res
 
-    @api.model
     def close_payslip_run(self):
         for run in self:
             if next((p for p in run.slip_ids if p.state == 'draft'), False):
@@ -94,7 +84,6 @@ class HrPayslipRun(models.Model):
         self.update_periods()
         return super(HrPayslipRun, self).close_payslip_run()
 
-    @api.model
     def draft_payslip_run(self):
         for run in self:
             run.hr_period_id.button_re_open()
@@ -109,7 +98,6 @@ class HrPayslipRun(models.Model):
                 period.button_close()
                 # Open the next period of the fiscal year
                 fiscal_year = period.fiscalyear_id
-                next_period = fiscal_year.search_period(
-                    number=period.number + 1)
+                next_period = fiscal_year.search_period(number=period.number + 1)
                 if next_period:
                     next_period.button_open()

@@ -23,6 +23,7 @@
         'views/hr_payslip_line.xml',
         'views/hr_payslip_run.xml',
         'views/afip_suss_items_views.xml',
+        'wizard/hr_payslip_employee.xml',
     ],
     'installable': True,
     'auto_install': False,

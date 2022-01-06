@@ -31,6 +31,7 @@
         'views/menus.xml',
         'views/hr_contract.xml',
         'views/hr_payslip_views.xml',
+        'data/payroll_account.xml',
         'data/hr_contribution_register.xml',
         'data/hr_leaves.xml',
         'data/hr_salary_rule_category.xml',
