@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+
+
         <record id="category_price_ingresante_202107" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_ingresante"/>
             <field name="from_date">2021-07-01</field>
@@ -13,6 +15,26 @@
             <field name="to_date">2021-12-31</field>
             <field name="value">228.96</field>
         </record>
+        <record id="category_price_ingresante_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_ingresante"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">256.80</field>
+        </record>
+        <record id="category_price_ingresante_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_ingresante"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">265.96</field>
+        </record>
+        <record id="category_price_ingresante_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_ingresante"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">275.12</field>
+        </record>
+
+
         <record id="category_price_operario_calificado_202107" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_operario_calificado"/>
             <field name="from_date">2021-07-01</field>
@@ -25,6 +47,26 @@
             <field name="to_date">2021-12-31</field>
             <field name="value">248.03</field>
         </record>
+        <record id="category_price_operario_calificado_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_operario_calificado"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">278.18</field>
+        </record>
+        <record id="category_price_operario_calificado_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_operario_calificado"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">288.11</field>
+        </record>
+        <record id="category_price_operario_calificado_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_operario_calificado"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">298.03</field>
+        </record>
+
+
         <record id="category_price_medio_of_mecanico_202107" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_medio_of_mecanico"/>
             <field name="from_date">2021-07-01</field>
@@ -37,6 +79,26 @@
             <field name="to_date">2021-12-31</field>
             <field name="value">267.31</field>
         </record>
+        <record id="category_price_medio_of_mecanico_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_medio_of_mecanico"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">299.82</field>
+        </record>
+        <record id="category_price_medio_of_mecanico_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_medio_of_mecanico"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">310.51</field>
+        </record>
+        <record id="category_price_medio_of_mecanico_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_medio_of_mecanico"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">321.20</field>
+        </record>
+
+
         <record id="category_price_medio_of_electricista_202107" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_medio_of_electricista"/>
             <field name="from_date">2021-07-01</field>
@@ -49,12 +111,52 @@
             <field name="to_date">2021-12-31</field>
             <field name="value">267.31</field>
         </record>
+        <record id="category_price_medio_of_electricista_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_medio_of_mecanico"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">299.82</field>
+        </record>
+        <record id="category_price_medio_of_electricista_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_medio_of_mecanico"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">310.51</field>
+        </record>
+        <record id="category_price_medio_of_electricista_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_medio_of_mecanico"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">321.20</field>
+        </record>
+
+
         <record id="category_price_of_servicio_2da_202110" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_servicio_2da"/>
-            <field name="from_date">2021-10-01</field>
+            <field name="from_date">2022-10-01</field>
             <field name="to_date">2021-12-31</field>
             <field name="value">281.51</field>
         </record>
+        <record id="category_price_of_servicio_2da_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_servicio_2da"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">315.74</field>
+        </record>
+        <record id="category_price_of_servicio_2da_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_servicio_2da"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">327.00</field>
+        </record>
+        <record id="category_price_of_servicio_2da_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_servicio_2da"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">338.27</field>
+        </record>
+
+
         <record id="category_price_of_reclamista_202107" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_reclamista"/>
             <field name="from_date">2021-07-01</field>
@@ -67,6 +169,26 @@
             <field name="to_date">2021-12-31</field>
             <field name="value">316.53</field>
         </record>
+        <record id="category_price_of_reclamista_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_reclamista"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">355.01</field>
+        </record>
+        <record id="category_price_of_reclamista_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_reclamista"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">367.68</field>
+        </record>
+        <record id="category_price_of_reclamista_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_reclamista"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">380.34</field>
+        </record>
+
+
         <record id="category_price_of_mecanico_202107" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_mecanico"/>
             <field name="from_date">2021-07-01</field>
@@ -79,6 +201,27 @@
             <field name="to_date">2021-12-31</field>
             <field name="value">316.53</field>
         </record>
+        <record id="category_price_of_mecanico_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_reclamista"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">355.01</field>
+        </record>
+        <record id="category_price_of_mecanico_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_reclamista"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">367.68</field>
+        </record>
+        <record id="category_price_of_mecanico_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_reclamista"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">380.34</field>
+        </record>
+
+
+
         <record id="category_price_of_electricista_202107" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_electricista"/>
             <field name="from_date">2021-07-01</field>
@@ -91,6 +234,26 @@
             <field name="to_date">2021-12-31</field>
             <field name="value">316.53</field>
         </record>
+        <record id="category_price_of_electricista_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_reclamista"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">355.01</field>
+        </record>
+        <record id="category_price_of_electricista_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_reclamista"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">367.68</field>
+        </record>
+        <record id="category_price_of_electricista_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_reclamista"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">380.34</field>
+        </record>
+
+
         <record id="category_price_of_servicios_1ra_202107" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_servicio_1ra"/>
             <field name="from_date">2021-07-01</field>
@@ -103,6 +266,27 @@
             <field name="to_date">2021-12-31</field>
             <field name="value">316.53</field>
         </record>
+        <record id="category_price_of_servicios_1ra_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_reclamista"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">355.01</field>
+        </record>
+        <record id="category_price_of_servicios_1ra_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_reclamista"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">367.68</field>
+        </record>
+        <record id="category_price_of_servicios_1ra_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_reclamista"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">380.34</field>
+        </record>
+
+
+
         <record id="category_price_of_multiple_202107" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_multiple"/>
             <field name="from_date">2021-07-01</field>
@@ -115,6 +299,26 @@
             <field name="to_date">2021-12-31</field>
             <field name="value">340.69</field>
         </record>
+        <record id="category_price_of_multiple_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_multiple"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">382.12</field>
+        </record>
+        <record id="category_price_of_multiple_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_multiple"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">395.74</field>
+        </record>
+        <record id="category_price_of_multiple_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_multiple"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">409.37</field>
+        </record>
+
+
         <record id="category_price_of_montador_202107" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_montador"/>
             <field name="from_date">2021-07-01</field>
@@ -127,6 +331,26 @@
             <field name="to_date">2021-12-31</field>
             <field name="value">349.71</field>
         </record>
+        <record id="category_price_of_montador_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_montador"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">392.24</field>
+        </record>
+        <record id="category_price_of_montador_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_montador"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">406.23</field>
+        </record>
+        <record id="category_price_of_montador_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_montador"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">420.21</field>
+        </record>
+
+
         <record id="category_price_of_calibrador_2ra_202107" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_calibrador_2da"/>
             <field name="from_date">2021-07-01</field>
@@ -139,6 +363,26 @@
             <field name="to_date">2021-12-31</field>
             <field name="value">387.55</field>
         </record>
+        <record id="category_price_of_calibrador_2ra_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_calibrador_2da"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">434.68</field>
+        </record>
+        <record id="category_price_of_calibrador_2ra_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_calibrador_2da"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">450.18</field>
+        </record>
+        <record id="category_price_of_calibrador_2ra_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_calibrador_2da"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">465.68</field>
+        </record>
+
+
         <record id="category_price_of_calibrador_1ra_202107" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_calibrador_1ra"/>
             <field name="from_date">2021-07-01</field>
@@ -151,6 +395,26 @@
             <field name="to_date">2021-12-31</field>
             <field name="value">416.95</field>
         </record>
+        <record id="category_price_of_calibrador_1ra_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_calibrador_1ra"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">467.65</field>
+        </record>
+        <record id="category_price_of_calibrador_1ra_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_calibrador_1ra"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">484.33</field>
+        </record>
+        <record id="category_price_of_calibrador_1ra_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_calibrador_1ra"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">501.01</field>
+        </record>
+
+
         <record id="category_price_of_superior_202107" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_superior"/>
             <field name="from_date">2021-07-01</field>
@@ -163,6 +427,26 @@
             <field name="to_date">2021-12-31</field>
             <field name="value">340.69</field>
         </record>
+        <record id="category_price_of_superior_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_superior"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">382.12</field>
+        </record>
+        <record id="category_price_of_superior_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_superior"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-29</field>
+            <field name="value">395.74</field>
+        </record>
+        <record id="category_price_of_superior_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_superior"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">409.37</field>
+        </record>
+
+
         <record id="category_price_of_multiple_superior_202107" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_multiple_superior"/>
             <field name="from_date">2021-07-01</field>
@@ -175,29 +459,128 @@
             <field name="to_date">2021-12-31</field>
             <field name="value">364.56</field>
         </record>
+        <record id="category_price_of_multiple_superior_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_multiple_superior"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">408.89</field>
+        </record>
+        <record id="category_price_of_multiple_superior_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_multiple_superior"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">423.48</field>
+        </record>
+        <record id="category_price_of_multiple_superior_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_of_multiple_superior"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">438.06</field>
+        </record>
+
+
+        <!-- Administrativo de 1º -->
         <record id="category_price_administrativo_1ra_202110" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_1ra"/>
             <field name="from_date">2021-10-01</field>
             <field name="to_date">2021-12-31</field>
             <field name="value">44228.30</field>
         </record>
+        <record id="category_price_administrativo_1ra_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_1ra"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">49606.46</field>
+        </record>
+        <record id="category_price_administrativo_1ra_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_1ra"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">51375.59</field>
+        </record>
+        <record id="category_price_administrativo_1ra_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_1ra"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">53144.73</field>
+        </record>
+
+        <!-- Administrativo de 2º -->
         <record id="category_price_adminsitrativo_2da_202110" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_2ra"/>
             <field name="from_date">2021-10-01</field>
             <field name="to_date">2021-12-31</field>
             <field name="value">49085.03</field>
         </record>
+        <record id="category_price_adminsitrativo_2da_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_2ra"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">55053.76</field>
+        </record>
+        <record id="category_price_adminsitrativo_2da_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_2ra"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2021-02-28</field>
+            <field name="value">57017.17</field>
+        </record>
+        <record id="category_price_adminsitrativo_2da_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_2ra"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">58980.57</field>
+        </record>
+
+        <!-- Administrativo de 3º -->
         <record id="category_price_adminsitrativo_3ra_202110" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_3ra"/>
             <field name="from_date">2021-10-01</field>
             <field name="to_date">2021-12-31</field>
             <field name="value">56675.94</field>
         </record>
+        <record id="category_price_adminsitrativo_3ra_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_3ra"/>
+            <field name="from_date">2022-01-31</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">63567.73</field>
+        </record>
+        <record id="category_price_adminsitrativo_3ra_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_3ra"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">65834.77</field>
+        </record>
+        <record id="category_price_adminsitrativo_3ra_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_3ra"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">68101.81</field>
+        </record>
+
+        <!-- Administrativo de 4º -->
         <record id="category_price_adminsitrativo_4ra_202110" model="hr.labor_union.category.price">
             <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_4ta"/>
             <field name="from_date">2021-10-01</field>
             <field name="to_date">2021-12-31</field>
             <field name="value">61898.94</field>
+        </record>
+        <record id="category_price_adminsitrativo_4ra_202201" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_4ta"/>
+            <field name="from_date">2022-01-01</field>
+            <field name="to_date">2022-01-31</field>
+            <field name="value">69425.85</field>
+        </record>
+        <record id="category_price_adminsitrativo_4ra_202202" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_4ta"/>
+            <field name="from_date">2022-02-01</field>
+            <field name="to_date">2022-02-28</field>
+            <field name="value">71901.81</field>
+        </record>
+        <record id="category_price_adminsitrativo_4ra_202203" model="hr.labor_union.category.price">
+            <field name="labor_union_category_id" ref="l10n_ar_payroll_lu_uom.category_administrativo_4ta"/>
+            <field name="from_date">2022-03-01</field>
+            <field name="to_date">2022-03-31</field>
+            <field name="value">74377.76</field>
         </record>
 
         <!-- SVCO CONVENIO: 2021-07-01 -->
