@@ -8,19 +8,5 @@
             <field name="lower_bound">0</field>
             <field name="upper_bound">100</field>
         </record>
-        <record id="extra_premio_presentismo_q" model="hr.contract.advantage.template">
-            <field name="name">Presentismo Quincenal</field>
-            <field name="code">PREM-PRES-Q</field>
-            <field name="default_value">2000</field>
-            <field name="lower_bound">0</field>
-            <field name="upper_bound">4000</field>
-        </record>
-        <record id="extra_premio_presentismo_m" model="hr.contract.advantage.template">
-            <field name="name">Presentismo Mensual</field>
-            <field name="code">PREM-PRES-M</field>
-            <field name="default_value">4000</field>
-            <field name="lower_bound">0</field>
-            <field name="upper_bound">4000</field>
-        </record>
     </data>
 </odoo>

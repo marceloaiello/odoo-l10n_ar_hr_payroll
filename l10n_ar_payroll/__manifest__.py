@@ -37,6 +37,7 @@
         'data/hr_salary_rule_category.xml',
         'data/hr_salary_rule_common.xml',
         'data/hr_salary_rule_aux.xml',
+        'data/hr_salary_rule_sac.xml'
         'data/hr_contract_advantage_template.xml',
         'data/hr_overtime_types.xml',
         'report/l10n_ar_payslip_report_template.xml',

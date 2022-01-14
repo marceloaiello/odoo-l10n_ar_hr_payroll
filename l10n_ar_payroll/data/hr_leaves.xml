@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <record id="leaves_WORK0" model="hr.leave.type">
-            <field name="name">Ausencias No Remuneradas</field>
+            <field name="name">Ausentismo - no remunerado</field>
             <field name="code">WORK0</field>
             <field name="request_unit">day</field>
             <field name="include_in_theoretical">true</field>
@@ -14,7 +14,7 @@
             <field name="company_id" ref="base.main_company" />
         </record>
         <record id="leaves_WORK0J" model="hr.leave.type">
-            <field name="name">Ausencias Remunerada</field>
+            <field name="name">Ausentismo Justificado - remunerado</field>
             <field name="code">WORK0-J</field>
             <field name="request_unit">day</field>
             <field name="include_in_theoretical">true</field>
@@ -25,20 +25,8 @@
             <field name="exclude_public_holidays">true</field>
             <field name="company_id" ref="base.main_company" />
         </record>
-        <record id="leaves_WORK0C" model="hr.leave.type">
-            <field name="name">Dias Compensatorios</field>
-            <field name="code">WORK0-C</field>
-            <field name="request_unit">day</field>
-            <field name="include_in_theoretical">true</field>
-            <field name="allocation_type">fixed_allocation</field>
-            <field name="leave_validation_type">both</field>
-            <field name="create_calendar_meeting">true</field>
-            <field name="color_name">wheat</field>
-            <field name="exclude_public_holidays">true</field>
-            <field name="company_id" ref="base.main_company" />
-        </record>
         <record id="leaves_WORK0-HOL" model="hr.leave.type">
-            <field name="name">Licencia Vacacional</field>
+            <field name="name">Licencia Vacacional LCT</field>
             <field name="code">WORK0-HOL</field>
             <field name="request_unit">day</field>
             <field name="include_in_theoretical">false</field>
@@ -50,7 +38,7 @@
             <field name="company_id" ref="base.main_company" />
         </record>
         <record id="leaves_WORK0-MATR" model="hr.leave.type">
-            <field name="name">Licencia por Matrimonio</field>
+            <field name="name">Licencia - por matrimonio</field>
             <field name="code">WORK0-MTR</field>
             <field name="request_unit">day</field>
             <field name="include_in_theoretical">false</field>
@@ -62,7 +50,7 @@
             <field name="company_id" ref="base.main_company" />
         </record>
         <record id="leaves_WORK0-NAC" model="hr.leave.type">
-            <field name="name">Licencia por Nacimiento</field>
+            <field name="name">Licencia por nacimiento</field>
             <field name="code">WORK0-NAC</field>
             <field name="request_unit">day</field>
             <field name="include_in_theoretical">false</field>
@@ -74,7 +62,7 @@
             <field name="company_id" ref="base.main_company" />
         </record>
         <record id="leaves_WORK0-FALL" model="hr.leave.type">
-            <field name="name">Licencia por Fallecimiento</field>
+            <field name="name">Licencia por fallecimiento</field>
             <field name="code">WORK0-FALL</field>
             <field name="request_unit">day</field>
             <field name="include_in_theoretical">false</field>
@@ -86,7 +74,7 @@
             <field name="company_id" ref="base.main_company" />
         </record>
         <record id="leaves_WORK0-EST" model="hr.leave.type">
-            <field name="name">Dias de Estudio</field>
+            <field name="name">Licencia - dias de estudio</field>
             <field name="code">WORK0-EST</field>
             <field name="request_unit">day</field>
             <field name="include_in_theoretical">false</field>
