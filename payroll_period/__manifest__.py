@@ -22,7 +22,7 @@
         'views/hr_payslip.xml',
         'views/hr_payslip_line.xml',
         'views/hr_payslip_run.xml',
-        'wizard/hr_payslip_employee.xml',
+        # 'wizard/hr_payslip_employee.xml',
     ],
     'installable': True,
     'auto_install': False,
