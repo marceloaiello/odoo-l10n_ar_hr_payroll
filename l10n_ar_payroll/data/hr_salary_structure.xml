@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Estructura: Liquidacion LCT Basica -->
+    <record id="BASE-AR" model="hr.payroll.structure">
+        <field name="name">( BASE-AR ) LIQUIDACION BASICA LCT - ! Uso como base para otras estructuras</field>
+        <field name="code">BASE-AR</field>
+        <field name="company_id" ref="base.main_company" />
+        <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_BASIC'),
+                                    ref('l10n_ar_payroll.rules_HFRD'),
+                                    ref('l10n_ar_payroll.rules_AUS'),
+                                    ref('l10n_ar_payroll.rules_AUSVAC'),
+                                    ref('l10n_ar_payroll.rules_OVT50'),
+                                    ref('l10n_ar_payroll.rules_OVT100'),
+                                    ref('l10n_ar_payroll.rules_ANTG'),
+                                    ref('l10n_ar_payroll.rules_PRES'),
+                                    ref('l10n_ar_payroll.rules_VAC'),
+                                    ref('l10n_ar_payroll.rules_AFIP-JUB11'),
+                                    ref('l10n_ar_payroll.rules_AFIP-INSSJP3'),
+                                    ref('l10n_ar_payroll.rules_AFIP-OS3'),
+                                    ref('l10n_ar_payroll.rules_EMBG-JUD'),
+                                    ref('l10n_ar_payroll.rules_ADV'),
+                                    ref('l10n_ar_payroll.rules_LOAN'),
+                                    ref('l10n_ar_payroll.rules_GROSS'),
+                                    ref('l10n_ar_payroll.rules_NOREM'),
+                                    ref('l10n_ar_payroll.rules_DESC'),
+                                    ref('l10n_ar_payroll.rules_NETO'),
+                                ])]" name="rule_ids" />
+    </record>
+    <!-- Estructura: Liquidacion S.A.C LCT -->
+    <record id="BASE-AR-SAC" model="hr.payroll.structure">
+        <field name="name">( BASE-AR-SAC ) LIQUIDACION BASICA SAC LCT ! Uso como base para otras estructuras</field>
+        <field name="code">BASE-AR-SAC</field>
+        <field name="company_id" ref="base.main_company" />
+        <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_SAC'),
+                                        ref('l10n_ar_payroll.rules_AFIP-JUB11'),
+                                        ref('l10n_ar_payroll.rules_AFIP-INSSJP3'),
+                                        ref('l10n_ar_payroll.rules_AFIP-OS3'),
+                                        ref('l10n_ar_payroll.rules_EMBG-JUD'),
+                                        ref('l10n_ar_payroll.rules_ADV'),
+                                        ref('l10n_ar_payroll.rules_LOAN'),
+                                        ref('l10n_ar_payroll.rules_GROSS'),
+                                        ref('l10n_ar_payroll.rules_NOREM'),
+                                        ref('l10n_ar_payroll.rules_DESC'),
+                                        ref('l10n_ar_payroll.rules_NETO'),
+                                    ])]" name="rule_ids" />
+    </record>
+</odoo>
