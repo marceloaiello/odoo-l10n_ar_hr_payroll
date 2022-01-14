@@ -59,7 +59,10 @@ result = contract.cct_id.svco_current_value
             <field name="active">true</field>
             <field name="appears_on_payslip">true</field>
             <!-- Condition Select -->
-            <field name="condition_select">none</field>
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = False
+            </field>
             <!-- Amount Select -->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">

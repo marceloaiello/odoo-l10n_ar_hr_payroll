@@ -439,9 +439,9 @@ result = -(inputs.LOAN.amount)
         </record>
 
         <!-- Estructura: Liquidacion LCT Basica -->
-        <record id="AR-BASE" model="hr.payroll.structure">
-            <field name="name">( AR-BASE ) LIQUIDACION BASICA LCT - ! Uso como base para otras estructuras</field>
-            <field name="code">AR-BASE</field>
+        <record id="BASE-AR" model="hr.payroll.structure">
+            <field name="name">( BASE-AR ) LIQUIDACION BASICA LCT - ! Uso como base para otras estructuras</field>
+            <field name="code">BASE-AR</field>
             <field name="company_id" ref="base.main_company" />
             <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_BASIC'),
                                     ref('l10n_ar_payroll.rules_HFRD'),
