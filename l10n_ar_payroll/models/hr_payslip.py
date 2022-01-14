@@ -49,7 +49,7 @@ class HrPayslip(models.Model):
                             "name": overtime.overtime_type_id.name,
                             "code": overtime.overtime_type_id.payroll_code,
                             "contract_id": contract.id,
-                            "amount": overtime.units
+                            "amount": overtime.units * overtime.overtime_type_id.fixed_amount
                         })
             res.extend(overtimes.values())
 
