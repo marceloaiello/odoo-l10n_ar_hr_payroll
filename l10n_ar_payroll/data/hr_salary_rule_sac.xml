@@ -18,8 +18,8 @@ result = ((inputs.SACBASE / 2) / 180) * inputs.SACDAYS
         </record>
 
         <!-- Estructura: Liquidacion S.A.C LCT -->
-        <record id="AR-BASE-SAC" model="hr.payroll.structure">
-            <field name="name">( AR-BASE-SAC ) LIQUIDACION BASICA SAC LCT ! Uso como base para otras estructuras</field>
+        <record id="BASE-AR-SAC" model="hr.payroll.structure">
+            <field name="name">( BASE-AR-SAC ) LIQUIDACION BASICA SAC LCT ! Uso como base para otras estructuras</field>
             <field name="code">AR-BASE-SAC</field>
             <field name="company_id" ref="base.main_company" />
             <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_SAC'),

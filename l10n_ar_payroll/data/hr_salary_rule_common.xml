@@ -116,24 +116,24 @@ else:
             <!-- Condition Select -->
             <field name="condition_select">python</field>
             <field name="condition_python">
-result = (worked_days and worked_days.WORK0-HOL and worked_days.WORK0-HOL.number_of_hours) or False
+result = (worked_days and worked_days.WORK0HOL and worked_days.WORK0HOL.number_of_days) or False
             </field>
             <!-- Amount Select -->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
 if contract.aplica_cct:
     if contract.is_wage_accurate:
-        result_qty = -(worked_days.WORK0-HOL.number_of_days)
+        result_qty = -(worked_days.WORK0HOL.number_of_days)
         result = contract.cct_category_id.get_category_value(payslip.date_from, payslip.date_to) / worked_days.WORK100.number_of_days
     else:
-        result_qty = -(worked_days.WORK0-HOL.number_of_hours)
+        result_qty = -(worked_days.WORK0HOL.number_of_hours)
         result = contract.cct_category_id.get_category_value(payslip.date_from, payslip.date_to)
 else:
     if contract.is_wage_accurate:
-        result_qty = -(worked_days.WORK0-HOL.number_of_days)
+        result_qty = -(worked_days.WORK0HOL.number_of_days)
         result = contract.wage / worked_days.WORK100.number_of_days
     else:
-        result_qty = -(worked_days.WORK0-HOL.number_of_hours)
+        result_qty = -(worked_days.WORK0HOL.number_of_hours)
         result = contract.amount
             </field>
         </record>
@@ -247,20 +247,23 @@ result = categories.BASIC931
             <!-- Condition Select -->
             <field name="condition_select">python</field>
             <field name="condition_python">
-result = (not worked_days.WORK0 and not worked_days.WORK0 >= 1 and not inputs.PRES-OVR != 0.00) or False
+result = ( not (worked_days.WORK0 and worked_days.WORK0.number_of_days >= 1 and inputs.PRESOVR.amount != 1) or False )
             </field>
             <!-- Amount Select -->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
-if contract.schedule_pay == 'bi-weekly':
-    result = 2500.00
-elif ontract.schedule_pay == 'monthly':
-    result = 5000.00
+if (inputs.PRESOVR.amount != 1 and inputs.PRESOVR.amount > 1):
+    result = inputs.PRESOVR.amount
+else:
+    if contract.schedule_pay == 'bi-weekly':
+        result = 2500.00
+    elif contract.schedule_pay == 'monthly':
+        result = 5000.00
             </field>
         </record>
         <record id="payslip_inputs_PRES-OVR" model="hr.rule.input">
             <field name="name">Presentismo (Override)</field>
-            <field name="code">PRES-OVR</field>
+            <field name="code">PRESOVR</field>
             <field name="input_id" ref="l10n_ar_payroll.rules_PRES" />
         </record>
 
@@ -277,7 +280,7 @@ elif ontract.schedule_pay == 'monthly':
             <!-- Condition Select -->
             <field name="condition_select">python</field>
             <field name="condition_python">
-result = (worked_days.VACDAYS and worked_days.VACDAYS > 0) or False
+result = (worked_days.VACDAYS and worked_days.VACDAYS.number_of_days > 0) or False
             </field>
             <!-- Amount Select -->
             <field name="amount_select">code</field>

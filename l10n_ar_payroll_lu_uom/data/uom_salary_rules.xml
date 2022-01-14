@@ -89,16 +89,16 @@ else:
         <!-- Condition Select -->
         <field name="condition_select">python</field>
         <field name="condition_python">
-result = (inputs and inputs.IMGR-RETROACT) or False
+result = (inputs and inputs.IMGRRETROACT.amount) or False
         </field>        <!-- Amount Select -->
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
-result = inputs.IMGR-RETROACT.amount
+result = inputs.IMGRRETROACT.amount
         </field>
     </record>
     <record id="payslip_inputs_IMGR-RETROACT" model="hr.rule.input">
         <field name="name">UOM IMGR Retroactivo - pagos no realizados</field>
-        <field name="code">IMGR-RETROACT</field>
+        <field name="code">IMGRRETROACT</field>
         <field name="input_id" ref="l10n_ar_payroll_lu_uom.rules_IMGR_RETROACT" />
     </record>
     <record id="rules_extra_norem_042021_9" model="hr.salary.rule">
