@@ -3,7 +3,7 @@
 
 {
     'name': 'Payroll Export Sicoss - Argentina',
-    'version': '14.0.1.2.0',
+    'version': '14.0.1.2.2',
     'description': 'Agrega la funcionalidad de exportar el .txt para importacion en 931 SICOSS',
     'summary': 'Agrega la funcionalidad de exportar el .txt para importacion en 931 SICOSS',
     'author': 'Nimarosa',
@@ -11,12 +11,18 @@
     'license': 'LGPL-3',
     'category': 'Payroll',
     'depends': [
-        'l10n_ar_payroll'
+        'payroll',
+        'payroll_account',
+        'payroll_period',
+        'l10n_ar_payroll',
     ],
     'data': [
-        ''
+        'security/ir.model.access.csv',
+        'views/payroll_sicoss_entry_views.xml',
+        'views/payroll_sicoss_entry_item_views.xml',
+        'views/menus.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }

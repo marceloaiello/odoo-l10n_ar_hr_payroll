@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_payroll_sicoss_entry_user,l10n_ar_payroll_sicoss_export.payroll.sicoss_entry,model_payroll_sicoss_entry,payroll.group_payroll_manager,1,1,1,1
+access_payroll_sicoss_entry_item_user,l10n_ar_payroll_sicoss_export.payroll.sicoss_entry.item,model_payroll_sicoss_entry_item,payroll.group_payroll_manager,1,1,1,1

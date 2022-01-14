@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_afip_sicoss_entry_item_form" model="ir.ui.view">
+        <field name="name">hr.sicoss_entry.item.view.form</field>
+        <field name="model">payroll.sicoss_entry.item</field>
+        <field name="arch" type="xml">
+            <form>
+                <h1>
+                    <field name="employee_id" />
+                </h1>
+                <h5>
+                    <field name="sicoss_entry_id" />
+                </h5>
+                <group>
+                    <group string="Conceptos">
+                        <field name="sueldo" />
+                        <field name="adicionales" />
+                        <field name="horas_extra" />
+                        <field name="premios" />
+                        <field name="vacaciones" />
+                        <field name="sac" />
+                        <field name="maternidad" />
+                        <field name="plus_zona_desfavorable" string="Plus ZD" />
+                        <field name="no_remunerativo" />
+                        <field name="incremento_salarial" string="Incremento Salarial" />
+                        <field name="rectificativa_remuneracion" string="Rectificativa" />
+                    </group>
+                    <group string="Totales">
+                        <field name="subtotal_bruto" string="Bruto" decoration-bf="1" />
+                        <field name="subtotal_no_remunerativo" string="No Remunerativo" decoration-bf="1" />
+                        <field name="subtotal_descuentos" string="Descuentos" decoration-bf="1" />
+                        <field name="subtotal_neto" string="Neto" decoration-bf="1" />
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

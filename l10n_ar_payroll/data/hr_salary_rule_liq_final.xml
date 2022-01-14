@@ -1,6 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!-- Rules: TODO: Indemnizacion por despido (sin causa) -->
+        <record id="rules_INDEM" model="hr.salary.rule">
+            <field name="name">INDEMNIZACION POR ANTIGUEDAD LCT</field>
+            <field name="code">R5000</field>
+            <field name="sequence">5000</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931NOREM" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <field name="account_credit" ref="l10n_ar.base_sueldos_a_pagar" />
+            <field name="account_debit" ref="l10n_ar.base_haberes_produccion"/>
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = (inputs and inputs.INDENMN and inputs.INDENMN.amount == 1 and employee.service_duration_month > 3) or False
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = 0
+            </field>
+        </record>
+        <record id="payslip_inputs_INDEMN" model="hr.rule.input">
+            <field name="name">Indemnizacion por despido (1-Si / 0-No)</field>
+            <field name="code">INDENMN</field>
+            <field name="input_id" ref="l10n_ar_payroll.rules_INDEM" />
+        </record>
 
+        <!-- Rules: TODO: Preaviso -->
+        <record id="rules_PREAVISO" model="hr.salary.rule">
+            <field name="name">INDNM. PREAVISO</field>
+            <field name="code">R5001</field>
+            <field name="sequence">5001</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931NOREM" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <field name="account_credit" ref="l10n_ar.base_sueldos_a_pagar" />
+            <field name="account_debit" ref="l10n_ar.base_haberes_produccion"/>
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = (inputs and inputs.PREAVISO and inputs.PREAVISO.amount == 1) or False
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if employee.service_duration_years > 1:
+    result = employee.service_duration_year
+else:
+    if employee.service_duration_months >= 3:
+        result = 1
+    else:
+        result = 15
+            </field>
+        </record>
+        <record id="payslip_inputs_PREAVISO" model="hr.rule.input">
+            <field name="name">Preaviso (1-Si / 0-No)</field>
+            <field name="code">PREAVISO</field>
+            <field name="input_id" ref="l10n_ar_payroll.rules_PREAVISO" />
+        </record>
+
+        <!-- Rules: S.A.C Preaviso -->
+        <record id="rules_SACPREAVISO" model="hr.salary.rule">
+            <field name="name">S.A.C S/PREAVISO</field>
+            <field name="code">R5002</field>
+            <field name="sequence">5002</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931SAC" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <field name="account_credit" ref="l10n_ar.base_sueldos_a_pagar" />
+            <field name="account_debit" ref="l10n_ar.base_haberes_produccion"/>
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = (inputs and inputs.PREAVISO and inputs.PREAVISO.amount == 1) or False
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = R10901 / 12
+            </field>
+        </record>
+
+        <!-- Rules: TODO: Dias Trabajados - Despido -->
+        <record id="rules_DIASDESPIDO" model="hr.salary.rule">
+            <field name="name">DIAS TRABAJADOS</field>
+            <field name="code">R5003</field>
+            <field name="sequence">5003</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931SAC" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <field name="account_credit" ref="l10n_ar.base_sueldos_a_pagar" />
+            <field name="account_debit" ref="l10n_ar.base_haberes_produccion"/>
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = True or False
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = 0
+            </field>
+        </record>
+
+        <!-- Rules: TODO: Integracion Mes de Despido (sin causa) -->
+        <record id="rules_INTDIAS" model="hr.salary.rule">
+            <field name="name">INTEGRACION MES</field>
+            <field name="code">R5004</field>
+            <field name="sequence">5004</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931NOREM" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <field name="account_credit" ref="l10n_ar.base_sueldos_a_pagar" />
+            <field name="account_debit" ref="l10n_ar.base_haberes_produccion"/>
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = true or False
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = 0
+            </field>
+        </record>
+
+        <!-- Rules: TODO: S.A.C Sobre Integracion de Dias  -->
+        <record id="rules_SACINTDIAS" model="hr.salary.rule">
+            <field name="name">S.A.C S/INT. DIAS</field>
+            <field name="code">R10905</field>
+            <field name="sequence">10905</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931SAC" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <field name="account_credit" ref="l10n_ar.base_sueldos_a_pagar" />
+            <field name="account_debit" ref="l10n_ar.base_haberes_produccion"/>
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = True or False
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = 0
+            </field>
+        </record>
+
+        <!-- Rules: TODO: No Rem (Indemn) - Vacaciones No Gozadas  -->
+        <record id="rules_VACNOGOC" model="hr.salary.rule">
+            <field name="name">VACACIONES NO GOZADAS</field>
+            <field name="code">R10910</field>
+            <field name="sequence">10910</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931NOREM" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <field name="account_credit" ref="l10n_ar.base_sueldos_a_pagar" />
+            <field name="account_debit" ref="l10n_ar.base_haberes_produccion"/>
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = (inputs and inputs.VACNOGOC and inputs.VACNOGOC.amount and inputs.VACNOGOC.amount > 0.00) or False
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if not contract.is_wage_accurate:
+    result_qty = inputs.VACNOGOC.amount
+    result = contract.amount * 9
+else:
+    result_qty = inputs.VACNOGOC.amount
+    result = contract.wage / 25
+            </field>
+        </record>
+        <record id="payslip_inputs_VAC-NO-GOC" model="hr.rule.input">
+            <field name="name">Dias de vacaciones no gozados</field>
+            <field name="code">VACNOGOC</field>
+            <field name="input_id" ref="l10n_ar_payroll.rules_VACNOGOC" />
+        </record>
+
+        <!-- Rules: S.A.C sobre Vacaciones no Gozadas  -->
+        <record id="rules_SACVACNOGOC" model="hr.salary.rule">
+            <field name="name">S.A.C S/VACACIONES NO GOC.</field>
+            <field name="code">R10911</field>
+            <field name="sequence">10911</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931SAC" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <field name="account_credit" ref="l10n_ar.base_sueldos_a_pagar" />
+            <field name="account_debit" ref="l10n_ar.base_haberes_produccion"/>
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = (inputs and inputs.VACNOGOC and inputs.VACNOGOC.amount and inputs.VACNOGOC.amount > 0.00) or False
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = R10910 / 12
+            </field>
+        </record>
+
+        <!-- Rules: TODO: S.A.C Extincion  -->
+        <record id="rules_SACPROPOR" model="hr.salary.rule">
+            <field name="name">S.A.C EXTINCION</field>
+            <field name="code">R10905</field>
+            <field name="sequence">10905</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931SAC" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <field name="account_credit" ref="l10n_ar.base_sueldos_a_pagar" />
+            <field name="account_debit" ref="l10n_ar.base_haberes_produccion"/>
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = True or False
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = 0
+            </field>
+        </record>
+
+        <!-- Estructura: Liquidacion Final -->
+        <record id="AR-DEFAULT-FINAL-M" model="hr.payroll.structure">
+            <field name="name">( AR-BASE ) LIQUIDACION FINAL LCT (Mensualizados) - ! Uso como base para otras estructuras</field>
+            <field name="code">AR-BASE-FINAL-MEN</field>
+            <field name="company_id" ref="base.main_company" />
+            <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_BASIC'),
+
+                                ])]" name="rule_ids" />
+        </record>
     </data>
 </odoo>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_action_payroll_sicoss_entry" action="action_payroll_sicoss_entry" parent="payroll.payroll_menu_root" groups="payroll.group_payroll_manager" sequence="90" />
+    </data>
+</odoo>

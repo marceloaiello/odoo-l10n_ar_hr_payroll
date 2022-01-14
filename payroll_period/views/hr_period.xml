@@ -6,7 +6,6 @@
         <field name="arch" type="xml">
             <form string="Periodos de Payroll">
                 <header>
-                    <button name="action_compute_suss" string="Calcular AFIP-SUSS" type="object" states="open" class="oe_highlight" />
                     <button name="button_open" string="Abrir Periodo" type="object" states="draft" />
                     <button name="button_re_open" string="Reabrir Periodo" type="object" states="done" />
                     <button name="button_close" string="Cerrar Periodo" type="object" states="open" />
@@ -41,30 +40,6 @@
                                     <field name="employee_id" />
                                     <field name="name" />
                                     <field name="state" />
-                                </tree>
-                            </field>
-                        </page>
-                        <page string="AFIP SICOSS (F931)">
-                            <separator string="Liquidacion AFIP-SICOSS del Periodo" />
-                            <newline />
-                            <field name="afip_suss_item_ids" nolabel="1">
-                                <tree>
-                                    <field name="employee_id" widget="many2one_avatar_employee"/>
-                                    <field name="sueldo" sum="Total Sueldo"/>
-                                    <field name="adicionales" sum="Total Adicionales"/>
-                                    <field name="horas_extra" sum="Total Horas Extra"/>
-                                    <field name="vacaciones" sum="Total Vacaciones"/>
-                                    <field name="plus_zona_desfavorable" string="Plus ZD(*)" sum="Total ZD"/>
-                                    <field name="sac" sum="Total S.A.C"/>
-                                    <field name="premios" sum="Total Premios"/>
-                                    <field name="no_remunerativo" sum="Total No Remunerativo"/>
-                                    <field name="maternidad" sum="Total Maternidad"/>
-                                    <field name="incremento_salarial" string="Incsal" sum="Total Incsal"/>
-                                    <field name="rectificativa_remuneracion" string="Rectificativa" sum="Total Rectificativa"/>
-                                    <field name="subtotal_bruto" string="Total Bruto" decoration-success="1" decoration-bf="1" sum="Total Bruto"/>
-                                    <field name="subtotal_no_remunerativo" string="Total NoRem" decoration-success="1" decoration-bf="1" sum="Total No Remunerativo"/>
-                                    <field name="subtotal_descuentos" string="Total Descuentos" decoration-danger="1" decoration-bf="1" sum="Total Descuentos"/>
-                                    <field name="subtotal_neto" string="Total Neto" decoration-info="1" decoration-bf="1" sum="Total Neto"/>
                                 </tree>
                             </field>
                         </page>

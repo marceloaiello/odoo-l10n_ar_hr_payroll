@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="payroll_sicoss_entry_view_form" model="ir.ui.view">
+        <field name="name">payroll.sicoss_entry.view.form</field>
+        <field name="model">payroll.sicoss_entry</field>
+        <field name="arch" type="xml">
+            <form string="Liquidacion AFIP-SICOSS">
+                <header>
+                    <button name="action_compute_suss" string="Computar lineas" type="object" states="draft" class="oe_highlight" />
+                    <button name="button_approve" string="Aprobar" type="object" states="draft" class="oe_highlight" />
+                    <button name="button_reject" string="Rechazar" type="object" states="draft" />
+                    <button name="button_close" string="Marcar enviado y presentado" type="object" states="approve" class="oe_highlight" />
+                    <button name="button_set_to_draft" string="Volver a borrador" type="object" states="approve" />
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approve,closed" />
+                </header>
+                <sheet>
+                    <group>
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="year" />
+                        </group>
+                        <group>
+                            <field name="month" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Liquidacion - por empleado">
+                            <field name="payroll_sicoss_entry_item_ids" nolabel="1">
+                                <tree>
+                                    <field name="employee_id" widget="many2one_avatar_employee" />
+                                    <field name="sueldo" sum="Total Sueldo" />
+                                    <field name="adicionales" sum="Total Adicionales" />
+                                    <field name="horas_extra" sum="Total Horas Extra" />
+                                    <field name="vacaciones" sum="Total Vacaciones" />
+                                    <field name="plus_zona_desfavorable" string="Plus ZD(*)" sum="Total ZD" />
+                                    <field name="sac" sum="Total S.A.C" />
+                                    <field name="premios" sum="Total Premios" />
+                                    <field name="no_remunerativo" sum="Total No Remunerativo" />
+                                    <field name="maternidad" sum="Total Maternidad" />
+                                    <field name="incremento_salarial" string="Incsal" sum="Total Incsal" />
+                                    <field name="rectificativa_remuneracion" string="Rectificativa" sum="Total Rectificativa" />
+                                    <field name="subtotal_bruto" string="Total Bruto" decoration-success="1" decoration-bf="1" sum="Total Bruto" />
+                                    <field name="subtotal_no_remunerativo" string="Total NoRem" decoration-success="1" decoration-bf="1" sum="Total No Remunerativo" />
+                                    <field name="subtotal_descuentos" string="Total Descuentos" decoration-danger="1" decoration-bf="1" sum="Total Descuentos" />
+                                    <field name="subtotal_neto" string="Total Neto" decoration-info="1" decoration-bf="1" sum="Total Neto" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Periodos y Liquidaciones">
+                            <field name="period_ids" nolabel="1">
+                                <tree>
+                                    <field name="name" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="payroll_sicoss_entry_view_tree" model="ir.ui.view">
+        <field name="name">payroll.sicoss_entry.view.tree</field>
+        <field name="model">payroll.sicoss_entry</field>
+        <field name="arch" type="xml">
+            <tree string="Liquidaciones de AFIP-SICOSS">
+                <field name="name" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+    <record id="action_payroll_sicoss_entry" model="ir.actions.act_window">
+        <field name="name">Liquidaciones AFIP-SICOSS</field>
+        <field name="res_model">payroll.sicoss_entry</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

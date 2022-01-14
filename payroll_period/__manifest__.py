@@ -12,7 +12,7 @@
     'category': 'Payroll',
     'depends': [
         'payroll',
-        'payroll_account'
+        'payroll_account',
     ],
     'data': [
         'security/ir.model.access.csv',
@@ -22,7 +22,6 @@
         'views/hr_payslip.xml',
         'views/hr_payslip_line.xml',
         'views/hr_payslip_run.xml',
-        'views/afip_suss_items_views.xml',
         'wizard/hr_payslip_employee.xml',
     ],
     'installable': True,

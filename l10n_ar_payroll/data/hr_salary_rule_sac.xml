@@ -3,8 +3,8 @@
     <data>
         <record id="rules_SAC" model="hr.salary.rule">
             <field name="name">S.A.C</field>
-            <field name="code">10110</field>
-            <field name="sequence">10110</field>
+            <field name="code">10101</field>
+            <field name="sequence">10101</field>
             <field name="category_id" ref="l10n_ar_payroll.categories_931SAC" />
             <field name="active">true</field>
             <field name="appears_on_payslip">true</field>
@@ -16,15 +16,24 @@
 result = ((inputs.SACBASE / 2) / 180) * inputs.SACDAYS
             </field>
         </record>
-        <record id="payslip_inputs_SACBASE" model="hr.rule.input">
-            <field name="name">Mejor Sueldo Semestral - S.A.C</field>
-            <field name="code">SACBASE</field>
-            <field name="input_id" ref="l10n_ar_payroll.rules_SAC" /> <!-- TODO: Calcular mejor sueldo -->
-        </record>
-        <record id="payslip_inputs_SACWORKDAYS" model="hr.rule.input">
-            <field name="name">Dias Trabajados - S.A.C</field>
-            <field name="code">SACDAYS</field>
-            <field name="input_id" ref="l10n_ar_payroll.rules_SAC" /> <!-- TODO: Calcular Dias -->
+
+        <!-- Estructura: Liquidacion S.A.C LCT -->
+        <record id="AR-BASE-SAC" model="hr.payroll.structure">
+            <field name="name">( AR-BASE-SAC ) LIQUIDACION SAC LCT ! Uso como base para otras estructuras</field>
+            <field name="code">AR-BASE-SAC</field>
+            <field name="company_id" ref="base.main_company" />
+            <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_SAC'),
+                                    ref('l10n_ar_payroll.rules_AFIP-JUB11'),
+                                    ref('l10n_ar_payroll.rules_AFIP-INSSJP3'),
+                                    ref('l10n_ar_payroll.rules_AFIP-OS3'),
+                                    ref('l10n_ar_payroll.rules_EMBG-JUD'),
+                                    ref('l10n_ar_payroll.rules_ADV'),
+                                    ref('l10n_ar_payroll.rules_LOAN'),
+                                    ref('l10n_ar_payroll.rules_GROSS'),
+                                    ref('l10n_ar_payroll.rules_NOREM'),
+                                    ref('l10n_ar_payroll.rules_DESC'),
+                                    ref('l10n_ar_payroll.rules_NETO'),
+                                ])]" name="rule_ids" />
         </record>
     </data>
 </odoo>

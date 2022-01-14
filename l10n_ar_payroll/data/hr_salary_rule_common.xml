@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!-- Rules: Horas Normales -->
         <record id="rules_BASIC_HOURS" model="hr.salary.rule">
             <field name="name">HORAS NORMALES</field>
             <field name="code">10100</field>
@@ -23,6 +24,8 @@ else:
             </field>
             <!-- TODO: Eventually we need to net public holidays from the worked days function -->
         </record>
+
+        <!-- Rules: Sueldo Basico -->
         <record id="rules_BASIC" model="hr.salary.rule">
             <field name="name">SUELDO BASICO</field>
             <field name="code">10100</field>
@@ -45,6 +48,8 @@ else:
             </field>
             <!-- TODO: Eventually we need to net public holidays from the worked days function -->
         </record>
+
+        <!-- Rules: Feriados -->
         <record id="rules_HFRD" model="hr.salary.rule">
             <field name="name">FERIADOS</field>
             <field name="code">10105</field>
@@ -70,6 +75,8 @@ else:
     result = contract.amount
             </field>
         </record>
+
+        <!-- Rules: Descuento - Ausentismo -->
         <record id="rules_AUS" model="hr.salary.rule">
             <field name="name">AUSENTISMO</field>
             <field name="code">10109</field>
@@ -95,6 +102,35 @@ else:
     result = contract.wage / worked_days.WORK100.number_of_days
             </field>
         </record>
+
+        <!-- Rules: Descuento - Ausentismo Vacacional -->
+        <record id="rules_AUSVAC" model="hr.salary.rule">
+            <field name="name">AUSENTISMO VACACIONAL</field>
+            <field name="code">10110</field>
+            <field name="sequence">10110</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931BASIC" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <field name="account_credit" ref="l10n_ar.base_sueldos_a_pagar" />
+            <field name="account_debit" ref="l10n_ar.base_haberes_produccion"/>
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = (worked_days and worked_days.WORK0-HOL and worked_days.WORK0-HOL.number_of_hours) or False
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if not contract.is_wage_accurate:
+    result_qty = -(worked_days.WORK0-HOL.number_of_hours)
+    result = contract.amount
+else:
+    result_qty = -(worked_days.WORK0-HOL.number_of_days)
+    result = contract.wage / worked_days.WORK100.number_of_days
+            </field>
+        </record>
+
+        <!-- Rules: Horas Extra al 50% -->
         <record id="rules_OVT50" model="hr.salary.rule">
             <field name="name">HORAS EXTRA AL 50%</field>
             <field name="code">10120</field>
@@ -121,6 +157,8 @@ else:
     result = (contract.wage / worked_days.WORK100.number_of_hours)
             </field>
         </record>
+
+        <!-- Rules: Horas Extra al 100% -->
         <record id="rules_OVT100" model="hr.salary.rule">
             <field name="name">HORAS EXTRA AL 100%</field>
             <field name="code">10121</field>
@@ -147,8 +185,10 @@ else:
     result = (contract.wage / worked_days.WORK100.number_of_hours)
             </field>
         </record>
+
+        <!-- Rules: LCT Antiguedad -->
         <record id="rules_ANTG" model="hr.salary.rule">
-            <field name="name">ANTIGUEDAD</field>
+            <field name="name">ANTIGUEDAD LCT</field>
             <field name="code">10301</field>
             <field name="sequence">10301</field>
             <field name="category_id" ref="l10n_ar_payroll.categories_931ADIC" />
@@ -169,6 +209,8 @@ result_qty = employee.service_duration_years
 result = categories.BASIC931
             </field>
         </record>
+
+        <!-- Rules: Presentismo Mensual -->
         <record id="rules_PRES" model="hr.salary.rule">
             <field name="name">PREMIO PRESENTISMO (M)</field>
             <field name="code">10320</field>
@@ -194,6 +236,8 @@ result = contract.env['hr.contract.advantage'].search([('contract_id', '=', cont
             <field name="code">PRES-OVR</field>
             <field name="input_id" ref="l10n_ar_payroll.rules_PRES" />
         </record>
+
+        <!-- Rules: Presentismo Quincenal -->
         <record id="rules_PRES_Q" model="hr.salary.rule">
             <field name="name">PREMIO PRESENTISMO (Q)</field>
             <field name="code">10320</field>
@@ -219,6 +263,8 @@ result = contract.env['hr.contract.advantage'].search([('contract_id', '=', cont
             <field name="code">PRES-OVR</field>
             <field name="input_id" ref="l10n_ar_payroll.rules_PRES_Q" />
         </record>
+
+        <!-- Rules: AFIP Jubilacion -->
         <record id="rules_AFIP-JUB11" model="hr.salary.rule">
             <field name="name">APORTES JUBILATORIOS</field>
             <field name="code">20100</field>
@@ -238,6 +284,8 @@ result_rate = -11.00
 result = categories.GROSS
             </field>
         </record>
+
+        <!-- Rules: AFIP INSSJP -->
         <record id="rules_AFIP-INSSJP3" model="hr.salary.rule">
             <field name="name">LEY 19.032 - INSSJP</field>
             <field name="code">20101</field>
@@ -257,6 +305,8 @@ result_rate = -3.00
 result = categories.GROSS
             </field>
         </record>
+
+        <!-- Rules: AFIP Obra Social -->
         <record id="rules_AFIP-OS3" model="hr.salary.rule">
             <field name="name">APORTES OBRA SOCIAL</field>
             <field name="code">20102</field>
@@ -276,6 +326,8 @@ result_rate = -3.00
 result = categories.GROSS
             </field>
         </record>
+
+        <!-- Rules: Embargos Judiciales -->
         <record id="rules_EMBG-JUD" model="hr.salary.rule">
             <field name="name">EMBARGOS JUDICIALES</field>
             <field name="code">30100</field>
@@ -298,6 +350,8 @@ result_rate = -(payslip.env['hr.contract.advantage'].search([('contract_id', '='
 result = categories.GROSS + categories.DESC + categories.NOREM + categories.RET
             </field>
         </record>
+
+        <!-- Rules: Adelantos - Descuento -->
         <record id="rules_ADV" model="hr.salary.rule">
             <field name="name">ADELANTOS OTORGADOS</field>
             <field name="code">30201</field>
@@ -323,6 +377,8 @@ result = -(inputs.ADV.amount)
             <field name="code">ADV</field>
             <field name="input_id" ref="l10n_ar_payroll.rules_ADV" />
         </record>
+
+        <!-- Rules: Prestamos - Descuento -->
         <record id="rules_LOAN" model="hr.salary.rule">
             <field name="name">PLANES PRESTAMOS OTORGADOS</field>
             <field name="code">30202</field>
@@ -347,6 +403,57 @@ result = -(inputs.LOAN.amount)
             <field name="name">Importe Prestamos (a descontar)</field>
             <field name="code">LOAN</field>
             <field name="input_id" ref="l10n_ar_payroll.rules_LOAN" />
+        </record>
+
+        <!-- Estructura: Liquidacion LCT - Jornalizados -->
+        <record id="AR-DEFAULT-H" model="hr.payroll.structure">
+            <field name="name">( AR-BASE ) LIQUIDACION BASICA LCT (Jornalizados) - ! Uso como base para otras estructuras</field>
+            <field name="code">AR-BASE-JOR</field>
+            <field name="company_id" ref="base.main_company" />
+            <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_BASIC_HOURS'),
+                                    ref('l10n_ar_payroll.rules_HFRD'),
+                                    ref('l10n_ar_payroll.rules_AUS'),
+                                    ref('l10n_ar_payroll.rules_AUSVAC'),
+                                    ref('l10n_ar_payroll.rules_OVT50'),
+                                    ref('l10n_ar_payroll.rules_OVT100'),
+                                    ref('l10n_ar_payroll.rules_ANTG'),
+                                    ref('l10n_ar_payroll.rules_PRES_Q'),
+                                    ref('l10n_ar_payroll.rules_AFIP-JUB11'),
+                                    ref('l10n_ar_payroll.rules_AFIP-INSSJP3'),
+                                    ref('l10n_ar_payroll.rules_AFIP-OS3'),
+                                    ref('l10n_ar_payroll.rules_EMBG-JUD'),
+                                    ref('l10n_ar_payroll.rules_ADV'),
+                                    ref('l10n_ar_payroll.rules_LOAN'),
+                                    ref('l10n_ar_payroll.rules_GROSS'),
+                                    ref('l10n_ar_payroll.rules_NOREM'),
+                                    ref('l10n_ar_payroll.rules_DESC'),
+                                    ref('l10n_ar_payroll.rules_NETO'),
+                                ])]" name="rule_ids" />
+        </record>
+        <!-- Estructura: Liquidacion LCT - Mensuales -->
+        <record id="AR-DEFAULT-M" model="hr.payroll.structure">
+            <field name="name">( AR-BASE ) LIQUIDACION BASICA LCT (Mensualizados) - ! Uso como base para otras estructuras</field>
+            <field name="code">AR-BASE-MEN</field>
+            <field name="company_id" ref="base.main_company" />
+            <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_BASIC'),
+                                    ref('l10n_ar_payroll.rules_HFRD'),
+                                    ref('l10n_ar_payroll.rules_AUS'),
+                                    ref('l10n_ar_payroll.rules_AUSVAC'),
+                                    ref('l10n_ar_payroll.rules_OVT50'),
+                                    ref('l10n_ar_payroll.rules_OVT100'),
+                                    ref('l10n_ar_payroll.rules_ANTG'),
+                                    ref('l10n_ar_payroll.rules_PRES'),
+                                    ref('l10n_ar_payroll.rules_AFIP-JUB11'),
+                                    ref('l10n_ar_payroll.rules_AFIP-INSSJP3'),
+                                    ref('l10n_ar_payroll.rules_AFIP-OS3'),
+                                    ref('l10n_ar_payroll.rules_EMBG-JUD'),
+                                    ref('l10n_ar_payroll.rules_ADV'),
+                                    ref('l10n_ar_payroll.rules_LOAN'),
+                                    ref('l10n_ar_payroll.rules_GROSS'),
+                                    ref('l10n_ar_payroll.rules_NOREM'),
+                                    ref('l10n_ar_payroll.rules_DESC'),
+                                    ref('l10n_ar_payroll.rules_NETO'),
+                                ])]" name="rule_ids" />
         </record>
     </data>
 </odoo>

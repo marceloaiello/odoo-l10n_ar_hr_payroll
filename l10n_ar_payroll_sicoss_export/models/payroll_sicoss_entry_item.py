@@ -4,12 +4,11 @@
 from odoo import models, fields
 
 
-class HrSussItem(models.Model):
-    _name = 'hr.suss.item'
-    _description = 'Hr Suss Item'
+class PayrollSicossEntryItem(models.Model):
+    _name = 'payroll.sicoss_entry.item'
+    _description = 'Payroll Sicoss Entry Item'
 
-    name = fields.Char(string='Referencia')
-    period_id = fields.Many2one('hr.period', string='Periodo Fiscal')
+    sicoss_entry_id = fields.Many2one('payroll.sicoss_entry', string='Liquidacion AFIP-SICOSS')
     employee_id = fields.Many2one('hr.employee', string='Empleado')
     sueldo = fields.Float(string='Sueldo')
     adicionales = fields.Float(string='Adicionales')

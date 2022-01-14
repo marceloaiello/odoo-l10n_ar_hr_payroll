@@ -13,11 +13,9 @@
                 <field name="overtime_hours" />
                 <field name="units" />
                 <field name="state" string="Estado" widget="badge" decoration-info="state == 'draft'" decoration-warning="state == 'confirm'" decoration-success="state == 'validate'" decoration-danger="state == 'cancel'" />
-                <button_group name="button_group_0" modifiers="{}" editOnly="false" readOnly="false">
-                    <button string="Aprobar" name="action_approve" type="object" icon="fa-thumbs-up" states="confirm" modifiers="{'invisible':[['state','not in',['confirm']]]}" />
-                    <button string="Validar" name="action_submit" type="object" icon="fa-check" states="draft" modifiers="{'invisible':[['state','not in',['draft']]]}" />
-                    <button string="Rechazar" name="action_cancel" type="object" icon="fa-times" states="confirm,draft,validate" modifiers="{'invisible':[['state','not in',['confirm','draft','validate']]]}" />
-                </button_group>
+                <button string="Aprobar" name="action_approve" type="object" icon="fa-thumbs-up" states="confirm" modifiers="{'invisible':[['state','not in',['confirm']]]}" />
+                <button string="Validar" name="action_submit" type="object" icon="fa-check" states="draft" modifiers="{'invisible':[['state','not in',['draft']]]}" />
+                <button string="Rechazar" name="action_cancel" type="object" icon="fa-times" states="confirm,draft,validate" modifiers="{'invisible':[['state','not in',['confirm','draft','validate']]]}" />
             </tree>
         </field>
     </record>
