@@ -7,6 +7,7 @@
         <field name="company_id" ref="base.main_company" />
         <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_BASIC'),
                                     ref('l10n_ar_payroll.rules_HFRD'),
+                                    ref('l10n_ar_payroll.rules_HFRD_PLUS'),
                                     ref('l10n_ar_payroll.rules_AUS'),
                                     ref('l10n_ar_payroll.rules_AUSVAC'),
                                     ref('l10n_ar_payroll.rules_OVT50'),

@@ -188,7 +188,7 @@ class HrPayslip(models.Model):
                             "contract_id": contract.id,
                         })
                     current_overtime_struct["number_of_hours"] = overtime.overtime_hours
-                    current_overtime_struct["number_of_days"] = overtime.overtime_hours / 24
+                    current_overtime_struct["number_of_days"] = overtime.overtime_hours / work_hours_per_day
             res.extend(overtimes.values())
 
             # -- compute sac days -- #

@@ -21,4 +21,11 @@
         <field name="type">add_percentage</field>
         <field name="add_percentage_amount">100</field>
     </record>
+    <record id="overtime_type_horas_extra_100_feriados" model="hr.overtime.type">
+        <field name="name">Feriados Trabajados - al 100%</field>
+        <field name="payroll_code">OVT100FE</field>
+        <field name="duration_type">hour</field>
+        <field name="type">add_percentage</field>
+        <field name="add_percentage_amount">100</field>
+    </record>
 </odoo>
