@@ -13,6 +13,18 @@
             <field name="exclude_public_holidays">true</field>
             <field name="company_id" ref="base.main_company" />
         </record>
+        <record id="leaves_WORK0LT" model="hr.leave.type">
+            <field name="name">Ausentismo - llegadas tarde</field>
+            <field name="code">WORK0LT</field>
+            <field name="request_unit">hour</field>
+            <field name="include_in_theoretical">true</field>
+            <field name="allocation_type">no</field>
+            <field name="leave_validation_type">hr</field>
+            <field name="create_calendar_meeting">true</field>
+            <field name="color_name">red</field>
+            <field name="exclude_public_holidays">true</field>
+            <field name="company_id" ref="base.main_company" />
+        </record>
         <record id="leaves_WORK0J" model="hr.leave.type">
             <field name="name">Ausentismo Justificado - remunerado</field>
             <field name="code">WORK0J</field>

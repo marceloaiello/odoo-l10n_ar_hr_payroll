@@ -81,7 +81,7 @@ result = base_30 - base_25
             </field>
         </record>
         <!-- Rules: Feriado Trabajado  -->
-        <record id="rules_HFRD_PLUS" model="hr.salary.rule">
+        <record id="rules_HFRD_TRAB" model="hr.salary.rule">
             <field name="name">FERIADOS - trabajados</field>
             <field name="code">10107</field>
             <field name="sequence">10107</field>
@@ -131,17 +131,29 @@ result = (worked_days and worked_days.WORK0 and worked_days.WORK0.number_of_hour
             <field name="amount_python_compute">
 if contract.aplica_cct:
     if contract.is_wage_accurate:
-        result_qty = worked_days.WORK0.number_of_days
+        if worked_days.WORK0LT.number_of_days:
+            result_qty = worked_days.WORK0.number_of_days + worked_days.WORK0LT.number_of_days
+        else:
+            result_qty = worked_days.WORK0.number_of_days
         result = contract.cct_category_id.get_category_value(payslip.date_from, payslip.date_to) / worked_days.WORK100.number_of_days
     else:
-        result_qty = worked_days.WORK0.number_of_hours
+        if worked_days.WORK0LT.number_of_days:
+            result_qty = worked_days.WORK0.number_of_hours + worked_days.WORK0LT.number_of_hours
+        else:
+            result_qty = worked_days.WORK0.number_of_hours
         result = contract.cct_category_id.get_category_value(payslip.date_from, payslip.date_to)
 else:
     if contract.is_wage_accurate:
-        result_qty = worked_days.HFRD.number_of_days
+        if worked_days.WORK0LT.number_of_days:
+            result_qty = worked_days.WORK0.number_of_days + worked_days.WORK0LT.number_of_days
+        else:
+            result_qty = worked_days.WORK0.number_of_days
         result = contract.amount / worked_days.WORK100.number_of_days
     else:
-        result_qty = worked_days.WORK0.number_of_hours
+        if worked_days.WORK0LT.number_of_days:
+            result_qty = worked_days.WORK0.number_of_hours + worked_days.WORK0LT.number_of_hours
+        else:
+            result_qty = worked_days.WORK0.number_of_hours
         result = contract.amount
             </field>
         </record>
