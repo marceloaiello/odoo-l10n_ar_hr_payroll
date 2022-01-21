@@ -287,7 +287,7 @@ result = categories.BASIC931
             <!-- Condition Select -->
             <field name="condition_select">python</field>
             <field name="condition_python">
-result = ( not (worked_days.WORK0 and worked_days.WORK0.number_of_days >= 1 and inputs.PRESOVR.amount != 1) or False )
+result = ( worked_days.WORK0 and worked_days.WORK0.number_of_days >= 1 and inputs.PRESOVR.amount != 1) or False
             </field>
             <!-- Amount Select -->
             <field name="amount_select">code</field>

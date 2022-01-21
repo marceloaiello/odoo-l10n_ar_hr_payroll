@@ -124,5 +124,5 @@ class PayrollSicossEntry(models.Model):
     @api.constrains('year', 'month')
     def _check_unique_entries(self):
         for record in self:
-            if self.env['payroll.sicoss_entry'].search_count([('year', '=', record.year), ('month', '=', record.month)]) > 0:
+            if self.env['payroll.sicoss_entry'].search_count([('year', '=', record.year), ('month', '=', record.month)]) > 1:
                 raise ValidationError("Ya existe una declaracion jurada existente para el periodo seleccionado.")
