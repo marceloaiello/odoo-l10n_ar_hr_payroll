@@ -93,26 +93,6 @@ class PayrollSicossEntry(models.Model):
                         line.category_id.code)] += line.total
         self.write({'payroll_sicoss_entry_item_ids': [(0, 0, values)]})
 
-    def _create_libro_digital_file(self, data):
-        return False
-
-    def _create_sicoss_txt_item(self, employee, sicoss_data):
-        res = {
-            'cuil': employee.ssnid,
-            'nombre_apellido': employee.name,
-            'conyuge': 'N',  # Defaults "N" TODO: Implement this.
-            'cantidad_hijos': 0,  # Defaults "0" TODO: Implement this.
-            'codigo_situacion': employee.contact_id.afip_situacion_revista_id.afip_id,
-            'codigo_condicion': employee.contract_id.afip_condicion_id.afip_id,
-            'codigo_actividad': employee.contract.afip_actividad_id.afip_id,
-            'codigo_zona': employee.contract_id.afip_localidad_id.afip_id,
-            'poporc_adicional_ss': employee.contract_id,  # TODO: Make defaults for AFIP fields
-            'codigo_mod_contratacion': employee.contract_id.afip_modalidad_contratacion_id.afip_id,
-            'codigo_obra_social': employee.contact_id.afip_obra_social_id.afip_id,
-            'cantidad_adherentes': employee.contact_id.os_adherentes,
-        }
-        return res
-
     def action_compute_suss(self):
         self.save()
         for sicoss_item in self.payroll_sicoss_entry_item_ids:
