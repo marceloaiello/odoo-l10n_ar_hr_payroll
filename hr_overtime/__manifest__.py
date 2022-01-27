@@ -11,7 +11,8 @@
     'license': 'LGPL-3',
     'category': 'Human Resources',
     'depends': [
-        'hr_attendance'
+        'payroll',
+        'hr_attendance',
     ],
     'data': [
         'security/ir.model.access.csv',

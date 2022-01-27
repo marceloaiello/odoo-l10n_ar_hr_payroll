@@ -14,11 +14,11 @@
         'base',
         'hr_contract',
         'payroll',
+        'l10n_ar_payroll',
     ],
     'data': [
         'views/hr_employee.xml',
         'views/hr_contract.xml',
-
     ],
     'installable': True,
     'auto_install': False,

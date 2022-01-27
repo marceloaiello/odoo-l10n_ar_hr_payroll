@@ -13,8 +13,8 @@
     'depends': [
         'payroll',
         'payroll_account',
-        'payroll_period',
         'l10n_ar_payroll',
+        'payroll_period',
     ],
     'data': [
         'security/ir.model.access.csv',

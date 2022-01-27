@@ -109,7 +109,7 @@ class HrPayslip(models.Model):
         for contract in contracts.filtered(lambda contract: contract.resource_calendar_id):
             day_from = datetime.combine(date_from, time.min)
             day_to = datetime.combine(date_to, time.max)
-            work_hours_per_day = contract.resource_calendar_id.hours_per_day
+            work_hours_per_day = 9  # FIXME: This is hardcoded, we have to find a method to return the correct hours.
 
             # -- compute leave days -- #
             leaves = {}
@@ -142,8 +142,10 @@ class HrPayslip(models.Model):
             res.extend(leaves.values())
 
             # -- compute public holidays leaves -- #
-            ph_days = len(self.env["hr.holidays.public.line"].search(
-                [('date', '>=', day_from), ('date', '<=', day_to)]))
+            public_holidays = self.env['hr.holidays.public'].get_holidays_list(
+                year=day_from.year, start_dt=day_from, end_dt=day_to, employee_id=contract.employee_id.id
+            )
+            ph_days = len(public_holidays)
             ph_hours = ph_days * work_hours_per_day
             public_holidays_leaves = {
                 "name": _("Feriados y No Laborables"),
@@ -192,7 +194,7 @@ class HrPayslip(models.Model):
             res.extend(overtimes.values())
 
             # -- compute sac days -- #
-            # TODO: Los dias los esta calculando restando fines de semana. No deberia ser asi, sino que debe calcualr dias corridos,
+            # FIXME: Los dias los esta calculando restando fines de semana. No deberia ser asi, sino que debe calcualr dias corridos,
             # las unicas ausencias que se deben descontar son las de ausentismos injustificados o licencias.
             # Por ende, esto si bien funciona, hay que pulir eso, y actualmente los dias deben editarse manualmanete en el S.A.C.
             if self._check_sac_period_valid(day_from):
