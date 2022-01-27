@@ -4,7 +4,6 @@
 
 from odoo import models, api, fields
 from odoo.exceptions import UserError, ValidationError
-from sicoss_registry_design import AFIP_SICOSS_v42 as AFIP_SICOSS
 
 
 class PayrollSicossEntry(models.Model):
