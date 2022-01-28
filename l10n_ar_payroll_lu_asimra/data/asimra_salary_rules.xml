@@ -48,7 +48,7 @@ result = categories.GROSS
             <!-- Amount Select -->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
-result = contract.cct_id.svco_current_value
+result = contract.cct_id.svco_current_value * -1
             </field>
         </record>
         <record id="rules_extra_norem_042021_9" model="hr.salary.rule">

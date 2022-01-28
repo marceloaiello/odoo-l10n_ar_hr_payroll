@@ -37,7 +37,7 @@ else:
             <!-- Condition Select -->
             <field name="condition_select">python</field>
             <field name="condition_python">
-result = (worked_days.HFRD and worked_days.HFRD.number_of_days and contract.schedule_pay == 'bi-weekly') or False
+result = (worked_days.HFRD and worked_days.HFRD.number_of_days and (not contract.is_wage_accurate)) or False
             </field>
             <!-- Amount Select -->
             <field name="amount_select">code</field>
@@ -60,7 +60,7 @@ except:
             <!-- Condition Select -->
             <field name="condition_select">python</field>
             <field name="condition_python">
-result = (worked_days.HFRD and worked_days.HFRD.number_of_days and contract.schedule_pay == 'monthly') or False
+result = (worked_days.HFRD and worked_days.HFRD.number_of_days and contract.is_wage_accurate) or False
             </field>
             <!-- Amount Select -->
             <field name="amount_select">code</field>
