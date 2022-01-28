@@ -66,7 +66,7 @@ result = (contract.schedule_pay == 'monthly') or (payslip.from_date.day == 16) o
         <!-- Amount Select -->
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
-result = payslip.compute_imgr(contract=contract, payslip=payslip, categories=categories)
+result = result = payslip.env['hr.payslip'].compute_imgr(contract=contract, payslip=payslip, categories=categories)
         </field>
     </record>
 </odoo>

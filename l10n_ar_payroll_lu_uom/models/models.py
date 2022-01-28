@@ -11,19 +11,16 @@ class HrPayslip(models.Model):
 
     @api.model
     def _get_month_gross(self, payslip):
-        from_date = payslip.date_from.replace(day=1)
-        to_date = payslip.date_from
-        valid_codes = ['TGROSS', 'TNOREM', 'VAC931', 'EXT931']
         amount_sum = 0.00
 
         affected_payslips = self.env['hr.payslip'].search([
             ('employee_id', '=', payslip.employee_id),
-            ('date_from', '>=', from_date),
-            ('date_to', '<=', to_date)])
+            ('date_from', '>=', payslip.date_from.replace(day=1)),
+            ('date_to', '<=', payslip.date_from)])
 
         if len(affected_payslips):
             for ap in affected_payslips:
-                for line in ap.details_by_salary_rule_category.filtered(lambda r: r.category_id.code in valid_codes):
+                for line in ap.details_by_salary_rule_category.filtered(lambda r: r.category_id.code in ['TGROSS', 'TNOREM', 'VAC931', 'EXT931']):
                     if line.category_id.code == 'TGROSS':
                         amount_sum += line.total
                     if line.category_id.code == 'TNOREM':
@@ -87,4 +84,3 @@ class HrContractLaborUnionCategoryPrice(models.Model):
     _inherit = 'hr.labor_union.category.price'
 
     imgr_value = fields.Float('Valor IMGR', default=0)
-
