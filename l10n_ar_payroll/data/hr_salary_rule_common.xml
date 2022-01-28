@@ -92,7 +92,7 @@ result = (worked_days.OVT100FE and worked_days.OVT100FE.number_of_hours) or Fals
 result_rate = 200.00
 try:
     amount = contract.cct_category_id.get_category_value(payslip.date_from, payslip.date_to)
-else:
+except:
     amount = contract.amount
 if contract.is_wage_accurate:
     result = amount / 25
@@ -184,7 +184,7 @@ result = (worked_days and worked_days.OVT50 and worked_days.OVT50.number_of_hour
 result_rate = 150.00
 try:
     amount = contract.cct_category_id.get_category_value(payslip.date_from, payslip.date_to)
-else:
+except:
     amount = contract.amount
 if contract.is_wage_accurate:
     result = amount / worked_days.WORK100.number_of_hours
@@ -213,7 +213,7 @@ result = (worked_days and worked_days.OVT100 and worked_days.OVT100.number_of_ho
 result_rate = 200.00
 try:
     amount = contract.cct_category_id.get_category_value(payslip.date_from, payslip.date_to)
-else:
+except:
     amount = contract.amount
 if contract.is_wage_accurate:
     result = amount / worked_days.WORK100.number_of_hours
@@ -292,7 +292,7 @@ result = (worked_days.VACDAYS and worked_days.VACDAYS.number_of_days) or False
             <field name="amount_python_compute">
 try:
     amount = contract.cct_category_id.get_category_value(payslip.date_from, payslip.date_to)
-else:
+except:
     amount = contract.amount
 if contract.is_wage_accurate:
     result = amount / 25

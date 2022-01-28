@@ -2,14 +2,20 @@
 <odoo>
     <data>
         <record id="AR-UOM" model="hr.payroll.structure">
-            <field name="name"> ( AR-UOM ) LIQUIDACION UOM - Sindicato Metalurgicos - Ascensores</field>
+            <field name="name"> ( AR-UOM ) LIQUIDACION UOM - Sindicato Metalurgicos</field>
             <field name="code">AR-UOM</field>
             <field name="company_id" ref="base.main_company" />
             <field name="parent_id" ref='l10n_ar_payroll.BASE-AR' />
             <field eval="[(6, 0, [  ref('l10n_ar_payroll_lu_uom.rules_UOM_SOL'),
-                                    ref('l10n_ar_payroll_lu_uom.rules_extra_norem_042021_9'),
                                     ref('l10n_ar_payroll_lu_uom.rules_IMGR'),
-                                    ref('l10n_ar_payroll_lu_uom.rules_IMGR_RETROACT'),
+                                    ref('l10n_ar_payroll_lu_uom.rules_UOMSVO')])]" name="rule_ids" />
+        </record>
+        <record id="AR-UOM-SAC" model="hr.payroll.structure">
+            <field name="name"> ( AR-UOM-SAC ) LIQUIDACION UOM S.A.C - Sindicato Metalurgicos</field>
+            <field name="code">AR-UOM-SAC</field>
+            <field name="company_id" ref="base.main_company" />
+            <field name="parent_id" ref='l10n_ar_payroll.BASE-AR-SAC' />
+            <field eval="[(6, 0, [  ref('l10n_ar_payroll_lu_uom.rules_UOM_SOL'),
                                     ref('l10n_ar_payroll_lu_uom.rules_UOMSVO')])]" name="rule_ids" />
         </record>
     </data>

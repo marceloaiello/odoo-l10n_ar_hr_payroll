@@ -1,16 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- SINDICATO -->
+        <!-- SINDICATOS -->
         <record id="lu_uom_metalurgicos_rama3_art4" model="hr.labor_union">
             <field name="sindicato">UOM - METALURGICOS - ASCENSORES</field>
             <field name="convenio">260/75</field>
         </record>
+        <record id="lu_uom_metalurgicos_general" model="hr.labor_union">
+            <field name="sindicato">UOM - METALURGICOS - RAMA GENERAL</field>
+            <field name="convenio">260/75</field>
+        </record>
+        <record id="lu_uom_metalurgicos_mensualizados" model="hr.labor_union">
+            <field name="sindicato">UOM - METALURGICOS - MENSUALIZADOS</field>
+            <field name="convenio">260/75</field>
+        </record>
 
-        <!-- CATEGORIAS -->
+        <!-- CATEGORIAS: RAMA GENERAL -->
+        <record id="general_category_ingresante" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_general" />
+            <field name="name">Ingresante - Rama</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="general_category_operario_calificado" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_general" />
+            <field name="name">Operario Calificado</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="general_category_medio_of" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_general" />
+            <field name="name">Medio Oficial</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="general_category_operario_especializado" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_general" />
+            <field name="name">Operario Especializado</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="general_category_operario_especializado_multiple" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_general" />
+            <field name="name">Operario Especializado Multiple</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="general_category_oficial" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_general" />
+            <field name="name">Oficial</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="general_category_oficial_multiple" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_general" />
+            <field name="name">Oficial Multiple</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="general_category_oficial_superior" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_general" />
+            <field name="name">Oficial Superior</field>
+            <field name="category_period_type">hour</field>
+        </record>
+        <record id="general_category_oficial_multiple_superior" model="hr.labor_union.category">
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_general" />
+            <field name="name">Oficial Multiple Superior</field>
+            <field name="category_period_type">hour</field>
+        </record>
+
+        <!-- CATEGORIAS: RAMA ASCENSORES -->
         <record id="category_ingresante" model="hr.labor_union.category">
             <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_rama3_art4" />
-            <field name="name">Ingresante</field>
+            <field name="name">Ingresante - Rama</field>
             <field name="category_period_type">hour</field>
         </record>
         <record id="category_operario_calificado" model="hr.labor_union.category">
@@ -83,23 +138,25 @@
             <field name="name">Oficial Multiple Superior</field>
             <field name="category_period_type">hour</field>
         </record>
+
+        <!-- CATEGORIAS: RAMA MENSUALIZADOS -->
         <record id="category_administrativo_1ra" model="hr.labor_union.category">
-            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_rama3_art4" />
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_mensualizados" />
             <field name="name">Administrativo 1º</field>
             <field name="category_period_type">month</field>
         </record>
         <record id="category_administrativo_2ra" model="hr.labor_union.category">
-            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_rama3_art4" />
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_mensualizados" />
             <field name="name">Administrativo 2º</field>
             <field name="category_period_type">month</field>
         </record>
         <record id="category_administrativo_3ra" model="hr.labor_union.category">
-            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_rama3_art4" />
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_mensualizados" />
             <field name="name">Administrativo 3º</field>
             <field name="category_period_type">month</field>
         </record>
         <record id="category_administrativo_4ta" model="hr.labor_union.category">
-            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_rama3_art4" />
+            <field name="labor_union_id" ref="l10n_ar_payroll_lu_uom.lu_uom_metalurgicos_mensualizados" />
             <field name="name">Administrativo 4º</field>
             <field name="category_period_type">month</field>
         </record>

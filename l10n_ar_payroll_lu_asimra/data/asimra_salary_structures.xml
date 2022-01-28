@@ -3,12 +3,19 @@
     <data>
         <!-- ASIMRA: Salary Structure -->
         <record id="structures_ASIMRA-MEN" model="hr.payroll.structure">
-            <field name="name">(AR-ASIMRA) ASIMRA METALURGICOS - Sindicato Supervisores Metalurgicos - Ascensores</field>
+            <field name="name">( AR-ASIMRA ) ASIMRA METALURGICOS - Sindicato Supervisores Metalurgicos</field>
             <field name="parent_id" ref='l10n_ar_payroll.BASE-AR' />
             <field name="code">AR-ASIMRA-MEN</field>
             <field eval="[(6, 0, [  ref('l10n_ar_payroll_lu_asimra.rules_ASIMRA1'),
-                                            ref('l10n_ar_payroll_lu_asimra.rules_extra_norem_042021_9'),
                                             ref('l10n_ar_payroll_lu_asimra.rules_ASIMRASVCO')])]" name="rule_ids" />
+        </record>
+        <record id="AR-ASIMRA-SAC" model="hr.payroll.structure">
+            <field name="name"> ( AR-ASIMRA-SAC ) LIQUIDACION ASIMRA S.A.C - Sindicato Supervisores Metalurgicos</field>
+            <field name="code">AR-ASIMRA-SAC</field>
+            <field name="company_id" ref="base.main_company" />
+            <field name="parent_id" ref='l10n_ar_payroll.BASE-AR-SAC' />
+            <field eval="[(6, 0, [  ref('l10n_ar_payroll_lu_asimra.rules_ASIMRA1'),
+                                    ref('l10n_ar_payroll_lu_asimra.rules_ASIMRASVCO')])]" name="rule_ids" />
         </record>
     </data>
 </odoo>

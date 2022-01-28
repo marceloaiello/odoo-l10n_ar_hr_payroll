@@ -42,7 +42,7 @@ class HrPeriod(models.Model):
     @api.model
     def get_next_period(self, company_id, schedule_pay):
         """
-         Get the next payroll period to process
+        Get the next payroll period to process
         :rtype: hr.period browse record
         """
         periods = self.search([

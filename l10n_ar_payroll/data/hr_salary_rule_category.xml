@@ -32,6 +32,10 @@
             <field name="code">NET</field>
             <field name="note">Remuneracion NETA a pagar al empleado en esta liquidacion. </field>
         </record>
+        <record id="categories_OTROS" model="hr.salary.rule.category">
+            <field name="name">(GLOBAL) OTROS</field>
+            <field name="code">OTR</field>
+        </record>
 
         <!-- Categorias para SICOSS - 931 -->
         <record id="categories_931BASIC" model="hr.salary.rule.category">

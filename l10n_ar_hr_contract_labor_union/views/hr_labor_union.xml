@@ -58,9 +58,9 @@
                         <group string="Categorias - CCT">
                             <field name="cct_categories" nolabel="1" widget="one2many">
                                 <tree editable="bottom">
-                                    <field name="name" />
-                                    <field name="category_period_type" string="Periodo de Importe" />
-                                    <field name="current_value" widget='monetary' />
+                                    <field name="name" decoration-bf="1" />
+                                    <field name="category_period_type" string="Periodo de Importe"  widget="badge" />
+                                    <field name="current_value" widget='monetary' decoration-bf="1" />
                                     <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
                                 </tree>
                             </field>
@@ -73,7 +73,6 @@
                                     <field name="from_date" />
                                     <field name="to_date" />
                                     <field name="value" widget='monetary' />
-                                    <field name="name" string="Referencia" />
                                     <field name="currency_id" invisible="1" modifiers="{'invisible':true,'readonly':true}" />
                                 </tree>
                             </field>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="tree_inherit_hr_labor_union_category_price_uom" model="ir.ui.view">
+        <field name="name">hr.labor_union.category.price.inherit.imgr</field>
+        <field name="model">hr.labor_union.category.price</field>
+        <field name="inherit_id" ref="l10n_ar_hr_contract_labor_union.hr_labor_union_category_price_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="value" position='after'>
+                <field name="imgr_value" string="UOM IMGR" decoration-bf="1" decoration-info="1" />
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -89,19 +89,19 @@ class PayrollSicossEntry(models.Model):
         for payslip in payslips:
             for line in payslip.details_by_salary_rule_category:
                 if line.category_id.code in self.concept_mappings:
-                    values[self.concept_mappings.get(
-                        line.category_id.code)] += line.total
+                    values[self.concept_mappings.get(line.category_id.code)] += line.total
         self.write({'payroll_sicoss_entry_item_ids': [(0, 0, values)]})
 
     def action_compute_suss(self):
-        self.save()
         for sicoss_item in self.payroll_sicoss_entry_item_ids:
             sicoss_item.unlink()
+
         payslips = self.env['hr.period'].search([
             ('year', '=', self.year),
             ('month', '=', self.month),
             ('state', '=', 'done')
         ]).payslip_ids
+
         for employee in payslips.mapped('employee_id'):
             self._create_suss_entry_item(employee.id, payslips.filtered(
                 lambda r: r.employee_id == employee))
