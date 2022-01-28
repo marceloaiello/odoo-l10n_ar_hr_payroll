@@ -61,12 +61,12 @@ result = contract.cct_id.svco_current_value
         <!-- Condition Select -->
         <field name="condition_select">python</field>
         <field name="condition_python">
-result = (contract.schedule_pay == 'monthly') or (payslip.from_date.day == 15) or False
+result = (contract.schedule_pay == 'monthly') or (payslip.from_date.day == 16) or False
         </field>
         <!-- Amount Select -->
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
-result = payslip.compute_imgr(payslip=payslip, schedule_pay=contract.schedule_pay, categories=categories)
+result = payslip.compute_imgr(contract=contract, payslip=payslip, categories=categories)
         </field>
     </record>
 </odoo>
