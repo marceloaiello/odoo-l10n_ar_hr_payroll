@@ -96,6 +96,22 @@ class HrPayslip(models.Model):
 
         return sac_data
 
+    def get_full_work_days_month(self, contract, date_from, date_to):
+        res = contract.employee_id._get_work_days_data(
+            datetime.combine(date_from.replace(day=1), datetime.min.time()),
+            datetime.combine(date_to, datetime.max.time()),
+            calendar=contract.resource_calendar_id,
+            compute_leaves=False)["days"]
+        return res
+
+    def get_real_work_days_month(self, contract, date_from, date_to):
+        res = contract.employee_id._get_work_days_data(
+            datetime.combine(date_from.replace(day=1), datetime.min.time()),
+            datetime.combine(date_to, datetime.max.time()),
+            calendar=contract.resource_calendar_id,
+            compute_leaves=True)["days"]
+        return res
+
     @api.model
     def get_worked_day_lines(self, contracts, date_from, date_to):
         # We completely override this function because day calculations in Argentina are

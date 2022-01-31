@@ -10,73 +10,43 @@ class HrPayslip(models.Model):
     _inherit = 'hr.payslip'
 
     @api.model
-    def _get_month_gross(self, payslip):
-        amount_sum = 0.00
+    def get_inputs(self, contracts, date_from, date_to):
+        # Call super function computation and append new values.
+        res = super().get_inputs(contracts, date_from, date_to)
 
-        affected_payslips = self.env['hr.payslip'].search([
-            ('employee_id', '=', payslip.employee_id),
-            ('date_from', '>=', payslip.date_from.replace(day=1)),
-            ('date_to', '<=', payslip.date_from)])
+        # -- add imgr input - last gross salary -- #
+        for contract in contracts:
+            if contract.schedule_pay == 'bi-weekly' and 'UOM' in contract.cct_id.name:
+                res.append(
+                    {
+                        "name": 'UOM IMGR - Bruto imponible periodos anteriores',
+                        "code": 'UOMIMGRGROSS',
+                        "contract_id": contract.id,
+                        "amount": self._get_month_gross(contract, date_from)
+                    }
+                )
 
-        if len(affected_payslips):
-            for ap in affected_payslips:
-                for line in ap.details_by_salary_rule_category.filtered(lambda r: r.category_id.code in ['TGROSS', 'TNOREM', 'VAC931', 'EXT931']):
-                    if line.category_id.code == 'TGROSS':
-                        amount_sum += line.total
-                    if line.category_id.code == 'TNOREM':
-                        amount_sum += line.total
-                    if line.category_id.code == 'EXT931':
-                        amount_sum -= line.total
-                    if line.category_id.code == 'VAC931':
-                        amount_sum -= line.total
-
-        return amount_sum
+        return res
 
     @api.model
-    def compute_imgr(self, contract=False, categories=False, payslip=False):
-        # Si el empleado es de liquidacion mensual, se utilizan solo los valores de la liquidacion actual
-        # para calcular el IMGR. Si es de caracter quincenal, se buscan los valores de liquidacioens anteriores y
-        # se suman a la actual.
-        # TODO: Contemplar otros tipos de declaraciones en el flujo.
-        imgr_value = 61688.00
-        category_sum = 0.00
-        if contract.schedule_pay == 'monthly':
-            category_sum = categories.GROSS + categories.NOREM
-            if categories.EXT931 and categories.EXT931 > 0:
-                category_sum -= categories.EXT931
-            if categories.VAC931 and categories.VAC931 > 0:
-                category_sum -= categories.VAC931
-        elif contract.schedule_pay == 'bi-weekly':
-            category_sum = self._get_month_gross(payslip) + categories.GROSS + categories.NOREM
-            if categories.EXT931 and categories.EXT931 > 0:
-                category_sum -= categories.EXT931
-            if categories.VAC931 and categories.VAC931 > 0:
-                category_sum -= categories.VAC931
-        else:
-            raise UserError('ERROR: La frecuencia de pago del empleado no es valida para el calculo del IMGR.')
-
-        # Get full and real worked days in the month and proporcionate the IMGR Base Amount
-        full_work_days = contract.employee_id._get_work_days_data(
-            datetime.combine(payslip.date_from.replace(day=1), datetime.min.time()),
-            datetime.combine(payslip.date_to, datetime.max.time()),
-            calendar=contract.resource_calendar_id,
-            compute_leaves=False)["days"]
-        real_worked_days = contract.employee_id._get_work_days_data(
-            datetime.combine(payslip.date_from.replace(day=1), datetime.min.time()),
-            datetime.combine(payslip.date_to, datetime.max.time()),
-            calendar=contract.resource_calendar_id,
-            compute_leaves=True)["days"]
-        if full_work_days > real_worked_days:
-            imgr_base = real_worked_days * (imgr_value / full_work_days)
-        else:
-            imgr_base = imgr_value
-
-        # Comparamos el imgr con el bruto imponible, para ver si es necesario proporcionar el monto.
-        if category_sum < imgr_base:
-            amount = imgr_base - category_sum
-        elif category_sum >= imgr_base:
-            amount = 0.00
-
+    def _get_month_gross(self, contract, date_from):
+        amount = 0.00
+        affected_payslips = self.env['hr.payslip'].search([
+            ('employee_id', '=', contract.employee_id.id),
+            ('date_from', '>=', date_from.replace(day=1)),
+            ('date_to', '<=', date_from)])
+        if len(affected_payslips) > 0:
+            for payslip in affected_payslips:
+                lines = payslip.details_by_salary_rule_category.filtered(lambda r: r.category_id.code in ['TGROSS', 'TNOREM', 'VAC931', 'EXT931'])
+                for line in lines:
+                    if line.category_id.code == 'TGROSS':
+                        amount += line.total
+                    if line.category_id.code == 'TNOREM':
+                        amount += line.total
+                    if line.category_id.code == 'VAC931':
+                        amount -= line.total
+                    if line.category_id.code == 'EXT931':
+                        amount -= line.total
         return amount
 
 

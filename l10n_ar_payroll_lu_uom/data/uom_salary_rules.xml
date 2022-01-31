@@ -66,7 +66,31 @@ result = (contract.schedule_pay == 'monthly') or (payslip.from_date.day == 16) o
         <!-- Amount Select -->
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
-result = result = payslip.env['hr.payslip'].compute_imgr(contract=contract, payslip=payslip, categories=categories)
+imgr_value = 61688.00
+amount_sum = 0.00
+full_work_days = payslip.env['hr.payslip'].get_full_work_days_month(contract, payslip.date_from, payslip.date_to)
+real_work_days = payslip.env['hr.payslip'].get_real_work_days_month(contract, payslip.date_from, payslip.date_to)
+
+if inputs.UOMIMGRGROSS and inputs.UOMIMGRGROSS.amount > 0:
+    amount_sum += inputs.UOMIMGRGROSS.amount
+if categories.GROSS:
+    amount_sum += categories.GROSS
+if categories.NOREM:
+    amount_sum += categories.NOREM
+if categories.EXT931:
+    amount_sum -= categories.EXT931
+if categories.VAC931:
+    amount_sum -= categories.VAC931
+
+if full_work_days > real_work_days:
+    imgr_base = real_worked_days * (imgr_value / full_work_days)
+else:
+    imgr_base = imgr_value
+
+if imgr_base > amount_sum:
+    result = imgr_base - amount_sum
+elif category_sum >= imgr_base:
+    result = 0.00
         </field>
     </record>
 </odoo>
