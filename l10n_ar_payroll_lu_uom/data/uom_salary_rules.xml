@@ -61,7 +61,7 @@ result = contract.cct_id.svco_current_value
         <!-- Condition Select -->
         <field name="condition_select">python</field>
         <field name="condition_python">
-result = (contract.schedule_pay == 'monthly') or (payslip.from_date.day == 16) or False
+result = contract.schedule_pay == 'monthly' or payslip.date_from.day == 16 or False
         </field>
         <!-- Amount Select -->
         <field name="amount_select">code</field>
@@ -83,13 +83,13 @@ if categories.VAC931:
     amount_sum -= categories.VAC931
 
 if full_work_days > real_work_days:
-    imgr_base = real_worked_days * (imgr_value / full_work_days)
+    imgr_base = real_work_days * (imgr_value / full_work_days)
 else:
     imgr_base = imgr_value
 
 if imgr_base > amount_sum:
     result = imgr_base - amount_sum
-elif category_sum >= imgr_base:
+elif amount_sum >= imgr_base:
     result = 0.00
         </field>
     </record>
