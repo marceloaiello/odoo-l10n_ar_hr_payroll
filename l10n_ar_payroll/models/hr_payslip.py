@@ -186,8 +186,8 @@ class HrPayslip(models.Model):
                 "name": _("Normal Working Days paid at 100%"),
                 "sequence": 1,
                 "code": "WORK100",
-                "number_of_days": work_data["days"] - ph_days,
-                "number_of_hours": work_data["hours"] - ph_hours,
+                "number_of_days": work_data["days"],
+                "number_of_hours": work_data["hours"],
                 "contract_id": contract.id,
             }
             res.append(attendances)
