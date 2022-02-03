@@ -91,7 +91,12 @@
                             <span t-field="o.contract_id.afip_modalidad_contratacion_id"></span>
                         </td>
                         <td colspan="2">
-                            <t t-esc="o.contract_id.cct_category_id.current_value"></t>
+                            <t t-if="o.contract_id.aplica_cct">
+                                <t t-esc="o.contract_id.cct_category_id.get_category_value(o.date_from, o.date_to)"></t>
+                            </t>
+                            <t t-else="">
+                                <t t-esc="o.contract_id.amount"></t>
+                            </t>
                             /
                             <span t-field="o.contract_id.amount_period"></span>
                         </td>

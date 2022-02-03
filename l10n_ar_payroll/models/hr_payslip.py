@@ -49,8 +49,9 @@ class HrPayslip(models.Model):
                             "name": overtime.overtime_type_id.name,
                             "code": overtime.overtime_type_id.payroll_code,
                             "contract_id": contract.id,
-                            "amount": overtime.units * overtime.overtime_type_id.fixed_amount
+                            "amount": 0.00
                         })
+                current_overtime_struct['amount'] += overtime.units * overtime.overtime_type_id.fixed_amount
             res.extend(overtimes.values())
 
             # -- add sac inputs -- #
