@@ -51,7 +51,7 @@ except:
         </record>
         <!-- Rules: Plus Feriado (Mensualizados)  -->
         <record id="rules_HFRD_PLUS" model="hr.salary.rule">
-            <field name="name">PLUS FERIADO</field>
+            <field name="name">PLUS FERIADO - no trabajados</field>
             <field name="code">10106</field>
             <field name="sequence">10106</field>
             <field name="category_id" ref="l10n_ar_payroll.categories_931BASIC" />
@@ -104,7 +104,7 @@ else:
         </record>
         <!-- Rules: Descuento - Ausentismo -->
         <record id="rules_AUS" model="hr.salary.rule">
-            <field name="name">AUSENTISMO</field>
+            <field name="name">AUSENTISMO - injustificado</field>
             <field name="code">10109</field>
             <field name="sequence">10109</field>
             <field name="category_id" ref="l10n_ar_payroll.categories_931BASIC" />
@@ -139,7 +139,7 @@ else:
         </record>
         <!-- Rules: Descuento - Ausentismo Vacacional -->
         <record id="rules_AUSVAC" model="hr.salary.rule">
-            <field name="name">AUSENTISMO VACACIONAL</field>
+            <field name="name">AUSENTISMO - vacacional</field>
             <field name="code">10110</field>
             <field name="sequence">10110</field>
             <field name="category_id" ref="l10n_ar_payroll.categories_931BASIC" />
@@ -165,9 +165,40 @@ else:
     result_qty = worked_days.WORK0HOL.number_of_hours
             </field>
         </record>
+        <!-- Rules: Descuento - Ausentismo Suspensiones -->
+        <record id="rules_AUSSUS" model="hr.salary.rule">
+            <field name="name">AUSENTISMO - vacacional</field>
+            <field name="code">10111</field>
+            <field name="sequence">10111</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_931BASIC" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = worked_days.WORK0SUS and 0 > worked_days.WORK0SUS.number_of_hours
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result_qty = 0
+try:
+    amount = contract.cct_category_id.get_category_value(payslip.date_from, payslip.date_to)
+except:
+    amount = contract.amount
+if contract.is_wage_accurate:
+    result = amount / worked_days.WORK100.number_of_days
+    if worked_days.WORK0SUS:
+        result_qty += worked_days.WORK0SUS.number_of_days
+else:
+    result = amount
+    if worked_days.WORK0SUS:
+        result_qty += worked_days.WORK0SUS.number_of_hours
+            </field>
+        </record>
         <!-- Rules: Horas Extra al 50% -->
         <record id="rules_OVT50" model="hr.salary.rule">
-            <field name="name">HORAS EXTRA AL 50%</field>
+            <field name="name">HORAS EXTRA - al 50%</field>
             <field name="code">10120</field>
             <field name="sequence">10120</field>
             <field name="category_id" ref="l10n_ar_payroll.categories_931EXT" />
@@ -188,7 +219,7 @@ except:
     amount = contract.amount
 if contract.is_wage_accurate:
     result = amount / worked_days.WORK100.number_of_hours
-    result_qty = worked_days.OVT50.number_of_days
+    result_qty = worked_days.OVT50.number_of_hours
 else:
     result = amount
     result_qty = worked_days.OVT50.number_of_hours
@@ -196,7 +227,7 @@ else:
         </record>
         <!-- Rules: Horas Extra al 100% -->
         <record id="rules_OVT100" model="hr.salary.rule">
-            <field name="name">HORAS EXTRA AL 100%</field>
+            <field name="name">HORAS EXTRA - al 100%</field>
             <field name="code">10121</field>
             <field name="sequence">10121</field>
             <field name="category_id" ref="l10n_ar_payroll.categories_931EXT" />
@@ -217,7 +248,7 @@ except:
     amount = contract.amount
 if contract.is_wage_accurate:
     result = amount / worked_days.WORK100.number_of_hours
-    result_qty = worked_days.OVT100.number_of_days
+    result_qty = worked_days.OVT100.number_of_hours
 else:
     result = amount
     result_qty = worked_days.OVT100.number_of_hours
@@ -244,7 +275,7 @@ result_qty = employee.service_duration_years
 result = categories.BASIC931
             </field>
         </record>
-        <!-- Rules: Premio Presentismo FIXME: No funciona la validacion-->
+        <!-- Rules: Premio Presentismo -->
         <record id="rules_PRES" model="hr.salary.rule">
             <field name="name">PREMIO PRESENTISMO</field>
             <field name="code">10320</field>
@@ -255,19 +286,18 @@ result = categories.BASIC931
             <!-- Condition Select -->
             <field name="condition_select">python</field>
             <field name="condition_python">
-result = (not(worked_days.WORK0 and worked_days.WORK0.number_of_days >= 1 and inputs.PRESOVR.amount == 0)) or False
-            </field>
+result = ( not (worked_days.WORK0HOL and - 1 >= worked_days.WORK0HOL.number_of_days)) and ( not (worked_days.WORK0 and -1 >= worked_days.WORK0.number_of_days)) or inputs.PRESOVR.amount != 0.00 or False            </field>
             <!-- Amount Select -->
             <field name="amount_select">code</field>
             <field name="amount_python_compute">
-if (inputs.PRESOVR.amount != 1.1 and inputs.PRESOVR.amount > 1):
+if (inputs.PRESOVR.amount > 0):
     result = inputs.PRESOVR.amount
 else:
     if contract.schedule_pay == 'bi-weekly':
         result = 2500.00
     elif contract.schedule_pay == 'monthly':
         result = 5000.00
-            </field>
+            </field> <!-- TODO: Se debe poner un parametro para el monto de presentismo. -->
         </record>
         <record id="payslip_inputs_PRES-OVR" model="hr.rule.input">
             <field name="name">Presentismo (Override)</field>

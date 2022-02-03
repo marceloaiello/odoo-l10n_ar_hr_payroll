@@ -2,7 +2,7 @@
 <odoo>
     <!-- Estructura: Liquidacion LCT Basica -->
     <record id="BASE-AR" model="hr.payroll.structure">
-        <field name="name">( BASE-AR ) LIQUIDACION BASICA LCT (Uso como base para otras estructuras)</field>
+        <field name="name">( BASE-AR ) LIQUIDACION BASICA LCT</field>
         <field name="code">BASE-AR</field>
         <field name="company_id" ref="base.main_company" />
         <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_BASIC'),
@@ -11,6 +11,7 @@
                                 ref('l10n_ar_payroll.rules_HFRD_TRAB'),
                                 ref('l10n_ar_payroll.rules_AUS'),
                                 ref('l10n_ar_payroll.rules_AUSVAC'),
+                                ref('l10n_ar_payroll.rules_AUSSUS'),
                                 ref('l10n_ar_payroll.rules_OVT50'),
                                 ref('l10n_ar_payroll.rules_OVT100'),
                                 ref('l10n_ar_payroll.rules_ANTG'),
@@ -28,9 +29,62 @@
                                 ref('l10n_ar_payroll.rules_NETO'),
                             ])]" name="rule_ids" />
     </record>
+    <!-- Estructura: Liquidacion LCT Basica Jubilados -->
+    <record id="BASE-AR-JUB" model="hr.payroll.structure">
+        <field name="name">( BASE-AR-JUB ) LIQUIDACION BASICA LCT  - JUBILADOS</field>
+        <field name="code">BASE-AR-JUB</field>
+        <field name="company_id" ref="base.main_company" />
+        <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_BASIC'),
+                                ref('l10n_ar_payroll.rules_HFRD'),
+                                ref('l10n_ar_payroll.rules_HFRD_PLUS'),
+                                ref('l10n_ar_payroll.rules_HFRD_TRAB'),
+                                ref('l10n_ar_payroll.rules_AUS'),
+                                ref('l10n_ar_payroll.rules_AUSVAC'),
+                                ref('l10n_ar_payroll.rules_AUSSUS'),
+                                ref('l10n_ar_payroll.rules_OVT50'),
+                                ref('l10n_ar_payroll.rules_OVT100'),
+                                ref('l10n_ar_payroll.rules_ANTG'),
+                                ref('l10n_ar_payroll.rules_PRES'),
+                                ref('l10n_ar_payroll.rules_VAC'),
+                                ref('l10n_ar_payroll.rules_AFIP-JUB11'),
+                                ref('l10n_ar_payroll.rules_EMBG-JUD'),
+                                ref('l10n_ar_payroll.rules_ADV'),
+                                ref('l10n_ar_payroll.rules_LOAN'),
+                                ref('l10n_ar_payroll.rules_GROSS'),
+                                ref('l10n_ar_payroll.rules_NOREM'),
+                                ref('l10n_ar_payroll.rules_DESC'),
+                                ref('l10n_ar_payroll.rules_NETO'),
+                            ])]" name="rule_ids" />
+    </record>
+    <!-- Estructura: Liquidacion LCT Basica - Fuera de Convenio - Sin Aportes y Contribuciones -->
+    <record id="BASE-AR-SAYC" model="hr.payroll.structure">
+        <field name="name">( BASE-AR-SAYC ) LIQUIDACION BASICA LCT - (SIN AyC)</field>
+        <field name="code">BASE-AR-SAYC</field>
+        <field name="company_id" ref="base.main_company" />
+        <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_BASIC'),
+                                ref('l10n_ar_payroll.rules_HFRD'),
+                                ref('l10n_ar_payroll.rules_HFRD_PLUS'),
+                                ref('l10n_ar_payroll.rules_HFRD_TRAB'),
+                                ref('l10n_ar_payroll.rules_AUS'),
+                                ref('l10n_ar_payroll.rules_AUSVAC'),
+                                ref('l10n_ar_payroll.rules_AUSSUS'),
+                                ref('l10n_ar_payroll.rules_OVT50'),
+                                ref('l10n_ar_payroll.rules_OVT100'),
+                                ref('l10n_ar_payroll.rules_ANTG'),
+                                ref('l10n_ar_payroll.rules_PRES'),
+                                ref('l10n_ar_payroll.rules_VAC'),
+                                ref('l10n_ar_payroll.rules_EMBG-JUD'),
+                                ref('l10n_ar_payroll.rules_ADV'),
+                                ref('l10n_ar_payroll.rules_LOAN'),
+                                ref('l10n_ar_payroll.rules_GROSS'),
+                                ref('l10n_ar_payroll.rules_NOREM'),
+                                ref('l10n_ar_payroll.rules_DESC'),
+                                ref('l10n_ar_payroll.rules_NETO'),
+                            ])]" name="rule_ids" />
+    </record>
     <!-- Estructura: Liquidacion S.A.C LCT -->
     <record id="BASE-AR-SAC" model="hr.payroll.structure">
-        <field name="name">( BASE-AR-SAC ) LIQUIDACION BASICA SAC LCT (Uso como base para otras estructuras)</field>
+        <field name="name">( BASE-AR-SAC ) LIQUIDACION BASICA LCT - SAC</field>
         <field name="code">BASE-AR-SAC</field>
         <field name="company_id" ref="base.main_company" />
         <field eval="[(6, 0, [  ref('l10n_ar_payroll.rules_SAC'),
