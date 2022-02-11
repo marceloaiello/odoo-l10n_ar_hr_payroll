@@ -25,6 +25,18 @@
             <field name="exclude_public_holidays">true</field>
             <field name="company_id" ref="base.main_company" />
         </record>
+        <record id="leaves_WORK0SUS" model="hr.leave.type">
+            <field name="name">Ausentismo - suspensiones</field>
+            <field name="code">WORK0SUS</field>
+            <field name="request_unit">day</field>
+            <field name="include_in_theoretical">true</field>
+            <field name="allocation_type">no</field>
+            <field name="leave_validation_type">hr</field>
+            <field name="create_calendar_meeting">true</field>
+            <field name="color_name">red</field>
+            <field name="exclude_public_holidays">true</field>
+            <field name="company_id" ref="base.main_company" />
+        </record>
         <record id="leaves_WORK0J" model="hr.leave.type">
             <field name="name">Ausentismo Justificado - remunerado</field>
             <field name="code">WORK0J</field>
@@ -46,7 +58,7 @@
             <field name="leave_validation_type">both</field>
             <field name="create_calendar_meeting">true</field>
             <field name="color_name">wheat</field>
-            <field name="exclude_public_holidays">false</field>
+            <field name="exclude_public_holidays">true</field>
             <field name="company_id" ref="base.main_company" />
         </record>
         <record id="leaves_WORK0-MATR" model="hr.leave.type">
@@ -58,7 +70,7 @@
             <field name="leave_validation_type">both</field>
             <field name="create_calendar_meeting">true</field>
             <field name="color_name">wheat</field>
-            <field name="exclude_public_holidays">false</field>
+            <field name="exclude_public_holidays">true</field>
             <field name="company_id" ref="base.main_company" />
         </record>
         <record id="leaves_WORK0-NAC" model="hr.leave.type">
@@ -70,7 +82,7 @@
             <field name="leave_validation_type">both</field>
             <field name="create_calendar_meeting">true</field>
             <field name="color_name">wheat</field>
-            <field name="exclude_public_holidays">false</field>
+            <field name="exclude_public_holidays">true</field>
             <field name="company_id" ref="base.main_company" />
         </record>
         <record id="leaves_WORK0-FALL" model="hr.leave.type">
@@ -82,7 +94,7 @@
             <field name="leave_validation_type">both</field>
             <field name="create_calendar_meeting">true</field>
             <field name="color_name">wheat</field>
-            <field name="exclude_public_holidays">false</field>
+            <field name="exclude_public_holidays">true</field>
             <field name="company_id" ref="base.main_company" />
         </record>
         <record id="leaves_WORK0-EST" model="hr.leave.type">
@@ -94,7 +106,7 @@
             <field name="leave_validation_type">both</field>
             <field name="create_calendar_meeting">true</field>
             <field name="color_name">wheat</field>
-            <field name="exclude_public_holidays">false</field>
+            <field name="exclude_public_holidays">true</field>
             <field name="company_id" ref="base.main_company" />
         </record>
     </data>

@@ -167,7 +167,7 @@ else:
         </record>
         <!-- Rules: Descuento - Ausentismo Suspensiones -->
         <record id="rules_AUSSUS" model="hr.salary.rule">
-            <field name="name">AUSENTISMO - vacacional</field>
+            <field name="name">AUSENTISMO - suspensiones</field>
             <field name="code">10111</field>
             <field name="sequence">10111</field>
             <field name="category_id" ref="l10n_ar_payroll.categories_931BASIC" />
