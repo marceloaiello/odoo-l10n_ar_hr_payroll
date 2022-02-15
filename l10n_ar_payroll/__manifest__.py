@@ -30,6 +30,7 @@
         'views/menus.xml',
         'views/hr_contract.xml',
         'views/hr_payslip_views.xml',
+        'views/hr_leave_type.xml',
         'data/tablas_afip_sicoss.xml',
         'data/payroll_account.xml',
         'data/hr_leaves.xml',
