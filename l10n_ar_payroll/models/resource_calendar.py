@@ -37,11 +37,9 @@ class ResourceCalendar(models.Model):
 
     def _attendance_intervals_batch_exclude_weekends(self, start_dt, end_dt, intervals, resources, tz):
         for resource in resources:
-            interval_resource = intervals[resource.id]
             attendances = []
-            for attendance in interval_resource._items:
-                if attendance[0].date() not in self._weekend_intervals(start_dt, end_dt, resource):
-                    attendances.append(attendance)
+            for day in self._weekend_intervals(start_dt, end_dt, resource):
+                attendances.append(day)
             intervals[resource.id] = Intervals(attendances)
         return intervals
 
