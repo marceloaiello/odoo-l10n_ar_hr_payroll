@@ -1,7 +1,7 @@
 # Copyright (C) 2021 Nimarosa (Nicolas Rodriguez) (<nicolasrsande@gmail.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, models
+from odoo import models
 from odoo.addons.resource.models.resource import Intervals
 
 from pytz import timezone
@@ -26,18 +26,27 @@ class ResourceCalendar(models.Model):
         weekdays = [int(attendance.dayofweek) for attendance in self.attendance_ids]
         weekends = [d for d in range(7) if d not in weekdays]
         for day in rrule.rrule(rrule.DAILY, start, until=until, byweekday=weekends):
-            result.append((datetime.combine(day,time.min).astimezone(tz),
-                           datetime.combine(day,time.max).astimezone(tz),self
-                           ),
-                          )
+            result.append(
+                (
+                    datetime.combine(day, time.min).astimezone(tz),
+                    datetime.combine(day, time.max).astimezone(tz), self
+                ),
+            )
 
-        return Intervals(result)
+        return result
 
-    def _attendance_intervals(self, start_dt, end_dt, resource=None):
-        res = super()._attendance_intervals(start_dt=start_dt,
-                                            end_dt=end_dt,
-                                            resource=resource)
-        if self.env.context.get('from_leave_request',False) and not self.env.context.get('exclude_weekends', False):
-            weekend = self._weekend_intervals(start_dt, end_dt, resource)
-            res = res | weekend
+    def _attendance_intervals_batch_exclude_weekends(self, start_dt, end_dt, intervals, resources, tz):
+        for resource in resources:
+            interval_resource = intervals[resource.id]
+            attendances = []
+            for attendance in interval_resource._items:
+                if attendance[0].date() not in self._weekend_intervals(start_dt, end_dt, resource).mapped("date"):
+                    attendances.append(attendance)
+            intervals[resource.id] = Intervals(attendances)
+        return intervals
+
+    def _attendance_intervals_batch(self, start_dt, end_dt, resources=None, domain=None, tz=None):
+        res = super()._attendance_intervals_batch(start_dt=start_dt, end_dt=end_dt, resources=resources, domain=domain, tz=tz)
+        if self.env.context.get("exclude_weekends") and resources:
+            return self._attendance_intervals_batch_exclude_weekends(start_dt, end_dt, res, resources, tz)
         return res
