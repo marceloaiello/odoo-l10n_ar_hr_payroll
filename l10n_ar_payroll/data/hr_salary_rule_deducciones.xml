@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Rules: Embargos Judiciales -->
+        <record id="rules_EMBG-JUD" model="hr.salary.rule">
+            <field name="name">EMBARGOS JUDICIALES</field>
+            <field name="code">30100</field>
+            <field name="sequence">30100</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_DED" />
+            <field name="register_id" ref="l10n_ar_payroll.contribution_register_JUD-EMBG" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <field name="account_credit" ref="l10n_ar.base_embargos_a_depositar" />
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = payslip.env['hr.contract.advantage'].search([('contract_id', '=', contract.id), ('code', '=', 'EMBR-RATE')])
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result_rate = -(payslip.env['hr.contract.advantage'].search([('contract_id', '=', contract.id), ('code', '=', 'EMBR-RATE')]).amount)
+result = categories.GROSS + categories.DESC + categories.NOREM + categories.RET
+            </field>
+        </record>
+        <!-- Rules: Adelantos - Descuento -->
+        <record id="rules_ADV" model="hr.salary.rule">
+            <field name="name">ADELANTOS OTORGADOS</field>
+            <field name="code">30201</field>
+            <field name="sequence">30201</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_DED" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <field name="account_credit" ref="l10n_ar.base_otros_creditos" />
+            <field name="account_debit" ref="l10n_ar.base_sueldos_a_pagar" />
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = ( inputs.ADV and inputs.ADV.amount != 0.00 ) or False
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = -(inputs.ADV.amount)
+            </field>
+        </record>
+        <record id="payslip_inputs_ADV-AMOUNT" model="hr.rule.input">
+            <field name="name">Importe Adelantos (a descontar)</field>
+            <field name="code">ADV</field>
+            <field name="input_id" ref="l10n_ar_payroll.rules_ADV" />
+        </record>
+        <!-- Rules: Prestamos - Descuento -->
+        <record id="rules_LOAN" model="hr.salary.rule">
+            <field name="name">PLANES PRESTAMOS OTORGADOS</field>
+            <field name="code">30202</field>
+            <field name="sequence">30202</field>
+            <field name="category_id" ref="l10n_ar_payroll.categories_DED" />
+            <field name="active">true</field>
+            <field name="appears_on_payslip">true</field>
+            <field name="account_credit" ref="l10n_ar.base_otros_creditos" />
+            <field name="account_debit" ref="l10n_ar.base_sueldos_a_pagar" />
+            <!-- Condition Select -->
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = ( inputs.LOAN and inputs.LOAN.amount != 0.00 ) or False
+            </field>
+            <!-- Amount Select -->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = -(inputs.LOAN.amount)
+            </field>
+        </record>
+        <record id="payslip_inputs_LOAN-AMOUNT" model="hr.rule.input">
+            <field name="name">Importe Prestamos (a descontar)</field>
+            <field name="code">LOAN</field>
+            <field name="input_id" ref="l10n_ar_payroll.rules_LOAN" />
+        </record>
+    </data>
+</odoo>
