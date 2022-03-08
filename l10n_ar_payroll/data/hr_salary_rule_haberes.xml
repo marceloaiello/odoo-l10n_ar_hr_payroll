@@ -253,6 +253,8 @@ else:
 result_rate = 1.00
 result_qty = employee.service_duration_years
 result = categories.BASIC931
+if categories.VAC931 != 0.00:
+    result += categories.VAC931
             </field>
         </record>
         <!-- Rules: Premio Presentismo -->

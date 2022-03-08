@@ -191,6 +191,10 @@ class HrPayslip(models.Model):
                 "number_of_hours": work_data["hours"],
                 "contract_id": contract.id,
             }
+            if contract.schedule_pay == 'bi-weekly':
+                attendances["number_of_days"] = work_data["days"] - ph_days
+                attendances["number_of_hours"] = work_data["hours"] - ph_hours
+
             res.append(attendances)
 
             # -- compute overtimes -- #

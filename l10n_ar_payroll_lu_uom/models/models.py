@@ -37,15 +37,13 @@ class HrPayslip(models.Model):
             ('date_to', '<=', date_from)])
         if len(affected_payslips) > 0:
             for payslip in affected_payslips:
-                lines = payslip.details_by_salary_rule_category.filtered(lambda r: r.category_id.code in ['TGROSS', 'TNOREM', 'VAC931', 'EXT931'])
+                lines_sum = ['TGROSS', 'TNOREM']
+                lines_substract = ['VAC931', 'EXT931']
+                lines = payslip.details_by_salary_rule_category.filtered(lambda r: r.category_id.code in lines_sum or lines_substract)
                 for line in lines:
-                    if line.category_id.code == 'TGROSS':
+                    if line.category_id.code in lines_sum:
                         amount += line.total
-                    if line.category_id.code == 'TNOREM':
-                        amount += line.total
-                    if line.category_id.code == 'VAC931':
-                        amount -= line.total
-                    if line.category_id.code == 'EXT931':
+                    if line.category_id.code in lines_substract:
                         amount -= line.total
         return amount
 
