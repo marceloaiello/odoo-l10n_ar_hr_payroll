@@ -33,7 +33,7 @@
         'views/hr_leave_type.xml',
         'data/tablas_afip_sicoss.xml',
         'data/payroll_account.xml',
-        'data/hr_leaves.xml',
+        #'data/hr_leaves.xml',
         'data/hr_overtime_types.xml',
         'data/hr_contract_advantage_template.xml',
         'data/hr_salary_rule_category.xml',
